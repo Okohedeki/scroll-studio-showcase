@@ -34,8 +34,31 @@
 }
 </style>
 <link rel="stylesheet" href="runtime/studio.css">
+<style>
+  html.ss-loading, html.ss-loading body { overflow: hidden; height: 100%; }
+  .ss-loader { position: fixed; inset: 0; z-index: 1000; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+    background: var(--bg); color: var(--ink); transition: opacity .7s cubic-bezier(.22,.8,.2,1), visibility .7s; }
+  html.ss-loading .ss-loader, .ss-loader.ss-leaving { display: flex; }
+  .ss-loader.ss-leaving { opacity: 0; visibility: hidden; }
+  .ss-loader__name { font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(28px, 3.4vw, 46px); letter-spacing: -.02em; }
+  .ss-loader__bar { width: min(320px, 60vw); height: 2px; background: var(--line); position: relative; overflow: hidden; }
+  .ss-loader__bar i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: scaleX(0); transition: transform .3s; }
+  .ss-loader__pct { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+</style>
+<script>
+  // Lock scrolling from the very first paint; the runtime unlocks it once every scene is ready.
+  // If the runtime can't run at all, open the page anyway after max_wait seconds.
+  document.documentElement.classList.add("ss-loading");
+  window.__ssLoader = { maxWait: 45.0, minTime: 0.6 };
+  setTimeout(function () { document.documentElement.classList.remove("ss-loading"); }, 50000.0);
+</script>
 </head>
 <body>
+<div class="ss-loader" id="ss-loader" role="status" aria-live="polite">
+  <div class="ss-loader__name">Northstar Observatory</div>
+  <div class="ss-loader__bar"><i></i></div>
+  <div class="ss-loader__pct"><span>0</span>%</div>
+</div>
 
 <header class="ss-nav" id="ss-nav"><div class="ss-nav__in">
   <a class="ss-wordmark" href="#">
@@ -65,7 +88,7 @@
 <div class="ss-num">03 · Home</div><h2 class="ss-h2">Clouds, oceans, <em>city lights.</em></h2><p class="ss-body">On the night side, the lights of eight billion people. Above them, a ring of satellites you can see from our roof.</p><div class="ss-fact">On a clear night we track twenty satellites an hour by eye.</div></div>
 </article>  </div>
   <script type="application/json" class="ss-config">{"background": null, "bloom": [0.7, 0.55, 0.05], "dust": "#b8b0ff", "final": null, "levels": [{"params": {"arm": "#8aa8ff", "arms": 4, "core": "#ffd7a0", "hot": "#d6b8ff", "radius": 15, "stars": 70000}, "preset": "galaxy"}, {"params": {"orbit": "#a98bff", "planet": "#6fc3ff", "sun": "#ffb860"}, "preset": "star-system"}, {"params": {"atmosphere": "#6fb8ff", "city": "#ffbe6b", "desert": "#b39461", "land": "#4f6f35", "ocean": "#0a2a5e", "satellites": 18}, "preset": "planet"}], "seed": 7, "style": "glow", "zoom": 9.0}</script>
-  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "scale", "legend": [], "scales": ["100,000 ly", "40 AU", "12,700 km"]}, "layout": "cards", "length": 4.0, "steps": [{"at": null, "body": "Our telescopes reach across the galaxy. Scroll down and fall with them: from the whole Milky Way to a single world.", "fact": null, "hint": "Scroll to fall inward", "image": null, "intro": true, "kicker": "Northstar Observatory", "length": 1.2, "title": "Three hundred billion stars. \u003cem\u003eOne evening.\u003c/em\u003e"}, {"at": null, "body": "A barred spiral a hundred thousand light-years across. Our Sun sits two-thirds of the way out, in a quiet arm.", "fact": "Light from the far side left before humans painted caves.", "hint": null, "image": null, "intro": false, "kicker": "01 \u00b7 The galaxy", "length": 1.5, "title": "You are \u003cem\u003esomewhere in here.\u003c/em\u003e"}, {"at": null, "body": "Eight planets, a belt of rubble and a long tail of ice. The third orbit is the one that matters to us.", "fact": "One astronomical unit: 150 million kilometres.", "hint": null, "image": null, "intro": false, "kicker": "02 \u00b7 One star", "length": 1.5, "title": "A small, \u003cem\u003esteady sun.\u003c/em\u003e"}, {"at": null, "body": "On the night side, the lights of eight billion people. Above them, a ring of satellites you can see from our roof.", "fact": "On a clear night we track twenty satellites an hour by eye.", "hint": null, "image": null, "intro": false, "kicker": "03 \u00b7 Home", "length": 1.6, "title": "Clouds, oceans, \u003cem\u003ecity lights.\u003c/em\u003e"}]}</script>
+  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "scale", "legend": [], "scales": ["100,000 ly", "40 AU", "12,700 km"]}, "layout": "cards", "length": 4.0, "steps": [{"at": null, "body": "Our telescopes reach across the galaxy. Scroll down and fall with them: from the whole Milky Way to a single world.", "fact": null, "hint": "Scroll to fall inward", "image": null, "intro": true, "kicker": "Northstar Observatory", "length": 1.2, "state": {}, "title": "Three hundred billion stars. \u003cem\u003eOne evening.\u003c/em\u003e"}, {"at": null, "body": "A barred spiral a hundred thousand light-years across. Our Sun sits two-thirds of the way out, in a quiet arm.", "fact": "Light from the far side left before humans painted caves.", "hint": null, "image": null, "intro": false, "kicker": "01 \u00b7 The galaxy", "length": 1.5, "state": {}, "title": "You are \u003cem\u003esomewhere in here.\u003c/em\u003e"}, {"at": null, "body": "Eight planets, a belt of rubble and a long tail of ice. The third orbit is the one that matters to us.", "fact": "One astronomical unit: 150 million kilometres.", "hint": null, "image": null, "intro": false, "kicker": "02 \u00b7 One star", "length": 1.5, "state": {}, "title": "A small, \u003cem\u003esteady sun.\u003c/em\u003e"}, {"at": null, "body": "On the night side, the lights of eight billion people. Above them, a ring of satellites you can see from our roof.", "fact": "On a clear night we track twenty satellites an hour by eye.", "hint": null, "image": null, "intro": false, "kicker": "03 \u00b7 Home", "length": 1.6, "state": {}, "title": "Clouds, oceans, \u003cem\u003ecity lights.\u003c/em\u003e"}]}</script>
 </section>
 <section class="ss-block" id="visit"><div class="ss-wrap ss-intro2">
   <h2 class="ss-display ss-reveal">Look up, <em>with company.</em></h2>

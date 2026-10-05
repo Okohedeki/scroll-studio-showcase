@@ -34,8 +34,31 @@
 }
 </style>
 <link rel="stylesheet" href="runtime/studio.css">
+<style>
+  html.ss-loading, html.ss-loading body { overflow: hidden; height: 100%; }
+  .ss-loader { position: fixed; inset: 0; z-index: 1000; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+    background: var(--bg); color: var(--ink); transition: opacity .7s cubic-bezier(.22,.8,.2,1), visibility .7s; }
+  html.ss-loading .ss-loader, .ss-loader.ss-leaving { display: flex; }
+  .ss-loader.ss-leaving { opacity: 0; visibility: hidden; }
+  .ss-loader__name { font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(28px, 3.4vw, 46px); letter-spacing: -.02em; }
+  .ss-loader__bar { width: min(320px, 60vw); height: 2px; background: var(--line); position: relative; overflow: hidden; }
+  .ss-loader__bar i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: scaleX(0); transition: transform .3s; }
+  .ss-loader__pct { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+</style>
+<script>
+  // Lock scrolling from the very first paint; the runtime unlocks it once every scene is ready.
+  // If the runtime can't run at all, open the page anyway after max_wait seconds.
+  document.documentElement.classList.add("ss-loading");
+  window.__ssLoader = { maxWait: 45.0, minTime: 0.6 };
+  setTimeout(function () { document.documentElement.classList.remove("ss-loading"); }, 50000.0);
+</script>
 </head>
 <body>
+<div class="ss-loader" id="ss-loader" role="status" aria-live="polite">
+  <div class="ss-loader__name">Atelier Sfumato</div>
+  <div class="ss-loader__bar"><i></i></div>
+  <div class="ss-loader__pct"><span>0</span>%</div>
+</div>
 
 <header class="ss-nav" id="ss-nav"><div class="ss-nav__in">
   <a class="ss-wordmark" href="#">
@@ -67,7 +90,7 @@
     </div>
   </div>
   <script type="application/json" class="ss-config">{"credits": ["Mona Lisa, Leonardo da Vinci, c. 1503\u20131519. Public domain."], "end": "assets/studio/final.jpg", "guides": "assets/studio/guides.json", "layers": {"final": "assets/studio/final.jpg", "mask_color": "assets/studio/mask_color.png", "mask_tone": "assets/studio/mask_tone.png", "mask_under": "assets/studio/mask_under.png", "paper": "assets/studio/paper.jpg", "tone": "assets/studio/tone.jpg", "under": "assets/studio/under.jpg"}, "lines": "assets/studio/lines.json", "paper": "#efe8da", "size": [1800, 2683], "stages": ["guides", "lines", "value", "underpaint", "colour"]}</script>
-  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "progress", "legend": [], "scales": ["Blank canvas"]}, "layout": "split", "length": 4.0, "steps": [{"at": null, "body": "Scroll, and watch the most famous portrait in the world come together the way it was actually made: proportion, line, value, underpainting, then colour.", "fact": null, "hint": "Scroll to begin", "image": null, "intro": true, "kicker": "A lesson in five parts", "length": 1.0, "title": "Paint the \u003cem\u003eMona Lisa\u003c/em\u003e with us, one layer at a time."}, {"at": null, "body": "Before a single line, find the big shapes. A vertical axis, the head as an oval, the whole figure inside a triangle.", "fact": "Leonardo set the two horizons at different heights. It makes her seem to rise out of the landscape.", "hint": null, "image": null, "intro": false, "kicker": "Lesson 01 / 05", "length": 1.1, "title": "Proportion"}, {"at": null, "body": "Now draw what you see, not what you know. Start where the viewer will look first, the face, then the hands, then everything else.", "fact": "Keep the charcoal loose. Lines are questions until the value answers them.", "hint": null, "image": null, "intro": false, "kicker": "Lesson 02 / 05", "length": 1.9, "title": "Line"}, {"at": null, "body": "Squint until the detail disappears and only light and dark remain. Build the shadows in layers, following the form like a hand following a cheek.", "fact": "Sfumato means \u0027gone up in smoke\u0027: edges that melt, never lines that stop.", "hint": null, "image": null, "intro": false, "kicker": "Lesson 03 / 05", "length": 1.4, "title": "Value"}, {"at": null, "body": "Masters laid in the whole picture in one earth colour first. It settles every value before colour can confuse them.", "fact": "Raw umber dries fast and stays warm under every glaze.", "hint": null, "image": null, "intro": false, "kicker": "Lesson 04 / 05", "length": 1.4, "title": "Underpainting"}, {"at": null, "body": "Thin, transparent glazes, dozens of them, each one barely there. Colour doesn\u0027t cover the drawing, it tints it.", "fact": "Leonardo worked on this panel for well over a decade. You can take your time.", "hint": null, "image": null, "intro": false, "kicker": "Lesson 05 / 05", "length": 1.6, "title": "Colour"}]}</script>
+  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "progress", "legend": [], "scales": ["Blank canvas"]}, "layout": "split", "length": 4.0, "steps": [{"at": null, "body": "Scroll, and watch the most famous portrait in the world come together the way it was actually made: proportion, line, value, underpainting, then colour.", "fact": null, "hint": "Scroll to begin", "image": null, "intro": true, "kicker": "A lesson in five parts", "length": 1.0, "state": {}, "title": "Paint the \u003cem\u003eMona Lisa\u003c/em\u003e with us, one layer at a time."}, {"at": null, "body": "Before a single line, find the big shapes. A vertical axis, the head as an oval, the whole figure inside a triangle.", "fact": "Leonardo set the two horizons at different heights. It makes her seem to rise out of the landscape.", "hint": null, "image": null, "intro": false, "kicker": "Lesson 01 / 05", "length": 1.1, "state": {}, "title": "Proportion"}, {"at": null, "body": "Now draw what you see, not what you know. Start where the viewer will look first, the face, then the hands, then everything else.", "fact": "Keep the charcoal loose. Lines are questions until the value answers them.", "hint": null, "image": null, "intro": false, "kicker": "Lesson 02 / 05", "length": 1.9, "state": {}, "title": "Line"}, {"at": null, "body": "Squint until the detail disappears and only light and dark remain. Build the shadows in layers, following the form like a hand following a cheek.", "fact": "Sfumato means \u0027gone up in smoke\u0027: edges that melt, never lines that stop.", "hint": null, "image": null, "intro": false, "kicker": "Lesson 03 / 05", "length": 1.4, "state": {}, "title": "Value"}, {"at": null, "body": "Masters laid in the whole picture in one earth colour first. It settles every value before colour can confuse them.", "fact": "Raw umber dries fast and stays warm under every glaze.", "hint": null, "image": null, "intro": false, "kicker": "Lesson 04 / 05", "length": 1.4, "state": {}, "title": "Underpainting"}, {"at": null, "body": "Thin, transparent glazes, dozens of them, each one barely there. Colour doesn\u0027t cover the drawing, it tints it.", "fact": "Leonardo worked on this panel for well over a decade. You can take your time.", "hint": null, "image": null, "intro": false, "kicker": "Lesson 05 / 05", "length": 1.6, "state": {}, "title": "Colour"}]}</script>
 </section>
 <section class="ss-block" id="method"><div class="ss-wrap ss-intro2">
   <h2 class="ss-display ss-reveal">Every masterpiece is <em>five simple lessons</em> stacked on top of each other.</h2>

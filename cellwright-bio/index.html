@@ -33,8 +33,31 @@
 }
 </style>
 <link rel="stylesheet" href="runtime/studio.css">
+<style>
+  html.ss-loading, html.ss-loading body { overflow: hidden; height: 100%; }
+  .ss-loader { position: fixed; inset: 0; z-index: 1000; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+    background: var(--bg); color: var(--ink); transition: opacity .7s cubic-bezier(.22,.8,.2,1), visibility .7s; }
+  html.ss-loading .ss-loader, .ss-loader.ss-leaving { display: flex; }
+  .ss-loader.ss-leaving { opacity: 0; visibility: hidden; }
+  .ss-loader__name { font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(28px, 3.4vw, 46px); letter-spacing: -.02em; }
+  .ss-loader__bar { width: min(320px, 60vw); height: 2px; background: var(--line); position: relative; overflow: hidden; }
+  .ss-loader__bar i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: scaleX(0); transition: transform .3s; }
+  .ss-loader__pct { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+</style>
+<script>
+  // Lock scrolling from the very first paint; the runtime unlocks it once every scene is ready.
+  // If the runtime can't run at all, open the page anyway after max_wait seconds.
+  document.documentElement.classList.add("ss-loading");
+  window.__ssLoader = { maxWait: 45.0, minTime: 0.6 };
+  setTimeout(function () { document.documentElement.classList.remove("ss-loading"); }, 50000.0);
+</script>
 </head>
 <body>
+<div class="ss-loader" id="ss-loader" role="status" aria-live="polite">
+  <div class="ss-loader__name">Cellwright Bio</div>
+  <div class="ss-loader__bar"><i></i></div>
+  <div class="ss-loader__pct"><span>0</span>%</div>
+</div>
 
 <header class="ss-nav" id="ss-nav"><div class="ss-nav__in">
   <a class="ss-wordmark" href="#">
@@ -67,8 +90,8 @@
 </article><article class="ss-step" style="--h: 160vh"><div class="ss-card">
 <div class="ss-num">05 / 05 · 0.3 nm</div><h2 class="ss-h2">One target. <em>One molecule.</em></h2><p class="ss-body">We design compounds that find that address and bind it, and nothing else. This is where a medicine begins.</p><div class="ss-fact">Designed against structure, validated in patient-derived cells.</div></div>
 </article>  </div>
-  <script type="application/json" class="ss-config">{"background": null, "bloom": [0.5, 0.45, 0.12], "final": "dock", "levels": [{"params": {}, "preset": "cell-field"}, {"params": {}, "preset": "cell"}, {"params": {}, "preset": "nucleus"}, {"params": {}, "preset": "helix"}], "style": "glow", "zoom": 14.0}</script>
-  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "scale", "legend": [{"color": "#45f0a0", "label": "Membrane"}, {"color": "#5b8cff", "label": "Nucleus"}, {"color": "#ff4fd8", "label": "Target"}], "scales": ["100 \u00b5m", "10 \u00b5m", "1 \u00b5m", "2 nm", "0.3 nm"]}, "layout": "cards", "length": 4.0, "steps": [{"at": null, "body": "We design medicines at the scale where disease actually begins. Scroll down through six orders of magnitude, from a field of cells to a single gene.", "fact": null, "hint": "Scroll to zoom in", "image": null, "intro": true, "kicker": "Cellwright Bio", "length": 1.2, "title": "From tissue \u003cem\u003eto molecule.\u003c/em\u003e"}, {"at": null, "body": "Long before symptoms, something changes in a tissue: a few cells behaving differently from their neighbours.", "fact": "Fluorescence imaging: membranes in green, nuclei in blue.", "hint": null, "image": null, "intro": false, "kicker": "01 / 05 \u00b7 100 \u00b5m", "length": 1.2, "title": "Disease starts \u003cem\u003esmall.\u003c/em\u003e"}, {"at": null, "body": "Mitochondria power it, vesicles move cargo, and at the centre the nucleus holds the instructions for all of it.", "fact": "A typical human cell is about 10 micrometres across.", "hint": null, "image": null, "intro": false, "kicker": "02 / 05 \u00b7 10 \u00b5m", "length": 1.5, "title": "Inside \u003cem\u003eone cell.\u003c/em\u003e"}, {"at": null, "body": "Two metres of DNA packed into a nucleus a hundred times narrower than a hair, folded so the right genes stay within reach.", "fact": "Chromatin: DNA wrapped around proteins, coiled and looped.", "hint": null, "image": null, "intro": false, "kicker": "03 / 05 \u00b7 1 \u00b5m", "length": 1.3, "title": "The genome, \u003cem\u003eunwound.\u003c/em\u003e"}, {"at": null, "body": "Down at the double helix, every disease variant is a precise address: a handful of letters in three billion.", "fact": "The helix is 2 nanometres wide and turns once every 10.5 base pairs.", "hint": null, "image": null, "intro": false, "kicker": "04 / 05 \u00b7 2 nm", "length": 1.5, "title": "Reading \u003cem\u003ethe code.\u003c/em\u003e"}, {"at": null, "body": "We design compounds that find that address and bind it, and nothing else. This is where a medicine begins.", "fact": "Designed against structure, validated in patient-derived cells.", "hint": null, "image": null, "intro": false, "kicker": "05 / 05 \u00b7 0.3 nm", "length": 1.6, "title": "One target. \u003cem\u003eOne molecule.\u003c/em\u003e"}]}</script>
+  <script type="application/json" class="ss-config">{"background": null, "bloom": [0.5, 0.45, 0.12], "dust": "#8fb8d8", "final": "dock", "levels": [{"params": {}, "preset": "cell-field"}, {"params": {}, "preset": "cell"}, {"params": {}, "preset": "nucleus"}, {"params": {}, "preset": "helix"}], "seed": 7, "style": "glow", "zoom": 14.0}</script>
+  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "scale", "legend": [{"color": "#45f0a0", "label": "Membrane"}, {"color": "#5b8cff", "label": "Nucleus"}, {"color": "#ff4fd8", "label": "Target"}], "scales": ["100 \u00b5m", "10 \u00b5m", "1 \u00b5m", "2 nm", "0.3 nm"]}, "layout": "cards", "length": 4.0, "steps": [{"at": null, "body": "We design medicines at the scale where disease actually begins. Scroll down through six orders of magnitude, from a field of cells to a single gene.", "fact": null, "hint": "Scroll to zoom in", "image": null, "intro": true, "kicker": "Cellwright Bio", "length": 1.2, "state": {}, "title": "From tissue \u003cem\u003eto molecule.\u003c/em\u003e"}, {"at": null, "body": "Long before symptoms, something changes in a tissue: a few cells behaving differently from their neighbours.", "fact": "Fluorescence imaging: membranes in green, nuclei in blue.", "hint": null, "image": null, "intro": false, "kicker": "01 / 05 \u00b7 100 \u00b5m", "length": 1.2, "state": {}, "title": "Disease starts \u003cem\u003esmall.\u003c/em\u003e"}, {"at": null, "body": "Mitochondria power it, vesicles move cargo, and at the centre the nucleus holds the instructions for all of it.", "fact": "A typical human cell is about 10 micrometres across.", "hint": null, "image": null, "intro": false, "kicker": "02 / 05 \u00b7 10 \u00b5m", "length": 1.5, "state": {}, "title": "Inside \u003cem\u003eone cell.\u003c/em\u003e"}, {"at": null, "body": "Two metres of DNA packed into a nucleus a hundred times narrower than a hair, folded so the right genes stay within reach.", "fact": "Chromatin: DNA wrapped around proteins, coiled and looped.", "hint": null, "image": null, "intro": false, "kicker": "03 / 05 \u00b7 1 \u00b5m", "length": 1.3, "state": {}, "title": "The genome, \u003cem\u003eunwound.\u003c/em\u003e"}, {"at": null, "body": "Down at the double helix, every disease variant is a precise address: a handful of letters in three billion.", "fact": "The helix is 2 nanometres wide and turns once every 10.5 base pairs.", "hint": null, "image": null, "intro": false, "kicker": "04 / 05 \u00b7 2 nm", "length": 1.5, "state": {}, "title": "Reading \u003cem\u003ethe code.\u003c/em\u003e"}, {"at": null, "body": "We design compounds that find that address and bind it, and nothing else. This is where a medicine begins.", "fact": "Designed against structure, validated in patient-derived cells.", "hint": null, "image": null, "intro": false, "kicker": "05 / 05 \u00b7 0.3 nm", "length": 1.6, "state": {}, "title": "One target. \u003cem\u003eOne molecule.\u003c/em\u003e"}]}</script>
 </section>
 <section class="ss-block" id="programs"><div class="ss-wrap ss-intro2">
   <h2 class="ss-display ss-reveal">Precision starts with <em>seeing clearly.</em></h2>

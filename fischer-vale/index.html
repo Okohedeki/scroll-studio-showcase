@@ -34,8 +34,31 @@
 }
 </style>
 <link rel="stylesheet" href="runtime/studio.css">
+<style>
+  html.ss-loading, html.ss-loading body { overflow: hidden; height: 100%; }
+  .ss-loader { position: fixed; inset: 0; z-index: 1000; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+    background: var(--bg); color: var(--ink); transition: opacity .7s cubic-bezier(.22,.8,.2,1), visibility .7s; }
+  html.ss-loading .ss-loader, .ss-loader.ss-leaving { display: flex; }
+  .ss-loader.ss-leaving { opacity: 0; visibility: hidden; }
+  .ss-loader__name { font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(28px, 3.4vw, 46px); letter-spacing: -.02em; }
+  .ss-loader__bar { width: min(320px, 60vw); height: 2px; background: var(--line); position: relative; overflow: hidden; }
+  .ss-loader__bar i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: scaleX(0); transition: transform .3s; }
+  .ss-loader__pct { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+</style>
+<script>
+  // Lock scrolling from the very first paint; the runtime unlocks it once every scene is ready.
+  // If the runtime can't run at all, open the page anyway after max_wait seconds.
+  document.documentElement.classList.add("ss-loading");
+  window.__ssLoader = { maxWait: 45.0, minTime: 0.6 };
+  setTimeout(function () { document.documentElement.classList.remove("ss-loading"); }, 50000.0);
+</script>
 </head>
 <body>
+<div class="ss-loader" id="ss-loader" role="status" aria-live="polite">
+  <div class="ss-loader__name">Fischer &amp; Vale</div>
+  <div class="ss-loader__bar"><i></i></div>
+  <div class="ss-loader__pct"><span>0</span>%</div>
+</div>
 
 <header class="ss-nav" id="ss-nav"><div class="ss-nav__in">
   <a class="ss-wordmark" href="#">
@@ -62,7 +85,7 @@
 <div class="ss-num">Weighted and felted</div><h2 class="ss-h2">Set down <em>without a sound.</em></h2><p class="ss-body">Brass weights under green baize: every piece sits square and stays there, even in a blitz.</p></div>
 </article>  </div>
   <script type="application/json" class="ss-config">{"background": "#0b0b0d", "count": 96, "credits": ["\u201cA Beautiful Game\u201d \u00a9 ASWF / MaterialX Project, glTF by Ed Mackey, CC BY 4.0"], "desktop": {"base": "assets/set/d/", "ext": "webp"}, "end": "assets/set/end.jpg", "fit": "contain", "mobile": {"base": "assets/set/m/", "ext": "webp"}, "poster": "assets/set/poster.jpg", "shift": 0.13}</script>
-  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "none", "legend": [], "scales": []}, "layout": "cards", "length": 4.0, "steps": [{"at": null, "body": "Every set is turned, carved and blown by hand in our workshop, then played before it leaves.", "fact": null, "hint": "Scroll to lift the pieces", "image": null, "intro": true, "kicker": "Fischer \u0026 Vale", "length": 1.2, "title": "Thirty-two pieces. \u003cem\u003eOne opening move.\u003c/em\u003e"}, {"at": null, "body": "Sixty-four squares cut from a single board of each wood, so the grain runs unbroken from rank to rank.", "fact": null, "hint": null, "image": null, "intro": false, "kicker": "Walnut and maple", "length": 1.3, "title": "The board comes \u003cem\u003efirst.\u003c/em\u003e"}, {"at": null, "body": "Each piece is gathered from the furnace and shaped by eye. No two kings are quite the same height.", "fact": "Lead-free crystal, annealed for 14 hours.", "hint": null, "image": null, "intro": false, "kicker": "Blown glass", "length": 1.4, "title": "Pieces you can \u003cem\u003esee through.\u003c/em\u003e"}, {"at": null, "body": "Brass weights under green baize: every piece sits square and stays there, even in a blitz.", "fact": null, "hint": null, "image": null, "intro": false, "kicker": "Weighted and felted", "length": 1.4, "title": "Set down \u003cem\u003ewithout a sound.\u003c/em\u003e"}]}</script>
+  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "none", "legend": [], "scales": []}, "layout": "cards", "length": 4.0, "steps": [{"at": null, "body": "Every set is turned, carved and blown by hand in our workshop, then played before it leaves.", "fact": null, "hint": "Scroll to lift the pieces", "image": null, "intro": true, "kicker": "Fischer \u0026 Vale", "length": 1.2, "state": {}, "title": "Thirty-two pieces. \u003cem\u003eOne opening move.\u003c/em\u003e"}, {"at": null, "body": "Sixty-four squares cut from a single board of each wood, so the grain runs unbroken from rank to rank.", "fact": null, "hint": null, "image": null, "intro": false, "kicker": "Walnut and maple", "length": 1.3, "state": {}, "title": "The board comes \u003cem\u003efirst.\u003c/em\u003e"}, {"at": null, "body": "Each piece is gathered from the furnace and shaped by eye. No two kings are quite the same height.", "fact": "Lead-free crystal, annealed for 14 hours.", "hint": null, "image": null, "intro": false, "kicker": "Blown glass", "length": 1.4, "state": {}, "title": "Pieces you can \u003cem\u003esee through.\u003c/em\u003e"}, {"at": null, "body": "Brass weights under green baize: every piece sits square and stays there, even in a blitz.", "fact": null, "hint": null, "image": null, "intro": false, "kicker": "Weighted and felted", "length": 1.4, "state": {}, "title": "Set down \u003cem\u003ewithout a sound.\u003c/em\u003e"}]}</script>
 </section>
 <section class="ss-block" id="craft"><div class="ss-wrap ss-intro2">
   <h2 class="ss-display ss-reveal">Made slowly, <em>played for generations.</em></h2>

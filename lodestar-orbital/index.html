@@ -33,8 +33,31 @@
 }
 </style>
 <link rel="stylesheet" href="runtime/studio.css">
+<style>
+  html.ss-loading, html.ss-loading body { overflow: hidden; height: 100%; }
+  .ss-loader { position: fixed; inset: 0; z-index: 1000; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+    background: var(--bg); color: var(--ink); transition: opacity .7s cubic-bezier(.22,.8,.2,1), visibility .7s; }
+  html.ss-loading .ss-loader, .ss-loader.ss-leaving { display: flex; }
+  .ss-loader.ss-leaving { opacity: 0; visibility: hidden; }
+  .ss-loader__name { font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(28px, 3.4vw, 46px); letter-spacing: -.02em; }
+  .ss-loader__bar { width: min(320px, 60vw); height: 2px; background: var(--line); position: relative; overflow: hidden; }
+  .ss-loader__bar i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: scaleX(0); transition: transform .3s; }
+  .ss-loader__pct { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+</style>
+<script>
+  // Lock scrolling from the very first paint; the runtime unlocks it once every scene is ready.
+  // If the runtime can't run at all, open the page anyway after max_wait seconds.
+  document.documentElement.classList.add("ss-loading");
+  window.__ssLoader = { maxWait: 45.0, minTime: 0.6 };
+  setTimeout(function () { document.documentElement.classList.remove("ss-loading"); }, 50000.0);
+</script>
 </head>
 <body>
+<div class="ss-loader" id="ss-loader" role="status" aria-live="polite">
+  <div class="ss-loader__name">Lodestar Orbital</div>
+  <div class="ss-loader__bar"><i></i></div>
+  <div class="ss-loader__pct"><span>0</span>%</div>
+</div>
 
 <header class="ss-nav" id="ss-nav"><div class="ss-nav__in">
   <a class="ss-wordmark" href="#">
@@ -66,7 +89,7 @@
     </div>
   </div>
   <script type="application/json" class="ss-config">{"end": "assets/launch/end.jpg", "poster": "assets/launch/poster.jpg", "video": "assets/launch/film.mp4", "videoMobile": "assets/launch/film-mobile.mp4"}</script>
-  <script type="application/json" class="ss-section">{"hud": {"clock": {"end": 540, "prefix": "T", "start": -3, "zero": 0.083}, "events": [{"at": 0.09, "label": "Lift-off"}, {"at": 0.3, "label": "Max-Q"}, {"at": 0.44, "label": "Cloud break"}, {"at": 0.66, "label": "Stage separation"}, {"at": 0.76, "label": "Fairing separation"}, {"at": 0.86, "label": "Array deploy"}], "fields": [{"curve": 1.6, "decimals": 1, "label": "Altitude", "to": 550, "unit": "km"}, {"curve": 1.25, "decimals": 2, "label": "Velocity", "to": 7.6, "unit": "km/s"}], "kind": "telemetry", "legend": [], "scales": []}, "layout": "overlay", "length": 7.0, "steps": [{"at": [0.01, 0.13], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": "Lodestar Orbital", "length": 1.2, "title": "Every mission starts \u003cem\u003eon the ground.\u003c/em\u003e"}, {"at": [0.22, 0.4], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": "Ascent", "length": 1.2, "title": "Through the weather. \u003cem\u003ePast the noise.\u003c/em\u003e"}, {"at": [0.56, 0.72], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": "Separation", "length": 1.2, "title": "When the fairing opens, \u003cem\u003ethe work begins.\u003c/em\u003e"}, {"at": [0.84, 0.99], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": "On station", "length": 1.2, "title": "Your satellite, \u003cem\u003eexactly where it belongs.\u003c/em\u003e"}]}</script>
+  <script type="application/json" class="ss-section">{"hud": {"clock": {"end": 540, "prefix": "T", "start": -3, "zero": 0.083}, "events": [{"at": 0.09, "label": "Lift-off"}, {"at": 0.3, "label": "Max-Q"}, {"at": 0.44, "label": "Cloud break"}, {"at": 0.66, "label": "Stage separation"}, {"at": 0.76, "label": "Fairing separation"}, {"at": 0.86, "label": "Array deploy"}], "fields": [{"curve": 1.6, "decimals": 1, "label": "Altitude", "to": 550, "unit": "km"}, {"curve": 1.25, "decimals": 2, "label": "Velocity", "to": 7.6, "unit": "km/s"}], "kind": "telemetry", "legend": [], "scales": []}, "layout": "overlay", "length": 7.0, "steps": [{"at": [0.01, 0.13], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": "Lodestar Orbital", "length": 1.2, "state": {}, "title": "Every mission starts \u003cem\u003eon the ground.\u003c/em\u003e"}, {"at": [0.22, 0.4], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": "Ascent", "length": 1.2, "state": {}, "title": "Through the weather. \u003cem\u003ePast the noise.\u003c/em\u003e"}, {"at": [0.56, 0.72], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": "Separation", "length": 1.2, "state": {}, "title": "When the fairing opens, \u003cem\u003ethe work begins.\u003c/em\u003e"}, {"at": [0.84, 0.99], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": "On station", "length": 1.2, "state": {}, "title": "Your satellite, \u003cem\u003eexactly where it belongs.\u003c/em\u003e"}]}</script>
 </section>
 <section class="ss-block" id="mission"><div class="ss-wrap ss-intro2">
   <h2 class="ss-display ss-reveal">One team from the pad <em>to on-station.</em></h2>
