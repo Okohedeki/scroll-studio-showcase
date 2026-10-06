@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="mode-dark">
+<html lang="en" class="mode-dark layout-flow">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -29,6 +29,9 @@
   --radius: 4px;
   color-scheme: dark;
 }
+.ss-surface-dark { --btn-bg: #ff7a3d; --btn-ink: #000000; --bg: #020203; --bg-2: #050608; --ink: #eef0f2; --ink-rgb: 238, 240, 242; --bg-rgb: 2, 2, 3; --ink-2: rgba(238, 240, 242, 0.68); --ink-3: rgba(238, 240, 242, 0.49); --line: rgba(238, 240, 242, .14); --accent-text: #ff7a3d; --em-color: #ffa071; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #050608; --btn-ink: #ffffff; --bg: #eef0f2; --bg-2: #1c1d1f; --ink: #050608; --ink-rgb: 5, 6, 8; --bg-rgb: 238, 240, 242; --ink-2: rgba(5, 6, 8, 1.0); --ink-3: rgba(5, 6, 8, 1.0); --line: rgba(5, 6, 8, .14); --accent-text: #050608; --em-color: #050608; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #ff7a3d; --btn-ink: #000000; --bg: #442c22; --bg-2: #e4e4e6; --ink: #eef0f2; --ink-rgb: 238, 240, 242; --bg-rgb: 68, 44, 34; --ink-2: rgba(238, 240, 242, 1.0); --ink-3: rgba(238, 240, 242, 1.0); --line: rgba(238, 240, 242, .14); --accent-text: #eef0f2; --em-color: #eef0f2; color-scheme: dark; background: var(--bg); color: var(--ink); }
 </style>
 <link rel="stylesheet" href="runtime/studio.css">
 <style>
@@ -125,8 +128,13 @@
       <div class="ss-tile__media"><video src="assets/_media/casa-alta.mp4" muted loop playsinline preload="metadata" poster="assets/_media/casa-alta.jpg"></video></div>
       <div class="ss-tile__text"><span class="ss-tag">parallax · hospitality</span><h3>Casa Alta</h3><p>A cliff hotel&#39;s photos, given depth and a slow camera move.</p></div>
     </a>
+    <a class="ss-tile ss-reveal" href="../hushwell/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/hushwell.mp4" muted loop playsinline preload="metadata" poster="assets/_media/hushwell.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">stack layout · healthcare</span><h3>Hushwell</h3><p>Full-screen panels that slide over each other, with a phone, a photo strip and an orbit.</p></div>
+    </a>
   </div>
 </div></section>
+
 <section class="ss-block"><div class="ss-wrap">
 <div class="ss-head ss-reveal"><span class="ss-kicker">How it works</span><h2 class="ss-display">One spec in, <em>one static site out.</em></h2></div>  <div class="ss-features ss-features--3">
     <div class="ss-feature ss-reveal">

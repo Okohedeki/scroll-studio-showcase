@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" class="mode-light layout-stack hero-media">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hushwell</title>
+<meta name="description" content="Personal sleep care, with a plan that changes as you do. A concept site."><meta name="generator" content="Scroll Studio">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root {
+  --bg: #edece9;
+  --bg-2: #e3e1dc;
+  --ink: #241b14;
+  --ink-rgb: 36, 27, 20;
+  --bg-rgb: 237, 236, 233;
+  --ink-2: rgba(36, 27, 20, 0.78);
+  --ink-3: rgba(36, 27, 20, 0.64);
+  --line: rgba(36, 27, 20, .13);
+  --accent: #2b1f16;
+  --accent-2: #e9b8b0;
+  --accent-ink: #ffffff;
+  --accent-text: #2b1f16;
+  --accent-rgb: 43, 31, 22;
+  --font-display: "Inter Tight", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "Inter Tight", ui-monospace, monospace;
+  --display-weight: 600;
+  --em-style: normal;
+  --radius: 999px;
+  color-scheme: light;
+}
+.ss-surface-dark { --btn-bg: #edece9; --btn-ink: #000000; --bg: #241b14; --bg-2: #342c25; --ink: #edece9; --ink-rgb: 237, 236, 233; --bg-rgb: 36, 27, 20; --ink-2: rgba(237, 236, 233, 0.68); --ink-3: rgba(237, 236, 233, 0.54); --line: rgba(237, 236, 233, .14); --accent-text: #9c9690; --em-color: #e9b8b0; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #2b1f16; --btn-ink: #ffffff; --bg: #e3e1dc; --bg-2: #edece9; --ink: #241b14; --ink-rgb: 36, 27, 20; --bg-rgb: 227, 225, 220; --ink-2: rgba(36, 27, 20, 0.78); --ink-3: rgba(36, 27, 20, 0.64); --line: rgba(36, 27, 20, .14); --accent-text: #2b1f16; --em-color: #2b1f16; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #2b1f16; --btn-ink: #ffffff; --bg: #f3d8d4; --bg-2: #30261f; --ink: #241b14; --ink-rgb: 36, 27, 20; --bg-rgb: 243, 216, 212; --ink-2: rgba(36, 27, 20, 1.0); --ink-3: rgba(36, 27, 20, 1.0); --line: rgba(36, 27, 20, .14); --accent-text: #241b14; --em-color: #241b14; color-scheme: light; background: var(--bg); color: var(--ink); }
+</style>
+<link rel="stylesheet" href="runtime/studio.css">
+<style>
+  html.ss-loading, html.ss-loading body { overflow: hidden; height: 100%; }
+  .ss-loader { position: fixed; inset: 0; z-index: 1000; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+    background: var(--bg); color: var(--ink); transition: opacity .7s cubic-bezier(.22,.8,.2,1), visibility .7s; }
+  html.ss-loading .ss-loader, .ss-loader.ss-leaving { display: flex; }
+  .ss-loader.ss-leaving { opacity: 0; visibility: hidden; }
+  .ss-loader__name { font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(28px, 3.4vw, 46px); letter-spacing: -.02em; }
+  .ss-loader__bar { width: min(320px, 60vw); height: 2px; background: var(--line); position: relative; overflow: hidden; }
+  .ss-loader__bar i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: scaleX(0); transition: transform .3s; }
+  .ss-loader__pct { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+</style>
+<script>
+  // Lock scrolling from the very first paint; the runtime unlocks it once every scene is ready.
+  // If the runtime can't run at all, open the page anyway after max_wait seconds.
+  document.documentElement.classList.add("ss-loading");
+  window.__ssLoader = { maxWait: 45.0, minTime: 0.6 };
+  setTimeout(function () { document.documentElement.classList.remove("ss-loading"); }, 50000.0);
+</script>
+</head>
+<body>
+<div class="ss-loader" id="ss-loader" role="status" aria-live="polite">
+  <div class="ss-loader__name">Hushwell</div>
+  <div class="ss-loader__bar"><i></i></div>
+  <div class="ss-loader__pct"><span>0</span>%</div>
+</div>
+
+<header class="ss-nav" id="ss-nav"><div class="ss-nav__in">
+  <a class="ss-wordmark" href="#">
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M4 15c2.5 0 4-1.6 4-4s1.5-4 4-4 4 1.6 4 4 1.5 4 4 4M4 19h16"/></svg>    <span>Hushwell</span>
+  </a>
+  <nav class="ss-nav__links"><a href="#plan">The plan</a></nav>
+<a class="ss-btn" href="#start">Start your plan <span class="ss-arrow">→</span></a></div></header>
+
+<main>
+<div class="ss-panel ss-panel--hero"><section class="ss-block ss-hero ss-hero--center ss-surface-dark ss-hero--media">
+<div class="ss-hero__media"><img src="assets/_media/b3664503e915.webp" alt="" fetchpriority="high"></div><div class="ss-hero__shade"></div>  <div class="ss-hero__in">
+<span class="ss-badge">Sleep consults now open in six states</span><h1 class="ss-h1">Sleep care, built around you.</h1><p class="ss-lede">A sleep clinician, a plan for your nights, and support that changes as you do.</p>    <div class="ss-btns"><a class="ss-btn ss-btn--hot" href="#start">Start your plan <span class="ss-arrow">→</span></a><a class="ss-btn" href="#plan">How it works</a></div>
+  </div>
+</section>
+
+</div><div class="ss-panel"><section class="ss-block ss-product ss-product--left" id="plan"><div class="ss-wrap ss-product__in">
+  <div class="ss-product__media ss-product__media--both" data-float>
+<img class="ss-product__img" src="assets/_media/3abdf0ae057f.webp" alt="" loading="lazy"><div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
+  <div class="ss-phone__bar"><span>21:48</span><i></i></div>
+<div class="ss-app">
+<div class="ss-app__name">Hushwell</div><div class="ss-app__title">Tonight&#39;s plan</div><div class="ss-app__label">Wind-down</div><div class="ss-app__opt is-on"><b>Lights low at 10:15</b><small>Warm light only from here</small></div><div class="ss-app__opt"><b>Screens away by 10:40</b></div><div class="ss-app__opt"><b>Bedroom at 18 °C</b><small>A cooler room helps you fall asleep</small></div><div class="ss-app__btn">Start wind-down</div>  </div></div></div>
+  </div>
+  <div class="ss-product__copy ss-reveal">
+<span class="ss-kicker">Hushwell Sleep</span>    <h2 class="ss-h2">A plan for your nights.</h2>
+<p class="ss-lede">Tell us how you sleep. A clinician builds a plan around your evenings, your mornings and anything that keeps you up, then adjusts it every week.</p><ul class="ss-pills"><li>Trouble falling asleep</li><li>Waking at night</li><li>Snoring</li><li>Jet lag</li><li>Shift work</li><li>Early waking</li></ul>    <div class="ss-btns"><a class="ss-btn ss-btn--hot" href="#start">Explore the plan <span class="ss-arrow">→</span></a><a class="ss-btn" href="#start">Get the app</a></div>
+<p class="ss-note">From $12 a month · concept pricing</p>  </div>
+</div></section>
+
+</div><div class="ss-panel"><section class="ss-block ss-strip">
+<div class="ss-wrap ss-head ss-strip__head ss-reveal"><span class="ss-kicker">In practice</span><h2 class="ss-h2">Small changes, every night.</h2><p class="ss-lede">What a plan looks like once it is part of your week.</p></div>  <div class="ss-strip__track" data-strip>
+<figure><img src="assets/_media/24bff2daeb2e.webp" alt="Read on paper, not a screen." loading="lazy"><figcaption>Read on paper, not a screen.</figcaption></figure><figure><img src="assets/_media/a9da4dba45a7.webp" alt="Caffeine stops at two." loading="lazy"><figcaption>Caffeine stops at two.</figcaption></figure><figure><img src="assets/_media/86eca0d5f1a8.webp" alt="Morning light, ten minutes." loading="lazy"><figcaption>Morning light, ten minutes.</figcaption></figure><figure><img src="assets/_media/b9b58f5c9d15.webp" alt="Dark, cool and quiet." loading="lazy"><figcaption>Dark, cool and quiet.</figcaption></figure><figure><img src="assets/_media/1be99f1b6959.webp" alt="Park the worries on paper." loading="lazy"><figcaption>Park the worries on paper.</figcaption></figure><figure><img src="assets/_media/1407077180a2.webp" alt="Wind down, don&#39;t work out." loading="lazy"><figcaption>Wind down, don&#39;t work out.</figcaption></figure>  </div>
+</section>
+
+</div><div class="ss-panel ss-surface-accent"><section class="ss-block ss-product ss-product--right ss-surface-accent"><div class="ss-wrap ss-product__in">
+  <div class="ss-product__media" data-float>
+<div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
+  <div class="ss-phone__bar"><span>06:12</span><i></i></div>
+<div class="ss-app">
+<div class="ss-app__name">Hushwell Shift</div><div class="ss-app__title">Your week</div><div class="ss-app__label">Next shift · Thu 22:00</div><p class="ss-app__note">Sleep in two blocks today so you start the night rested.</p><div class="ss-app__opt is-on"><b>Core sleep · 08:30 to 13:30</b></div><div class="ss-app__opt"><b>Nap · 18:30 to 19:20</b><small>Set a light alarm</small></div><div class="ss-app__opt"><b>Light at 21:30</b><small>Bright light before you leave</small></div><div class="ss-app__btn">Save my week</div>  </div></div></div>
+  </div>
+  <div class="ss-product__copy ss-reveal">
+<span class="ss-kicker">Hushwell Shift</span>    <h2 class="ss-h2">Sleep when the world is awake.</h2>
+<p class="ss-lede">Nights, earlies and rotating rosters each need a different plan. Shift builds one around your schedule and moves it when your roster does.</p><ul class="ss-pills"><li>Night shifts</li><li>Rotating rosters</li><li>On-call</li><li>Long-haul crews</li></ul>    <div class="ss-btns"><a class="ss-btn ss-btn--hot" href="#start">Join the waitlist <span class="ss-arrow">→</span></a></div>
+<p class="ss-note">Coming soon</p>  </div>
+</div></section>
+
+</div><div class="ss-panel ss-surface-dark ss-panel--hero"><section class="ss-block ss-hero ss-hero--center ss-surface-dark">
+<div class="ss-hero__media"><img src="assets/_media/fe7a1f3530a8.webp" alt="" fetchpriority="high"></div><div class="ss-hero__shade"></div>  <div class="ss-hero__in">
+<span class="ss-badge">Sleep assistant</span><h2 class="ss-h1">Ask anything, even at 3 a.m.</h2><p class="ss-lede">A private assistant for the questions that come up at night, with a clinician one message away when it matters.</p>    <div class="ss-btns"><a class="ss-btn ss-btn--hot" href="#start">Try the assistant <span class="ss-arrow">→</span></a></div>
+  </div>
+</section>
+
+</div><div class="ss-panel"><section class="ss-block ss-orbit"><div class="ss-wrap ss-orbit__in">
+  <div class="ss-orbit__copy ss-reveal">
+<span class="ss-kicker">End-to-end care</span>    <h2 class="ss-h2">From the first bad night to rested.</h2>
+<p class="ss-lede">Start with a consult and a plan. As Hushwell grows, the rest of your sleep care joins it in one place.</p>  </div>
+  <div class="ss-orbit__stage" data-orbit>
+    <div class="ss-orbit__center">Hushwell</div>
+<div class="ss-orbit__item is-primary"><b>Sleep consults</b><small>Live</small></div><div class="ss-orbit__item is-primary"><b>Prescriptions</b><small>Live</small></div><div class="ss-orbit__item"><b>Home sleep tests</b><small>Developing</small></div><div class="ss-orbit__item"><b>CBT-I coaching</b><small>Developing</small></div><div class="ss-orbit__item"><b>Wearables</b><small>Roadmap</small></div><div class="ss-orbit__item"><b>Partner care</b><small>Roadmap</small></div><div class="ss-orbit__item"><b>Bloodwork</b><small>Roadmap</small></div>  </div>
+</div></section>
+
+</div><div class="ss-panel"><section class="ss-block ss-faq"><div class="ss-wrap ss-faq__in">
+  <div class="ss-head ss-reveal"><span class="ss-kicker">Questions</span><h2 class="ss-h2">Before you start.</h2></div>
+  <div class="ss-faq__list">
+<details class="ss-reveal" open><summary>Who builds my plan?</summary><p>A licensed sleep clinician reviews your answers and builds the plan. The app helps you follow it; it never diagnoses on its own.</p></details><details class="ss-reveal"><summary>Do I need a wearable?</summary><p>No. A sleep diary in the app is enough to start. If you already have a tracker, you can connect it.</p></details><details class="ss-reveal"><summary>Can I cancel any time?</summary><p>Yes. Plans are monthly and you can cancel in the app.</p></details><details class="ss-reveal"><summary>Is this a replacement for a doctor?</summary><p>No. If something needs in-person care, your clinician will tell you and help you find it.</p></details>  </div>
+</div></section>
+</div><div class="ss-panel ss-surface-dark"><section class="ss-block ss-cta ss-surface-dark" id="start">
+  <div class="ss-cta__in">
+<span class="ss-kicker ss-reveal">Start tonight</span>    <h2 class="ss-display ss-reveal">Rest is a plan.</h2>
+<a class="ss-btn ss-btn--hot ss-reveal" href="#">Start your plan <span class="ss-arrow">→</span></a>  </div>
+</section>
+
+</div></main>
+
+<footer class="ss-footer"><div class="ss-wrap ss-footer__in">
+  <span>© Hushwell. A concept site: the company, services, prices and people are fictional.</span>
+  <span>Photographs generated locally with Z-Image Turbo</span>
+</div></footer>
+
+<script type="module" src="runtime/index.js"></script>
+</body>
+</html>
