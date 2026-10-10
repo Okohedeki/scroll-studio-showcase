@@ -1,60 +1,255 @@
 <!doctype html>
-<html lang="en" data-fx='{&#34;bg&#34;: &#34;ascii&#34;, &#34;text&#34;: &#34;scramble&#34;}' class="mode-dark layout-flow style-ascii-art">
+<html lang="en" data-style="ascii-art" class="mode-dark layout-flow style-ascii-art">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Halcyon</title>
 <meta name="description" content="The calendar that guards your mornings. One page, built in twenty styles by Scroll Studio."><meta name="generator" content="Scroll Studio">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23ffb000%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%231a1200%22%3EH%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23ffd27a%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%230d0a04%22%3EH%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root {
-  --bg: #050505;
-  --bg-2: #0b0b0b;
-  --ink: #e9e9e9;
-  --ink-rgb: 233, 233, 233;
-  --bg-rgb: 5, 5, 5;
-  --ink-2: rgba(233, 233, 233, 0.68);
-  --ink-3: rgba(233, 233, 233, 0.5);
-  --line: rgba(233, 233, 233, .13);
-  --accent: #ffb000;
-  --accent-2: #ffd36b;
-  --accent-ink: #1a1200;
-  --accent-text: #ffb000;
-  --accent-rgb: 255, 176, 0;
+  --bg: #0d0a04;
+  --bg-2: #140f06;
+  --ink: #ffb000;
+  --ink-rgb: 255, 176, 0;
+  --bg-rgb: 13, 10, 4;
+  --ink-2: #e8a33a;
+  --ink-3: #c98a14;
+  --line: rgba(255, 176, 0, .28);
+  --accent: #ffd27a;
+  --accent-2: #ffd27a;
+  --accent-ink: #0d0a04;
+  --accent-text: #ffd27a;
+  --accent-rgb: 255, 210, 122;
   --font-display: "JetBrains Mono", system-ui, sans-serif;
   --font-body: "JetBrains Mono", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
-  --display-weight: 600;
+  --display-weight: 700;
   --em-style: normal;
   --radius: 0px;
   color-scheme: dark;
 }
-.ss-surface-dark { --btn-bg: #ffb000; --btn-ink: #000000; --bg: #020202; --bg-2: #050505; --ink: #e9e9e9; --ink-rgb: 233, 233, 233; --bg-rgb: 2, 2, 2; --ink-2: rgba(233, 233, 233, 0.68); --ink-3: rgba(233, 233, 233, 0.5); --line: rgba(233, 233, 233, .14); --accent-text: #ffb000; --em-color: #ffd36b; color-scheme: dark; background: var(--bg); color: var(--ink); }
-.ss-surface-light { --btn-bg: #050505; --btn-ink: #ffffff; --bg: #e9e9e9; --bg-2: #1c1c1c; --ink: #050505; --ink-rgb: 5, 5, 5; --bg-rgb: 233, 233, 233; --ink-2: rgba(5, 5, 5, 1.0); --ink-3: rgba(5, 5, 5, 1.0); --line: rgba(5, 5, 5, .14); --accent-text: #050505; --em-color: #050505; color-scheme: light; background: var(--bg); color: var(--ink); }
-.ss-surface-accent { --btn-bg: #ffb000; --btn-ink: #000000; --bg: #44381e; --bg-2: #dfdedd; --ink: #e9e9e9; --ink-rgb: 233, 233, 233; --bg-rgb: 68, 56, 30; --ink-2: rgba(233, 233, 233, 1.0); --ink-3: rgba(233, 233, 233, 1.0); --line: rgba(233, 233, 233, .14); --accent-text: #e9e9e9; --em-color: #e9e9e9; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-dark { --btn-bg: #ffd27a; --btn-ink: #000000; --bg: #050402; --bg-2: #0d0a04; --ink: #ffb000; --ink-rgb: 255, 176, 0; --bg-rgb: 5, 4, 2; --ink-2: rgba(255, 176, 0, 0.75); --ink-3: rgba(255, 176, 0, 0.61); --line: rgba(255, 176, 0, .14); --accent-text: #ffd27a; --em-color: #ffd27a; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #0d0a04; --btn-ink: #ffffff; --bg: #ffb000; --bg-2: #251b04; --ink: #0d0a04; --ink-rgb: 13, 10, 4; --bg-rgb: 255, 176, 0; --ink-2: rgba(13, 10, 4, 1.0); --ink-3: rgba(13, 10, 4, 1.0); --line: rgba(13, 10, 4, .14); --accent-text: #0d0a04; --em-color: #0d0a04; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #ffd27a; --btn-ink: #000000; --bg: #4a3c22; --bg-2: #f4a902; --ink: #ffb000; --ink-rgb: 255, 176, 0; --bg-rgb: 74, 60, 34; --ink-2: rgba(255, 176, 0, 1.0); --ink-3: rgba(255, 176, 0, 1.0); --line: rgba(255, 176, 0, .14); --accent-text: #ffb000; --em-color: #ffb000; color-scheme: dark; background: var(--bg); color: var(--ink); }
 </style>
 <link rel="stylesheet" href="../../runtime/studio.css">
 <style id="ss-style">
-/* ASCII art: a drifting character field behind hero, intro and CTA (fx bg); headlines decode letter by letter (fx text) */
-html.style-ascii-art .ss-h1, html.style-ascii-art .ss-h2, html.style-ascii-art .ss-display { letter-spacing: -.04em; }
-html.style-ascii-art .ss-h1::before { content: "> "; color: var(--accent); }
-html.style-ascii-art em { font-style: normal; color: var(--bg); background: var(--accent); padding: 0 .12em; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
-html.style-ascii-art .ss-features { gap: 0; background: none; border: 0; font-size: 15px; }
-html.style-ascii-art .ss-feature { background: transparent; border: 1px dashed rgba(var(--ink-rgb), .35); margin: -1px 0 0 -1px; }
-html.style-ascii-art .ss-feature h3::before { content: "# "; color: var(--accent); }
-html.style-ascii-art .ss-btn { border: 1px solid var(--ink); background: transparent; font-family: var(--font-mono); }
-html.style-ascii-art .ss-btn::before { content: "["; } html.style-ascii-art .ss-btn::after { content: "]"; }
-html.style-ascii-art .ss-btn--hot { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+/* ASCII art: an amber phosphor terminal. One monospace face on a character grid (widths in ch, line height one
+   cell), box drawing, inverse video for selection, no gradients, no glow, no easing: things appear in steps. Without
+   JavaScript the whole session is already printed; the runtime types and prints it as you scroll. */
+
+html.style-ascii-art {
+  --tx-size: 16px; --tx-lh: 1.55; --dim: #c98a14; --hi: #ffd27a; --pane: min(40vw, 600px); --bar-h: 34px;
+  background: var(--bg); color: var(--ink);
+}
+html.style-ascii-art body { background: var(--bg); color: var(--ink); font: 400 var(--tx-size)/var(--tx-lh) "JetBrains Mono", ui-monospace, monospace; font-variant-ligatures: none; }
+html.style-ascii-art ::selection { background: var(--ink); color: var(--bg); }
+html.style-ascii-art :focus-visible { outline: 1px solid var(--hi); outline-offset: 2px; }
+html.style-ascii-art .ss-nav { display: none; }
+html.style-ascii-art em { font-style: normal; color: var(--hi); font-weight: 700; }
+html.style-ascii-art b, html.style-ascii-art strong { color: var(--hi); }
+.tx-sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* the session column (and the render pane beside it on wide screens) */
+html.style-ascii-art main { max-width: calc(96ch + 6ch); padding: 3ch 3ch calc(var(--bar-h) + 2lh); }
+@media (min-width: 1180px) { html.style-ascii-art main { margin-right: var(--pane); margin-left: max(0px, calc((100vw - var(--pane) - 102ch) / 2)); } }
+.tx-sec { padding-bottom: 3lh; }
+.tx-l.is-hid { visibility: hidden; }
+
+/* section rule and prompt */
+.tx-rule { display: flex; gap: 1ch; color: var(--dim); white-space: nowrap; overflow: hidden; margin-bottom: 1lh; }
+.tx-rule::before { content: "──"; }
+.tx-rule::after { content: "────────────────────────────────────────────────────────────────────────────────────────────────────────────────"; flex: 1; overflow: hidden; }
+.tx-rule span:first-child { color: var(--hi); }
+.tx-prompt { margin-bottom: .5lh; word-break: break-all; }
+.tx-ps1 { color: var(--hi); font-weight: 700; }
+.tx-bin:empty::before { content: var(--tx-bin, "app"); }
+.tx-up { text-transform: uppercase; }
+.tx-cmd { font: inherit; font-weight: 700; color: var(--ink); }
+.tx-cmd .sx-ch { display: inline; }
+.tx-cmd .sx-word { display: inline; white-space: pre; }
+.tx-cursor { display: inline-block; width: 1ch; height: 1.2em; margin-left: .3ch; vertical-align: -.22em; background: var(--ink); animation: tx-blink 1.06s steps(1) infinite; }
+@keyframes tx-blink { 50% { opacity: 0; } }
+pre .tx-cursor, .tx-banner .tx-cursor { display: none; }
+
+/* output */
+.tx-out > * + *, .tx-split__copy > * + * { margin-top: .5lh; }
+.tx-dim { color: var(--dim); }
+.tx-h { font: 700 1em/var(--tx-lh) "JetBrains Mono", monospace; color: var(--hi); max-width: 72ch; }
+.tx-h--1 { text-transform: uppercase; letter-spacing: .02em; }
+.tx-hash { color: var(--dim); }
+.tx-p { max-width: 72ch; }
+.tx-banner { letter-spacing: -.06em; font: 400 var(--tx-size)/.96 "JetBrains Mono", monospace; color: var(--hi); white-space: pre; overflow: hidden; margin: .5lh 0 1lh; }
+.tx-banner:empty { display: none; }
+
+/* buttons: [ bracketed ], inverse video on hover */
+.tx-btns { display: flex; flex-wrap: wrap; gap: 0 2ch; }
+.tx-btn { font: inherit; font-weight: 700; color: var(--ink); background: none; border: 0; padding: 0 .5ch; cursor: pointer; white-space: nowrap; }
+.tx-btn--hot { background: var(--ink); color: var(--bg); }
+.tx-btn:hover, .tx-btn:focus-visible { background: var(--hi); color: var(--bg); outline: none; }
+.tx-btn:active { background: var(--bg); color: var(--hi); box-shadow: inset 0 0 0 1px var(--hi); }
+
+/* features: --help */
+.tx-flags { list-style: none; display: grid; gap: .25lh; }
+.tx-flag { display: grid; grid-template-columns: minmax(18ch, 26ch) minmax(0, 1fr); gap: 0 2ch; padding: 0 1ch; margin: 0 -1ch; cursor: default; }
+.tx-flag__n { font: 700 1em/var(--tx-lh) "JetBrains Mono", monospace; color: var(--hi); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tx-flag__s { color: var(--dim); }
+.tx-flag:hover, .tx-flag:focus-visible, .tx-man__item:hover { background: var(--ink); color: var(--bg); outline: none; }
+.tx-flag:hover *, .tx-flag:focus-visible *, .tx-man__item:hover * { color: var(--bg); }
+.tx-meter { white-space: nowrap; color: var(--hi); }
+
+/* product: copy and a TUI phone */
+.tx-split { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 1lh 4ch; align-items: start; }
+.tx-side--left .tx-split__media { order: -1; }
+.tx-tags { display: flex; flex-wrap: wrap; gap: 0 1ch; }
+.tx-tag::before { content: "["; color: var(--dim); }
+.tx-tag::after { content: "]"; color: var(--dim); }
+.tx-kv { display: flex; gap: 1ch; max-width: 60ch; }
+.tx-kv > :first-child { display: flex; flex: 1; min-width: 0; }
+.tx-kv > :first-child::after { content: " ........................................................................"; flex: 1; overflow: hidden; white-space: nowrap; color: var(--dim); }
+.tx-kv > :last-child { flex: none; color: var(--hi); font-weight: 700; }
+.tx-phone { width: 32ch; border: 1px solid var(--ink); border-radius: 1.4ch; padding: .5lh 2ch 1lh; }
+.tx-phone > * + * { margin-top: .3lh; }
+.tx-phone__bar { display: flex; justify-content: space-between; color: var(--dim); border-bottom: 1px dashed var(--line); padding-bottom: .3lh; margin-bottom: .4lh; }
+.tx-phone__app { color: var(--dim); }
+.tx-phone__title { font-weight: 700; color: var(--hi); }
+.tx-phone__label { color: var(--dim); margin-top: .6lh; }
+.tx-phone__opt { display: grid; grid-template-columns: 3ch 1fr; column-gap: 1ch; }
+.tx-phone__opt b { color: var(--ink); font-weight: 400; }
+.tx-phone__opt small { grid-column: 2; font-size: 1em; color: var(--dim); }
+.tx-phone__opt.is-on b, .tx-phone__opt.is-on > span { color: var(--hi); font-weight: 700; }
+.tx-phone__btn { margin-top: .8lh; text-align: center; background: var(--ink); color: var(--bg); font-weight: 700; }
+.tx-img img { max-width: min(100%, 60ch); filter: sepia(1) saturate(2.2) hue-rotate(-12deg) contrast(1.1); }
+.tx-img.is-ascii img { display: none; }
+.tx-img.is-ascii.is-image img { display: block; }
+.tx-img.is-ascii.is-image .tx-art { display: none; }
+.tx-art { font: 400 calc(var(--tx-size) * .8)/1 "JetBrains Mono", monospace; color: var(--ink); white-space: pre; overflow: hidden; }
+
+/* stats: neofetch */
+.tx-neo { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 1lh 4ch; align-items: start; }
+.tx-neo__logo { font: 700 var(--tx-size)/1.02 "JetBrains Mono", monospace; color: var(--hi); white-space: pre; margin: 0; }
+.tx-neo__logo:empty { display: none; }
+.tx-neo__info > * + * { margin-top: .2lh; }
+.tx-neo__host { color: var(--hi); font-weight: 700; }
+.tx-neo__list { display: grid; gap: .2lh; }
+.tx-neo__list dt { color: var(--ink); }
+.tx-swatch { display: flex; gap: 0; margin-top: .8lh !important; }
+.tx-swatch i { width: 3ch; height: 1lh; }
+.tx-swatch i:nth-child(1) { background: #0d0a04; box-shadow: inset 0 0 0 1px var(--line); } .tx-swatch i:nth-child(2) { background: #3a2a06; } .tx-swatch i:nth-child(3) { background: #6b4b08; } .tx-swatch i:nth-child(4) { background: #9a6b10; }
+.tx-swatch i:nth-child(5) { background: #c98a14; } .tx-swatch i:nth-child(6) { background: #ffb000; } .tx-swatch i:nth-child(7) { background: #ffd27a; } .tx-swatch i:nth-child(8) { background: #fff1cf; }
+
+/* timeline: a boot log */
+.tx-boot { list-style: none; display: grid; gap: .2lh; }
+.tx-boot__l { padding-left: 9ch; text-indent: -9ch; }
+.tx-ok { color: var(--hi); font-weight: 700; white-space: pre; }
+.tx-boot__w { color: var(--dim); }
+.tx-boot__l h3 { display: inline; font: 700 1em/var(--tx-lh) "JetBrains Mono", monospace; color: var(--hi); }
+
+/* quote: an email reply */
+.tx-mail { position: relative; padding-left: 2ch; max-width: 70ch; color: var(--ink); overflow: hidden; }
+.tx-mail::before { content: ">\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A>\A"; white-space: pre; position: absolute; left: 0; top: 0; color: var(--dim); }
+.tx-sig { color: var(--dim); }
+
+/* faq: a man page */
+.tx-man__head { display: flex; justify-content: space-between; gap: 2ch; color: var(--dim); max-width: 80ch; flex-wrap: wrap; }
+.tx-man__sec { font: 700 1em/var(--tx-lh) "JetBrains Mono", monospace; color: var(--hi); margin-top: 1lh !important; }
+.tx-man__ind { padding-left: 7ch; color: var(--dim); }
+.tx-man__list { display: grid; gap: .6lh; }
+.tx-man__item { padding: 0 1ch 0 7ch; margin: 0 -1ch; max-width: 82ch; }
+.tx-man__item dt { font-weight: 700; color: var(--hi); }
+.tx-man__item dd { padding-left: 7ch; }
+
+/* cta: a double-ruled box; copy the command, or press ENTER */
+.tx-box { position: relative; max-width: 76ch; margin-top: 1lh !important; padding: 1lh 3ch; border: 3px double var(--ink); }
+.tx-box__t { position: absolute; top: calc(-.5lh - 2px); left: 2ch; padding: 0 1ch; background: var(--bg); color: var(--hi); font-weight: 700; }
+.tx-box__t::before { content: "┤ "; color: var(--ink); } .tx-box__t::after { content: " ├"; color: var(--ink); }
+.tx-box > * + * { margin-top: .6lh; }
+.tx-h--cta { text-transform: uppercase; }
+.tx-copy { display: flex; flex-wrap: wrap; gap: 0 2ch; align-items: baseline; }
+.tx-copy__cmd { color: var(--ink); word-break: break-all; }
+.tx-enter { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 1.5ch; }
+.tx-caret { display: inline-block; width: 1ch; height: 1.2em; vertical-align: -.22em; background: var(--ink); animation: tx-blink 1.06s steps(1) infinite; }
+.tx-done { color: var(--hi); min-height: 1lh; }
+
+/* end of the buffer */
+.tx-eof { max-width: calc(96ch + 6ch); padding: 0 3ch calc(var(--bar-h) + 1lh); color: var(--dim); }
+@media (min-width: 1180px) { .tx-eof { margin-right: var(--pane); margin-left: max(0px, calc((100vw - var(--pane) - 102ch) / 2)); } }
+.tx-eof p { line-height: var(--tx-lh); }
+.tx-eof__line { display: flex; justify-content: space-between; gap: 2ch; flex-wrap: wrap; margin-top: 1lh; color: var(--ink); }
+html:not(.js) .tx-eof { display: none; }
+html.style-ascii-art .ss-footer { border-top: 1px dashed var(--line); padding-bottom: calc(var(--bar-h) + 8px); }
+html.style-ascii-art .ss-footer__in { color: var(--dim); font: 400 13px/1.5 "JetBrains Mono", monospace; max-width: none; }
+@media (min-width: 1180px) { html.style-ascii-art .ss-footer { margin-right: var(--pane); } }
+
+/* the tmux status bar */
+.tx-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: flex; align-items: center; gap: 2ch; height: var(--bar-h); padding: 0 1ch; background: var(--ink); color: var(--bg); font: 700 14px/1 "JetBrains Mono", monospace; white-space: nowrap; overflow: hidden; }
+.tx-bar a, .tx-bar button { color: var(--bg); font: inherit; background: none; border: 0; padding: 4px .6ch; cursor: pointer; }
+.tx-bar__w { display: flex; gap: .5ch; flex: 1; min-width: 0; overflow: hidden; }
+.tx-win { font-weight: 400 !important; }
+.tx-win b, .tx-bar b { font-weight: 700; color: inherit; }
+.tx-win.is-on { background: var(--bg) !important; color: var(--ink) !important; }
+.tx-win.is-on::after { content: "*"; }
+.tx-bar a:hover, .tx-bar button:hover, .tx-bar a:focus-visible, .tx-bar button:focus-visible { background: var(--bg); color: var(--hi); outline: none; }
+.tx-bar__r { display: flex; align-items: center; gap: 1ch; }
+.tx-bar__cta { background: var(--bg) !important; color: var(--hi) !important; }
+.tx-bar [hidden] { display: none; }
+html:not(.js) .tx-bar { position: static; }
+
+/* the render pane */
+.tx-pane { display: none; }
+@media (min-width: 1180px) {
+  html.tx-live .tx-pane { display: block; position: fixed; top: 0; right: 0; bottom: var(--bar-h); width: var(--pane); z-index: 40; padding: 3ch 3ch 2ch 0; }
+}
+.tx-pane__box { position: relative; height: 100%; display: flex; flex-direction: column; border: 1px solid var(--ink); padding: 1lh 2ch 1lh; }
+.tx-pane__title { position: absolute; top: calc(-.5lh - 1px); left: 2ch; right: 2ch; display: flex; justify-content: space-between; pointer-events: none; }
+.tx-pane__title span { background: var(--bg); padding: 0 1ch; color: var(--hi); font-weight: 700; }
+.tx-pane__title span:first-child::before { content: "┤ "; color: var(--ink); } .tx-pane__title span:first-child::after { content: " ├"; color: var(--ink); }
+.tx-pane__file { color: var(--dim) !important; font-weight: 400 !important; }
+.tx-render { flex: 1; min-height: 0; margin: 0; font: 400 var(--tx-size)/var(--tx-lh) "JetBrains Mono", monospace; color: var(--ink); white-space: pre; overflow: hidden; cursor: crosshair; }
+.tx-stat { flex: none; margin: 1lh 0 0; padding-top: .5lh; border-top: 1px dashed var(--line); font: 400 var(--tx-size)/var(--tx-lh) "JetBrains Mono", monospace; color: var(--dim); white-space: pre; overflow: hidden; }
+
+/* a screen clear (jumps) and the help */
+.tx-clear { position: fixed; inset: 0 0 var(--bar-h) 0; z-index: 55; background: var(--bg); display: none; }
+.tx-clear.is-on { display: block; }
+.tx-help { position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); z-index: 70; padding: 1lh 3ch; background: var(--bg); border: 3px double var(--ink); box-shadow: 0 0 0 100vmax rgba(13, 10, 4, .75); }
+.tx-help[hidden] { display: none; }
+.tx-help pre { margin: 0; font: inherit; color: var(--ink); white-space: pre; }
+
+/* sections without their own markup print as plain output */
+html.style-ascii-art main > .ss-block, html.style-ascii-art main > .ss-backdrop { padding: 0 0 3lh; }
+html.style-ascii-art .ss-display, html.style-ascii-art .ss-h2, html.style-ascii-art .ss-h1 { font: 700 1em/var(--tx-lh) "JetBrains Mono", monospace; color: var(--hi); letter-spacing: 0; }
+html.style-ascii-art .ss-display::before, html.style-ascii-art .ss-h2::before { content: "## "; color: var(--dim); }
+html.style-ascii-art .ss-kicker, html.style-ascii-art .ss-lede { font: inherit; color: var(--ink); }
+html.style-ascii-art .ss-btn { border-radius: 0; border: 0; background: none; color: var(--ink); font: 700 1em/1 "JetBrains Mono", monospace; padding: 0 .5ch; }
+html.style-ascii-art .ss-btn::before { content: "[ "; } html.style-ascii-art .ss-btn::after { content: " ]"; }
 html.style-ascii-art .ss-btn:hover { background: var(--ink); color: var(--bg); }
-html.style-ascii-art .ss-v::after { content: "_"; color: var(--accent); animation: ss-caret 1s steps(1) infinite; }
-@keyframes ss-caret { 50% { opacity: 0; } }
-html.style-ascii-art .ss-tl::before { content: "*"; background: none; box-shadow: none; color: var(--accent); width: auto; height: auto; top: -12px; font-size: 18px; }
-html.style-ascii-art .ss-tile { border-style: dashed; border-radius: 0; }
-html.style-ascii-art .ss-faq__list summary::after { content: "[+]"; font-size: 15px; }
-html.style-ascii-art .ss-faq__list details[open] summary::after { content: "[-]"; transform: none; }
-html.style-ascii-art .ss-quote blockquote::before { content: "/* "; color: var(--ink-3); } html.style-ascii-art .ss-quote blockquote::after { content: " */"; color: var(--ink-3); }
-@media (prefers-reduced-motion: reduce) { html.style-ascii-art .ss-v::after { animation: none; } }
+html.style-ascii-art img { filter: sepia(1) saturate(2) hue-rotate(-12deg); }
+
+/* phones */
+@media (max-width: 700px) {
+  html.style-ascii-art { --tx-size: 13.5px; --bar-h: 40px; }
+  html.style-ascii-art main { padding: 2ch 2ch calc(var(--bar-h) + 2lh); }
+  .tx-flag { grid-template-columns: minmax(0, 1fr); }
+  .tx-flag__d { padding-left: 4ch; }
+  .tx-split, .tx-neo { grid-template-columns: minmax(0, 1fr); }
+  .tx-side--left .tx-split__media { order: 0; }
+  .tx-phone { width: min(100%, 32ch); }
+  .tx-man__item { padding-left: 2ch; }
+  .tx-man__item dd { padding-left: 4ch; }
+  .tx-man__ind { padding-left: 2ch; }
+  .tx-box { padding: 1lh 2ch; }
+  .tx-bar { gap: 1ch; font-size: 13px; }
+  .tx-bar__s, .tx-kbd, .tx-clock { display: none !important; }
+  .tx-win { font-size: 0; }
+  .tx-win b { font-size: 13px; }
+  .tx-win.is-on::after { font-size: 13px; }
+  .tx-eof { padding: 0 2ch calc(var(--bar-h) + 1lh); }
+}
+
+/* reduced motion: printed at once (runtime); a steady cursor */
+@media (prefers-reduced-motion: reduce) { .tx-cursor, .tx-caret { animation: none; } }
 
 </style><style>
   /* A section's backdrop: the image fills the panel (or a wrapper in the flow layout); the section itself goes clear,
@@ -167,88 +362,185 @@ html.style-ascii-art .ss-quote blockquote::before { content: "/* "; color: var(-
   <nav class="ss-nav__links"><a href="#why">Why</a><a href="#features">Features</a><a href="#how">How</a></nav>
 <a class="ss-btn" href="#get">Get Halcyon <span class="ss-arrow">→</span></a></div></header>
 
+<div class="tx-env" data-bin="halcyon" hidden></div>
+<style>:root { --tx-bin: "halcyon"; }</style>
+<aside class="tx-pane" aria-hidden="true">
+  <div class="tx-pane__box">
+    <p class="tx-pane__title"><span>render</span><span class="tx-pane__file">halcyon.obj</span></p>
+    <pre class="tx-render"></pre>
+    <pre class="tx-stat"></pre>
+  </div>
+</aside>
+<nav class="tx-bar" aria-label="Sections">
+  <a class="tx-bar__s" href="#">[halcyon]</a>
+  <span class="tx-bar__w">
+    <a class="tx-win is-on" href="#" data-k="0"><b>0</b>:~</a>
+<a class="tx-win" href="#why" data-k="1"><b>1</b>:why</a><a class="tx-win" href="#features" data-k="2"><b>2</b>:features</a><a class="tx-win" href="#how" data-k="3"><b>3</b>:how</a>  </span>
+  <span class="tx-bar__r">
+    <button type="button" class="tx-kbd" aria-pressed="true" hidden>keys:on</button>
+    <button type="button" class="tx-help-btn" hidden>?:help</button>
+    <span class="tx-clock" aria-hidden="true"></span>
+<a class="tx-bar__cta" href="#get">[ Get Halcyon ]</a>  </span>
+</nav>
+<div class="tx-help" role="dialog" aria-label="Keyboard shortcuts" hidden>
+  <pre>KEYS
+  j / k      next / previous section
+  0-9        jump to window
+  g / G      top / end of buffer
+  enter      run the last command (the call to action)
+  ?          this help        esc  close</pre>
+</div>
 <main>
-<section class="ss-block ss-hero ss-hero--center">
-  <div class="ss-hero__in">
-<span class="ss-badge">New · Halcyon 2.0</span><h1 class="ss-h1">Your mornings, <em>back.</em></h1><p class="ss-lede">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>    <div class="ss-btns"><a class="ss-btn ss-btn--hot" href="#get">Try it free <span class="ss-arrow">→</span></a><a class="ss-btn" href="../../looks/">See the looks</a></div>
+<section class="tx-sec tx-sec--hero" data-n="0">
+
+  <p class="tx-rule" aria-hidden="true"><span>[00]</span><span>~</span></p>
+<p class="tx-prompt"><span class="tx-ps1" aria-hidden="true"><span class="tx-bin"></span>:~$</span> <kbd class="tx-cmd">cat README.md</kbd></p>
+
+  <div class="tx-out">
+    <pre class="tx-l tx-banner" aria-hidden="true"></pre>
+<p class="tx-l tx-dim">New · Halcyon 2.0</p>    <h1 class="tx-l tx-h tx-h--1"><span class="tx-hash" aria-hidden="true"># </span>Your mornings, <em>back.</em></h1>
+<p class="tx-l tx-p">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>    <p class="tx-l tx-btns"><a class="tx-btn tx-btn--hot" href="#get">[ Try it free ]</a><a class="tx-btn" href="../../looks/">[ See the looks ]</a></p>
   </div>
+
+
 </section>
+<section class="tx-sec tx-sec--intro" data-n="1" id="why">
 
-<section class="ss-block" id="why"><div class="ss-wrap ss-intro2">
-  <h2 class="ss-display ss-reveal">Calendars fill up <em>from the top.</em></h2>
-  <div class="ss-reveal">
-<span class="ss-kicker">The problem</span><p class="ss-lede">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>  </div>
-</div></section>
+  <p class="tx-rule" aria-hidden="true"><span>[01]</span><span>why</span></p>
+<p class="tx-prompt"><span class="tx-ps1" aria-hidden="true"><span class="tx-bin"></span>:~$</span> <kbd class="tx-cmd">cat the-problem.md</kbd></p>
 
-<section class="ss-block" id="features"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">What it does</span><h2 class="ss-display">Three rules, <em>kept for you.</em></h2></div>  <div class="ss-features ss-features--3">
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">01</span>      <div><h3>Focus first</h3><p>Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">02</span>      <div><h3>Smart batching</h3><p>Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">03</span>      <div><h3>Polite no</h3><p>Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p></div>
-    </div>
-  </div>
-</div></section>
+  <div class="tx-out">
+<p class="tx-l tx-dim">&lt;!-- The problem --&gt;</p>    <h2 class="tx-l tx-h"><span class="tx-hash" aria-hidden="true">## </span>Calendars fill up <em>from the top.</em></h2>
+<p class="tx-l tx-p">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>  </div>
 
-<section class="ss-scene ss-overlay ss-side-right ss-type-type ss-shade-auto ss-type--display" id="words" data-scene="type">
-  <div class="ss-track" style="height: 260vh">
-    <div class="ss-stage">
-      <div class="ss-visual"></div>
-      <div class="ss-shade"></div>
-      <div class="ss-captions">
-      </div>
-      
-      <div class="ss-outro"></div>
-    </div>
-  </div>
-  <script type="application/json" class="ss-config">{"mode": "swap", "text": "Halcyon keeps your", "words": ["mornings", "Fridays", "evenings", "weekends"]}</script>
-  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "none", "legend": [], "scales": []}, "layout": "overlay", "length": 2.6, "steps": []}</script>
+
 </section>
-<section class="ss-block ss-product ss-product--right ss-pose--beside" id="app"><div class="ss-wrap ss-product__in">
-  <div class="ss-product__media" data-float>
-<div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
-  <div class="ss-phone__bar"><span>9:41</span><i></i></div>
-<div class="ss-app">
-<div class="ss-app__name">Halcyon</div><div class="ss-app__title">Coffee with Sam</div><div class="ss-app__label">Best times</div><p class="ss-app__note">Your 8-11 focus block stays free.</p><div class="ss-app__opt is-on"><b>Tue 2:30 pm</b><small>Next to your other calls</small></div><div class="ss-app__opt"><b>Wed 4:00 pm</b><small>End of day</small></div><div class="ss-app__opt"><b>Thu 1:00 pm</b><small>After lunch</small></div><div class="ss-app__btn">Send these times</div>  </div></div></div>
+<section class="tx-sec tx-sec--features" data-n="2" id="features">
+
+  <p class="tx-rule" aria-hidden="true"><span>[02]</span><span>features</span></p>
+  <p class="tx-prompt"><span class="tx-ps1" aria-hidden="true"><span class="tx-bin"></span>:~$</span> <kbd class="tx-cmd"><span class="tx-bin"></span> --help</kbd></p>
+  <div class="tx-out">
+    <p class="tx-l tx-dim">Usage: <span class="tx-bin"></span> [options]</p>
+<h2 class="tx-l tx-h"><span class="tx-hash" aria-hidden="true">## </span>Three rules, <em>kept for you.</em></h2><p class="tx-l tx-dim">What it does</p>    <p class="tx-l tx-dim">Options:</p>
+    <ul class="tx-flags">
+      <li class="tx-l tx-flag" tabindex="0">
+        <h3 class="tx-flag__n"><span aria-hidden="true"><span class="tx-flag__s">-1,</span> --focus-first</span><span class="tx-sr">Focus first</span></h3>
+        <p class="tx-flag__d">Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p>
+      </li>
+      <li class="tx-l tx-flag" tabindex="0">
+        <h3 class="tx-flag__n"><span aria-hidden="true"><span class="tx-flag__s">-2,</span> --smart-batching</span><span class="tx-sr">Smart batching</span></h3>
+        <p class="tx-flag__d">Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p>
+      </li>
+      <li class="tx-l tx-flag" tabindex="0">
+        <h3 class="tx-flag__n"><span aria-hidden="true"><span class="tx-flag__s">-3,</span> --polite-no</span><span class="tx-sr">Polite no</span></h3>
+        <p class="tx-flag__d">Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p>
+      </li>
+    </ul>
   </div>
-  <div class="ss-product__copy ss-reveal">
-<span class="ss-kicker">The app</span>    <h2 class="ss-h2">Pick a slot, <em>keep the morning.</em></h2>
-<p class="ss-lede">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><ul class="ss-pills"><li>iPhone</li><li>Android</li><li>Web</li><li>Google and Outlook</li></ul>    
-  </div>
-</div></section>
 
-<section class="ss-block ss-band ss-band"><div class="ss-wrap ss-stats ss-stats--4">
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="11">11<sup>h</sup></div><div class="ss-l">Focus hours kept per week</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="38">38<sup>%</sup></div><div class="ss-l">Fewer meeting fragments</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="2">2<sup>min</sup></div><div class="ss-l">To set up</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="0">0</div><div class="ss-l">Calendars replaced</div></div>
-</div></section>
 
-<section class="ss-block" id="how"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">How it works</span><h2 class="ss-display">Set it up <em>over coffee.</em></h2></div>  <div class="ss-timeline ss-timeline--4">
-<div class="ss-tl ss-reveal"><span class="ss-when">Minute 1</span><h4>Connect</h4><p>Sign in with Google or Outlook; nothing moves yet.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Minute 2</span><h4>Mark your hours</h4><p>Paint the blocks you want protected.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Day 1</span><h4>It starts</h4><p>New invites are steered around your focus.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Week 1</span><h4>You notice</h4><p>A free morning, then another one.</p></div>  </div>
-</div></section>
-
-<section class="ss-block"><div class="ss-wrap ss-quote ss-reveal">
-  <blockquote>I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote><cite>Priya N., product designer</cite></div></section>
-
-<section class="ss-block ss-faq"><div class="ss-wrap ss-faq__in">
-  <div class="ss-head ss-reveal"><h2 class="ss-h2">Questions</h2></div>
-  <div class="ss-faq__list">
-<details class="ss-reveal" open><summary>Does it replace my calendar?</summary><p>No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></details><details class="ss-reveal"><summary>What do the people I meet see?</summary><p>A short list of times that work for both of you. No new app to install.</p></details><details class="ss-reveal"><summary>Can I override it?</summary><p>Always. Drag anything anywhere; Halcyon learns from what you move.</p></details>  </div>
-</div></section>
-<section class="ss-block ss-cta" id="get">
-  <div class="ss-cta__in">
-<span class="ss-kicker ss-reveal">Free for 30 days</span>    <h2 class="ss-display ss-reveal">Keep <em>tomorrow morning.</em></h2>
-<a class="ss-btn ss-btn--hot ss-reveal" href="#">Get Halcyon <span class="ss-arrow">→</span></a>  </div>
 </section>
+<section class="tx-sec tx-sec--product" data-n="3" id="app">
 
+  <p class="tx-rule" aria-hidden="true"><span>[03]</span><span>the app</span></p>
+  <p class="tx-prompt"><span class="tx-ps1" aria-hidden="true"><span class="tx-bin"></span>:~$</span> <kbd class="tx-cmd"><span class="tx-bin"></span> open --the-app</kbd></p>
+  <div class="tx-out tx-split tx-side--right">
+    <div class="tx-split__copy">
+<p class="tx-l tx-dim">&lt;!-- The app --&gt;</p>      <h2 class="tx-l tx-h"><span class="tx-hash" aria-hidden="true">## </span>Pick a slot, <em>keep the morning.</em></h2>
+<p class="tx-l tx-p">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><p class="tx-l tx-tags"><span class="tx-dim">platforms:</span> <span class="tx-tag">iPhone</span><span class="tx-tag">Android</span><span class="tx-tag">Web</span><span class="tx-tag">Google and Outlook</span></p>      
+    </div>
+<div class="tx-split__media"><div class="tx-l tx-phone" aria-label="App screen">
+  <div class="tx-phone__bar"><span>9:41</span><span aria-hidden="true">▂▄▆ ▮▮▯</span></div>
+<p class="tx-phone__app">Halcyon</p><p class="tx-phone__title">Coffee with Sam</p><p class="tx-phone__label">BEST TIMES</p><p class="tx-phone__note">Your 8-11 focus block stays free.</p><p class="tx-phone__opt is-on"><span aria-hidden="true">(•)</span> <b>Tue 2:30 pm</b><small>Next to your other calls</small></p><p class="tx-phone__opt"><span aria-hidden="true">( )</span> <b>Wed 4:00 pm</b><small>End of day</small></p><p class="tx-phone__opt"><span aria-hidden="true">( )</span> <b>Thu 1:00 pm</b><small>After lunch</small></p><p class="tx-phone__btn">[ Send these times ]</p></div>
+</div>
+  </div>
+
+
+</section>
+<section class="tx-sec tx-sec--stats" data-n="4">
+
+  <p class="tx-rule" aria-hidden="true"><span>[04]</span><span>stats</span></p>
+<p class="tx-prompt"><span class="tx-ps1" aria-hidden="true"><span class="tx-bin"></span>:~$</span> <kbd class="tx-cmd">neofetch</kbd></p>
+
+  <div class="tx-out tx-neo">
+    <pre class="tx-l tx-neo__logo" aria-hidden="true"></pre>
+    <div class="tx-neo__info">
+      <p class="tx-l tx-neo__host"><span class="tx-bin"></span>@scroll-studio</p>
+      <p class="tx-l tx-dim" aria-hidden="true">-----------------------</p>
+      <dl class="tx-neo__list">
+        <div class="tx-l tx-kv"><dt>Focus hours kept per week</dt><dd><span class="tx-num">11</span> h</dd></div>
+        <div class="tx-l tx-kv"><dt>Fewer meeting fragments</dt><dd><span class="tx-num">38</span> %</dd></div>
+        <div class="tx-l tx-kv"><dt>To set up</dt><dd><span class="tx-num">2</span> min</dd></div>
+        <div class="tx-l tx-kv"><dt>Calendars replaced</dt><dd><span class="tx-num">0</span></dd></div>
+      </dl>
+      <p class="tx-l tx-swatch" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></p>
+    </div>
+  </div>
+
+
+</section>
+<section class="tx-sec tx-sec--timeline" data-n="5" id="how">
+
+  <p class="tx-rule" aria-hidden="true"><span>[05]</span><span>how</span></p>
+  <p class="tx-prompt"><span class="tx-ps1" aria-hidden="true"><span class="tx-bin"></span>:~$</span> <kbd class="tx-cmd"><span class="tx-bin"></span> setup --verbose</kbd></p>
+  <div class="tx-out">
+<p class="tx-l tx-dim">&lt;!-- How it works --&gt;</p><h2 class="tx-l tx-h"><span class="tx-hash" aria-hidden="true">## </span>Set it up <em>over coffee.</em></h2>    <ol class="tx-boot">
+      <li class="tx-l tx-boot__l"><span class="tx-ok" aria-hidden="true">[  OK  ]</span> <span class="tx-boot__w">Minute 1</span> <h3>Connect</h3> <span class="tx-dim">— Sign in with Google or Outlook; nothing moves yet.</span></li>
+      <li class="tx-l tx-boot__l"><span class="tx-ok" aria-hidden="true">[  OK  ]</span> <span class="tx-boot__w">Minute 2</span> <h3>Mark your hours</h3> <span class="tx-dim">— Paint the blocks you want protected.</span></li>
+      <li class="tx-l tx-boot__l"><span class="tx-ok" aria-hidden="true">[  OK  ]</span> <span class="tx-boot__w">Day 1</span> <h3>It starts</h3> <span class="tx-dim">— New invites are steered around your focus.</span></li>
+      <li class="tx-l tx-boot__l"><span class="tx-ok" aria-hidden="true">[  OK  ]</span> <span class="tx-boot__w">Week 1</span> <h3>You notice</h3> <span class="tx-dim">— A free morning, then another one.</span></li>
+    </ol>
+    <p class="tx-l tx-dim">Reached target <span class="tx-bin"></span>.target. 4 units started.</p>
+  </div>
+
+
+</section>
+<section class="tx-sec tx-sec--quote" data-n="6">
+
+  <p class="tx-rule" aria-hidden="true"><span>[06]</span><span>review</span></p>
+<p class="tx-prompt"><span class="tx-ps1" aria-hidden="true"><span class="tx-bin"></span>:~$</span> <kbd class="tx-cmd">cat reviews/priya-n.eml</kbd></p>
+
+  <div class="tx-out">
+    <p class="tx-l tx-dim">From: Priya N., product designer</p>
+    <p class="tx-l tx-dim">Subject: Re: <span class="tx-bin"></span></p>
+    <blockquote class="tx-l tx-mail">I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote>
+<p class="tx-l tx-sig">-- Priya N., product designer</p>  </div>
+
+
+</section>
+<section class="tx-sec tx-sec--faq" data-n="7">
+
+  <p class="tx-rule" aria-hidden="true"><span>[07]</span><span>man</span></p>
+  <p class="tx-prompt"><span class="tx-ps1" aria-hidden="true"><span class="tx-bin"></span>:~$</span> <kbd class="tx-cmd">man <span class="tx-bin"></span></kbd></p>
+  <div class="tx-out tx-man">
+    <p class="tx-l tx-man__head" aria-hidden="true"><span><span class="tx-bin tx-up"></span>(1)</span><span>User Manual</span><span><span class="tx-bin tx-up"></span>(1)</span></p>
+    <h2 class="tx-l tx-man__sec">QUESTIONS</h2>
+    <dl class="tx-man__list">
+      <div class="tx-l tx-man__item"><dt>Does it replace my calendar?</dt><dd>No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</dd></div>
+      <div class="tx-l tx-man__item"><dt>What do the people I meet see?</dt><dd>A short list of times that work for both of you. No new app to install.</dd></div>
+      <div class="tx-l tx-man__item"><dt>Can I override it?</dt><dd>Always. Drag anything anywhere; Halcyon learns from what you move.</dd></div>
+    </dl>
+  </div>
+
+
+</section>
+<section class="tx-sec tx-sec--cta" data-n="8" id="get">
+
+  <p class="tx-rule" aria-hidden="true"><span>[08]</span><span>start</span></p>
+  <p class="tx-prompt"><span class="tx-ps1" aria-hidden="true"><span class="tx-bin"></span>:~$</span> <kbd class="tx-cmd"><span class="tx-bin"></span> start</kbd></p>
+  <div class="tx-out">
+    <div class="tx-l tx-box">
+<p class="tx-box__t">Free for 30 days</p>      <h2 class="tx-h tx-h--cta"><span class="tx-hash" aria-hidden="true"># </span>Keep <em>tomorrow morning.</em></h2>
+      <p class="tx-copy" hidden><span class="tx-copy__cmd"></span><button type="button" class="tx-btn tx-copy__btn">[ copy ]</button></p>
+<p class="tx-enter"><a class="tx-btn tx-btn--hot tx-go" href="#">[ Get Halcyon ]</a> <span class="tx-dim tx-enter__hint" aria-hidden="true">or press ENTER</span><span class="tx-caret" aria-hidden="true"></span></p>      <p class="tx-done" role="status" aria-live="polite"></p>
+    </div>
+  </div>
+
+</section>
 </main>
-
+<div class="tx-eof" aria-hidden="true">
+<p>~</p><p>~</p><p>~</p><p>~</p><p>~</p><p>~</p>  <p class="tx-eof__line"><span>-- EOF --</span><span>halcyon/README.md [readonly]</span></p>
+</div>
 <footer class="ss-footer"><div class="ss-wrap ss-footer__in">
   <span>© Halcyon. A concept site; the product is fictional.</span>
   <span>Built with Scroll Studio</span>
@@ -257,9 +549,9 @@ html.style-ascii-art .ss-quote blockquote::before { content: "/* "; color: var(-
 <script>window.__ssScroll = { speed: 1.0 };</script>
 <script type="module" src="../../runtime/index.js"></script>
 <nav class="ss-looks" aria-label="Looks">
-  <a href="../clay-3d/" aria-label="Previous look">←</a>
-  <a class="ss-looks__name" href="../">ASCII art <small>10/20</small></a>
-  <a href="../gradient-mesh/" aria-label="Next look">→</a>
+  <a href="../art-deco/" aria-label="Previous look">←</a>
+  <a class="ss-looks__name" href="../">ASCII art <small>3/21</small></a>
+  <a href="../bauhaus/" aria-label="Next look">→</a>
 </nav>
 <style>
   .ss-looks { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 990; display: flex; align-items: center; gap: 4px; padding: 5px;

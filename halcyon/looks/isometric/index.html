@@ -1,62 +1,236 @@
 <!doctype html>
-<html lang="en" data-fx='{}' class="mode-light layout-flow style-isometric">
+<html lang="en" data-style="isometric" class="mode-light layout-flow style-isometric">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Halcyon</title>
 <meta name="description" content="The calendar that guards your mornings. One page, built in twenty styles by Scroll Studio."><meta name="generator" content="Scroll Studio">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%234f6bff%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EH%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23d24a28%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EH%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root {
-  --bg: #eef2f8;
-  --bg-2: #e2e8f2;
-  --ink: #16213a;
-  --ink-rgb: 22, 33, 58;
-  --bg-rgb: 238, 242, 248;
-  --ink-2: rgba(22, 33, 58, 0.78);
-  --ink-3: rgba(22, 33, 58, 0.64);
-  --line: rgba(22, 33, 58, .13);
-  --accent: #4f6bff;
-  --accent-2: #8fa2ff;
+  --bg: #cfe8f3;
+  --bg-2: #bfdcea;
+  --ink: #1d2b3a;
+  --ink-rgb: 29, 43, 58;
+  --bg-rgb: 207, 232, 243;
+  --ink-2: rgba(29, 43, 58, 0.84);
+  --ink-3: rgba(29, 43, 58, 0.7);
+  --line: rgba(29, 43, 58, .13);
+  --accent: #d24a28;
+  --accent-2: #21998e;
   --accent-ink: #ffffff;
-  --accent-text: #445cd8;
-  --accent-rgb: 79, 107, 255;
-  --font-display: "Outfit", system-ui, sans-serif;
-  --font-body: "Outfit", system-ui, sans-serif;
+  --accent-text: #9c412d;
+  --accent-rgb: 210, 74, 40;
+  --font-display: "Sora", system-ui, sans-serif;
+  --font-body: "Sora", system-ui, sans-serif;
   --font-mono: "DM Mono", ui-monospace, monospace;
   --display-weight: 700;
   --em-style: normal;
-  --radius: 4px;
+  --radius: 3px;
   color-scheme: light;
 }
-.ss-surface-dark { --btn-bg: #4f6bff; --btn-ink: #000000; --bg: #16213a; --bg-2: #273249; --ink: #eef2f8; --ink-rgb: 238, 242, 248; --bg-rgb: 22, 33, 58; --ink-2: rgba(238, 242, 248, 0.68); --ink-3: rgba(238, 242, 248, 0.54); --line: rgba(238, 242, 248, .14); --accent-text: #7f94fd; --em-color: #8fa2ff; color-scheme: dark; background: var(--bg); color: var(--ink); }
-.ss-surface-light { --btn-bg: #4f6bff; --btn-ink: #000000; --bg: #e2e8f2; --bg-2: #eef2f8; --ink: #16213a; --ink-rgb: 22, 33, 58; --bg-rgb: 226, 232, 242; --ink-2: rgba(22, 33, 58, 0.78); --ink-3: rgba(22, 33, 58, 0.64); --line: rgba(22, 33, 58, .14); --accent-text: #445cd8; --em-color: #4f6bff; color-scheme: light; background: var(--bg); color: var(--ink); }
-.ss-surface-accent { --btn-bg: #16213a; --btn-ink: #ffffff; --bg: #c1ccff; --bg-2: #202b46; --ink: #16213a; --ink-rgb: 22, 33, 58; --bg-rgb: 193, 204, 255; --ink-2: rgba(22, 33, 58, 1.0); --ink-3: rgba(22, 33, 58, 1.0); --line: rgba(22, 33, 58, .14); --accent-text: #16213a; --em-color: #16213a; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-dark { --btn-bg: #d24a28; --btn-ink: #000000; --bg: #1d2b3a; --bg-2: #2b3a49; --ink: #cfe8f3; --ink-rgb: 207, 232, 243; --bg-rgb: 29, 43, 58; --ink-2: rgba(207, 232, 243, 0.76); --ink-3: rgba(207, 232, 243, 0.62); --line: rgba(207, 232, 243, .14); --accent-text: #d19385; --em-color: #21998e; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #d24a28; --btn-ink: #000000; --bg: #bfdcea; --bg-2: #cfe8f3; --ink: #1d2b3a; --ink-rgb: 29, 43, 58; --bg-rgb: 191, 220, 234; --ink-2: rgba(29, 43, 58, 0.84); --ink-3: rgba(29, 43, 58, 0.7); --line: rgba(29, 43, 58, .14); --accent-text: #9c412d; --em-color: #d24a28; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #1d2b3a; --btn-ink: #ffffff; --bg: #85c7c1; --bg-2: #233442; --ink: #1d2b3a; --ink-rgb: 29, 43, 58; --bg-rgb: 133, 199, 193; --ink-2: rgba(29, 43, 58, 1.0); --ink-3: rgba(29, 43, 58, 1.0); --line: rgba(29, 43, 58, .14); --accent-text: #1d2b3a; --em-color: #1d2b3a; color-scheme: light; background: var(--bg); color: var(--ink); }
 </style>
 <link rel="stylesheet" href="../../runtime/studio.css">
 <style id="ss-style">
-/* isometric: an isometric dot grid; cards and buttons extruded into blocks with stepped side faces */
-html.style-isometric body { background-color: var(--bg);
-  background-image: radial-gradient(circle, rgba(var(--ink-rgb), .16) 1.2px, transparent 1.4px), radial-gradient(circle, rgba(var(--ink-rgb), .16) 1.2px, transparent 1.4px);
-  background-size: 34px 20px; background-position: 0 0, 17px 10px; }
-html.style-isometric .ss-block, html.style-isometric .ss-hero:not(.ss-hero--media), html.style-isometric .ss-panel, html.style-isometric .ss-panel > section { background: transparent; }
-html.style-isometric .ss-band { background: rgba(var(--bg-rgb), .6); }
-html.style-isometric { --iso: 1px 1px 0 #2e3d6b, 2px 2px 0 #2e3d6b, 3px 3px 0 #2e3d6b, 4px 4px 0 #2e3d6b, 5px 5px 0 #2e3d6b, 6px 6px 0 #2e3d6b, 7px 7px 0 #2e3d6b, 8px 8px 0 #2e3d6b; }
-html.style-isometric .ss-features { gap: 28px; background: none; border: 0; }
-html.style-isometric .ss-feature, html.style-isometric .ss-tile, html.style-isometric .ss-stats > div {
-  background: #fff; border: 2px solid var(--ink); border-radius: var(--radius); box-shadow: var(--iso); transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
-html.style-isometric .ss-feature:hover, html.style-isometric .ss-tile:hover { transform: translate(-4px, -4px); box-shadow: var(--iso), 9px 9px 0 #2e3d6b, 10px 10px 0 #2e3d6b, 11px 11px 0 #2e3d6b, 12px 12px 0 #2e3d6b; }
-html.style-isometric .ss-feature:nth-child(3n+1) { background: #dfe6ff; }
-html.style-isometric .ss-feature:nth-child(3n+2) { background: #ffe8d6; }
-html.style-isometric .ss-feature:nth-child(3n) { background: #d9f7ec; }
-html.style-isometric .ss-stats > div { padding: 26px 24px; }
-html.style-isometric .ss-btn { border: 2px solid var(--ink); background: #fff; color: var(--ink); box-shadow: 1px 1px 0 var(--ink), 2px 2px 0 var(--ink), 3px 3px 0 var(--ink), 4px 4px 0 var(--ink); transition: transform .15s, box-shadow .15s; }
-html.style-isometric .ss-btn--hot { background: var(--accent); color: var(--accent-ink); }
-html.style-isometric .ss-btn:hover { transform: translate(4px, 4px); box-shadow: none; background: var(--accent-2); color: var(--ink); }
-html.style-isometric .ss-h1, html.style-isometric .ss-display { text-shadow: 1px 1px 0 var(--accent-2), 2px 2px 0 var(--accent-2), 3px 3px 0 var(--accent-2), 4px 4px 0 var(--accent-2), 5px 5px 0 var(--accent); }
-html.style-isometric .ss-tl::before { border-radius: 0; transform: rotate(45deg) skew(-10deg, -10deg); box-shadow: 2px 2px 0 var(--ink); }
-html.style-isometric .ss-phone { transform: rotateX(20deg) rotateZ(-14deg); box-shadow: 18px 26px 0 -2px #2e3d6b, 0 50px 90px -30px rgba(0, 0, 0, .4); }
+/* Isometric: a miniature world on a 2:1 grid, seen by a fixed-angle drone. The world is SVG (drawn by the runtime);
+   every word of copy sits on the flat HUD plane: white callout cards with a thin border, numbered pins and leader
+   lines. Three-tone faces from one light (top lightest, left mid, right darkest). Static page without JavaScript. */
+html.style-isometric {
+  --sky: #cfe8f3; --ground: #f3ebdd; --ink: #1d2b3a; --ink-2: #3c4c60; --line: #9fb3c8;
+  --a1: #ff8a65; --a2: #f4643f; --a3: #d24a28; --t1: #7fe0d6; --t2: #2ec4b6; --t3: #21998e;
+  --n1: #ffffff; --n2: #dce3ec; --n3: #b3c3d6;
+  background: var(--sky);
+}
+html.style-isometric body { background: var(--sky); color: var(--ink); font-family: "Sora", system-ui, sans-serif; }
+html.style-isometric em { color: var(--a3); font-style: normal; }
+html.style-isometric .ss-nav { display: none; }
+html.style-isometric ::selection { background: var(--a1); color: var(--ink); }
+html.style-isometric :focus-visible { outline: 2px solid var(--a3); outline-offset: 3px; }
+html.style-isometric body::before { content: ""; position: fixed; inset: 0; z-index: 0; pointer-events: none; opacity: .5;
+  background-image: repeating-linear-gradient(26.57deg, transparent 0 31px, rgba(29, 43, 58, .07) 31px 32px), repeating-linear-gradient(-26.57deg, transparent 0 31px, rgba(29, 43, 58, .07) 31px 32px); }
+
+/* ---------------------------------------------------------------- bar + minimap */
+.iso-bar { position: fixed; inset: 14px 14px auto 14px; z-index: 60; height: 54px; display: flex; align-items: center; gap: 22px; padding: 0 8px 0 16px;
+  background: #fff; border: 1px solid var(--line); border-radius: 4px; }
+.iso-bar__mark { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 17px; letter-spacing: -.01em; }
+.iso-bar__mark i { width: 22px; height: 22px; display: block; background:
+  linear-gradient(var(--a1), var(--a1)) 0 0 / 100% 0 no-repeat;
+  clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+  background: conic-gradient(from -60deg at 50% 50%, var(--a1) 0 120deg, var(--a3) 0 240deg, var(--a2) 0); }
+.iso-bar__links { display: flex; gap: 4px; margin-left: auto; font-size: 14px; }
+.iso-bar__links a { padding: 8px 12px; border-radius: 3px; color: var(--ink-2); }
+.iso-bar__links a b { font-family: "DM Mono", monospace; font-weight: 500; font-size: 12px; color: var(--a3); margin-right: 4px; }
+.iso-bar__links a:hover, .iso-bar__links a.is-on { background: var(--n2); color: var(--ink); }
+.iso-flat { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border: 1px solid var(--ink); border-radius: 3px; font-weight: 600; font-size: 14px; background: #fff; color: var(--ink); }
+.iso-flat:hover { background: var(--ink); color: #fff; }
+.iso-mini { position: fixed; left: 14px; bottom: 14px; z-index: 58; width: 200px; height: 132px; background: rgba(255, 255, 255, .92); border: 1px solid var(--line); border-radius: 4px; display: none; }
+.iso-mini__map { width: 100%; height: 100%; display: block; }
+.iso-mini__map .d { cursor: pointer; }
+.iso-mini__map .d:hover polygon, .iso-mini__map .d.is-on polygon { fill: var(--a1); }
+.iso-mini__here { position: absolute; right: 8px; top: 6px; font: 500 11px "DM Mono", monospace; letter-spacing: .08em; color: var(--ink-2); }
+html.iso-live .iso-mini { display: block; pointer-events: auto; }
+
+/* ---------------------------------------------------------------- type + cards (flat HUD plane) */
+.iso-h1 { font-weight: 700; font-size: clamp(44px, 5.4vw, 92px); line-height: 1; letter-spacing: -.035em; margin: 14px 0 20px; text-wrap: balance; }
+.iso-h2 { font-weight: 700; font-size: clamp(26px, 2.2vw, 38px); line-height: 1.08; letter-spacing: -.025em; margin: 0 0 12px; text-wrap: balance; }
+.iso-lede { font-size: clamp(17px, 1.25vw, 19px); line-height: 1.6; max-width: 40ch; color: var(--ink-2); }
+.iso-body { font-size: 15.5px; line-height: 1.6; color: var(--ink-2); }
+.iso-note { font-size: 13px; color: var(--ink-2); margin-top: 10px; }
+.iso-kicker, .iso-tag { font-family: "DM Mono", monospace; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); margin: 0 0 10px; display: flex; gap: 8px; align-items: center; }
+.iso-kicker b { color: #fff; background: var(--a3); padding: 2px 6px; font-weight: 500; border-radius: 2px; }
+.iso-badge { display: inline-flex; align-items: center; gap: 10px; font: 500 13px "DM Mono", monospace; letter-spacing: .06em; text-transform: uppercase; background: #fff; border: 1px solid var(--line); padding: 7px 12px; border-radius: 3px; }
+.iso-badge i { width: 10px; height: 10px; background: var(--t2); transform: rotate(45deg) scaleY(.9); display: block; }
+.iso-card { position: relative; background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 20px 22px; }
+.iso-card h3 { font-size: 20px; font-weight: 700; letter-spacing: -.015em; margin: 0 0 6px; }
+.iso-pin { position: absolute; left: -13px; top: -13px; width: 26px; height: 26px; border-radius: 50%; background: var(--a3); color: #fff; font: 500 12px/26px "DM Mono", monospace; text-align: center; }
+.iso-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+.iso-meter { height: 6px; background: var(--n2); margin-top: 12px; }
+.iso-meter i { display: block; height: 100%; background: var(--t2); }
+.iso-btns { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; margin-top: 22px; }
+/* the keycap: a top with two shaded sides that physically depresses */
+.iso-key { --k: 8px; position: relative; display: inline-flex; align-items: center; padding: 15px 26px; background: var(--a1); color: var(--ink); font-weight: 700; font-size: 16px; letter-spacing: -.01em;
+  border-radius: 2px; margin: 0 var(--k) var(--k) 0; transition: transform .09s steps(2), margin .09s steps(2); }
+.iso-key::before, .iso-key::after { content: ""; position: absolute; pointer-events: none; transition: all .09s steps(2); }
+.iso-key::before { left: 0; top: 100%; width: 100%; height: var(--k); background: var(--a2); transform-origin: 0 0; transform: skewX(45deg); }
+.iso-key::after { left: 100%; top: 0; width: var(--k); height: 100%; background: var(--a3); transform-origin: 0 0; transform: skewY(45deg); }
+.iso-key:hover { background: #ff9d7d; }
+.iso-key:active { transform: translate(calc(var(--k) - 2px), calc(var(--k) - 2px)); }
+.iso-key:active::before { height: 2px; } .iso-key:active::after { width: 2px; }
+.iso-key--big { --k: 14px; padding: 22px 40px; font-size: 22px; }
+
+/* stats as labels (static: a row of figures) */
+.iso-stats { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+.iso-stat { background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 14px 16px; display: grid; gap: 4px; }
+.iso-stat b { font-size: clamp(34px, 3vw, 52px); font-weight: 700; letter-spacing: -.04em; line-height: 1; }
+.iso-stat b small { font-size: .45em; margin-left: 2px; color: var(--a3); }
+.iso-stat span { font-size: 13px; color: var(--ink-2); line-height: 1.35; }
+.iso-layers { list-style: none; padding: 0; margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.iso-layers li { font: 500 12px "DM Mono", monospace; letter-spacing: .06em; text-transform: uppercase; background: #fff; border: 1px solid var(--line); padding: 6px 10px; border-radius: 3px; }
+.iso-bubble blockquote { font-size: clamp(20px, 1.7vw, 27px); font-weight: 600; line-height: 1.35; letter-spacing: -.015em; margin: 0 0 12px; }
+.iso-bubble figcaption { font: 500 12px "DM Mono", monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-2); }
+.iso-bubble::after { content: ""; position: absolute; left: 34px; bottom: -11px; width: 20px; height: 20px; background: #fff; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transform: rotate(45deg) skew(10deg, 10deg); }
+.iso-faq details { border-top: 1px solid var(--n2); }
+.iso-faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 14px; padding: 13px 0; font-weight: 600; font-size: 15.5px; }
+.iso-faq summary::-webkit-details-marker { display: none; }
+.iso-faq summary i { width: 14px; height: 14px; flex: none; margin-top: 3px; background: linear-gradient(var(--ink), var(--ink)) center / 100% 2px no-repeat, linear-gradient(var(--ink), var(--ink)) center / 2px 100% no-repeat; transition: transform .15s steps(3); }
+.iso-faq details[open] summary i { transform: rotate(45deg); }
+.iso-faq p { margin: 0 0 14px; font-size: 14.5px; line-height: 1.6; color: var(--ink-2); }
+.style-isometric .iso-screen { margin: 0; }
+.style-isometric .iso-screen .ss-phone { width: 260px; aspect-ratio: 9 / 18.5; background: #1d2b3a; border-radius: 22px; padding: 9px; box-shadow: none; }
+.style-isometric .iso-screen .ss-phone__screen { border-radius: 15px; height: 100%; overflow: hidden; background: #fff; color: var(--ink); }
+.style-isometric .iso-screen .ss-phone__bar { display: flex; justify-content: space-between; padding: 10px 14px 0; font-size: 10px; font-weight: 600; }
+.style-isometric .iso-screen .ss-phone__bar i { width: 18px; height: 8px; background: var(--ink); border-radius: 2px; display: block; }
+.style-isometric .iso-screen .ss-app { padding: 14px 12px; display: grid; gap: 7px; }
+.style-isometric .iso-screen .ss-app__name { font: 500 10px "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: var(--a3); }
+.style-isometric .iso-screen .ss-app__title { font-size: 21px; font-weight: 700; letter-spacing: -.02em; line-height: 1.05; }
+.style-isometric .iso-screen .ss-app__label { font: 500 10px "DM Mono", monospace; letter-spacing: .1em; text-transform: uppercase; margin-top: 4px; color: var(--ink-2); }
+.style-isometric .iso-screen .ss-app__note { font-size: 11px; line-height: 1.4; color: var(--ink-2); }
+.style-isometric .iso-screen .ss-app__opt { border: 1px solid var(--n2); border-radius: 6px; padding: 8px 10px; display: grid; gap: 1px; background: #fff; }
+.style-isometric .iso-screen .ss-app__opt b { font-size: 13px; }
+.style-isometric .iso-screen .ss-app__opt small { font-size: 10px; color: var(--ink-2); }
+.style-isometric .iso-screen .ss-app__opt.is-on { background: #e9f8f6; border-color: var(--t2); }
+.style-isometric .iso-screen .ss-app__btn { background: var(--a1); border-radius: 6px; padding: 10px; text-align: center; font-weight: 700; font-size: 12px; margin-top: 4px; }
+
+/* ---------------------------------------------------------------- static layout (no JavaScript) */
+.iso-sec { position: relative; z-index: 1; padding: 120px max(24px, 6vw) 80px; }
+.iso-sec--hero { min-height: 92vh; display: flex; align-items: center; }
+.iso-sec .iso-hud { max-width: 640px; }
+.iso-sec--stats .iso-hud, .iso-sec--cta .iso-hud { max-width: 1100px; }
+.iso-sec--cta { text-align: center; }
+.iso-sec--cta .iso-hud { margin: 0 auto; }
+.iso-sec--cta .iso-btns { justify-content: center; }
+.iso-sec .iso-screen { margin-top: 30px; }
+.iso-photo { margin: 24px 0 0; max-width: 520px; }
+.iso-photo img { border-radius: 4px; border: 1px solid var(--line); }
+
+/* ---------------------------------------------------------------- live: the world + fixed HUD */
+.iso-world { position: fixed; inset: 0; width: 100vw; height: 100vh; height: 100svh; z-index: 0; display: none; overflow: visible; }
+html.iso-live .iso-world { display: block; }
+html.iso-live body::before { display: none; }
+.iso-world polygon { stroke-linejoin: round; }
+.iso-world .iso-b { transition: none; }
+.iso-world .iso-b.is-dim { filter: grayscale(.75) opacity(.7); }
+.iso-world .iso-b.is-lift > .t { fill: #fff6ec; }
+.iso-world .iso-b.is-on > .t { fill: var(--a1); } .iso-world .iso-b.is-on > .l { fill: var(--a2); } .iso-world .iso-b.is-on > .r { fill: var(--a3); }
+.iso-world .iso-hit { cursor: pointer; }
+.iso-world text { font-family: "DM Mono", monospace; font-weight: 500; }
+.iso-leaders { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 3; pointer-events: none; display: none; overflow: visible; }
+html.iso-live .iso-leaders { display: block; }
+.iso-leaders path { fill: none; stroke: var(--ink); stroke-width: 1.2; }
+.iso-leaders circle { fill: var(--ink); }
+.iso-leaders .ring { fill: #fff; stroke: var(--ink); stroke-width: 1.5; }
+html.iso-live .iso-sec { pointer-events: none; padding: 0; height: calc(var(--len, 1) * 100svh); min-height: 0; display: block; }
+html.iso-live .iso-hud { position: fixed; z-index: 4; left: 4.5vw; top: 104px; width: min(400px, 34vw); max-width: none; visibility: hidden; pointer-events: none; }
+html.iso-live .iso-hud.is-on { visibility: visible; pointer-events: auto; }
+html.iso-live .iso-hud--hero { width: min(560px, 42vw); top: 18vh; }
+html.iso-live .iso-hud--cta { left: 50%; top: 15vh; transform: translateX(-50%); width: min(820px, 90vw); text-align: center; }
+html.iso-live .iso-hud > *:not(.iso-stats):not(.iso-layers), html.iso-live .iso-hud .iso-list > li { will-change: transform, opacity; }
+html.iso-live .iso-list { display: block; position: relative; margin-top: 18px; }
+html.iso-live .iso-list > li { position: absolute; left: 0; top: 0; width: 100%; }
+html.iso-live .iso-card--head + .iso-list { margin-top: 18px; }
+html.iso-live .iso-stats { display: block; }
+html.iso-live .iso-stat { position: fixed; left: 0; top: 0; width: 168px; padding: 10px 12px; transform-origin: 50% 100%; }
+html.iso-live .iso-stat b { font-size: 34px; }
+html.iso-live .iso-layers { display: block; margin: 0; }
+html.iso-live .iso-layers li { position: fixed; left: 0; top: 0; white-space: nowrap; }
+html.iso-live .iso-screen { position: fixed; left: 0; top: 0; z-index: 2; transform-origin: 0 0; pointer-events: none; display: none; }
+html.iso-live .iso-screen.is-on { display: block; }
+html.iso-live .iso-photo { display: none; }
+html.iso-live .iso-sec--stats .iso-hud { left: 0; top: 0; width: 0; }
+html.iso-live .iso-sec--product .iso-layers { position: static; }
+html.iso-live .iso-card--faq { max-height: calc(100svh - 230px); overflow: auto; }
+.iso-label { position: fixed; left: 0; top: 0; z-index: 5; pointer-events: none; background: var(--ink); color: #fff; font: 500 11px "DM Mono", monospace; letter-spacing: .06em; text-transform: uppercase; padding: 5px 8px; border-radius: 3px; opacity: 0; white-space: nowrap; transform: translate(-50%, -140%); }
+.iso-label.is-on { opacity: 1; }
+
+/* sections the style doesn't draw scroll over the world on a plain card */
+html.style-isometric main > section:not(.iso-sec), html.style-isometric main > div > section:not(.iso-sec) { position: relative; z-index: 6; background: #fff; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+html.style-isometric main .ss-panel { position: relative !important; top: auto !important; }
+html.style-isometric .ss-block:not(.iso-sec) .ss-display, html.style-isometric .ss-block:not(.iso-sec) .ss-h2 { font-family: "Sora", sans-serif; }
+html.style-isometric .ss-tile, html.style-isometric .ss-feature { border: 1px solid var(--line); border-radius: 4px; background: #fff; box-shadow: none; }
+html.style-isometric .ss-btn { border-radius: 3px; background: #fff; border-color: var(--ink); color: var(--ink); backdrop-filter: none; }
+html.style-isometric .ss-btn--hot { background: var(--a1); border-color: var(--a1); }
+html.style-isometric .ss-kicker { font-family: "DM Mono", monospace; color: var(--a3); }
+
+/* footer: the underside of the world slab, strata and pipes, links laid out as a legend */
+.iso-under { position: relative; z-index: 6; height: 64px; background: linear-gradient(#e6d7bd 0 18px, #d4bf9c 18px 40px, #bda57f 40px); }
+.iso-under i { position: absolute; top: 24px; height: 10px; border-radius: 5px; background: #8a9bb0; }
+.iso-under i:nth-child(1) { left: 8%; width: 22%; } .iso-under i:nth-child(2) { left: 41%; width: 9%; background: var(--t3); } .iso-under i:nth-child(3) { left: 63%; width: 28%; }
+html.style-isometric .ss-footer { position: relative; z-index: 6; background: linear-gradient(#a98e66, #8f7553); color: #fff8ec; border: 0; clip-path: polygon(0 0, 100% 0, 100% 70%, 50% 100%, 0 70%); padding-bottom: 60px; }
+html.style-isometric .ss-footer .ss-footer__in { padding: 28px max(24px, 6vw) 34px; font: 500 12px "DM Mono", monospace; letter-spacing: .06em; text-transform: uppercase; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+html.style-isometric .ss-footer a { text-decoration: underline; text-underline-offset: 3px; }
+
+@media (max-width: 760px) {
+  .iso-bar { inset: 8px 8px auto 8px; height: 48px; gap: 10px; }
+  .iso-bar__links { display: none; }
+  .iso-bar__cta { margin-left: auto; padding: 8px 12px; font-size: 13px; }
+  .iso-mini { width: 120px; height: 80px; left: auto; right: 8px; top: 64px; bottom: auto; }
+  .iso-mini__here { display: none; }
+  .iso-sec { padding: 96px 20px 60px; }
+  html.iso-live .iso-hud, html.iso-live .iso-hud--hero { left: 12px; right: 12px; width: auto; top: auto; bottom: 14px; }
+  html.iso-live .iso-hud--hero { bottom: 18px; }
+  html.iso-live .iso-hud--cta { left: 12px; right: 12px; transform: none; top: auto; bottom: 30px; width: auto; }
+  html.iso-live .iso-card { padding: 16px 16px; }
+  html.iso-live .iso-card--head { display: none; }
+  html.iso-live .iso-list { margin-top: 0; }
+  html.iso-live .iso-list > li { top: auto; bottom: 0; }
+  html.iso-live .iso-hud--cta { top: 120px; bottom: auto; }
+  html.iso-live .iso-sec--stats .iso-hud { left: 12px; right: 12px; top: auto; bottom: 14px; width: auto; }
+  html.iso-live .iso-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  html.iso-live .iso-stat { position: static; width: auto; transform: none !important; }
+  .iso-h1 { font-size: clamp(36px, 10vw, 52px); }
+  .iso-h2 { font-size: 23px; }
+  .iso-body { font-size: 14.5px; }
+  html.iso-live .iso-stat { width: 120px; padding: 8px 9px; }
+  html.iso-live .iso-stat b { font-size: 24px; }
+  html.iso-live .iso-stat span { font-size: 11px; }
+  html.iso-live .iso-card--faq { max-height: 52svh; }
+  .iso-key--big { --k: 10px; padding: 16px 26px; font-size: 18px; }
+  .style-isometric .iso-screen .ss-phone { width: 200px; }
+}
 
 </style><style>
   /* A section's backdrop: the image fills the panel (or a wrapper in the flow layout); the section itself goes clear,
@@ -169,87 +343,86 @@ html.style-isometric .ss-phone { transform: rotateX(20deg) rotateZ(-14deg); box-
   <nav class="ss-nav__links"><a href="#why">Why</a><a href="#features">Features</a><a href="#how">How</a></nav>
 <a class="ss-btn" href="#get">Get Halcyon <span class="ss-arrow">→</span></a></div></header>
 
+<header class="iso-bar">
+  <a class="iso-bar__mark" href="#"><i aria-hidden="true"></i><span>Halcyon</span></a>
+  <nav class="iso-bar__links" aria-label="Districts"><a href="#why"><b>01</b> Why</a><a href="#features"><b>02</b> Features</a><a href="#how"><b>03</b> How</a></nav>
+<a class="iso-flat iso-bar__cta" href="#get"><span>Get Halcyon</span></a></header>
+<div class="iso-mini" aria-hidden="true"><svg class="iso-mini__map"></svg><span class="iso-mini__here">01</span></div>
 <main>
-<section class="ss-block ss-hero ss-hero--center">
-  <div class="ss-hero__in">
-<span class="ss-badge">New · Halcyon 2.0</span><h1 class="ss-h1">Your mornings, <em>back.</em></h1><p class="ss-lede">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>    <div class="ss-btns"><a class="ss-btn ss-btn--hot" href="#get">Try it free <span class="ss-arrow">→</span></a><a class="ss-btn" href="../../looks/">See the looks</a></div>
+<section class="iso-sec iso-sec--hero" data-iso="hero" data-name="New · Halcyon 2.0">
+  <div class="iso-hud iso-hud--hero">
+<p class="iso-badge"><i aria-hidden="true"></i>New · Halcyon 2.0</p><h1 class="iso-h1">Your mornings, <em>back.</em></h1><p class="iso-lede">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>    <div class="iso-btns"><a class="iso-key" href="#get"><span>Try it free</span></a><a class="iso-flat" href="../../looks/"><span>See the looks</span></a></div>
   </div>
 </section>
 
-<section class="ss-block" id="why"><div class="ss-wrap ss-intro2">
-  <h2 class="ss-display ss-reveal">Calendars fill up <em>from the top.</em></h2>
-  <div class="ss-reveal">
-<span class="ss-kicker">The problem</span><p class="ss-lede">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>  </div>
-</div></section>
-
-<section class="ss-block" id="features"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">What it does</span><h2 class="ss-display">Three rules, <em>kept for you.</em></h2></div>  <div class="ss-features ss-features--3">
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">01</span>      <div><h3>Focus first</h3><p>Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">02</span>      <div><h3>Smart batching</h3><p>Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">03</span>      <div><h3>Polite no</h3><p>Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p></div>
-    </div>
-  </div>
-</div></section>
-
-<section class="ss-scene ss-overlay ss-side-right ss-type-type ss-shade-auto ss-type--display" id="words" data-scene="type">
-  <div class="ss-track" style="height: 260vh">
-    <div class="ss-stage">
-      <div class="ss-visual"></div>
-      <div class="ss-shade"></div>
-      <div class="ss-captions">
-      </div>
-      
-      <div class="ss-outro"></div>
-    </div>
-  </div>
-  <script type="application/json" class="ss-config">{"mode": "swap", "text": "Halcyon keeps your", "words": ["mornings", "Fridays", "evenings", "weekends"]}</script>
-  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "none", "legend": [], "scales": []}, "layout": "overlay", "length": 2.6, "steps": []}</script>
+<section class="iso-sec iso-sec--intro" data-iso="intro" data-name="The problem" id="why">
+  <div class="iso-hud"><div class="iso-card" data-anchor="main">
+    <p class="iso-kicker"><b>02</b> The problem</p>
+    <h2 class="iso-h2">Calendars fill up <em>from the top.</em></h2>
+<p class="iso-body">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>  </div></div>
 </section>
-<section class="ss-block ss-product ss-product--right ss-pose--beside" id="app"><div class="ss-wrap ss-product__in">
-  <div class="ss-product__media" data-float>
-<div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
+
+<section class="iso-sec iso-sec--features" data-iso="features" data-n="3" data-name="What it does" id="features">
+  <div class="iso-hud">
+<div class="iso-card iso-card--head"><p class="iso-kicker"><b>03</b> What it does</p><h2 class="iso-h2">Three rules, <em>kept for you.</em></h2></div>    <ol class="iso-list">
+      <li class="iso-card iso-card--item" data-anchor="f0"><span class="iso-pin" aria-hidden="true">1</span>
+<p class="iso-tag">01</p><h3>Focus first</h3><p class="iso-body">Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p>      </li>
+      <li class="iso-card iso-card--item" data-anchor="f1"><span class="iso-pin" aria-hidden="true">2</span>
+<p class="iso-tag">02</p><h3>Smart batching</h3><p class="iso-body">Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p>      </li>
+      <li class="iso-card iso-card--item" data-anchor="f2"><span class="iso-pin" aria-hidden="true">3</span>
+<p class="iso-tag">03</p><h3>Polite no</h3><p class="iso-body">Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p>      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="iso-sec iso-sec--product" data-iso="product" data-n="4" data-name="The app" id="app">
+  <div class="iso-hud">
+    <div class="iso-card" data-anchor="main">
+      <p class="iso-kicker"><b>04</b> The app</p>
+      <h2 class="iso-h2">Pick a slot, <em>keep the morning.</em></h2>
+<p class="iso-body">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p>      
+    </div>
+<ul class="iso-layers"><li data-anchor="l0">iPhone</li><li data-anchor="l1">Android</li><li data-anchor="l2">Web</li><li data-anchor="l3">Google and Outlook</li></ul>  </div>
+<figure class="iso-screen" data-screen><div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
   <div class="ss-phone__bar"><span>9:41</span><i></i></div>
 <div class="ss-app">
 <div class="ss-app__name">Halcyon</div><div class="ss-app__title">Coffee with Sam</div><div class="ss-app__label">Best times</div><p class="ss-app__note">Your 8-11 focus block stays free.</p><div class="ss-app__opt is-on"><b>Tue 2:30 pm</b><small>Next to your other calls</small></div><div class="ss-app__opt"><b>Wed 4:00 pm</b><small>End of day</small></div><div class="ss-app__opt"><b>Thu 1:00 pm</b><small>After lunch</small></div><div class="ss-app__btn">Send these times</div>  </div></div></div>
+</figure></section>
+
+<section class="iso-sec iso-sec--stats" data-iso="stats" data-n="4" data-name="Figures">
+  <div class="iso-hud">
+    <ul class="iso-stats">
+<li class="iso-stat" data-anchor="s0" data-v="11"><b>11<small>h</small></b><span>Focus hours kept per week</span></li><li class="iso-stat" data-anchor="s1" data-v="38"><b>38<small>%</small></b><span>Fewer meeting fragments</span></li><li class="iso-stat" data-anchor="s2" data-v="2"><b>2<small>min</small></b><span>To set up</span></li><li class="iso-stat" data-anchor="s3" data-v="0"><b>0</b><span>Calendars replaced</span></li>    </ul>
   </div>
-  <div class="ss-product__copy ss-reveal">
-<span class="ss-kicker">The app</span>    <h2 class="ss-h2">Pick a slot, <em>keep the morning.</em></h2>
-<p class="ss-lede">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><ul class="ss-pills"><li>iPhone</li><li>Android</li><li>Web</li><li>Google and Outlook</li></ul>    
-  </div>
-</div></section>
-
-<section class="ss-block ss-band ss-band"><div class="ss-wrap ss-stats ss-stats--4">
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="11">11<sup>h</sup></div><div class="ss-l">Focus hours kept per week</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="38">38<sup>%</sup></div><div class="ss-l">Fewer meeting fragments</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="2">2<sup>min</sup></div><div class="ss-l">To set up</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="0">0</div><div class="ss-l">Calendars replaced</div></div>
-</div></section>
-
-<section class="ss-block" id="how"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">How it works</span><h2 class="ss-display">Set it up <em>over coffee.</em></h2></div>  <div class="ss-timeline ss-timeline--4">
-<div class="ss-tl ss-reveal"><span class="ss-when">Minute 1</span><h4>Connect</h4><p>Sign in with Google or Outlook; nothing moves yet.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Minute 2</span><h4>Mark your hours</h4><p>Paint the blocks you want protected.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Day 1</span><h4>It starts</h4><p>New invites are steered around your focus.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Week 1</span><h4>You notice</h4><p>A free morning, then another one.</p></div>  </div>
-</div></section>
-
-<section class="ss-block"><div class="ss-wrap ss-quote ss-reveal">
-  <blockquote>I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote><cite>Priya N., product designer</cite></div></section>
-
-<section class="ss-block ss-faq"><div class="ss-wrap ss-faq__in">
-  <div class="ss-head ss-reveal"><h2 class="ss-h2">Questions</h2></div>
-  <div class="ss-faq__list">
-<details class="ss-reveal" open><summary>Does it replace my calendar?</summary><p>No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></details><details class="ss-reveal"><summary>What do the people I meet see?</summary><p>A short list of times that work for both of you. No new app to install.</p></details><details class="ss-reveal"><summary>Can I override it?</summary><p>Always. Drag anything anywhere; Halcyon learns from what you move.</p></details>  </div>
-</div></section>
-<section class="ss-block ss-cta" id="get">
-  <div class="ss-cta__in">
-<span class="ss-kicker ss-reveal">Free for 30 days</span>    <h2 class="ss-display ss-reveal">Keep <em>tomorrow morning.</em></h2>
-<a class="ss-btn ss-btn--hot ss-reveal" href="#">Get Halcyon <span class="ss-arrow">→</span></a>  </div>
 </section>
 
+<section class="iso-sec iso-sec--timeline" data-iso="timeline" data-n="4" data-name="How it works" id="how">
+  <div class="iso-hud">
+<div class="iso-card iso-card--head"><p class="iso-kicker"><b>06</b> How it works</p><h2 class="iso-h2">Set it up <em>over coffee.</em></h2></div>    <ol class="iso-list">
+<li class="iso-card iso-card--item" data-anchor="t0"><span class="iso-pin" aria-hidden="true">1</span><p class="iso-tag">Minute 1</p><h3>Connect</h3><p class="iso-body">Sign in with Google or Outlook; nothing moves yet.</p></li><li class="iso-card iso-card--item" data-anchor="t1"><span class="iso-pin" aria-hidden="true">2</span><p class="iso-tag">Minute 2</p><h3>Mark your hours</h3><p class="iso-body">Paint the blocks you want protected.</p></li><li class="iso-card iso-card--item" data-anchor="t2"><span class="iso-pin" aria-hidden="true">3</span><p class="iso-tag">Day 1</p><h3>It starts</h3><p class="iso-body">New invites are steered around your focus.</p></li><li class="iso-card iso-card--item" data-anchor="t3"><span class="iso-pin" aria-hidden="true">4</span><p class="iso-tag">Week 1</p><h3>You notice</h3><p class="iso-body">A free morning, then another one.</p></li>    </ol>
+  </div>
+</section>
+
+<section class="iso-sec iso-sec--quote" data-iso="quote" data-name="Priya N., product designer">
+  <div class="iso-hud"><figure class="iso-card iso-bubble" data-anchor="person">
+    <blockquote>I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote><figcaption>Priya N., product designer</figcaption>  </figure></div>
+</section>
+
+<section class="iso-sec iso-sec--faq" data-iso="faq" data-name="Help desk">
+  <div class="iso-hud"><div class="iso-card iso-card--faq" data-anchor="main">
+    <p class="iso-kicker"><b>08</b></p>
+    <h2 class="iso-h2">Questions</h2>
+    <div class="iso-faq"><details open><summary><span>Does it replace my calendar?</span><i aria-hidden="true"></i></summary><p>No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></details><details><summary><span>What do the people I meet see?</span><i aria-hidden="true"></i></summary><p>A short list of times that work for both of you. No new app to install.</p></details><details><summary><span>Can I override it?</span><i aria-hidden="true"></i></summary><p>Always. Drag anything anywhere; Halcyon learns from what you move.</p></details></div>
+  </div></div>
+</section>
+
+<section class="iso-sec iso-sec--cta" data-iso="cta" data-name="Free for 30 days" id="get">
+  <div class="iso-hud iso-hud--cta">
+<p class="iso-badge"><i aria-hidden="true"></i>Free for 30 days</p>    <h2 class="iso-h1 iso-h1--cta">Keep <em>tomorrow morning.</em></h2>
+<div class="iso-btns"><a class="iso-key iso-key--big" href="#"><span>Get Halcyon</span></a></div>  </div>
+</section>
 </main>
+<div class="iso-under" aria-hidden="true"><i></i><i></i><i></i></div>
 
 <footer class="ss-footer"><div class="ss-wrap ss-footer__in">
   <span>© Halcyon. A concept site; the product is fictional.</span>
@@ -259,9 +432,9 @@ html.style-isometric .ss-phone { transform: rotateX(20deg) rotateZ(-14deg); box-
 <script>window.__ssScroll = { speed: 1.0 };</script>
 <script type="module" src="../../runtime/index.js"></script>
 <nav class="ss-looks" aria-label="Looks">
-  <a href="../kinetic-type/" aria-label="Previous look">←</a>
-  <a class="ss-looks__name" href="../">Isometric <small>8/20</small></a>
-  <a href="../clay-3d/" aria-label="Next look">→</a>
+  <a href="../holographic/" aria-label="Previous look">←</a>
+  <a class="ss-looks__name" href="../">Isometric <small>12/21</small></a>
+  <a href="../kinetic-type/" aria-label="Next look">→</a>
 </nav>
 <style>
   .ss-looks { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 990; display: flex; align-items: center; gap: 4px; padding: 5px;

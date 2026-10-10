@@ -1,67 +1,371 @@
 <!doctype html>
-<html lang="en" data-fx='{}' class="mode-light layout-flow style-halftone">
+<html lang="en" data-style="halftone" class="mode-light layout-flow style-halftone">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Halcyon</title>
 <meta name="description" content="The calendar that guards your mornings. One page, built in twenty styles by Scroll Studio."><meta name="generator" content="Scroll Studio">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230057ff%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EH%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23ec008c%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EH%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root {
-  --bg: #f4f1ea;
-  --bg-2: #e9e4d8;
+  --bg: #f3efe6;
+  --bg-2: #ebe5d8;
   --ink: #141414;
   --ink-rgb: 20, 20, 20;
-  --bg-rgb: 244, 241, 234;
+  --bg-rgb: 243, 239, 230;
   --ink-2: rgba(20, 20, 20, 0.75);
   --ink-3: rgba(20, 20, 20, 0.61);
   --line: rgba(20, 20, 20, .13);
-  --accent: #0057ff;
-  --accent-2: #5b8cff;
+  --accent: #ec008c;
+  --accent-2: #00aeef;
   --accent-ink: #ffffff;
-  --accent-text: #0154f6;
-  --accent-rgb: 0, 87, 255;
-  --font-display: "Archivo Black", system-ui, sans-serif;
-  --font-body: "Archivo", system-ui, sans-serif;
-  --font-mono: "Space Mono", ui-monospace, monospace;
-  --display-weight: 400;
+  --accent-text: #141414;
+  --accent-rgb: 236, 0, 140;
+  --font-display: "Playfair Display", system-ui, sans-serif;
+  --font-body: "Libre Caslon Text", system-ui, sans-serif;
+  --font-mono: "Libre Franklin", ui-monospace, monospace;
+  --display-weight: 800;
   --em-style: normal;
   --radius: 0px;
   color-scheme: light;
+  --font-masthead: "UnifrakturMaguntia", system-ui, sans-serif;
+  --font-kicker: "Oswald", system-ui, sans-serif;
 }
-.ss-surface-dark { --btn-bg: #0057ff; --btn-ink: #ffffff; --bg: #141414; --bg-2: #262625; --ink: #f4f1ea; --ink-rgb: 244, 241, 234; --bg-rgb: 20, 20, 20; --ink-2: rgba(244, 241, 234, 0.68); --ink-3: rgba(244, 241, 234, 0.51); --line: rgba(244, 241, 234, .14); --accent-text: #4e88f8; --em-color: #5b8cff; color-scheme: dark; background: var(--bg); color: var(--ink); }
-.ss-surface-light { --btn-bg: #0057ff; --btn-ink: #ffffff; --bg: #e9e4d8; --bg-2: #f4f1ea; --ink: #141414; --ink-rgb: 20, 20, 20; --bg-rgb: 233, 228, 216; --ink-2: rgba(20, 20, 20, 0.75); --ink-3: rgba(20, 20, 20, 0.61); --line: rgba(20, 20, 20, .14); --accent-text: #0154f6; --em-color: #0057ff; color-scheme: light; background: var(--bg); color: var(--ink); }
-.ss-surface-accent { --btn-bg: #0057ff; --btn-ink: #ffffff; --bg: #a5c0ff; --bg-2: #1d1e22; --ink: #141414; --ink-rgb: 20, 20, 20; --bg-rgb: 165, 192, 255; --ink-2: rgba(20, 20, 20, 1.0); --ink-3: rgba(20, 20, 20, 1.0); --line: rgba(20, 20, 20, .14); --accent-text: #141414; --em-color: #0057ff; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-dark { --btn-bg: #ec008c; --btn-ink: #000000; --bg: #141414; --bg-2: #262625; --ink: #f3efe6; --ink-rgb: 243, 239, 230; --bg-rgb: 20, 20, 20; --ink-2: rgba(243, 239, 230, 0.68); --ink-3: rgba(243, 239, 230, 0.51); --line: rgba(243, 239, 230, .14); --accent-text: #ee4ca9; --em-color: #00aeef; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #ec008c; --btn-ink: #000000; --bg: #ebe5d8; --bg-2: #f3efe6; --ink: #141414; --ink-rgb: 20, 20, 20; --bg-rgb: 235, 229, 216; --ink-2: rgba(20, 20, 20, 0.75); --ink-3: rgba(20, 20, 20, 0.61); --line: rgba(20, 20, 20, .14); --accent-text: #c50476; --em-color: #ec008c; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #141414; --btn-ink: #ffffff; --bg: #73d2f6; --bg-2: #1a1f22; --ink: #141414; --ink-rgb: 20, 20, 20; --bg-rgb: 115, 210, 246; --ink-2: rgba(20, 20, 20, 1.0); --ink-3: rgba(20, 20, 20, 1.0); --line: rgba(20, 20, 20, .14); --accent-text: #141414; --em-color: #141414; color-scheme: light; background: var(--bg); color: var(--ink); }
 </style>
 <link rel="stylesheet" href="../../runtime/studio.css">
 <style id="ss-style">
-/* halftone: newsprint dot screens, duotone pictures and heavy grotesk headlines */
-html.style-halftone { --dots: radial-gradient(circle at center, rgba(var(--ink-rgb), .9) 0 30%, transparent 32%); }
-html.style-halftone .ss-hero:not(.ss-hero--media), html.style-halftone .ss-cta { position: relative; isolation: isolate; }
-html.style-halftone .ss-hero:not(.ss-hero--media)::before, html.style-halftone .ss-cta::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background-image: radial-gradient(circle, var(--accent) 0 34%, transparent 36%); background-size: 12px 12px;
-  -webkit-mask: radial-gradient(70% 90% at 100% 0%, #000 0%, transparent 70%); mask: radial-gradient(70% 90% at 100% 0%, #000 0%, transparent 70%); opacity: .55; }
-html.style-halftone .ss-h1, html.style-halftone .ss-h2, html.style-halftone .ss-display { text-transform: uppercase; letter-spacing: -.02em; line-height: .9; }
-html.style-halftone .ss-h1 em, html.style-halftone .ss-h2 em, html.style-halftone .ss-display em { font-style: normal; color: transparent;
-  background-image: radial-gradient(circle, var(--accent) 0 58%, transparent 62%); background-size: .075em .075em; -webkit-background-clip: text; background-clip: text; }
-html.style-halftone .ss-band { background-color: var(--bg-2); background-image: radial-gradient(circle, rgba(var(--ink-rgb), .09) 0 30%, transparent 33%); background-size: 8px 8px; border-block: 3px solid var(--ink); }
-html.style-halftone .ss-features { background: none; border: 0; gap: 0; }
-html.style-halftone .ss-feature { border: 3px solid var(--ink); margin: -1.5px; }
-html.style-halftone .ss-feature h3 { text-transform: uppercase; font-size: 26px; }
-html.style-halftone .ss-feature:hover { background: var(--accent); color: #fff; }
-html.style-halftone .ss-feature:hover p, html.style-halftone .ss-feature:hover .ss-tag { color: rgba(255, 255, 255, .9); }
-html.style-halftone .ss-tile__media img, html.style-halftone .ss-tile__media video, html.style-halftone .ss-hero__media img, html.style-halftone .ss-hero__media video, html.style-halftone .ss-strip img { filter: grayscale(1) contrast(1.25); }
-html.style-halftone .ss-tile__media, html.style-halftone .ss-product__media, html.style-halftone .ss-hero__media, html.style-halftone .ss-strip figure { position: relative; }
-html.style-halftone .ss-tile__media::after, html.style-halftone .ss-hero__media::after, html.style-halftone .ss-strip figure::after { content: ""; position: absolute; inset: 0; pointer-events: none;
-  background: var(--accent); mix-blend-mode: screen; opacity: .85; }
-html.style-halftone .ss-btn { border: 3px solid var(--ink); background: var(--bg); text-transform: uppercase; font-weight: 700; letter-spacing: .04em; }
-html.style-halftone .ss-btn--hot { background: var(--accent); border-color: var(--ink); color: #fff; }
-html.style-halftone .ss-btn:hover { background: var(--ink); color: var(--bg); }
-html.style-halftone .ss-v { color: var(--accent); }
-html.style-halftone .ss-quote blockquote { font-family: var(--font-display); text-transform: uppercase; }
-html.style-halftone .ss-tl::before { border-radius: 50%; box-shadow: 0 0 0 4px var(--bg), 0 0 0 6px var(--ink); }
-html.style-halftone .ss-kicker { background: var(--ink); color: var(--bg); display: inline-block; padding: 5px 9px; }
+/* Halftone: reading a freshly printed paper.
+   Newsprint, one ink and one spot colour; mastheads, hairline column rules, kickers, decks, bylines, captions and
+   jump lines. Pictures are screened into dots (runtime canvas; a CSS dot screen without it). Section fronts print
+   plate by plate. Body copy is part of the design: justified, hyphenated, in real columns. */
+
+html.style-halftone {
+  --ht-paper: #f3efe6;
+  --ht-ink: #141414;
+  --ht-ink-2: #2e2b27;
+  --ht-ink-3: #4a463f;
+  --ht-c: #00aeef; --ht-m: #ec008c; --ht-y: #fff200;
+  --ht-rule: #141414;
+  --ht-serif: "Libre Caslon Text", Georgia, serif;
+  --ht-head: "Playfair Display", Georgia, serif;
+  --ht-sans: "Libre Franklin", "Franklin Gothic Medium", Arial, sans-serif;
+  --ht-cond: "Oswald", "Arial Narrow", sans-serif;
+  --ht-black: "UnifrakturMaguntia", "Old English Text MT", serif;
+  background: var(--ht-paper);
+}
+html.style-halftone body { position: relative; background: var(--ht-paper); color: var(--ht-ink); font-family: var(--ht-serif); font-size: 17px; line-height: 1.55; }
+html.style-halftone body::before { content: ""; position: fixed; inset: 0; z-index: 3; pointer-events: none; opacity: .5; mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .55 0 0 0 0 .5 0 0 0 0 .42 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E"); }
+html.style-halftone main { position: relative; z-index: 1; }
+html.style-halftone em { color: inherit; font-style: italic; }
+html.style-halftone .ss-nav { display: none; }
+html.style-halftone ::selection { background: var(--ht-y); color: var(--ht-ink); }
+
+.ht-page { width: min(1240px, calc(100% - 2 * var(--gutter))); margin: 0 auto; }
+
+/* ---------------------------------------------------------------- masthead */
+.ht-mast { position: relative; z-index: 4; width: min(1240px, calc(100% - 2 * var(--gutter))); margin: 0 auto; padding-top: 34px; }
+.ht-mast__row { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; padding-bottom: 14px; }
+.ht-mast__name { font-family: var(--ht-black); font-size: clamp(40px, min(8.6vw, calc(58vw / var(--len, 7))), 138px); line-height: 1; text-align: center; white-space: nowrap; letter-spacing: .01em; }
+.ht-ear { width: min(220px, 100%); min-width: 150px; border: 1px solid var(--ht-rule); padding: 10px 12px; font-family: var(--ht-sans); font-size: 12px; line-height: 1.35; color: var(--ht-ink-2); }
+.ht-ear b { display: block; font-family: var(--ht-cond); font-weight: 600; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--ht-ink); margin-bottom: 4px; }
+.ht-ear--r { justify-self: end; text-align: right; }
+.ht-ear__cta { display: block; }
+.ht-ear__cta:hover b { text-decoration: underline; }
+.ht-dateline { display: flex; justify-content: space-between; gap: 16px; padding: 7px 0; border-top: 4px solid var(--ht-rule); border-bottom: 1px solid var(--ht-rule);
+  font-family: var(--ht-sans); font-size: 12.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; }
+.ht-dateline::before { content: ""; position: absolute; }
+.ht-sections { display: flex; justify-content: center; flex-wrap: wrap; gap: 0; padding: 9px 0; border-bottom: 1px solid var(--ht-rule);
+  font-family: var(--ht-sans); font-size: 13px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.ht-sections a { padding: 2px 16px; position: relative; }
+.ht-sections a + a::before { content: "•"; position: absolute; left: -4px; color: var(--ht-ink-3); }
+.ht-sections a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.ht-sections small { margin-left: 6px; font-weight: 500; color: var(--ht-ink-3); letter-spacing: .04em; }
+
+/* running head: the slim strip that replaces the masthead once you are reading */
+.ht-runner { position: fixed; inset: 0 0 auto; z-index: 50; display: flex; align-items: center; gap: 18px; height: 46px; padding: 0 var(--gutter);
+  background: var(--ht-paper); border-bottom: 1px solid var(--ht-rule); box-shadow: 0 3px 0 -2px var(--ht-rule); font-family: var(--ht-sans); font-size: 12px; font-weight: 700;
+  letter-spacing: .12em; text-transform: uppercase; transform: translateY(-110%); transition: transform .25s steps(3); }
+html.ht-run .ht-runner { transform: none; }
+.ht-runner__name { font-family: var(--ht-black); font-size: 24px; letter-spacing: 0; text-transform: none; font-weight: 400; }
+.ht-runner__sec { flex: 1; text-align: center; }
+.ht-runner__cta { padding: 7px 12px; background: var(--ht-ink); color: var(--ht-paper); }
+.ht-runner__cta:hover { background: var(--ht-paper); color: var(--ht-ink); box-shadow: inset 0 0 0 1px var(--ht-ink); }
+
+/* ---------------------------------------------------------------- type */
+.ht-kicker { display: block; font-family: var(--ht-cond); font-weight: 500; font-size: 15px; letter-spacing: .08em; text-transform: uppercase; color: var(--ht-ink); margin-bottom: 10px; }
+.ht-kicker--rule { display: flex; align-items: center; gap: 14px; margin: 26px 0 6px; }
+.ht-kicker--rule::after { content: ""; flex: 1; height: 1px; background: var(--ht-rule); }
+.ht-h1 { font-family: var(--ht-head); font-weight: 900; font-size: clamp(52px, 8.4vw, 146px); line-height: .94; letter-spacing: -.025em; text-wrap: balance; margin: 6px 0 26px; }
+.ht-h1 em { font-weight: 800; }
+.ht-h2 { font-family: var(--ht-head); font-weight: 800; font-size: clamp(38px, 4.8vw, 78px); line-height: 1; letter-spacing: -.02em; text-wrap: balance; margin-bottom: 26px; }
+.ht-deck { font-family: var(--ht-head); font-style: italic; font-weight: 400; font-size: clamp(21px, 1.9vw, 27px); line-height: 1.3; color: var(--ht-ink); text-wrap: pretty; }
+.ht-byline { font-family: var(--ht-sans); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; padding-bottom: 10px; margin-bottom: 14px; border-bottom: 1px solid var(--ht-rule); }
+.ht-dropcap::first-letter { font-family: var(--ht-head); font-weight: 900; font-style: normal; float: left; font-size: 3.4em; line-height: .82; padding: .06em .08em 0 0; }
+@supports (initial-letter: 3) { .ht-dropcap::first-letter { initial-letter: 3; float: none; font-size: inherit; line-height: inherit; padding: 0 .12em 0 0; } }
+.ht-cols { columns: 2 16rem; column-gap: 2.2rem; column-rule: 1px solid var(--ht-rule); text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+.ht-cols p { margin-bottom: .8em; }
+.ht-note { margin-top: 14px; font-family: var(--ht-sans); font-size: 13px; color: var(--ht-ink-2); }
+.ht-jumps { display: flex; flex-wrap: wrap; gap: 10px 22px; align-items: center; margin-top: 26px; font-family: var(--ht-sans); }
+.ht-jump { font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.ht-jump--box { text-decoration: none; padding: 12px 18px; background: var(--ht-ink); color: var(--ht-paper); }
+.ht-jump--box:hover { background: var(--ht-paper); color: var(--ht-ink); box-shadow: inset 0 0 0 2px var(--ht-ink); }
+.ht-jump:not(.ht-jump--box):hover { text-decoration-thickness: 2px; }
+
+/* ---------------------------------------------------------------- sections and folds */
+.ht-sec { position: relative; padding: clamp(60px, 9vh, 110px) 0; }
+.ht-sec[id] { scroll-margin-top: 60px; }
+.ht-sec::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(rgba(58, 46, 26, 0) 35%, rgba(58, 46, 26, .1)); opacity: var(--dim, 0); }
+.ht-sec + .ht-sec::before { content: ""; position: absolute; left: 0; right: 0; top: 0; height: 26px; pointer-events: none;
+  background: linear-gradient(rgba(40, 30, 10, .045), rgba(40, 30, 10, 0)); }
+.ht-fold { position: relative; width: min(1240px, calc(100% - 2 * var(--gutter))); margin: clamp(40px, 6vh, 70px) auto 0; height: 1px; background: rgba(20, 20, 20, .25); }
+.ht-fold span { position: absolute; right: 0; top: -9px; padding-left: 10px; background: var(--ht-paper); font-family: var(--ht-sans); font-size: 10px; letter-spacing: .3em; text-transform: uppercase; color: var(--ht-ink-3); }
+
+/* section fronts */
+.ht-front { margin-bottom: clamp(30px, 4vw, 50px); }
+.ht-front__bar { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; padding: 8px 0; border-top: 6px solid var(--ht-rule); border-bottom: 1px solid var(--ht-rule);
+  font-family: var(--ht-sans); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 26px; }
+.ht-front__bar b { font-family: var(--ht-cond); font-weight: 600; font-size: clamp(20px, 2vw, 26px); letter-spacing: .16em; }
+.ht-front__bar span:last-child { text-align: right; }
+.ht-front__title { position: relative; font-family: var(--ht-head); font-weight: 900; font-size: clamp(42px, 5.8vw, 98px); line-height: .98; letter-spacing: -.025em; text-wrap: balance; max-width: 16em; isolation: isolate; }
+.ht-plate-k { position: relative; z-index: 2; mix-blend-mode: multiply; display: block; }
+.ht-plates { position: absolute; inset: 0; z-index: 1; pointer-events: none; }
+.ht-plate { position: absolute; inset: 0; mix-blend-mode: multiply; display: block; }
+.ht-plate--y { color: var(--ht-y); transform: translate(.6px, .9px); }
+.ht-plate--m { color: var(--ht-m); transform: translate(-1.1px, .5px); }
+.ht-plate--c { color: var(--ht-c); transform: translate(.9px, -.8px); }
+/* the press run (runtime adds .ht-press, then .ht-printed): yellow, magenta, cyan, black, each landing off register and settling */
+html.ht-live .ht-front.ht-press:not(.ht-printed) .ht-plate, html.ht-live .ht-front.ht-press:not(.ht-printed) .ht-plate-k { opacity: 0; }
+html.ht-live .ht-front.ht-press:not(.ht-printed) .ht-plate--y { transform: translate(-7px, 5px); }
+html.ht-live .ht-front.ht-press:not(.ht-printed) .ht-plate--m { transform: translate(6px, -5px); }
+html.ht-live .ht-front.ht-press:not(.ht-printed) .ht-plate--c { transform: translate(-5px, -6px); }
+html.ht-live .ht-front.ht-press:not(.ht-printed) .ht-plate-k { transform: translate(4px, 6px); }
+html.ht-live .ht-front.ht-press .ht-plate, html.ht-live .ht-front.ht-press .ht-plate-k { transition: opacity .08s linear, transform .32s cubic-bezier(.2, .8, .3, 1); }
+html.ht-live .ht-front.ht-press .ht-plate--y { transition-delay: 0s; }
+html.ht-live .ht-front.ht-press .ht-plate--m { transition-delay: .2s; }
+html.ht-live .ht-front.ht-press .ht-plate--c { transition-delay: .4s; }
+html.ht-live .ht-front.ht-press .ht-plate-k { transition-delay: .6s; }
+
+/* the lead headline arrives as an ink impression: a slight spread that resolves crisp */
+html.ht-live [data-ht-ink] { transition: filter .3s ease-out, text-shadow .3s ease-out, opacity .2s; }
+html.ht-live [data-ht-ink]:not(.ht-inked) { filter: blur(1.4px); text-shadow: 0 0 1.5px rgba(20, 20, 20, .8), 0 0 4px rgba(20, 20, 20, .3); opacity: .82; }
+
+/* ---------------------------------------------------------------- pictures */
+.ht-photo { margin: 0; }
+.ht-photo__plate { position: relative; aspect-ratio: 16 / 10; background-color: #e9e2d2;
+  background-image: radial-gradient(circle, var(--ht-ink) 0 1.7px, transparent 2.2px); background-size: 6px 6px;
+  -webkit-mask-image: radial-gradient(70% 60% at 40% 45%, rgba(0, 0, 0, .3), #000); mask-image: radial-gradient(70% 60% at 40% 45%, rgba(0, 0, 0, .3), #000);
+  outline: 1px solid rgba(20, 20, 20, .2); }
+html.ht-gl .ht-photo__plate { background: transparent; -webkit-mask-image: none; mask-image: none; cursor: zoom-in; }
+.ht-photo--tall .ht-photo__plate { aspect-ratio: 4 / 5; }
+.ht-photo figcaption { margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--ht-rule); font-family: var(--ht-sans); font-size: 13px; line-height: 1.4; color: var(--ht-ink-2); }
+.ht-photo figcaption b { color: var(--ht-ink); font-weight: 800; }
+.ht-credit { float: right; margin-left: 10px; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ht-ink-3); }
+.ht-canvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
+.ht-loupe { position: fixed; left: 0; top: 0; z-index: 5; width: 200px; height: 200px; margin: -100px 0 0 -100px; border-radius: 50%; pointer-events: none; display: none;
+  box-shadow: 0 0 0 7px #2a2a2a, 0 0 0 9px #6b6b6b, 0 0 0 10px #1a1a1a, 0 22px 40px -10px rgba(0, 0, 0, .55), inset 0 0 18px rgba(0, 0, 0, .25); }
+.ht-loupe.is-on { display: block; }
+.ht-loupe i { position: absolute; inset: 0; border-radius: 50%;
+  background: repeating-conic-gradient(from -1deg, rgba(20, 20, 20, .85) 0 .7deg, transparent .7deg 6deg);
+  -webkit-mask: radial-gradient(closest-side, transparent 88%, #000 89% 96%, transparent 97%); mask: radial-gradient(closest-side, transparent 88%, #000 89% 96%, transparent 97%); }
+.ht-loupe::after { content: "10×"; position: absolute; right: 18px; bottom: 16px; font: 700 10px/1 var(--ht-sans); letter-spacing: .1em; color: #141414; background: rgba(243, 239, 230, .85); padding: 2px 4px; }
+
+/* ---------------------------------------------------------------- front page: the lead story */
+.ht-lead { padding-top: 10px; }
+.ht-lead__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 2.2rem; align-items: start; }
+.ht-photo--lead { grid-column: 1 / span 8; }
+.ht-lead__story { grid-column: 9 / span 4; padding-left: 2.2rem; border-left: 1px solid var(--ht-rule); margin-left: -1.1rem; }
+.ht-lead--center .ht-h1 { text-align: center; margin-inline: auto; max-width: 14em; }
+.ht-lead__device { margin-top: 30px; display: grid; justify-items: center; filter: grayscale(1) contrast(1.1); }
+.ht-lead__device .ss-phone { width: 200px; }
+
+/* the second story */
+.ht-story__in { max-width: 980px; }
+.ht-cols--story { font-size: 18px; }
+
+/* ---------------------------------------------------------------- features: classifieds and boxed display ads */
+.ht-ads { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 2.2rem; align-items: start; }
+.ht-ads__display { grid-column: 1 / span 8; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 22px; }
+.ht-ads__display:only-child { grid-column: 1 / -1; }
+.ht-ad { border: 3px solid var(--ht-ink); outline: 1px solid var(--ht-ink); outline-offset: -8px; padding: 30px 30px 32px; text-align: center; display: flex; flex-direction: column; align-items: center; }
+.ht-ad__ref { font-family: var(--ht-cond); font-weight: 500; font-size: 14px; letter-spacing: .2em; text-transform: uppercase; padding: 3px 10px; border-top: 1px solid var(--ht-ink); border-bottom: 1px solid var(--ht-ink); }
+.ht-ad__t { font-family: var(--ht-head); font-weight: 900; font-size: clamp(34px, 3.6vw, 58px); line-height: .98; letter-spacing: -.02em; margin: 16px 0 12px; text-transform: uppercase; }
+.ht-ad p { font-size: 17px; max-width: 34ch; }
+.ht-rating { display: flex; gap: 4px; margin-top: 12px; }
+.ht-rating i { width: 9px; height: 9px; border-radius: 50%; border: 1px solid var(--ht-ink); }
+.ht-rating i.on { background: var(--ht-ink); }
+.ht-ads__small { grid-column: 9 / span 4; padding-left: 2.2rem; margin-left: -1.1rem; border-left: 1px solid var(--ht-rule); text-align: justify; hyphens: auto; font-size: 15.5px; line-height: 1.45; }
+.ht-ads__head { font-family: var(--ht-sans); font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; padding-bottom: 6px; margin-bottom: 12px; border-bottom: 3px double var(--ht-rule); text-align: left; }
+.ht-small { padding: 10px 0 12px; border-bottom: 1px solid rgba(20, 20, 20, .35); }
+.ht-small b { font-family: var(--ht-sans); font-weight: 800; text-transform: uppercase; letter-spacing: .03em; font-size: 14px; }
+.ht-small__ref { font-family: var(--ht-sans); font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ht-ink-3); white-space: nowrap; }
+
+/* ---------------------------------------------------------------- product: a feature story with a printed photograph */
+.ht-feature__grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); column-gap: 2.2rem; align-items: start; }
+.ht-feature .ht-photo { grid-column: 1 / span 5; }
+.ht-feature__story { grid-column: 6 / span 7; padding-left: 2.2rem; margin-left: -1.1rem; border-left: 1px solid var(--ht-rule); }
+.ht-feature--right .ht-photo { grid-column: 8 / span 5; grid-row: 1; }
+.ht-feature--right .ht-feature__story { grid-column: 1 / span 7; grid-row: 1; padding: 0 2.2rem 0 0; margin: 0 -1.1rem 0 0; border-left: 0; border-right: 1px solid var(--ht-rule); }
+.ht-feature__story .ht-cols { margin-top: 24px; font-size: 16.5px; }
+.ht-glance { margin-top: 26px; border-top: 4px solid var(--ht-rule); border-bottom: 1px solid var(--ht-rule); padding: 10px 0 12px; }
+.ht-glance__head { font-family: var(--ht-cond); font-weight: 600; font-size: 15px; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 6px; }
+.ht-glance dl div { display: flex; justify-content: space-between; gap: 20px; padding: 7px 0; border-top: 1px solid rgba(20, 20, 20, .3); font-family: var(--ht-sans); font-size: 14px; }
+.ht-glance dt { font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: 12px; }
+.ht-glance dd { text-align: right; font-weight: 500; }
+
+/* ---------------------------------------------------------------- stats: by the numbers, dot-field charts */
+.ht-figs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--ht-rule); border-bottom: 1px solid var(--ht-rule); }
+.ht-figs--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ht-figs--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ht-figs--1 { grid-template-columns: minmax(0, 1fr); }
+.ht-fig { margin: 0; padding: 22px 24px 24px; display: flex; flex-direction: column; }
+.ht-fig + .ht-fig { border-left: 1px solid var(--ht-rule); }
+.ht-fig__v { font-family: var(--ht-head); font-weight: 900; font-size: clamp(64px, 7vw, 120px); line-height: .9; letter-spacing: -.04em; font-variant-numeric: lining-nums tabular-nums; }
+.ht-fig__v span { font-size: .36em; letter-spacing: 0; margin-left: 4px; font-weight: 700; }
+.ht-fig__l { font-family: var(--ht-sans); font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin: 12px 0 16px; min-height: 2.8em; }
+.ht-dots { width: 100%; max-width: 220px; margin-top: auto; }
+.ht-dots circle.on { fill: var(--ht-ink); }
+.ht-dots circle.off { fill: none; stroke: var(--ht-ink); stroke-width: .7; opacity: .55; }
+html.ht-live .ht-figs .ht-dots circle.on { transition: opacity .2s linear, fill .25s linear; transition-delay: calc(var(--i) * 7ms), calc(var(--i) * 7ms + .45s); }
+html.ht-live .ht-figs:not(.ht-printed) .ht-dots circle.on { opacity: 0; fill: var(--ht-m); }
+html.ht-live .ht-figs.ht-printed .ht-dots circle.on { opacity: 1; }
+.ht-fig__key { margin-top: 10px; font-family: var(--ht-sans); font-size: 11px; color: var(--ht-ink-3); letter-spacing: .04em; }
+.ht-source { margin-top: 10px; font-family: var(--ht-sans); font-size: 11.5px; font-style: italic; color: var(--ht-ink-3); }
+
+/* ---------------------------------------------------------------- timeline: how it works, a print diagram with leader lines */
+.ht-diagram { list-style: none; position: relative; display: grid; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); gap: 2.2rem; counter-reset: s; }
+.ht-diagram--1 { --n: 1; } .ht-diagram--2 { --n: 2; } .ht-diagram--3 { --n: 3; } .ht-diagram--4 { --n: 4; } .ht-diagram--5 { --n: 5; } .ht-diagram--6 { --n: 3; }
+.ht-diagram::before { content: ""; position: absolute; left: 0; right: 0; top: 33px; height: 2px; background: var(--ht-ink); }
+.ht-diagram__step { position: relative; }
+.ht-diagram__n { position: relative; display: grid; place-items: center; width: 68px; height: 68px; border-radius: 50%; background: var(--ht-paper); border: 2px solid var(--ht-ink);
+  font-family: var(--ht-head); font-weight: 900; font-size: 34px; box-shadow: 4px 4px 0 var(--ht-m); }
+.ht-diagram__lead { display: block; width: 0; height: 34px; margin-left: 33px; border-left: 1.5px dotted var(--ht-ink); }
+.ht-diagram__when { display: block; font-family: var(--ht-sans); font-weight: 800; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; }
+.ht-diagram__t { font-family: var(--ht-head); font-weight: 800; font-size: 26px; line-height: 1.05; margin: 6px 0 8px; }
+.ht-diagram__step p { font-size: 16px; line-height: 1.5; hyphens: auto; }
+
+/* ---------------------------------------------------------------- quote: letters to the editor */
+.ht-pull { max-width: 980px; margin: 0 auto; padding: 26px 0 30px; border-top: 6px solid var(--ht-rule); border-bottom: 1px solid var(--ht-rule); position: relative; }
+.ht-pull::after { content: ""; position: absolute; left: 0; right: 0; bottom: 4px; height: 1px; background: var(--ht-rule); }
+.ht-pull__to { font-family: var(--ht-sans); font-size: 12px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; margin-bottom: 14px; }
+.ht-pull__q { font-family: var(--ht-head); font-style: italic; font-weight: 400; font-size: clamp(30px, 3.8vw, 58px); line-height: 1.1; letter-spacing: -.01em; text-wrap: balance; }
+.ht-pull__q::before { content: "\201C"; font-weight: 900; margin-left: -.42em; }
+.ht-pull__q::after { content: "\201D"; font-weight: 900; }
+.ht-pull__who { margin-top: 18px; text-align: right; font-family: var(--ht-sans); font-size: 14px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+
+/* ---------------------------------------------------------------- faq: ask the editor */
+.ht-ask__list { columns: 2 22rem; column-gap: 2.2rem; column-rule: 1px solid var(--ht-rule); }
+.ht-qa { break-inside: avoid; padding: 14px 0 16px; border-top: 1px solid var(--ht-rule); }
+.ht-qa summary { list-style: none; cursor: pointer; font-family: var(--ht-sans); font-weight: 700; font-size: 18px; line-height: 1.35; }
+.ht-qa summary::-webkit-details-marker { display: none; }
+.ht-qa summary::after { content: " ▸"; font-size: 13px; }
+.ht-qa[open] summary::after { content: " ▾"; }
+.ht-qa p { margin-top: 10px; padding-top: 10px; border-top: 1px dotted rgba(20, 20, 20, .5); text-align: justify; hyphens: auto; }
+.ht-qa__q { font-family: var(--ht-head); font-weight: 900; font-style: normal; }
+
+/* ---------------------------------------------------------------- cta: the clip-out coupon */
+.ht-coupon-sec { padding-bottom: clamp(80px, 12vh, 140px); }
+.ht-coupon { position: relative; max-width: 780px; margin: 0 auto; padding: clamp(30px, 4vw, 54px); border: 3px dashed var(--ht-ink); text-align: center; background: var(--ht-paper);
+  transition: transform .6s cubic-bezier(.2, .8, .3, 1), box-shadow .6s, border-color .3s; }
+.ht-coupon__scissors { position: absolute; left: 36px; top: -24px; font-size: 34px; line-height: 1; padding: 0 8px; background: var(--ht-paper); transition: left 1.1s cubic-bezier(.6, 0, .4, 1); }
+.ht-coupon:hover .ht-coupon__scissors { left: calc(100% - 90px); }
+.ht-coupon__head { font-family: var(--ht-cond); font-weight: 600; font-size: 16px; letter-spacing: .3em; text-transform: uppercase; padding-bottom: 10px; border-bottom: 1px solid var(--ht-ink); display: inline-block; }
+.ht-coupon__offer { margin-top: 18px; font-family: var(--ht-head); font-style: italic; font-size: 22px; }
+.ht-coupon__title { font-family: var(--ht-head); font-weight: 900; font-size: clamp(40px, 5.4vw, 84px); line-height: .98; letter-spacing: -.025em; margin: 10px 0 28px; text-wrap: balance; }
+.ht-coupon__fields { display: grid; grid-template-columns: auto 1fr; gap: 14px 14px; align-items: end; max-width: 520px; margin: 0 auto 30px; text-align: left; }
+.ht-coupon__fields span { font-family: var(--ht-sans); font-size: 12px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.ht-coupon__fields i { height: 1px; background: var(--ht-ink); margin-bottom: 3px; }
+.ht-coupon__btn { display: inline-flex; gap: 12px; align-items: center; padding: 16px 30px; background: var(--ht-ink); color: var(--ht-paper); font-family: var(--ht-sans); font-weight: 800; font-size: 16px;
+  letter-spacing: .14em; text-transform: uppercase; }
+.ht-coupon__btn:hover { background: var(--ht-paper); color: var(--ht-ink); box-shadow: inset 0 0 0 2px var(--ht-ink); }
+.ht-coupon__fine { margin-top: 18px; font-family: var(--ht-sans); font-size: 11.5px; font-style: italic; color: var(--ht-ink-3); }
+.ht-coupon.is-cut { border-color: transparent; transform: translate(-8px, -14px) rotate(-2.4deg); box-shadow: 14px 22px 30px -12px rgba(30, 20, 0, .45), 0 0 0 1px rgba(20, 20, 20, .15); }
+.ht-coupon.is-cut .ht-coupon__scissors { left: calc(100% - 60px); }
+
+/* fallback types (gallery, strip, orbit): printed in the paper's grammar */
+.ht-wrapped .ht-page > section { padding: 0; background: none; }
+.ht-wrapped .ss-kicker { font-family: var(--ht-cond); color: var(--ht-ink); letter-spacing: .08em; }
+.ht-wrapped .ss-display, .ht-wrapped .ss-h2 { font-family: var(--ht-head); font-weight: 900; letter-spacing: -.02em; }
+.ht-wrapped .ss-tile { border: 0; border-top: 3px solid var(--ht-ink); border-radius: 0; background: transparent; }
+.ht-wrapped .ss-tile__media { filter: grayscale(1) contrast(1.2); background: #e9e2d2 radial-gradient(circle, var(--ht-ink) 0 1.6px, transparent 2.1px) 0 0 / 6px 6px; }
+.ht-wrapped .ss-strip img { border-radius: 0; filter: grayscale(1) contrast(1.15); }
+.ht-wrapped .ss-orbit__item { background: var(--ht-paper); border: 1.5px solid var(--ht-ink); color: var(--ht-ink); }
+.ht-wrapped .ss-orbit__item.is-primary { background: var(--ht-ink); color: var(--ht-paper); }
+.ht-wrapped .ss-tile__text p, .ht-wrapped .ss-lede { color: var(--ht-ink-2); }
+
+/* ---------------------------------------------------------------- colophon, crop marks, imprint */
+.ht-colophon { position: relative; z-index: 1; width: min(1240px, calc(100% - 2 * var(--gutter))); margin: 0 auto; display: grid; grid-template-columns: 40px 1fr auto 40px; gap: 24px; align-items: center;
+  padding: 24px 0; border-top: 4px double var(--ht-rule); font-family: var(--ht-sans); font-size: 12.5px; line-height: 1.5; color: var(--ht-ink-2); }
+.ht-reg { width: 40px; height: 40px; }
+.ht-bar { display: flex; }
+.ht-bar i { width: 22px; height: 22px; }
+html.style-halftone .ss-footer { position: relative; z-index: 1; border-top: 1px solid var(--ht-rule); width: min(1240px, calc(100% - 2 * var(--gutter))); margin: 0 auto 40px; }
+html.style-halftone .ss-footer__in { padding: 14px 0; font-family: var(--ht-sans); font-size: 12px; letter-spacing: .06em; color: var(--ht-ink-2); }
+html.style-halftone .ss-footer a { text-decoration: underline; }
+.ht-crop { position: absolute; width: 26px; height: 26px; z-index: 4; pointer-events: none; }
+.ht-crop::before, .ht-crop::after { content: ""; position: absolute; background: var(--ht-ink); }
+.ht-crop::before { width: 26px; height: 1px; } .ht-crop::after { width: 1px; height: 26px; }
+.ht-crop--tl { left: 8px; top: 8px; } .ht-crop--tl::before { top: 12px; left: -6px; } .ht-crop--tl::after { left: 12px; top: -6px; }
+.ht-crop--tr { right: 8px; top: 8px; } .ht-crop--tr::before { top: 12px; right: -6px; } .ht-crop--tr::after { right: 12px; top: -6px; }
+.ht-crop--bl { left: 8px; bottom: 8px; } .ht-crop--bl::before { bottom: 12px; left: -6px; } .ht-crop--bl::after { left: 12px; bottom: -6px; }
+.ht-crop--br { right: 8px; bottom: 8px; } .ht-crop--br::before { bottom: 12px; right: -6px; } .ht-crop--br::after { right: 12px; bottom: -6px; }
+
+/* stack layout: pages follow each other like a paper */
+html.style-halftone .ss-panel { position: relative; background: transparent; border-radius: 0; box-shadow: none; min-height: 0; display: block; overflow: visible; }
+html.style-halftone .ss-panel > section { background: transparent; transform: none; }
+html.style-halftone .ss-panel::after { display: none; }
+
+/* ---------------------------------------------------------------- phones: one column */
+@media (max-width: 900px) {
+  .ht-mast { padding-top: 22px; }
+  .ht-mast__row { grid-template-columns: 1fr; }
+  .ht-ear { display: none; }
+  .ht-mast__name { font-size: min(13vw, calc(150vw / var(--len, 7)), 64px); white-space: normal; text-wrap: balance; }
+  .ht-dateline { font-size: 10.5px; letter-spacing: .06em; }
+  .ht-dateline span:last-child { display: none; }
+  .ht-sections { justify-content: flex-start; flex-wrap: nowrap; overflow-x: auto; font-size: 12px; scrollbar-width: none; }
+  .ht-sections a { white-space: nowrap; padding: 2px 12px; }
+  .ht-runner { gap: 10px; padding: 0 14px; }
+  .ht-runner__sec { display: none; }
+  .ht-runner__page { flex: 1; text-align: right; }
+  .ht-h1 { font-size: clamp(46px, 13vw, 66px); }
+  .ht-lead__grid, .ht-ads, .ht-feature__grid { grid-template-columns: minmax(0, 1fr); }
+  .ht-photo--lead, .ht-lead__story, .ht-ads__display, .ht-ads__small, .ht-feature .ht-photo, .ht-feature__story,
+  .ht-feature--right .ht-photo, .ht-feature--right .ht-feature__story { grid-column: 1; grid-row: auto; margin: 0; padding: 0; border: 0; }
+  .ht-lead__story, .ht-ads__small, .ht-feature__story { margin-top: 26px; }
+  .ht-cols { columns: 1; text-align: left; }
+  .ht-figs, .ht-figs--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ht-fig { padding: 18px 14px; }
+  .ht-fig + .ht-fig { border-left: 0; }
+  .ht-fig:nth-child(2n) { border-left: 1px solid var(--ht-rule); }
+  .ht-fig:nth-child(n+3) { border-top: 1px solid var(--ht-rule); }
+  .ht-fig__v { font-size: clamp(52px, 15vw, 72px); }
+  .ht-diagram { grid-template-columns: minmax(0, 1fr); gap: 26px; padding-left: 0; }
+  .ht-diagram::before { left: 33px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
+  .ht-diagram__step { display: grid; grid-template-columns: 68px 1fr; column-gap: 18px; }
+  .ht-diagram__n { grid-row: span 3; }
+  .ht-diagram__lead { display: none; }
+  .ht-front__bar { grid-template-columns: 1fr auto; grid-template-areas: "b b" "s p"; font-size: 10.5px; row-gap: 4px; }
+  .ht-front__bar b { grid-area: b; text-align: left; font-size: 20px; }
+  .ht-front__bar span:first-child { grid-area: s; }
+  .ht-front__bar span:last-child { grid-area: p; }
+  .ht-front__title { font-size: clamp(38px, 11vw, 54px); }
+  .ht-pull__q::before { margin-left: 0; }
+  .ht-ask__list { columns: 1; }
+  .ht-coupon__fields { grid-template-columns: 1fr; gap: 4px; }
+  .ht-coupon__fields i { margin-bottom: 12px; }
+  .ht-colophon { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+  html.style-halftone .ss-footer { margin-bottom: 84px; }
+  .ht-loupe { width: 150px; height: 150px; margin: -75px 0 0 -75px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.ht-live [data-ht-ink]:not(.ht-inked) { filter: none; text-shadow: none; opacity: 1; }
+  .ht-runner, .ht-coupon, .ht-coupon__scissors { transition: none; }
+}
 
 </style><style>
   /* A section's backdrop: the image fills the panel (or a wrapper in the flow layout); the section itself goes clear,
@@ -174,87 +478,206 @@ html.style-halftone .ss-kicker { background: var(--ink); color: var(--bg); displ
   <nav class="ss-nav__links"><a href="#why">Why</a><a href="#features">Features</a><a href="#how">How</a></nav>
 <a class="ss-btn" href="#get">Get Halcyon <span class="ss-arrow">→</span></a></div></header>
 
+<div class="ht-crop ht-crop--tl" aria-hidden="true"></div><div class="ht-crop ht-crop--tr" aria-hidden="true"></div>
+<header class="ht-mast" data-ht-mast>
+  <div class="ht-mast__row">
+    <div class="ht-ear ht-ear--l">
+      <b>Late edition</b>
+      <span>The calendar that guards your mornings. One page, built in twenty styles by Scroll Studio.</span>
+    </div>
+    <a class="ht-mast__name" href="#" style="--len: 7">Halcyon</a>
+    <div class="ht-ear ht-ear--r">
+<a class="ht-ear__cta" href="#get"><b>Get Halcyon</b><span>Free · see coupon</span></a>    </div>
+  </div>
+  <div class="ht-dateline">
+    <span>Vol. I · No. 9</span>
+    <span data-ht-date>Today's edition</span>
+    <span>18 pages · Free</span>
+  </div>
+<nav class="ht-sections" aria-label="Sections">
+<a href="#why">Why<small>B1</small></a><a href="#features">Features<small>C1</small></a><a href="#how">How<small>F1</small></a>  </nav></header>
+<div class="ht-runner" aria-hidden="true">
+  <span class="ht-runner__name">Halcyon</span>
+  <span class="ht-runner__sec" data-ht-runner>Front page</span>
+  <span class="ht-runner__page" data-ht-page>A1</span>
+<a class="ht-runner__cta" href="#get" tabindex="-1">Get Halcyon</a></div>
+<div class="ht-loupe" aria-hidden="true"><i></i></div>
 <main>
-<section class="ss-block ss-hero ss-hero--center">
-  <div class="ss-hero__in">
-<span class="ss-badge">New · Halcyon 2.0</span><h1 class="ss-h1">Your mornings, <em>back.</em></h1><p class="ss-lede">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>    <div class="ss-btns"><a class="ss-btn ss-btn--hot" href="#get">Try it free <span class="ss-arrow">→</span></a><a class="ss-btn" href="../../looks/">See the looks</a></div>
-  </div>
-</section>
 
-<section class="ss-block" id="why"><div class="ss-wrap ss-intro2">
-  <h2 class="ss-display ss-reveal">Calendars fill up <em>from the top.</em></h2>
-  <div class="ss-reveal">
-<span class="ss-kicker">The problem</span><p class="ss-lede">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>  </div>
-</div></section>
-
-<section class="ss-block" id="features"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">What it does</span><h2 class="ss-display">Three rules, <em>kept for you.</em></h2></div>  <div class="ss-features ss-features--3">
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">01</span>      <div><h3>Focus first</h3><p>Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">02</span>      <div><h3>Smart batching</h3><p>Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">03</span>      <div><h3>Polite no</h3><p>Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p></div>
-    </div>
-  </div>
-</div></section>
-
-<section class="ss-scene ss-overlay ss-side-right ss-type-type ss-shade-auto ss-type--display" id="words" data-scene="type">
-  <div class="ss-track" style="height: 260vh">
-    <div class="ss-stage">
-      <div class="ss-visual"></div>
-      <div class="ss-shade"></div>
-      <div class="ss-captions">
+<section class="ht-sec ht-lead ht-lead--center" data-ht-front data-sec="Front page" data-page="A1">
+  <div class="ht-page">
+<p class="ht-kicker ht-kicker--rule">New · Halcyon 2.0</p>    <h1 class="ht-h1" data-ht-ink>Your mornings, <em>back.</em></h1>
+    <div class="ht-lead__grid">
+      <figure class="ht-photo ht-photo--lead" data-ht-img="sunrise">
+        <div class="ht-photo__plate" role="img" aria-label="Halftone illustration: the sun rising over hills"></div>
+        <figcaption><b>On the cover.</b> First light over the hills. <span class="ht-credit">Halftone, 85 lpi</span></figcaption>
+      </figure>
+      <div class="ht-lead__story">
+        <p class="ht-byline">By the newsroom · Staff report</p>
+<p class="ht-deck ht-dropcap">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>        <p class="ht-jumps"><a class="ht-jump ht-jump--box" href="#get">Try it free <span aria-hidden="true">→</span></a><a class="ht-jump" href="../../looks/">See the looks <span aria-hidden="true">→</span></a></p>
       </div>
-      
-      <div class="ss-outro"></div>
     </div>
   </div>
-  <script type="application/json" class="ss-config">{"mode": "swap", "text": "Halcyon keeps your", "words": ["mornings", "Fridays", "evenings", "weekends"]}</script>
-  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "none", "legend": [], "scales": []}, "layout": "overlay", "length": 2.6, "steps": []}</script>
+  <div class="ht-fold" aria-hidden="true"><span>Fold</span></div>
 </section>
-<section class="ss-block ss-product ss-product--right ss-pose--beside" id="app"><div class="ss-wrap ss-product__in">
-  <div class="ss-product__media" data-float>
-<div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
-  <div class="ss-phone__bar"><span>9:41</span><i></i></div>
-<div class="ss-app">
-<div class="ss-app__name">Halcyon</div><div class="ss-app__title">Coffee with Sam</div><div class="ss-app__label">Best times</div><p class="ss-app__note">Your 8-11 focus block stays free.</p><div class="ss-app__opt is-on"><b>Tue 2:30 pm</b><small>Next to your other calls</small></div><div class="ss-app__opt"><b>Wed 4:00 pm</b><small>End of day</small></div><div class="ss-app__opt"><b>Thu 1:00 pm</b><small>After lunch</small></div><div class="ss-app__btn">Send these times</div>  </div></div></div>
+
+
+<section class="ht-sec ht-story" id="why" data-ht-front data-sec="Why" data-page="B1">
+  <div class="ht-page ht-story__in">
+<p class="ht-kicker">The problem</p>    <h2 class="ht-h2">Calendars fill up <em>from the top.</em></h2>
+    <div class="ht-cols ht-cols--story">
+<p class="ht-dropcap">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>    </div>
   </div>
-  <div class="ss-product__copy ss-reveal">
-<span class="ss-kicker">The app</span>    <h2 class="ss-h2">Pick a slot, <em>keep the morning.</em></h2>
-<p class="ss-lede">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><ul class="ss-pills"><li>iPhone</li><li>Android</li><li>Web</li><li>Google and Outlook</li></ul>    
+</section>
+
+
+<section class="ht-sec ht-classifieds" id="features">
+  <div class="ht-page">
+    <header class="ht-front" data-ht-front data-sec="Features" data-page="C1">
+  <div class="ht-front__bar"><span>Section C</span><b>Features</b><span>Page C1</span></div>
+<span class="ht-kicker">What it does</span><h2 class="ht-front__title"><span class="ht-plate-k">Three rules, <em>kept for you.</em></span><span class="ht-plates" aria-hidden="true"><span class="ht-plate ht-plate--y">Three rules, <em>kept for you.</em></span><span class="ht-plate ht-plate--m">Three rules, <em>kept for you.</em></span><span class="ht-plate ht-plate--c">Three rules, <em>kept for you.</em></span></span></h2></header>
+
+    <div class="ht-ads">
+      <div class="ht-ads__display">
+        <article class="ht-ad">
+          <span class="ht-ad__ref">01</span>
+          <h3 class="ht-ad__t">Focus first</h3>
+<p>Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p>        </article>
+      </div>
+      <div class="ht-ads__small">
+        <p class="ht-ads__head">Classified · 2 listings</p>
+        <p class="ht-small"><b>Smart batching.</b> Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps. <span class="ht-small__ref">Ref. 02</span></p>
+        <p class="ht-small"><b>Polite no.</b> Halcyon suggests a better slot instead of declining, and the other side picks with one tap. <span class="ht-small__ref">Ref. 03</span></p>
+      </div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="ss-block ss-band ss-band"><div class="ss-wrap ss-stats ss-stats--4">
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="11">11<sup>h</sup></div><div class="ss-l">Focus hours kept per week</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="38">38<sup>%</sup></div><div class="ss-l">Fewer meeting fragments</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="2">2<sup>min</sup></div><div class="ss-l">To set up</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="0">0</div><div class="ss-l">Calendars replaced</div></div>
-</div></section>
 
-<section class="ss-block" id="how"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">How it works</span><h2 class="ss-display">Set it up <em>over coffee.</em></h2></div>  <div class="ss-timeline ss-timeline--4">
-<div class="ss-tl ss-reveal"><span class="ss-when">Minute 1</span><h4>Connect</h4><p>Sign in with Google or Outlook; nothing moves yet.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Minute 2</span><h4>Mark your hours</h4><p>Paint the blocks you want protected.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Day 1</span><h4>It starts</h4><p>New invites are steered around your focus.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Week 1</span><h4>You notice</h4><p>A free morning, then another one.</p></div>  </div>
-</div></section>
+<section class="ht-sec ht-feature ht-feature--right" id="app">
+  <div class="ht-page">
+    <header class="ht-front" data-ht-front data-sec="Technology" data-page="D1">
+  <div class="ht-front__bar"><span>Section D</span><b>Technology</b><span>Page D1</span></div>
+<span class="ht-kicker">The app</span><h2 class="ht-front__title"><span class="ht-plate-k">Pick a slot, <em>keep the morning.</em></span><span class="ht-plates" aria-hidden="true"><span class="ht-plate ht-plate--y">Pick a slot, <em>keep the morning.</em></span><span class="ht-plate ht-plate--m">Pick a slot, <em>keep the morning.</em></span><span class="ht-plate ht-plate--c">Pick a slot, <em>keep the morning.</em></span></span></h2></header>
 
-<section class="ss-block"><div class="ss-wrap ss-quote ss-reveal">
-  <blockquote>I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote><cite>Priya N., product designer</cite></div></section>
+    <div class="ht-feature__grid">
+      <figure class="ht-photo ht-photo--tall" data-ht-img="phone" data-title="Coffee with Sam" data-app="Halcyon" data-label="Best times" data-button="Send these times" data-opts="Tue 2:30 pm*|Wed 4:00 pm|Thu 1:00 pm">
+        <div class="ht-photo__plate" role="img" aria-label="Halftone photograph of the Halcyon screen: Coffee with Sam"></div>
+        <figcaption><b>Halcyon.</b> Coffee with Sam Your 8-11 focus block stays free. <span class="ht-credit">Photograph: staff</span></figcaption>
+      </figure>
+      <div class="ht-feature__story">
+<p class="ht-deck">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><div class="ht-cols ht-cols--2"><p class="ht-dropcap">Best times: Tue 2:30 pm, next to your other calls (selected); Wed 4:00 pm, end of day; Thu 1:00 pm, after lunch. Then one tap: “Send these times.”</p></div>        <aside class="ht-glance">
+          <p class="ht-glance__head">At a glance</p>
+<dl><div><dt>Available on</dt><dd>iPhone · Android · Web · Google and Outlook</dd></div></dl>        </aside>
+        
+      </div>
+    </div>
+  </div>
+</section>
 
-<section class="ss-block ss-faq"><div class="ss-wrap ss-faq__in">
-  <div class="ss-head ss-reveal"><h2 class="ss-h2">Questions</h2></div>
-  <div class="ss-faq__list">
-<details class="ss-reveal" open><summary>Does it replace my calendar?</summary><p>No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></details><details class="ss-reveal"><summary>What do the people I meet see?</summary><p>A short list of times that work for both of you. No new app to install.</p></details><details class="ss-reveal"><summary>Can I override it?</summary><p>Always. Drag anything anywhere; Halcyon learns from what you move.</p></details>  </div>
-</div></section>
-<section class="ss-block ss-cta" id="get">
-  <div class="ss-cta__in">
-<span class="ss-kicker ss-reveal">Free for 30 days</span>    <h2 class="ss-display ss-reveal">Keep <em>tomorrow morning.</em></h2>
-<a class="ss-btn ss-btn--hot ss-reveal" href="#">Get Halcyon <span class="ss-arrow">→</span></a>  </div>
+
+<section class="ht-sec ht-numbers">
+  <div class="ht-page">
+    <header class="ht-front" data-ht-front data-sec="By the numbers" data-page="E1">
+  <div class="ht-front__bar"><span>Section E</span><b>By the numbers</b><span>Page E1</span></div>
+<h2 class="ht-front__title"><span class="ht-plate-k">By the numbers</span><span class="ht-plates" aria-hidden="true"><span class="ht-plate ht-plate--y">By the numbers</span><span class="ht-plate ht-plate--m">By the numbers</span><span class="ht-plate ht-plate--c">By the numbers</span></span></h2></header>
+
+    <div class="ht-figs ht-figs--4" data-ht-figs>
+      <figure class="ht-fig">
+        <p class="ht-fig__v">11<span>h</span></p>
+        <figcaption class="ht-fig__l">Focus hours kept per week</figcaption>
+        <svg class="ht-dots" viewBox="0 0 100 20" aria-hidden="true">
+<circle cx="5" cy="5" r="3.6" class="on" style="--i: 0"/><circle cx="15" cy="5" r="3.6" class="on" style="--i: 1"/><circle cx="25" cy="5" r="3.6" class="on" style="--i: 2"/><circle cx="35" cy="5" r="3.6" class="on" style="--i: 3"/><circle cx="45" cy="5" r="3.6" class="on" style="--i: 4"/><circle cx="55" cy="5" r="3.6" class="on" style="--i: 5"/><circle cx="65" cy="5" r="3.6" class="on" style="--i: 6"/><circle cx="75" cy="5" r="3.6" class="on" style="--i: 7"/><circle cx="85" cy="5" r="3.6" class="on" style="--i: 8"/><circle cx="95" cy="5" r="3.6" class="on" style="--i: 9"/><circle cx="5" cy="15" r="3.6" class="on" style="--i: 10"/>        </svg>
+        <p class="ht-fig__key">Each dot: 1 h</p>
+      </figure>
+      <figure class="ht-fig">
+        <p class="ht-fig__v">38<span>%</span></p>
+        <figcaption class="ht-fig__l">Fewer meeting fragments</figcaption>
+        <svg class="ht-dots" viewBox="0 0 100 100" aria-hidden="true">
+<circle cx="5" cy="5" r="3.6" class="on" style="--i: 0"/><circle cx="15" cy="5" r="3.6" class="on" style="--i: 1"/><circle cx="25" cy="5" r="3.6" class="on" style="--i: 2"/><circle cx="35" cy="5" r="3.6" class="on" style="--i: 3"/><circle cx="45" cy="5" r="3.6" class="on" style="--i: 4"/><circle cx="55" cy="5" r="3.6" class="on" style="--i: 5"/><circle cx="65" cy="5" r="3.6" class="on" style="--i: 6"/><circle cx="75" cy="5" r="3.6" class="on" style="--i: 7"/><circle cx="85" cy="5" r="3.6" class="on" style="--i: 8"/><circle cx="95" cy="5" r="3.6" class="on" style="--i: 9"/><circle cx="5" cy="15" r="3.6" class="on" style="--i: 10"/><circle cx="15" cy="15" r="3.6" class="on" style="--i: 11"/><circle cx="25" cy="15" r="3.6" class="on" style="--i: 12"/><circle cx="35" cy="15" r="3.6" class="on" style="--i: 13"/><circle cx="45" cy="15" r="3.6" class="on" style="--i: 14"/><circle cx="55" cy="15" r="3.6" class="on" style="--i: 15"/><circle cx="65" cy="15" r="3.6" class="on" style="--i: 16"/><circle cx="75" cy="15" r="3.6" class="on" style="--i: 17"/><circle cx="85" cy="15" r="3.6" class="on" style="--i: 18"/><circle cx="95" cy="15" r="3.6" class="on" style="--i: 19"/><circle cx="5" cy="25" r="3.6" class="on" style="--i: 20"/><circle cx="15" cy="25" r="3.6" class="on" style="--i: 21"/><circle cx="25" cy="25" r="3.6" class="on" style="--i: 22"/><circle cx="35" cy="25" r="3.6" class="on" style="--i: 23"/><circle cx="45" cy="25" r="3.6" class="on" style="--i: 24"/><circle cx="55" cy="25" r="3.6" class="on" style="--i: 25"/><circle cx="65" cy="25" r="3.6" class="on" style="--i: 26"/><circle cx="75" cy="25" r="3.6" class="on" style="--i: 27"/><circle cx="85" cy="25" r="3.6" class="on" style="--i: 28"/><circle cx="95" cy="25" r="3.6" class="on" style="--i: 29"/><circle cx="5" cy="35" r="3.6" class="on" style="--i: 30"/><circle cx="15" cy="35" r="3.6" class="on" style="--i: 31"/><circle cx="25" cy="35" r="3.6" class="on" style="--i: 32"/><circle cx="35" cy="35" r="3.6" class="on" style="--i: 33"/><circle cx="45" cy="35" r="3.6" class="on" style="--i: 34"/><circle cx="55" cy="35" r="3.6" class="on" style="--i: 35"/><circle cx="65" cy="35" r="3.6" class="on" style="--i: 36"/><circle cx="75" cy="35" r="3.6" class="on" style="--i: 37"/><circle cx="85" cy="35" r="1.3" class="off" style="--i: 38"/><circle cx="95" cy="35" r="1.3" class="off" style="--i: 39"/><circle cx="5" cy="45" r="1.3" class="off" style="--i: 40"/><circle cx="15" cy="45" r="1.3" class="off" style="--i: 41"/><circle cx="25" cy="45" r="1.3" class="off" style="--i: 42"/><circle cx="35" cy="45" r="1.3" class="off" style="--i: 43"/><circle cx="45" cy="45" r="1.3" class="off" style="--i: 44"/><circle cx="55" cy="45" r="1.3" class="off" style="--i: 45"/><circle cx="65" cy="45" r="1.3" class="off" style="--i: 46"/><circle cx="75" cy="45" r="1.3" class="off" style="--i: 47"/><circle cx="85" cy="45" r="1.3" class="off" style="--i: 48"/><circle cx="95" cy="45" r="1.3" class="off" style="--i: 49"/><circle cx="5" cy="55" r="1.3" class="off" style="--i: 50"/><circle cx="15" cy="55" r="1.3" class="off" style="--i: 51"/><circle cx="25" cy="55" r="1.3" class="off" style="--i: 52"/><circle cx="35" cy="55" r="1.3" class="off" style="--i: 53"/><circle cx="45" cy="55" r="1.3" class="off" style="--i: 54"/><circle cx="55" cy="55" r="1.3" class="off" style="--i: 55"/><circle cx="65" cy="55" r="1.3" class="off" style="--i: 56"/><circle cx="75" cy="55" r="1.3" class="off" style="--i: 57"/><circle cx="85" cy="55" r="1.3" class="off" style="--i: 58"/><circle cx="95" cy="55" r="1.3" class="off" style="--i: 59"/><circle cx="5" cy="65" r="1.3" class="off" style="--i: 60"/><circle cx="15" cy="65" r="1.3" class="off" style="--i: 61"/><circle cx="25" cy="65" r="1.3" class="off" style="--i: 62"/><circle cx="35" cy="65" r="1.3" class="off" style="--i: 63"/><circle cx="45" cy="65" r="1.3" class="off" style="--i: 64"/><circle cx="55" cy="65" r="1.3" class="off" style="--i: 65"/><circle cx="65" cy="65" r="1.3" class="off" style="--i: 66"/><circle cx="75" cy="65" r="1.3" class="off" style="--i: 67"/><circle cx="85" cy="65" r="1.3" class="off" style="--i: 68"/><circle cx="95" cy="65" r="1.3" class="off" style="--i: 69"/><circle cx="5" cy="75" r="1.3" class="off" style="--i: 70"/><circle cx="15" cy="75" r="1.3" class="off" style="--i: 71"/><circle cx="25" cy="75" r="1.3" class="off" style="--i: 72"/><circle cx="35" cy="75" r="1.3" class="off" style="--i: 73"/><circle cx="45" cy="75" r="1.3" class="off" style="--i: 74"/><circle cx="55" cy="75" r="1.3" class="off" style="--i: 75"/><circle cx="65" cy="75" r="1.3" class="off" style="--i: 76"/><circle cx="75" cy="75" r="1.3" class="off" style="--i: 77"/><circle cx="85" cy="75" r="1.3" class="off" style="--i: 78"/><circle cx="95" cy="75" r="1.3" class="off" style="--i: 79"/><circle cx="5" cy="85" r="1.3" class="off" style="--i: 80"/><circle cx="15" cy="85" r="1.3" class="off" style="--i: 81"/><circle cx="25" cy="85" r="1.3" class="off" style="--i: 82"/><circle cx="35" cy="85" r="1.3" class="off" style="--i: 83"/><circle cx="45" cy="85" r="1.3" class="off" style="--i: 84"/><circle cx="55" cy="85" r="1.3" class="off" style="--i: 85"/><circle cx="65" cy="85" r="1.3" class="off" style="--i: 86"/><circle cx="75" cy="85" r="1.3" class="off" style="--i: 87"/><circle cx="85" cy="85" r="1.3" class="off" style="--i: 88"/><circle cx="95" cy="85" r="1.3" class="off" style="--i: 89"/><circle cx="5" cy="95" r="1.3" class="off" style="--i: 90"/><circle cx="15" cy="95" r="1.3" class="off" style="--i: 91"/><circle cx="25" cy="95" r="1.3" class="off" style="--i: 92"/><circle cx="35" cy="95" r="1.3" class="off" style="--i: 93"/><circle cx="45" cy="95" r="1.3" class="off" style="--i: 94"/><circle cx="55" cy="95" r="1.3" class="off" style="--i: 95"/><circle cx="65" cy="95" r="1.3" class="off" style="--i: 96"/><circle cx="75" cy="95" r="1.3" class="off" style="--i: 97"/><circle cx="85" cy="95" r="1.3" class="off" style="--i: 98"/><circle cx="95" cy="95" r="1.3" class="off" style="--i: 99"/>        </svg>
+        <p class="ht-fig__key">Each dot: 1%</p>
+      </figure>
+      <figure class="ht-fig">
+        <p class="ht-fig__v">2<span>min</span></p>
+        <figcaption class="ht-fig__l">To set up</figcaption>
+        <svg class="ht-dots" viewBox="0 0 100 20" aria-hidden="true">
+<circle cx="5" cy="5" r="3.6" class="on" style="--i: 0"/><circle cx="15" cy="5" r="3.6" class="on" style="--i: 1"/><circle cx="25" cy="5" r="1.3" class="off" style="--i: 2"/><circle cx="35" cy="5" r="1.3" class="off" style="--i: 3"/><circle cx="45" cy="5" r="1.3" class="off" style="--i: 4"/><circle cx="55" cy="5" r="1.3" class="off" style="--i: 5"/><circle cx="65" cy="5" r="1.3" class="off" style="--i: 6"/><circle cx="75" cy="5" r="1.3" class="off" style="--i: 7"/><circle cx="85" cy="5" r="1.3" class="off" style="--i: 8"/><circle cx="95" cy="5" r="1.3" class="off" style="--i: 9"/><circle cx="5" cy="15" r="1.3" class="off" style="--i: 10"/>        </svg>
+        <p class="ht-fig__key">Each dot: 1 min</p>
+      </figure>
+      <figure class="ht-fig">
+        <p class="ht-fig__v">0</p>
+        <figcaption class="ht-fig__l">Calendars replaced</figcaption>
+        <svg class="ht-dots" viewBox="0 0 100 20" aria-hidden="true">
+<circle cx="5" cy="5" r="1.3" class="off" style="--i: 0"/><circle cx="15" cy="5" r="1.3" class="off" style="--i: 1"/><circle cx="25" cy="5" r="1.3" class="off" style="--i: 2"/><circle cx="35" cy="5" r="1.3" class="off" style="--i: 3"/><circle cx="45" cy="5" r="1.3" class="off" style="--i: 4"/><circle cx="55" cy="5" r="1.3" class="off" style="--i: 5"/><circle cx="65" cy="5" r="1.3" class="off" style="--i: 6"/><circle cx="75" cy="5" r="1.3" class="off" style="--i: 7"/><circle cx="85" cy="5" r="1.3" class="off" style="--i: 8"/><circle cx="95" cy="5" r="1.3" class="off" style="--i: 9"/><circle cx="5" cy="15" r="1.3" class="off" style="--i: 10"/>        </svg>
+        <p class="ht-fig__key">Each dot: 1</p>
+      </figure>
+    </div>
+    <p class="ht-source">Source: company figures. Final numbers as printed.</p>
+  </div>
+</section>
+
+
+<section class="ht-sec ht-how" id="how">
+  <div class="ht-page">
+    <header class="ht-front" data-ht-front data-sec="How" data-page="F1">
+  <div class="ht-front__bar"><span>Section F</span><b>How</b><span>Page F1</span></div>
+<span class="ht-kicker">How it works</span><h2 class="ht-front__title"><span class="ht-plate-k">Set it up <em>over coffee.</em></span><span class="ht-plates" aria-hidden="true"><span class="ht-plate ht-plate--y">Set it up <em>over coffee.</em></span><span class="ht-plate ht-plate--m">Set it up <em>over coffee.</em></span><span class="ht-plate ht-plate--c">Set it up <em>over coffee.</em></span></span></h2></header>
+
+    <ol class="ht-diagram ht-diagram--4">
+<li class="ht-diagram__step"><span class="ht-diagram__n" aria-hidden="true">1</span><span class="ht-diagram__lead" aria-hidden="true"></span><span class="ht-diagram__when">Minute 1</span><h3 class="ht-diagram__t">Connect</h3><p>Sign in with Google or Outlook; nothing moves yet.</p></li><li class="ht-diagram__step"><span class="ht-diagram__n" aria-hidden="true">2</span><span class="ht-diagram__lead" aria-hidden="true"></span><span class="ht-diagram__when">Minute 2</span><h3 class="ht-diagram__t">Mark your hours</h3><p>Paint the blocks you want protected.</p></li><li class="ht-diagram__step"><span class="ht-diagram__n" aria-hidden="true">3</span><span class="ht-diagram__lead" aria-hidden="true"></span><span class="ht-diagram__when">Day 1</span><h3 class="ht-diagram__t">It starts</h3><p>New invites are steered around your focus.</p></li><li class="ht-diagram__step"><span class="ht-diagram__n" aria-hidden="true">4</span><span class="ht-diagram__lead" aria-hidden="true"></span><span class="ht-diagram__when">Week 1</span><h3 class="ht-diagram__t">You notice</h3><p>A free morning, then another one.</p></li>    </ol>
+  </div>
+</section>
+
+
+<section class="ht-sec ht-letters">
+  <div class="ht-page">
+    <header class="ht-front" data-ht-front data-sec="Letters" data-page="G1">
+  <div class="ht-front__bar"><span>Section G</span><b>Letters</b><span>Page G1</span></div>
+<h2 class="ht-front__title"><span class="ht-plate-k">Letters to the editor</span><span class="ht-plates" aria-hidden="true"><span class="ht-plate ht-plate--y">Letters to the editor</span><span class="ht-plate ht-plate--m">Letters to the editor</span><span class="ht-plate ht-plate--c">Letters to the editor</span></span></h2></header>
+
+    <figure class="ht-pull">
+      <p class="ht-pull__to">To the Editor:</p>
+      <blockquote class="ht-pull__q">I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote>
+<figcaption class="ht-pull__who">— Priya N., product designer</figcaption>    </figure>
+  </div>
+</section>
+
+
+<section class="ht-sec ht-ask">
+  <div class="ht-page">
+    <header class="ht-front" data-ht-front data-sec="Ask the editor" data-page="H1">
+  <div class="ht-front__bar"><span>Section H</span><b>Ask the editor</b><span>Page H1</span></div>
+<h2 class="ht-front__title"><span class="ht-plate-k">Questions</span><span class="ht-plates" aria-hidden="true"><span class="ht-plate ht-plate--y">Questions</span><span class="ht-plate ht-plate--m">Questions</span><span class="ht-plate ht-plate--c">Questions</span></span></h2></header>
+
+    <div class="ht-ask__list">
+<details class="ht-qa" open><summary><span class="ht-qa__q">Q.</span> Does it replace my calendar?</summary><p><span class="ht-qa__q">A.</span> No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></details><details class="ht-qa"><summary><span class="ht-qa__q">Q.</span> What do the people I meet see?</summary><p><span class="ht-qa__q">A.</span> A short list of times that work for both of you. No new app to install.</p></details><details class="ht-qa"><summary><span class="ht-qa__q">Q.</span> Can I override it?</summary><p><span class="ht-qa__q">A.</span> Always. Drag anything anywhere; Halcyon learns from what you move.</p></details>    </div>
+  </div>
+</section>
+
+
+<section class="ht-sec ht-coupon-sec" id="get">
+  <div class="ht-page">
+    <div class="ht-coupon" data-ht-coupon>
+      <span class="ht-coupon__scissors" aria-hidden="true">✂</span>
+      <p class="ht-coupon__head">Clip and mail today</p>
+<p class="ht-coupon__offer">Free for 30 days</p>      <h2 class="ht-coupon__title">Keep <em>tomorrow morning.</em></h2>
+      <div class="ht-coupon__fields" aria-hidden="true"><span>Name</span><i></i><span>Address</span><i></i><span>Morning you want back</span><i></i></div>
+<a class="ht-coupon__btn" href="#" data-ht-cut>Get Halcyon <span aria-hidden="true">→</span></a>      <p class="ht-coupon__fine">No stamp required. Offer good while the ink is wet.</p>
+    </div>
+  </div>
 </section>
 
 </main>
+<aside class="ht-colophon" aria-label="Colophon">
+  <svg class="ht-reg" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="11" fill="none" stroke="#141414" stroke-width="1.2"/><circle cx="20" cy="20" r="5" fill="#141414"/><path d="M20 2v36M2 20h36" stroke="#141414" stroke-width="1.2"/></svg>
+  <div class="ht-colophon__text">
+    <b>Halcyon</b> is printed in two colours on 80 gsm newsprint and screened at 85 lines per inch.
+    Set in Playfair Display, Libre Caslon and Libre Franklin. Vol. I, No. 9.
+  </div>
+  <div class="ht-bar" aria-hidden="true"><i style="background:#00aeef"></i><i style="background:#ec008c"></i><i style="background:#fff200"></i><i style="background:#141414"></i><i style="background:#7fd6f7"></i><i style="background:#f580c5"></i><i style="background:#fff880"></i><i style="background:#8a8a8a"></i></div>
+  <svg class="ht-reg" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="11" fill="none" stroke="#141414" stroke-width="1.2"/><circle cx="20" cy="20" r="5" fill="#141414"/><path d="M20 2v36M2 20h36" stroke="#141414" stroke-width="1.2"/></svg>
+</aside>
+<div class="ht-crop ht-crop--bl" aria-hidden="true"></div><div class="ht-crop ht-crop--br" aria-hidden="true"></div>
 
 <footer class="ss-footer"><div class="ss-wrap ss-footer__in">
   <span>© Halcyon. A concept site; the product is fictional.</span>
@@ -264,9 +687,9 @@ html.style-halftone .ss-kicker { background: var(--ink); color: var(--bg); displ
 <script>window.__ssScroll = { speed: 1.0 };</script>
 <script type="module" src="../../runtime/index.js"></script>
 <nav class="ss-looks" aria-label="Looks">
-  <a href="../retro-vhs/" aria-label="Previous look">←</a>
-  <a class="ss-looks__name" href="../">Halftone <small>15/20</small></a>
-  <a href="../bauhaus/" aria-label="Next look">→</a>
+  <a href="../gradient-mesh/" aria-label="Previous look">←</a>
+  <a class="ss-looks__name" href="../">Halftone <small>10/21</small></a>
+  <a href="../holographic/" aria-label="Next look">→</a>
 </nav>
 <style>
   .ss-looks { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 990; display: flex; align-items: center; gap: 4px; padding: 5px;

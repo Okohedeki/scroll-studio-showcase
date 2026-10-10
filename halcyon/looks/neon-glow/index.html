@@ -1,61 +1,364 @@
 <!doctype html>
-<html lang="en" data-fx='{}' class="mode-dark layout-flow style-neon-glow">
+<html lang="en" data-style="neon-glow" class="mode-dark layout-flow style-neon-glow">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Halcyon</title>
 <meta name="description" content="The calendar that guards your mornings. One page, built in twenty styles by Scroll Studio."><meta name="generator" content="Scroll Studio">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23ff2bd6%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2316031a%22%3EH%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23ff2a6d%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%230b0a0e%22%3EH%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root {
-  --bg: #07040d;
-  --bg-2: #0e0818;
-  --ink: #fbeaff;
-  --ink-rgb: 251, 234, 255;
-  --bg-rgb: 7, 4, 13;
-  --ink-2: rgba(251, 234, 255, 0.68);
-  --ink-3: rgba(251, 234, 255, 0.49);
-  --line: rgba(251, 234, 255, .13);
-  --accent: #ff2bd6;
-  --accent-2: #3df5ff;
-  --accent-ink: #16031a;
-  --accent-text: #ff2bd6;
-  --accent-rgb: 255, 43, 214;
+  --bg: #0b0a0e;
+  --bg-2: #16131a;
+  --ink: #e9e4da;
+  --ink-rgb: 233, 228, 218;
+  --bg-rgb: 11, 10, 14;
+  --ink-2: rgba(233, 228, 218, 0.68);
+  --ink-3: rgba(233, 228, 218, 0.51);
+  --line: rgba(233, 228, 218, .13);
+  --accent: #ff2a6d;
+  --accent-2: #05d9e8;
+  --accent-ink: #0b0a0e;
+  --accent-text: #ff2a6d;
+  --accent-rgb: 255, 42, 109;
   --font-display: "Tilt Neon", system-ui, sans-serif;
-  --font-body: "Outfit", system-ui, sans-serif;
-  --font-mono: "Space Mono", ui-monospace, monospace;
+  --font-body: "Barlow", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
   --display-weight: 400;
   --em-style: normal;
   --radius: 999px;
   color-scheme: dark;
+  --font-script: "Neonderthaw", system-ui, sans-serif;
+  --font-plaque: "Barlow Condensed", system-ui, sans-serif;
 }
-.ss-surface-dark { --btn-bg: #ff2bd6; --btn-ink: #000000; --bg: #030205; --bg-2: #07040d; --ink: #fbeaff; --ink-rgb: 251, 234, 255; --bg-rgb: 3, 2, 5; --ink-2: rgba(251, 234, 255, 0.68); --ink-3: rgba(251, 234, 255, 0.49); --line: rgba(251, 234, 255, .14); --accent-text: #ff2bd6; --em-color: #3df5ff; color-scheme: dark; background: var(--bg); color: var(--ink); }
-.ss-surface-light { --btn-bg: #07040d; --btn-ink: #ffffff; --bg: #fbeaff; --bg-2: #1f1b25; --ink: #07040d; --ink-rgb: 7, 4, 13; --bg-rgb: 251, 234, 255; --ink-2: rgba(7, 4, 13, 1.0); --ink-3: rgba(7, 4, 13, 1.0); --line: rgba(7, 4, 13, .14); --accent-text: #07040d; --em-color: #07040d; color-scheme: light; background: var(--bg); color: var(--ink); }
-.ss-surface-accent { --btn-bg: #ff2bd6; --btn-ink: #000000; --bg: #14404a; --bg-2: #ede0f4; --ink: #fbeaff; --ink-rgb: 251, 234, 255; --bg-rgb: 20, 64, 74; --ink-2: rgba(251, 234, 255, 1.0); --ink-3: rgba(251, 234, 255, 1.0); --line: rgba(251, 234, 255, .14); --accent-text: #fbeaff; --em-color: #fbeaff; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-dark { --btn-bg: #ff2a6d; --btn-ink: #000000; --bg: #040406; --bg-2: #0b0a0e; --ink: #e9e4da; --ink-rgb: 233, 228, 218; --bg-rgb: 4, 4, 6; --ink-2: rgba(233, 228, 218, 0.68); --ink-3: rgba(233, 228, 218, 0.51); --line: rgba(233, 228, 218, .14); --accent-text: #ff2a6d; --em-color: #05d9e8; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #0b0a0e; --btn-ink: #ffffff; --bg: #e9e4da; --bg-2: #212022; --ink: #0b0a0e; --ink-rgb: 11, 10, 14; --bg-rgb: 233, 228, 218; --ink-2: rgba(11, 10, 14, 1.0); --ink-3: rgba(11, 10, 14, 1.0); --line: rgba(11, 10, 14, .14); --accent-text: #0b0a0e; --em-color: #0b0a0e; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #ff2a6d; --btn-ink: #000000; --bg: #0a3e44; --bg-2: #dcdad1; --ink: #e9e4da; --ink-rgb: 233, 228, 218; --bg-rgb: 10, 62, 68; --ink-2: rgba(233, 228, 218, 1.0); --ink-3: rgba(233, 228, 218, 1.0); --line: rgba(233, 228, 218, .14); --accent-text: #e9e4da; --em-color: #e9e4da; color-scheme: dark; background: var(--bg); color: var(--ink); }
 </style>
 <link rel="stylesheet" href="../../runtime/studio.css">
 <style id="ss-style">
-/* neon glow: tubes of light on a dark wall; headlines buzz on the first time they are seen (.fx-seen from the runtime) */
-@keyframes ss-neon-on { 0% { opacity: .15; } 8% { opacity: 1; } 10% { opacity: .3; } 14% { opacity: 1; } 22% { opacity: .5; } 26%, 100% { opacity: 1; } }
-@keyframes ss-neon-hum { 0%, 100% { opacity: 1; } 50% { opacity: .9; } }
-html.style-neon-glow body { background: radial-gradient(120% 80% at 50% 0%, #1a0b2e 0%, var(--bg) 60%) fixed; }
-html.style-neon-glow .ss-h1, html.style-neon-glow .ss-h2, html.style-neon-glow .ss-display, html.style-neon-glow .ss-v {
-  color: #fff; text-shadow: 0 0 4px #fff, 0 0 12px var(--accent), 0 0 28px var(--accent), 0 0 60px rgba(var(--accent-rgb), .6); }
-html.style-neon-glow .ss-h1 em, html.style-neon-glow .ss-h2 em, html.style-neon-glow .ss-display em {
-  color: #e9feff; font-style: normal; text-shadow: 0 0 4px #fff, 0 0 12px var(--accent-2), 0 0 30px var(--accent-2), 0 0 64px var(--accent-2); }
-html.style-neon-glow .fx-seen.ss-h1, html.style-neon-glow .fx-seen.ss-h2, html.style-neon-glow .fx-seen.ss-display { animation: ss-neon-on 1.4s steps(1, end) both, ss-neon-hum 3s 1.4s ease-in-out infinite; }
-html.style-neon-glow .ss-kicker { color: var(--accent-2); text-shadow: 0 0 10px var(--accent-2); }
-html.style-neon-glow .ss-btn { border: 1.5px solid var(--accent-2); color: #e9feff; background: transparent; box-shadow: 0 0 10px rgba(61, 245, 255, .5), inset 0 0 10px rgba(61, 245, 255, .35); text-shadow: 0 0 8px var(--accent-2); }
-html.style-neon-glow .ss-btn--hot { border-color: var(--accent); color: #fff; box-shadow: 0 0 12px var(--accent), inset 0 0 12px rgba(var(--accent-rgb), .5); text-shadow: 0 0 8px var(--accent); background: rgba(var(--accent-rgb), .12); }
-html.style-neon-glow .ss-btn:hover { background: rgba(var(--accent-rgb), .25); color: #fff; }
-html.style-neon-glow .ss-features { gap: 18px; background: none; border: 0; }
-html.style-neon-glow .ss-feature { border: 1.5px solid rgba(61, 245, 255, .55); border-radius: 18px; background: rgba(10, 4, 20, .6); box-shadow: 0 0 18px -4px rgba(61, 245, 255, .45), inset 0 0 22px -8px rgba(61, 245, 255, .35); }
-html.style-neon-glow .ss-feature:nth-child(2n) { border-color: rgba(var(--accent-rgb), .6); box-shadow: 0 0 18px -4px rgba(var(--accent-rgb), .5), inset 0 0 22px -8px rgba(var(--accent-rgb), .35); }
-html.style-neon-glow .ss-tl::before { background: var(--accent-2); box-shadow: 0 0 12px var(--accent-2), 0 0 24px var(--accent-2); }
-html.style-neon-glow .ss-tile { border-color: rgba(var(--accent-rgb), .45); box-shadow: 0 0 22px -8px var(--accent); }
-html.style-neon-glow .ss-band { background: rgba(255, 255, 255, .02); border-color: rgba(var(--accent-rgb), .3); }
-@media (prefers-reduced-motion: reduce) { html.style-neon-glow .fx-seen { animation: none !important; } }
+/* Neon glow: a night street of storefront walls. Every section is a wall (brick, concrete, black paint, or the warm
+   bar inside) with one primary sign mounted on a raceway, plain matte plaques for the copy, and darkness between the
+   storefronts. The runtime draws each sign as SVG tubes (glass, halo, core) over its real text and runs its power
+   state: unlit glass -> a two-dip stutter -> lit (spill on the wall, reflections on the wet ground) -> dimming behind
+   you. Glow is pre-rendered on separate layers and only their opacity ever changes. Body text never glows. */
+
+@property --room { syntax: "<color>"; inherits: true; initial-value: #ff2a6d; }
+html.style-neon-glow { --room: #ff2a6d; --core: #fff6f0; --glass: rgba(233, 228, 218, .42); --glassfill: rgba(233, 228, 218, .07); --plaque: "Barlow Condensed", var(--font-body);
+  transition: --room 1.3s ease; --brick: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='168' height='64'%3E%3Crect width='168' height='64' fill='%230a090c'/%3E%3Crect x='1' y='1' width='81' height='29' rx='2' fill='%231a1519'/%3E%3Crect x='85' y='1' width='81' height='29' rx='2' fill='%23171217'/%3E%3Crect x='-41' y='33' width='81' height='29' rx='2' fill='%231c161b'/%3E%3Crect x='43' y='33' width='81' height='29' rx='2' fill='%23161115'/%3E%3Crect x='127' y='33' width='81' height='29' rx='2' fill='%231c161b'/%3E%3Crect x='1' y='1' width='81' height='3' fill='%23ffffff' opacity='.025'/%3E%3Crect x='43' y='33' width='81' height='3' fill='%23ffffff' opacity='.02'/%3E%3C/svg%3E"); --noise: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url%28%23n%29'/%3E%3C/svg%3E"); }
+html.style-neon-glow body { background: #08070a; }
+html.style-neon-glow em { color: inherit; font-style: normal; }
+
+/* stack layout: the street is continuous */
+html.style-neon-glow .ss-panel { position: relative; top: 0 !important; min-height: 0; display: block; border-radius: 0; box-shadow: none; overflow: visible; background: transparent; }
+html.style-neon-glow .ss-panel::after { display: none; }
+html.style-neon-glow .ss-panel > section { transform: none; }
+
+/* ------------------------------------------------------------- the room light and the hand near the glass */
+.ng-room { position: fixed; inset: 0; z-index: 40; pointer-events: none; mix-blend-mode: screen; opacity: .2;
+  background: radial-gradient(90% 40% at 50% 104%, var(--room), transparent 70%), radial-gradient(40% 60% at -4% 40%, var(--room), transparent 70%), radial-gradient(40% 60% at 104% 60%, var(--room), transparent 70%); }
+.ng-torch { position: fixed; left: 0; top: 0; width: 640px; height: 640px; margin: -320px 0 0 -320px; z-index: 41; pointer-events: none; mix-blend-mode: screen; opacity: 0;
+  background: radial-gradient(closest-side, var(--room), transparent); transform: translate(var(--tx, -999px), var(--ty, -999px)); transition: opacity .6s; }
+.ng-torch.is-on { opacity: .09; }
+html:not(.ng-live) .ng-torch { display: none; }
+
+/* ------------------------------------------------------------- nav: a small always-lit wordmark, plain links */
+html.style-neon-glow .ss-nav, html.style-neon-glow .ss-nav.ss-solid { background: linear-gradient(rgba(8, 7, 10, .92), rgba(8, 7, 10, 0)); backdrop-filter: none; -webkit-backdrop-filter: none; border-color: transparent; }
+html.style-neon-glow .ss-wordmark { font-family: var(--font-display); font-size: 24px; font-weight: 400; color: #ffd6e2; text-shadow: 0 0 4px rgba(255, 42, 109, .8), 0 0 14px rgba(255, 42, 109, .45); }
+html.style-neon-glow .ss-nav__links { gap: 30px; font-family: var(--plaque); font-weight: 500; font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+html.style-neon-glow .ss-nav__links a { position: relative; padding: 6px 0 9px; }
+html.style-neon-glow .ss-nav__links a::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; border-radius: 2px; background: rgba(233, 228, 218, .16); }
+html.style-neon-glow .ss-nav__links a.is-on { color: var(--ink); }
+html.style-neon-glow .ss-nav__links a.is-on::after { background: var(--core); box-shadow: 0 0 4px var(--room), 0 0 12px var(--room); }
+html.style-neon-glow .ss-nav .ss-btn { background: transparent; border: 2px solid rgba(233, 228, 218, .3); font-family: var(--plaque); font-weight: 600; letter-spacing: .14em; text-transform: uppercase; font-size: 13px; backdrop-filter: none; }
+html.style-neon-glow .ss-nav .ss-btn:hover { background: transparent; color: var(--core); border-color: var(--core); box-shadow: 0 0 8px var(--room), inset 0 0 8px var(--room); }
+
+/* ------------------------------------------------------------- walls */
+.ng-front { position: relative; isolation: isolate; color: var(--ink); overflow: clip; }
+.ng-wall--brick { background: var(--noise), var(--brick); background-size: 240px, 168px 64px; }
+.ng-wall--concrete { background: var(--noise), linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px) 0 0 / 100% 46vh, linear-gradient(90deg, rgba(0, 0, 0, .35) 1px, transparent 1px) 0 0 / 33.33% 100%,
+  radial-gradient(circle, rgba(0, 0, 0, .55) 0 3px, transparent 4px) 40px 40px / 16.66% 23vh, #141217; }
+.ng-wall--paint { background: var(--noise), linear-gradient(180deg, #0d0c10, #0a090c); background-size: 240px, auto; }
+.ng-wall--bar { background: radial-gradient(60% 40% at 30% 0%, rgba(255, 179, 107, .16), transparent 70%), radial-gradient(50% 40% at 80% 0%, rgba(255, 179, 107, .12), transparent 70%),
+  var(--noise), repeating-linear-gradient(90deg, #1e1411 0 110px, #170f0d 110px 112px, #1b120f 112px 230px, #140d0b 230px 232px); }
+/* darkness between storefronts */
+.ng-front::before, .ng-front::after { content: ""; position: absolute; left: 0; right: 0; height: 16vh; z-index: 0; pointer-events: none; }
+.ng-front::before { top: 0; background: linear-gradient(#060508, rgba(6, 5, 8, 0)); }
+.ng-front::after { bottom: 0; background: linear-gradient(rgba(6, 5, 8, 0), #060508); }
+.ng-front > * { position: relative; z-index: 1; }
+.ng-spill { position: absolute !important; inset: 0; z-index: 0 !important; pointer-events: none; opacity: 0; transition: opacity 1.1s ease .1s; mix-blend-mode: screen;
+  background: radial-gradient(60% 46% at 32% 30%, color-mix(in srgb, var(--tube) 30%, transparent), transparent 72%); }
+.ng-front.is-lit .ng-spill { opacity: 1; transition-delay: .3s; }
+.ng-wet { position: absolute !important; left: 0; right: 0; bottom: 0; height: 24vh; z-index: 0 !important; pointer-events: none; opacity: 0; transition: opacity 1.2s .2s;
+  background: radial-gradient(34% 90% at 30% 0%, color-mix(in srgb, var(--tube) 55%, transparent), transparent 75%);
+  -webkit-mask: repeating-linear-gradient(0deg, #000 0 2px, rgba(0, 0, 0, .25) 2px 6px), linear-gradient(#000, transparent); -webkit-mask-composite: source-in;
+  mask: repeating-linear-gradient(0deg, #000 0 2px, rgba(0, 0, 0, .25) 2px 6px), linear-gradient(#000, transparent); mask-composite: intersect; }
+.ng-front.is-lit .ng-wet { opacity: .8; }
+
+/* ------------------------------------------------------------- signs: real text, drawn over as tubes */
+.ng-mount { position: relative; display: inline-block; max-width: 100%; }
+.ng-mount::before { content: ""; position: absolute; inset: -40% -18%; z-index: -1; pointer-events: none; opacity: 0; transition: opacity .9s .2s; mix-blend-mode: screen;
+  background: radial-gradient(closest-side, color-mix(in srgb, var(--tube) 34%, transparent), transparent); }
+.ng-mount:has(.is-lit)::before { opacity: calc(.72 + .28 * var(--near, 0)); }
+.ng-live .ng-sign:not(.has-tubes) .ng-sign__txt, .ng-live .ng-sign:not(.has-tubes) em { color: var(--glass); text-shadow: none; }
+.ng-mount::after { content: ""; position: absolute; left: 6%; right: 6%; top: 50%; height: 14px; margin-top: -7px; z-index: -1; border-radius: 3px;
+  background: radial-gradient(circle, #3a353f 0 2px, transparent 2.5px) 8px 50% / 120px 100% repeat-x, linear-gradient(#25222a, #17151b); box-shadow: 0 6px 12px -4px rgba(0, 0, 0, .8); }
+.ng-mount--script::after { display: none; }
+.ng-sign { position: relative; margin: 0; font-family: var(--font-display); font-weight: 400; line-height: 1.08; letter-spacing: .03em; text-wrap: balance; color: var(--core);
+  text-shadow: 0 0 2px #fff, 0 0 8px var(--tube), 0 0 20px var(--tube), 0 0 44px var(--tube); }
+.ng-sign em { color: var(--core); text-shadow: 0 0 2px #fff, 0 0 8px var(--tube2), 0 0 20px var(--tube2), 0 0 44px var(--tube2); }
+.ng-sign.has-tubes .ng-sign__txt, .ng-sign.has-tubes em { color: transparent; text-shadow: none; }
+.ng-sign.ng-sign--hero { font-size: clamp(52px, 8.6vw, 150px); }
+.ng-sign.ng-sign--big { font-size: clamp(42px, 6vw, 100px); }
+.ng-sign { font-size: clamp(36px, 4.4vw, 74px); }
+.ng-sign.ng-sign--small { font-size: clamp(26px, 2.2vw, 36px); }
+.ng-sign.ng-sign--script { font-family: "Neonderthaw", cursive; font-size: clamp(56px, 7.4vw, 128px); letter-spacing: 0; line-height: 1.1; }
+.ng-sign.ng-sign--closing { font-size: clamp(30px, 4vw, 64px); }
+.ng-tubes { position: absolute; inset: 0; pointer-events: none; }
+.ng-tubes svg { position: absolute; left: 0; top: 0; overflow: visible; }
+.ng-glass text { fill: var(--glassfill); stroke: var(--glass); stroke-width: 1.15px; paint-order: stroke; }
+.ng-halo, .ng-halo2, .ng-core { opacity: 0; will-change: opacity; }
+.ng-halo { transition: opacity .45s ease; }
+.ng-halo2 { transition: opacity .35s ease; }
+.ng-core { transition: opacity 1.7s ease .15s; }   /* the core lingers: warm-off before unlit glass */
+.ng-core text { fill: var(--core); }
+.ng-sign.is-lit .ng-halo, .ng-sign.is-lit .ng-halo2, .ng-sign.is-lit .ng-core { opacity: 1; animation: ng-ignite .78s linear both; transition: none; }
+.ng-sign.is-lit .ng-halo2 { animation-name: ng-ignite2; }
+.ng-sign.is-idle .ng-core { opacity: .5; } .ng-sign.is-idle .ng-halo { opacity: .2; } .ng-sign.is-idle .ng-halo2 { opacity: 0; }
+/* two partial dips inside ~.6 s, then steady: under three flashes a second, never a full blackout */
+@keyframes ng-ignite { 0% { opacity: 0; } 9% { opacity: .95; } 18% { opacity: .3; } 32% { opacity: 1; } 44% { opacity: .42; } 60% { opacity: 1; } 100% { opacity: 1; } }
+@keyframes ng-ignite2 { 0%, 50% { opacity: 0; } 100% { opacity: 1; } }
+/* the bad tube: one letter of the hero sign lags, then buzzes now and then */
+.ng-sign--hero.is-lit .ng-core .ng-lag, .ng-sign--hero.is-lit .ng-halo .ng-lag { animation: ng-lag 1.7s linear both, ng-buzz 8s 3s linear infinite; }
+@keyframes ng-lag { 0%, 52% { opacity: .08; } 62% { opacity: 1; } 70% { opacity: .25; } 84% { opacity: 1; } 100% { opacity: 1; } }
+@keyframes ng-buzz { 0%, 93% { opacity: 1; } 94% { opacity: .35; } 95.5% { opacity: 1; } 97% { opacity: .5; } 98.5%, 100% { opacity: 1; } }
+
+/* small always-mounted signs (the badge, the brand at closing time) */
+.ng-minisign { display: inline-block; margin: 0 0 30px; }
+.ng-minisign span { position: relative; display: inline-block; padding: 9px 18px; border-radius: 10px; font-family: var(--font-display); font-size: 17px; letter-spacing: .06em; color: rgba(233, 228, 218, .78);
+  border: 2px solid var(--glass); transition: color .4s; }
+.ng-minisign span::before { content: ""; position: absolute; inset: -2px; border-radius: inherit; border: 2px solid var(--core); opacity: 0; transition: opacity .3s;
+  box-shadow: 0 0 6px var(--tube), 0 0 16px var(--tube), inset 0 0 10px var(--tube); }
+.is-lit .ng-minisign span, .ng-minisign[data-always] span, html:not(.ng-live) .ng-minisign span { color: var(--core); text-shadow: 0 0 6px var(--tube); }
+.is-lit .ng-minisign span::before, .ng-minisign[data-always] span::before, html:not(.ng-live) .ng-minisign span::before { opacity: 1; transition-delay: .9s; }
+
+/* ------------------------------------------------------------- plaques and labels: plain, matte, readable */
+.ng-plaque { position: relative; max-width: 46ch; padding: 18px 24px 20px; border-radius: 6px; background: linear-gradient(180deg, #1c1920, #131116); border: 1px solid rgba(233, 228, 218, .1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .05), 0 16px 34px -14px rgba(0, 0, 0, .9); font-family: var(--plaque); font-size: 19px; line-height: 1.45; letter-spacing: .01em; color: var(--ink); }
+.ng-plaque::before { content: ""; position: absolute; inset: 7px; pointer-events: none; background:
+  radial-gradient(circle, #4a4450 0 2px, transparent 2.5px) 0 0 / 7px 7px no-repeat, radial-gradient(circle, #4a4450 0 2px, transparent 2.5px) 100% 0 / 7px 7px no-repeat,
+  radial-gradient(circle, #4a4450 0 2px, transparent 2.5px) 0 100% / 7px 7px no-repeat, radial-gradient(circle, #4a4450 0 2px, transparent 2.5px) 100% 100% / 7px 7px no-repeat; }
+.is-lit .ng-plaque, .ng-plaque.is-lit { border-top-color: color-mix(in srgb, var(--tube) 45%, transparent); }
+.ng-plaque p + p { margin-top: 10px; }
+.ng-label { display: inline-block; margin: 0 0 22px; padding: 5px 10px; border-radius: 3px; background: #1d1a21; border: 1px solid rgba(233, 228, 218, .14);
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); }
+.ng-note { margin-top: 12px; font-size: 15px; color: var(--ink-2); }
+
+/* ------------------------------------------------------------- buttons: tube outlines, lit on hover */
+.ng-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+.ng-btn { position: relative; display: inline-flex; align-items: center; padding: 14px 28px; border-radius: 999px; border: 2px solid var(--glass); color: var(--ink);
+  font-family: var(--plaque); font-weight: 600; font-size: 15px; letter-spacing: .16em; text-transform: uppercase; }
+.ng-btn::before { content: ""; position: absolute; inset: -2px; border-radius: inherit; border: 2px solid var(--core); opacity: 0; transition: opacity .25s;
+  box-shadow: 0 0 6px var(--tube), 0 0 18px var(--tube), inset 0 0 12px var(--tube); }
+.ng-btn--hot::before { opacity: .5; }
+.ng-btn:hover::before, .ng-btn:focus-visible::before { opacity: 1; }
+.ng-btn:hover, .ng-btn:focus-visible { color: var(--core); }
+.ng-btn:focus-visible, .ng-open:focus-visible { outline: 2px solid #fff; outline-offset: 8px; }
+
+/* ------------------------------------------------------------- hero: the densest wall */
+.ng-hero { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; padding: 120px var(--gutter) 120px; }
+.ng-hero__in { width: min(1180px, 100%); }
+.ng-hero .ng-spill { background: radial-gradient(55% 50% at 30% 46%, color-mix(in srgb, var(--tube) 32%, transparent), transparent 72%); }
+.ng-hero__foot { display: flex; flex-wrap: wrap; align-items: flex-end; gap: 24px 40px; margin-top: 46px; }
+.ng-hero__foot .ng-btns { margin-top: 0; }
+.ng-arrow { position: absolute !important; right: 9vw; top: 50%; width: 70px; transform: translateY(-50%); overflow: visible; }
+.ng-arrow path { fill: none; stroke: var(--glass); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+.ng-arrow path { stroke-dasharray: 1 1; stroke-dashoffset: 0; }
+.ng-live .ng-hero.is-lit .ng-arrow path { stroke: var(--core); filter: drop-shadow(0 0 4px var(--tube2)) drop-shadow(0 0 12px var(--tube2)); animation: ng-draw 1.4s .6s ease-out both; }
+@keyframes ng-draw { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+.ng-window { position: absolute !important; border: 10px solid #1d1b21; border-radius: 4px; background: #0e0d11; overflow: hidden; box-shadow: inset 0 0 40px rgba(0, 0, 0, .9), 0 30px 60px -30px #000; }
+.ng-hero__window { right: 6vw; bottom: 16vh; width: min(30vw, 420px); aspect-ratio: 4 / 5; }
+.ng-hero__window img, .ng-hero__window video { width: 100%; height: 100%; object-fit: cover; opacity: .8; }
+.ng-hero__phone { right: 16vw; bottom: -20vh; padding: 20px; border: 0; background: none; box-shadow: none; overflow: visible; }
+
+/* ------------------------------------------------------------- intro */
+.ng-intro { padding: clamp(130px, 22vh, 240px) var(--gutter); }
+.ng-intro__in { max-width: 1240px; margin-left: auto; display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
+.ng-intro .ng-plaque { margin-top: 44px; text-align: left; }
+.ng-intro .ng-spill { background: radial-gradient(55% 46% at 70% 40%, color-mix(in srgb, var(--tube) 30%, transparent), transparent 72%); }
+.ng-intro .ng-wet { background: radial-gradient(34% 90% at 70% 0%, color-mix(in srgb, var(--tube) 55%, transparent), transparent 75%); }
+
+/* ------------------------------------------------------------- features: a wall of small signs that light in turn */
+.ng-features__stage { padding: clamp(110px, 16vh, 170px) var(--gutter); }
+.ng-features__head { max-width: 900px; margin-bottom: clamp(40px, 7vh, 80px); }
+.ng-wallsigns { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6vh 4vw; align-items: start; }
+.ng-wallsigns--2, .ng-wallsigns--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ng-fsign { position: relative; }
+.ng-fsign:nth-child(3n + 2) { margin-top: 7vh; transform: rotate(.8deg); }
+.ng-fsign:nth-child(3n + 3) { margin-top: 2vh; transform: rotate(-1deg); }
+.ng-fsign__tag { display: inline-block; margin-bottom: 14px; font-family: var(--font-mono); font-size: 12px; letter-spacing: .16em; color: var(--ink-2); padding: 3px 8px; border: 1px solid rgba(233, 228, 218, .18); border-radius: 3px; }
+.ng-fsign .ng-sign { margin-bottom: 18px; }
+.ng-plaque--small { font-size: 17px; padding: 14px 18px 16px; }
+.ng-meter { margin-top: 12px; height: 6px; border-radius: 6px; border: 1px solid var(--glass); position: relative; }
+.ng-meter i { position: absolute; left: -1px; top: -1px; bottom: -1px; width: calc(var(--m) * 100%); border-radius: inherit; background: var(--core); box-shadow: 0 0 6px var(--tube); }
+.ng-live .ng-features { height: calc(100vh + var(--n) * 48vh); height: calc(100svh + var(--n) * 48svh); }
+.ng-live .ng-features__stage { position: sticky; top: 0; min-height: 100vh; min-height: 100svh; display: flex; flex-direction: column; justify-content: center; }
+.ng-live .ng-features.is-free { height: auto; }
+.ng-live .ng-features.is-free .ng-features__stage { position: relative; min-height: 0; }
+
+/* ------------------------------------------------------------- product: a shop window */
+.ng-product { padding: clamp(110px, 16vh, 170px) var(--gutter); min-height: 100vh; min-height: 100svh; display: flex; align-items: center; }
+.ng-product__in { width: 100%; max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 6vw; align-items: center; }
+.ng-product--right .ng-shop { order: 2; }
+.ng-shop { position: relative; display: grid; place-items: center; }
+.ng-window--shop { position: relative !important; width: min(100%, 520px); height: min(72vh, 680px); display: grid; place-items: center;
+  background: radial-gradient(70% 60% at 50% 40%, color-mix(in srgb, var(--tube) 16%, #121016), #0b0a0d 80%); border-width: 14px; }
+.ng-window--shop .ss-phone { width: clamp(210px, 17vw, 270px); }
+.ng-phone { position: relative; z-index: 1; }
+.ng-phone--behind { position: absolute; transform: translate(-40%, 4%) rotate(-8deg) scale(.86); z-index: 0; }
+.ng-product__img { width: 100%; height: 100%; object-fit: cover; opacity: .85; }
+.ng-pane { position: absolute; inset: 0; z-index: 2; pointer-events: none; background: linear-gradient(115deg, rgba(255, 255, 255, .07) 0 18%, transparent 18% 40%, rgba(255, 255, 255, .04) 40% 44%, transparent 44%); }
+.ng-product .ng-plaque { margin-top: 34px; }
+.ng-menu { list-style: none; display: grid; gap: 0; margin-top: 14px; border-top: 1px dashed rgba(233, 228, 218, .18); }
+.ng-menu li, .ng-menu div { display: flex; justify-content: space-between; gap: 20px; padding: 8px 0; border-bottom: 1px dashed rgba(233, 228, 218, .18); font-size: 17px; }
+.ng-menu--tags li::after { content: "✓"; color: var(--ink-2); }
+.ng-menu dd { font-family: var(--font-display); }
+
+/* ------------------------------------------------------------- stats: a motel sign board of tube numerals */
+.ng-stats { padding: clamp(110px, 16vh, 170px) var(--gutter); }
+.ng-stats .ng-spill { background: radial-gradient(60% 50% at 50% 50%, color-mix(in srgb, var(--room) 24%, transparent), transparent 72%); }
+.ng-stats__in { max-width: 1280px; margin: 0 auto; }
+.ng-board { position: relative; padding: clamp(46px, 6vw, 70px) clamp(18px, 3vw, 44px) clamp(28px, 4vw, 44px); border-radius: 18px; background: #09080b;
+  border: 12px solid #1c1a20; box-shadow: inset 0 0 50px rgba(0, 0, 0, .95), 0 0 0 1px #2a2730, 0 40px 80px -30px #000; }
+.ng-board__live { position: absolute; left: 22px; top: 16px; display: flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; text-transform: uppercase; color: var(--ink-2); }
+.ng-board__live i { width: 8px; height: 8px; border-radius: 50%; background: #3dffb4; box-shadow: 0 0 8px #3dffb4; }
+.ng-board__cells { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.ng-board__cells--1 { grid-template-columns: 1fr; } .ng-board__cells--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } .ng-board__cells--3, .ng-board__cells--5, .ng-board__cells--6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.ng-cell { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 10px 14px 4px; }
+.ng-cell + .ng-cell { border-left: 1px solid rgba(233, 228, 218, .08); }
+.ng-cell__v { position: relative; height: clamp(70px, 8vw, 128px); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: clamp(56px, 6vw, 100px);
+  color: var(--core); text-shadow: 0 0 2px #fff, 0 0 10px var(--tube), 0 0 24px var(--tube); }
+.ng-cell__v small { font-size: .4em; margin-left: 4px; }
+.ng-cell__v.has-seg .ng-cell__txt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.ng-seg { height: 100%; width: auto; overflow: visible; }
+.ng-seg .g { fill: none; stroke: rgba(233, 228, 218, .09); stroke-linecap: round; stroke-width: 9; }
+.ng-seg .l { fill: none; stroke: var(--core); stroke-linecap: round; stroke-width: 5; opacity: 0; transition: opacity .12s; }
+.ng-seg .lt { fill: var(--core); opacity: 0; transition: opacity .12s; font-family: var(--font-display); }
+.ng-seg .gt { fill: rgba(233, 228, 218, .08); font-family: var(--font-display); }
+.ng-seg .lit { filter: drop-shadow(0 0 3px var(--tube)) drop-shadow(0 0 9px var(--tube)); }
+.ng-cell.is-lit .ng-seg .l, .ng-cell.is-lit .ng-seg .lt { opacity: 1; }
+.ng-cell__l { margin-top: 18px; font-family: var(--plaque); font-size: 17px; letter-spacing: .04em; color: var(--ink-2); max-width: 20ch; }
+
+/* ------------------------------------------------------------- timeline: one tube drawn along the wall */
+.ng-timeline { padding: clamp(110px, 16vh, 170px) var(--gutter) clamp(130px, 20vh, 220px); }
+.ng-timeline__in { max-width: 1240px; margin: 0 auto; }
+.ng-timeline__head { margin-bottom: clamp(60px, 10vh, 110px); }
+.ng-route { list-style: none; position: relative; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); column-gap: 10vw; row-gap: 12vh; }
+.ng-stop { position: relative; padding-top: 34px; }
+.ng-stop:nth-child(even) { margin-top: 18vh; }
+.ng-stop__hook { position: absolute; left: 24px; top: 0; width: 1px; height: 1px; }
+.ng-stop__sign { display: inline-flex; flex-direction: column; gap: 6px; padding: 14px 20px; border-radius: 12px; border: 2px solid var(--glass); margin-bottom: 18px; transition: border-color .3s, box-shadow .3s; }
+.ng-stop__when { font-family: var(--font-mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); }
+.ng-stop h3 { font-family: var(--font-display); font-weight: 400; font-size: clamp(26px, 2.4vw, 40px); line-height: 1.1; color: rgba(233, 228, 218, .78); transition: color .3s; }
+.ng-stop.is-lit .ng-stop__sign { border-color: var(--core); box-shadow: 0 0 6px var(--tube), 0 0 18px var(--tube), inset 0 0 12px color-mix(in srgb, var(--tube) 60%, transparent); }
+.ng-stop.is-lit h3 { color: var(--core); text-shadow: 0 0 2px #fff, 0 0 10px var(--tube), 0 0 24px var(--tube); }
+html:not(.ng-live) .ng-stop h3 { color: var(--core); }
+.ng-line { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; z-index: 0; }
+.ng-line .g { fill: none; stroke: rgba(233, 228, 218, .13); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
+.ng-line .h { fill: none; stroke: var(--tube); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 6px var(--tube)) drop-shadow(0 0 16px var(--tube)); }
+.ng-line .c { fill: none; stroke: var(--core); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ------------------------------------------------------------- quote: a script sign over its plaque */
+.ng-quote { padding: clamp(130px, 22vh, 240px) var(--gutter); }
+.ng-quote__in { margin: 0 auto; max-width: 1180px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.ng-quote .ng-spill { background: radial-gradient(55% 46% at 50% 34%, color-mix(in srgb, var(--tube) 22%, transparent), transparent 72%); }
+.ng-quote .ng-wet { background: radial-gradient(34% 90% at 50% 0%, color-mix(in srgb, var(--tube) 45%, transparent), transparent 75%); }
+.ng-plaque--quote { margin-top: 46px; max-width: 760px; padding: 26px 34px 28px; text-align: left; }
+.ng-plaque--quote blockquote { font-family: var(--font-body); font-size: clamp(19px, 1.6vw, 24px); line-height: 1.5; }
+.ng-plaque--quote figcaption { margin-top: 14px; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-2); }
+
+/* ------------------------------------------------------------- faq: inside the bar, warm and calm */
+.ng-faq { padding: clamp(120px, 18vh, 200px) var(--gutter); }
+.ng-faq .ng-spill { background: radial-gradient(50% 40% at 25% 20%, color-mix(in srgb, var(--tube) 18%, transparent), transparent 72%); }
+.ng-faq__in { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.4fr); gap: 6vw; align-items: start; }
+.ng-faq__kicker { margin-top: 20px; color: var(--ink-2); font-family: var(--plaque); font-size: 18px; }
+.ng-q { padding: 10px 0; border-bottom: 1px solid rgba(255, 220, 180, .08); }
+.ng-q summary { list-style: none; cursor: pointer; padding: 14px 0; }
+.ng-q summary::-webkit-details-marker { display: none; }
+.ng-q__sign { font-family: var(--font-display); font-size: clamp(21px, 1.8vw, 28px); line-height: 1.25; color: rgba(233, 222, 205, .74); transition: color .3s; }
+.ng-q summary:hover .ng-q__sign { color: rgba(255, 240, 222, .92); }
+.ng-q[open] .ng-q__sign { color: #fff3e2; text-shadow: 0 0 2px #fff, 0 0 10px #ffb36b, 0 0 24px rgba(255, 179, 107, .7); }
+.ng-plaque--answer { margin: 6px 0 14px; max-width: 60ch; background: linear-gradient(180deg, #2a1d16, #1f1510); border-color: rgba(255, 220, 180, .12); }
+
+/* ------------------------------------------------------------- cta: the OPEN sign */
+.ng-cta { min-height: 100vh; min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 130px var(--gutter); }
+.ng-cta__bg { position: absolute !important; inset: 0; background-size: cover; background-position: center; opacity: .14; }
+.ng-cta .ng-spill { background: radial-gradient(50% 46% at 50% 66%, rgba(255, 78, 26, .3), transparent 72%), radial-gradient(50% 40% at 50% 30%, color-mix(in srgb, var(--tube) 18%, transparent), transparent 72%); }
+.ng-cta .ng-wet { background: radial-gradient(30% 90% at 50% 0%, rgba(255, 78, 26, .55), transparent 75%); }
+.ng-cta__in { display: flex; flex-direction: column; align-items: center; }
+.ng-open { position: relative; display: inline-flex; flex-direction: column; align-items: center; margin-top: 56px; padding: 26px 64px 22px; border-radius: 28px; color: var(--ink); }
+.ng-open__frame { position: absolute; inset: 0; border-radius: inherit; border: 3px solid var(--glass); }
+.ng-open__frame i { position: absolute; inset: -3px; border-radius: inherit; border: 3px solid #d9e6ff; opacity: 0; transition: opacity .2s;
+  box-shadow: 0 0 0 1px #2f7bff, 0 0 12px 2px rgba(47, 123, 255, .9), 0 0 38px 6px rgba(47, 123, 255, .4), inset 0 0 16px rgba(47, 123, 255, .6); }
+.ng-open__word { position: relative; font-family: var(--font-display); font-size: clamp(64px, 9vw, 150px); line-height: 1; letter-spacing: .07em; }
+.ng-open__word b { font-weight: 400; color: transparent; -webkit-text-stroke: 1.2px var(--glass); }
+.ng-open__word i { position: absolute; inset: 0; font-style: normal; color: #ffe4da; opacity: 0; transition: opacity .2s; text-shadow: 0 0 2px #fff, 0 0 10px #ff4e1a, 0 0 26px #ff4e1a, 0 0 60px #ff4e1a; }
+.ng-open__word::after { content: ""; position: absolute; inset: -30% -20%; z-index: -1; opacity: 0; transition: opacity .4s; background: radial-gradient(closest-side, rgba(255, 78, 26, .35), transparent); }
+.ng-open__label { margin-top: 12px; font-family: var(--plaque); font-weight: 600; font-size: 18px; letter-spacing: .2em; text-transform: uppercase; }
+.ng-open.is-on .ng-open__frame i, .ng-open.is-on .ng-open__word i, html:not(.ng-live) .ng-open .ng-open__word i, html:not(.ng-live) .ng-open .ng-open__frame i { opacity: 1; }
+.ng-open.is-on { animation: ng-clunk .5s cubic-bezier(.3, 1.6, .5, 1) both; }
+.ng-open.is-on:hover .ng-open__word::after, .ng-open.is-on:focus-visible .ng-open__word::after { opacity: 1; }
+.ng-open:hover .ng-open__label { color: var(--core); }
+@keyframes ng-clunk { 0% { transform: scale(.985); } 35% { transform: scale(1.035); } 100% { transform: none; } }
+
+/* ------------------------------------------------------------- closing time */
+.ng-closing { padding: clamp(110px, 18vh, 180px) var(--gutter) clamp(70px, 10vh, 110px); text-align: center; }
+.ng-closing__in { display: flex; flex-direction: column; align-items: center; gap: 30px; }
+.ng-closing .ng-spill { background: radial-gradient(50% 50% at 50% 40%, color-mix(in srgb, var(--tube) 20%, transparent), transparent 72%); }
+html.style-neon-glow .ss-footer { background: #060508; border-top: 0; position: relative; z-index: 1; }
+html.style-neon-glow .ss-footer__in { font-family: var(--font-mono); font-size: 12px; color: var(--ink-2); }
+
+/* ------------------------------------------------------------- default blocks on the street */
+html.style-neon-glow main > .ss-block, html.style-neon-glow main > * > .ss-block { background: var(--noise), linear-gradient(#0d0c10, #0a090c); }
+html.style-neon-glow .ss-display, html.style-neon-glow .ss-h2, html.style-neon-glow .ss-h1 { font-weight: 400; color: var(--core); text-shadow: 0 0 2px #fff, 0 0 10px var(--accent), 0 0 24px var(--accent); }
+html.style-neon-glow .ss-tile { background: #141217; border-color: rgba(233, 228, 218, .12); border-radius: 8px; }
+html.style-neon-glow .ss-btn--hot { background: transparent; color: var(--core); border: 2px solid var(--core); box-shadow: 0 0 8px var(--accent), inset 0 0 8px var(--accent); }
+
+/* ------------------------------------------------------------- phones */
+@media (max-width: 900px) {
+  .ng-hero { padding: 110px var(--gutter) 90px; align-items: flex-end; }
+  .ng-sign.ng-sign--hero { font-size: clamp(48px, 14vw, 80px); }
+  .ng-sign.ng-sign--big { font-size: clamp(38px, 11vw, 60px); }
+  .ng-sign { font-size: clamp(32px, 9vw, 46px); }
+  .ng-sign.ng-sign--small { font-size: 26px; }
+  .ng-sign.ng-sign--script { font-size: clamp(46px, 13vw, 74px); }
+  .ng-arrow { right: 20px; top: 120px; width: 40px; transform: none; }
+  .ng-intro__in { align-items: flex-start; text-align: left; }
+  .ng-wallsigns, .ng-wallsigns--2, .ng-wallsigns--4 { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .ng-fsign:nth-child(n) { margin-top: 0; transform: none; }
+  .ng-fsign .ng-sign { margin-bottom: 10px; }
+  .ng-fsign__tag { margin-bottom: 8px; }
+  .ng-plaque--small { font-size: 16px; padding: 10px 14px 12px; }
+  .ng-product__in { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .ng-product--right .ng-shop { order: 0; }
+  .ng-window--shop { height: 56vh; }
+  .ng-window--shop .ss-phone { width: min(52vw, 220px); }
+  .ng-board__cells, .ng-board__cells--3, .ng-board__cells--5, .ng-board__cells--6 { grid-template-columns: 1fr 1fr; row-gap: 26px; }
+  .ng-cell + .ng-cell { border-left: 0; }
+  .ng-cell__v { height: 64px; font-size: 52px; }
+  .ng-cell__l { font-size: 15px; }
+  .ng-route { grid-template-columns: minmax(0, 1fr); row-gap: 50px; padding-left: 26px; }
+  .ng-stop:nth-child(even) { margin-top: 0; }
+  .ng-stop__hook { left: -14px; top: 30px; }
+  .ng-faq__in { grid-template-columns: minmax(0, 1fr); gap: 26px; }
+  .ng-open { padding: 20px 40px 18px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ng-sign.is-lit .ng-halo, .ng-sign.is-lit .ng-halo2, .ng-sign.is-lit .ng-core, .ng-sign--hero.is-lit .ng-core .ng-lag, .ng-sign--hero.is-lit .ng-halo .ng-lag, .ng-open.is-on, .ng-live .ng-hero.is-lit .ng-arrow path { animation: none; }
+  .ng-halo, .ng-halo2, .ng-core { transition: opacity .15s; }
+  html.style-neon-glow { transition: none; }
+}
 
 </style><style>
   /* A section's backdrop: the image fills the panel (or a wrapper in the flow layout); the section itself goes clear,
@@ -168,87 +471,176 @@ html.style-neon-glow .ss-band { background: rgba(255, 255, 255, .02); border-col
   <nav class="ss-nav__links"><a href="#why">Why</a><a href="#features">Features</a><a href="#how">How</a></nav>
 <a class="ss-btn" href="#get">Get Halcyon <span class="ss-arrow">→</span></a></div></header>
 
+<div class="ng-room" aria-hidden="true"></div>
+<div class="ng-torch" aria-hidden="true"></div>
 <main>
-<section class="ss-block ss-hero ss-hero--center">
-  <div class="ss-hero__in">
-<span class="ss-badge">New · Halcyon 2.0</span><h1 class="ss-h1">Your mornings, <em>back.</em></h1><p class="ss-lede">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>    <div class="ss-btns"><a class="ss-btn ss-btn--hot" href="#get">Try it free <span class="ss-arrow">→</span></a><a class="ss-btn" href="../../looks/">See the looks</a></div>
+
+<section class="ng-front ng-wall--brick ng-hero" data-ng="hero" style="--tube: #ff2a6d; --tube2: #ffe9c7">
+  <div class="ng-spill" aria-hidden="true"><i></i></div>
+  <div class="ng-hero__in">
+<p class="ng-minisign" style="--tube: #05d9e8" data-minisign><span>New · Halcyon 2.0</span></p>    <div class="ng-mount"><h1 class="ng-sign ng-sign--hero" data-sign><span class="ng-sign__txt">Your mornings, <em>back.</em></span></h1></div>
+    <div class="ng-hero__foot">
+<div class="ng-plaque"><p>Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p></div>      <div class="ng-btns"><a class="ng-btn ng-btn--hot" href="#get"><span>Try it free</span></a><a class="ng-btn" href="../../looks/"><span>See the looks</span></a></div>
+    </div>
+  </div>
+  <svg class="ng-arrow" viewBox="0 0 120 220" aria-hidden="true"><path d="M60 10 V170 M24 134 L60 172 L96 134" pathLength="1"/></svg>
+  <div class="ng-wet" aria-hidden="true"></div>
+</section>
+
+
+<section class="ng-front ng-wall--paint ng-intro" data-ng="intro" style="--tube: #05d9e8; --tube2: #ff2a6d" id="why">
+  <div class="ng-spill" aria-hidden="true"><i></i></div>
+  <div class="ng-intro__in">
+<p class="ng-label">The problem</p>    <div class="ng-mount"><h2 class="ng-sign ng-sign--big" data-sign><span class="ng-sign__txt">Calendars fill up <em>from the top.</em></span></h2></div>
+<div class="ng-plaque ng-plaque--wide"><p>Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p></div>  </div>
+  <div class="ng-wet" aria-hidden="true"></div>
+</section>
+
+
+<section class="ng-front ng-wall--concrete ng-features" data-ng="features" style="--tube: #3dffb4; --tube2: #ffe9c7; --n: 3" id="features">
+  <div class="ng-features__stage">
+    <div class="ng-spill" aria-hidden="true"><i></i></div>
+<header class="ng-features__head">
+<p class="ng-label">What it does</p><div class="ng-mount"><h2 class="ng-sign " data-sign><span class="ng-sign__txt">Three rules, <em>kept for you.</em></span></h2></div>    </header>    <ol class="ng-wallsigns ng-wallsigns--3">
+      <li class="ng-fsign" style="--tube: #05d9e8; --tube2: #ff2a6d">
+        <span class="ng-fsign__tag">01</span>
+        <h3 class="ng-sign ng-sign--small" data-sign><span class="ng-sign__txt">Focus first</span></h3>
+<div class="ng-plaque ng-plaque--small"><p>Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p></div>      </li>
+      <li class="ng-fsign" style="--tube: #3dffb4; --tube2: #ffe9c7">
+        <span class="ng-fsign__tag">02</span>
+        <h3 class="ng-sign ng-sign--small" data-sign><span class="ng-sign__txt">Smart batching</span></h3>
+<div class="ng-plaque ng-plaque--small"><p>Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p></div>      </li>
+      <li class="ng-fsign" style="--tube: #b14cff; --tube2: #05d9e8">
+        <span class="ng-fsign__tag">03</span>
+        <h3 class="ng-sign ng-sign--small" data-sign><span class="ng-sign__txt">Polite no</span></h3>
+<div class="ng-plaque ng-plaque--small"><p>Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p></div>      </li>
+    </ol>
   </div>
 </section>
 
-<section class="ss-block" id="why"><div class="ss-wrap ss-intro2">
-  <h2 class="ss-display ss-reveal">Calendars fill up <em>from the top.</em></h2>
-  <div class="ss-reveal">
-<span class="ss-kicker">The problem</span><p class="ss-lede">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>  </div>
-</div></section>
 
-<section class="ss-block" id="features"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">What it does</span><h2 class="ss-display">Three rules, <em>kept for you.</em></h2></div>  <div class="ss-features ss-features--3">
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">01</span>      <div><h3>Focus first</h3><p>Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">02</span>      <div><h3>Smart batching</h3><p>Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">03</span>      <div><h3>Polite no</h3><p>Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p></div>
-    </div>
-  </div>
-</div></section>
-
-<section class="ss-scene ss-overlay ss-side-right ss-type-type ss-shade-auto ss-type--display" id="words" data-scene="type">
-  <div class="ss-track" style="height: 260vh">
-    <div class="ss-stage">
-      <div class="ss-visual"></div>
-      <div class="ss-shade"></div>
-      <div class="ss-captions">
-      </div>
-      
-      <div class="ss-outro"></div>
-    </div>
-  </div>
-  <script type="application/json" class="ss-config">{"mode": "swap", "text": "Halcyon keeps your", "words": ["mornings", "Fridays", "evenings", "weekends"]}</script>
-  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "none", "legend": [], "scales": []}, "layout": "overlay", "length": 2.6, "steps": []}</script>
-</section>
-<section class="ss-block ss-product ss-product--right ss-pose--beside" id="app"><div class="ss-wrap ss-product__in">
-  <div class="ss-product__media" data-float>
-<div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
+<section class="ng-front ng-wall--brick ng-product ng-product--right" data-ng="product" style="--tube: #b14cff; --tube2: #05d9e8" id="app">
+  <div class="ng-spill" aria-hidden="true"><i></i></div>
+  <div class="ng-product__in">
+    <div class="ng-shop">
+      <div class="ng-window ng-window--shop">
+<div class="ng-phone"><div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
   <div class="ss-phone__bar"><span>9:41</span><i></i></div>
 <div class="ss-app">
 <div class="ss-app__name">Halcyon</div><div class="ss-app__title">Coffee with Sam</div><div class="ss-app__label">Best times</div><p class="ss-app__note">Your 8-11 focus block stays free.</p><div class="ss-app__opt is-on"><b>Tue 2:30 pm</b><small>Next to your other calls</small></div><div class="ss-app__opt"><b>Wed 4:00 pm</b><small>End of day</small></div><div class="ss-app__opt"><b>Thu 1:00 pm</b><small>After lunch</small></div><div class="ss-app__btn">Send these times</div>  </div></div></div>
+</div>        <i class="ng-pane" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="ng-product__copy">
+<p class="ng-label">The app</p>      <div class="ng-mount"><h2 class="ng-sign " data-sign><span class="ng-sign__txt">Pick a slot, <em>keep the morning.</em></span></h2></div>
+      <div class="ng-plaque">
+<p>When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><ul class="ng-menu ng-menu--tags"><li>iPhone</li><li>Android</li><li>Web</li><li>Google and Outlook</li></ul>      </div>
+      
+    </div>
   </div>
-  <div class="ss-product__copy ss-reveal">
-<span class="ss-kicker">The app</span>    <h2 class="ss-h2">Pick a slot, <em>keep the morning.</em></h2>
-<p class="ss-lede">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><ul class="ss-pills"><li>iPhone</li><li>Android</li><li>Web</li><li>Google and Outlook</li></ul>    
-  </div>
-</div></section>
-
-<section class="ss-block ss-band ss-band"><div class="ss-wrap ss-stats ss-stats--4">
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="11">11<sup>h</sup></div><div class="ss-l">Focus hours kept per week</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="38">38<sup>%</sup></div><div class="ss-l">Fewer meeting fragments</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="2">2<sup>min</sup></div><div class="ss-l">To set up</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="0">0</div><div class="ss-l">Calendars replaced</div></div>
-</div></section>
-
-<section class="ss-block" id="how"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">How it works</span><h2 class="ss-display">Set it up <em>over coffee.</em></h2></div>  <div class="ss-timeline ss-timeline--4">
-<div class="ss-tl ss-reveal"><span class="ss-when">Minute 1</span><h4>Connect</h4><p>Sign in with Google or Outlook; nothing moves yet.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Minute 2</span><h4>Mark your hours</h4><p>Paint the blocks you want protected.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Day 1</span><h4>It starts</h4><p>New invites are steered around your focus.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Week 1</span><h4>You notice</h4><p>A free morning, then another one.</p></div>  </div>
-</div></section>
-
-<section class="ss-block"><div class="ss-wrap ss-quote ss-reveal">
-  <blockquote>I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote><cite>Priya N., product designer</cite></div></section>
-
-<section class="ss-block ss-faq"><div class="ss-wrap ss-faq__in">
-  <div class="ss-head ss-reveal"><h2 class="ss-h2">Questions</h2></div>
-  <div class="ss-faq__list">
-<details class="ss-reveal" open><summary>Does it replace my calendar?</summary><p>No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></details><details class="ss-reveal"><summary>What do the people I meet see?</summary><p>A short list of times that work for both of you. No new app to install.</p></details><details class="ss-reveal"><summary>Can I override it?</summary><p>Always. Drag anything anywhere; Halcyon learns from what you move.</p></details>  </div>
-</div></section>
-<section class="ss-block ss-cta" id="get">
-  <div class="ss-cta__in">
-<span class="ss-kicker ss-reveal">Free for 30 days</span>    <h2 class="ss-display ss-reveal">Keep <em>tomorrow morning.</em></h2>
-<a class="ss-btn ss-btn--hot ss-reveal" href="#">Get Halcyon <span class="ss-arrow">→</span></a>  </div>
+  <div class="ng-wet" aria-hidden="true"></div>
 </section>
 
+
+<section class="ng-front ng-wall--paint ng-stats" data-ng="stats" style="--tube: #ff2a6d; --tube2: #ffe9c7">
+  <div class="ng-spill" aria-hidden="true"><i></i></div>
+  <div class="ng-stats__in">
+    <div class="ng-board" data-board>
+      <span class="ng-board__live" aria-hidden="true"><i></i>Live</span>
+      <ol class="ng-board__cells ng-board__cells--4">
+        <li class="ng-cell" style="--tube: #3dffb4; --tube2: #ffe9c7">
+          <p class="ng-cell__v" data-seg="11" data-unit="h"><span class="ng-cell__txt">11<small>h</small></span></p>
+          <p class="ng-cell__l">Focus hours kept per week</p>
+        </li>
+        <li class="ng-cell" style="--tube: #b14cff; --tube2: #05d9e8">
+          <p class="ng-cell__v" data-seg="38" data-unit="%"><span class="ng-cell__txt">38<small>%</small></span></p>
+          <p class="ng-cell__l">Fewer meeting fragments</p>
+        </li>
+        <li class="ng-cell" style="--tube: #ffe9c7; --tube2: #ff2a6d">
+          <p class="ng-cell__v" data-seg="2" data-unit="min"><span class="ng-cell__txt">2<small>min</small></span></p>
+          <p class="ng-cell__l">To set up</p>
+        </li>
+        <li class="ng-cell" style="--tube: #2f7bff; --tube2: #3dffb4">
+          <p class="ng-cell__v" data-seg="0" data-unit=""><span class="ng-cell__txt">0</span></p>
+          <p class="ng-cell__l">Calendars replaced</p>
+        </li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+
+<section class="ng-front ng-wall--paint ng-timeline" data-ng="timeline" style="--tube: #2f7bff; --tube2: #3dffb4" id="how">
+  <div class="ng-spill" aria-hidden="true"><i></i></div>
+  <div class="ng-timeline__in">
+<header class="ng-timeline__head">
+<p class="ng-label">How it works</p><div class="ng-mount"><h2 class="ng-sign " data-sign><span class="ng-sign__txt">Set it up <em>over coffee.</em></span></h2></div>    </header>    <ol class="ng-route">
+      <li class="ng-stop">
+        <span class="ng-stop__hook" aria-hidden="true"></span>
+        <div class="ng-stop__sign"><span class="ng-stop__when">Minute 1</span><h3>Connect</h3></div>
+<div class="ng-plaque ng-plaque--small"><p>Sign in with Google or Outlook; nothing moves yet.</p></div>      </li>
+      <li class="ng-stop">
+        <span class="ng-stop__hook" aria-hidden="true"></span>
+        <div class="ng-stop__sign"><span class="ng-stop__when">Minute 2</span><h3>Mark your hours</h3></div>
+<div class="ng-plaque ng-plaque--small"><p>Paint the blocks you want protected.</p></div>      </li>
+      <li class="ng-stop">
+        <span class="ng-stop__hook" aria-hidden="true"></span>
+        <div class="ng-stop__sign"><span class="ng-stop__when">Day 1</span><h3>It starts</h3></div>
+<div class="ng-plaque ng-plaque--small"><p>New invites are steered around your focus.</p></div>      </li>
+      <li class="ng-stop">
+        <span class="ng-stop__hook" aria-hidden="true"></span>
+        <div class="ng-stop__sign"><span class="ng-stop__when">Week 1</span><h3>You notice</h3></div>
+<div class="ng-plaque ng-plaque--small"><p>A free morning, then another one.</p></div>      </li>
+    </ol>
+  </div>
+</section>
+
+
+<section class="ng-front ng-wall--brick ng-quote" data-ng="quote" style="--tube: #ffe9c7; --tube2: #ff2a6d">
+  <div class="ng-spill" aria-hidden="true"><i></i></div>
+  <figure class="ng-quote__in">
+    <div class="ng-mount ng-mount--script"><p class="ng-sign ng-sign--script" data-sign aria-hidden="true"><span class="ng-sign__txt">I got my mornings back in a week</span></p></div>
+    <div class="ng-plaque ng-plaque--quote">
+      <blockquote>I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote>
+<figcaption>Priya N., product designer</figcaption>    </div>
+  </figure>
+  <div class="ng-wet" aria-hidden="true"></div>
+</section>
+
+
+<section class="ng-front ng-wall--bar ng-faq" data-ng="faq" style="--tube: #ffe9c7; --tube2: #ffb36b">
+  <div class="ng-spill" aria-hidden="true"><i></i></div>
+  <div class="ng-faq__in">
+    <header>
+      <p class="ng-label">Inside</p>
+      <div class="ng-mount"><h2 class="ng-sign " data-sign><span class="ng-sign__txt">Questions</span></h2></div>
+    </header>
+    <div class="ng-faq__list">
+<details class="ng-q" open><summary><span class="ng-q__sign">Does it replace my calendar?</span></summary><div class="ng-plaque ng-plaque--answer"><p>No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></div></details><details class="ng-q"><summary><span class="ng-q__sign">What do the people I meet see?</span></summary><div class="ng-plaque ng-plaque--answer"><p>A short list of times that work for both of you. No new app to install.</p></div></details><details class="ng-q"><summary><span class="ng-q__sign">Can I override it?</span></summary><div class="ng-plaque ng-plaque--answer"><p>Always. Drag anything anywhere; Halcyon learns from what you move.</p></div></details>    </div>
+  </div>
+</section>
+
+
+<section class="ng-front ng-wall--brick ng-cta" data-ng="cta" style="--tube: #ffe9c7; --tube2: #ff4e1a" id="get">
+  <div class="ng-spill" aria-hidden="true"><i></i></div>
+  <div class="ng-cta__in">
+<p class="ng-label">Free for 30 days</p>    <div class="ng-mount"><h2 class="ng-sign ng-sign--big" data-sign><span class="ng-sign__txt">Keep <em>tomorrow morning.</em></span></h2></div>
+    <a class="ng-open" href="#" data-open>
+      <span class="ng-open__frame" aria-hidden="true"><i></i></span>
+      <span class="ng-open__word" aria-hidden="true"><b>OPEN</b><i>OPEN</i></span>
+      <span class="ng-open__label">Get Halcyon</span>
+    </a>
+  </div>
+  <div class="ng-wet" aria-hidden="true"></div>
+</section>
 </main>
+<section class="ng-front ng-wall--paint ng-closing" style="--tube: #2f7bff; --tube2: #ffe9c7" aria-label="Closing time">
+  <div class="ng-spill" aria-hidden="true"><i></i></div>
+  <div class="ng-closing__in">
+    <p class="ng-sign ng-sign--closing" data-sign aria-hidden="true"><span class="ng-sign__txt">Closed · see you tomorrow</span></p>
+    <p class="ng-minisign ng-minisign--brand" style="--tube: #ff2a6d" data-always><span>Halcyon</span></p>
+  </div>
+</section>
 
 <footer class="ss-footer"><div class="ss-wrap ss-footer__in">
   <span>© Halcyon. A concept site; the product is fictional.</span>
@@ -258,9 +650,9 @@ html.style-neon-glow .ss-band { background: rgba(255, 255, 255, .02); border-col
 <script>window.__ssScroll = { speed: 1.0 };</script>
 <script type="module" src="../../runtime/index.js"></script>
 <nav class="ss-looks" aria-label="Looks">
-  <a href="../holographic/" aria-label="Previous look">←</a>
-  <a class="ss-looks__name" href="../">Neon glow <small>4/20</small></a>
-  <a href="../wireframe-3d/" aria-label="Next look">→</a>
+  <a href="../neo-brutalism/" aria-label="Previous look">←</a>
+  <a class="ss-looks__name" href="../">Neon glow <small>16/21</small></a>
+  <a href="../particles/" aria-label="Next look">→</a>
 </nav>
 <style>
   .ss-looks { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 990; display: flex; align-items: center; gap: 4px; padding: 5px;

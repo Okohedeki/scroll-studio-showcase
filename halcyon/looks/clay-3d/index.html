@@ -1,61 +1,358 @@
 <!doctype html>
-<html lang="en" data-fx='{}' class="mode-light layout-flow style-clay-3d">
+<html lang="en" data-style="clay-3d" class="mode-light layout-flow style-clay-3d">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Halcyon</title>
 <meta name="description" content="The calendar that guards your mornings. One page, built in twenty styles by Scroll Studio."><meta name="generator" content="Scroll Studio">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%237c5cff%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EH%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%236a48f0%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EH%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root {
-  --bg: #f3ecff;
-  --bg-2: #ebe0ff;
-  --ink: #2d2350;
-  --ink-rgb: 45, 35, 80;
-  --bg-rgb: 243, 236, 255;
-  --ink-2: rgba(45, 35, 80, 0.82);
-  --ink-3: rgba(45, 35, 80, 0.68);
-  --line: rgba(45, 35, 80, .13);
-  --accent: #7c5cff;
-  --accent-2: #b6a3ff;
+  --bg: #f4eeff;
+  --bg-2: #fbf8ff;
+  --ink: #2b2140;
+  --ink-rgb: 43, 33, 64;
+  --bg-rgb: 244, 238, 255;
+  --ink-2: rgba(43, 33, 64, 0.79);
+  --ink-3: rgba(43, 33, 64, 0.65);
+  --line: rgba(43, 33, 64, .13);
+  --accent: #6a48f0;
+  --accent-2: #9d86ff;
   --accent-ink: #ffffff;
-  --accent-text: #694ed5;
-  --accent-rgb: 124, 92, 255;
+  --accent-text: #6a48f0;
+  --accent-rgb: 106, 72, 240;
   --font-display: "Fredoka", system-ui, sans-serif;
   --font-body: "Nunito", system-ui, sans-serif;
-  --font-mono: "DM Mono", ui-monospace, monospace;
+  --font-mono: "Nunito", ui-monospace, monospace;
   --display-weight: 600;
   --em-style: normal;
   --radius: 32px;
   color-scheme: light;
 }
-.ss-surface-dark { --btn-bg: #7c5cff; --btn-ink: #000000; --bg: #2d2350; --bg-2: #3d335e; --ink: #f3ecff; --ink-rgb: 243, 236, 255; --bg-rgb: 45, 35, 80; --ink-2: rgba(243, 236, 255, 0.72); --ink-3: rgba(243, 236, 255, 0.58); --line: rgba(243, 236, 255, .14); --accent-text: #a993ff; --em-color: #b6a3ff; color-scheme: dark; background: var(--bg); color: var(--ink); }
-.ss-surface-light { --btn-bg: #7c5cff; --btn-ink: #000000; --bg: #ebe0ff; --bg-2: #f3ecff; --ink: #2d2350; --ink-rgb: 45, 35, 80; --bg-rgb: 235, 224, 255; --ink-2: rgba(45, 35, 80, 0.82); --ink-3: rgba(45, 35, 80, 0.68); --line: rgba(45, 35, 80, .14); --accent-text: #694ed5; --em-color: #7c5cff; color-scheme: light; background: var(--bg); color: var(--ink); }
-.ss-surface-accent { --btn-bg: #2d2350; --btn-ink: #ffffff; --bg: #d7ccff; --bg-2: #372d5a; --ink: #2d2350; --ink-rgb: 45, 35, 80; --bg-rgb: 215, 204, 255; --ink-2: rgba(45, 35, 80, 1.0); --ink-3: rgba(45, 35, 80, 1.0); --line: rgba(45, 35, 80, .14); --accent-text: #2d2350; --em-color: #2d2350; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-dark { --btn-bg: #f4eeff; --btn-ink: #000000; --bg: #2b2140; --bg-2: #3b314f; --ink: #f4eeff; --ink-rgb: 244, 238, 255; --bg-rgb: 43, 33, 64; --ink-2: rgba(244, 238, 255, 0.7); --ink-3: rgba(244, 238, 255, 0.56); --line: rgba(244, 238, 255, .14); --accent-text: #a791f7; --em-color: #9d86ff; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #6a48f0; --btn-ink: #ffffff; --bg: #fbf8ff; --bg-2: #f4eeff; --ink: #2b2140; --ink-rgb: 43, 33, 64; --bg-rgb: 251, 248, 255; --ink-2: rgba(43, 33, 64, 0.79); --ink-3: rgba(43, 33, 64, 0.65); --line: rgba(43, 33, 64, .14); --accent-text: #6a48f0; --em-color: #6a48f0; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #6a48f0; --btn-ink: #ffffff; --bg: #c9bcff; --bg-2: #342a4b; --ink: #2b2140; --ink-rgb: 43, 33, 64; --bg-rgb: 201, 188, 255; --ink-2: rgba(43, 33, 64, 1.0); --ink-3: rgba(43, 33, 64, 1.0); --line: rgba(43, 33, 64, .14); --accent-text: #2b2140; --em-color: #2b2140; color-scheme: light; background: var(--bg); color: var(--ink); }
 </style>
 <link rel="stylesheet" href="../../runtime/studio.css">
 <style id="ss-style">
-/* clay 3D: claymorphism. Puffy pastel shapes with an outer drop, an inner highlight and an inner shade */
-html.style-clay-3d { --clay: 18px 22px 40px -12px rgba(76, 52, 160, .35), inset -8px -10px 18px rgba(76, 52, 160, .16), inset 10px 10px 16px rgba(255, 255, 255, .75); }
-html.style-clay-3d .ss-features { gap: 26px; background: none; border: 0; }
-html.style-clay-3d .ss-feature, html.style-clay-3d .ss-tile, html.style-clay-3d .ss-stats > div, html.style-clay-3d .ss-faq__list details, html.style-clay-3d .ss-quote {
-  border: 0; border-radius: var(--radius); background: #fff; box-shadow: var(--clay); }
-html.style-clay-3d .ss-feature:nth-child(4n+1) { background: #ffe3ef; }
-html.style-clay-3d .ss-feature:nth-child(4n+2) { background: #dff4ff; }
-html.style-clay-3d .ss-feature:nth-child(4n+3) { background: #e6ffe6; }
-html.style-clay-3d .ss-feature:nth-child(4n) { background: #fff4d6; }
-html.style-clay-3d .ss-stats > div { padding: 30px 26px; }
-html.style-clay-3d .ss-faq__list details { padding: 20px 26px; margin-bottom: 14px; }
-html.style-clay-3d .ss-faq__list details:last-child { border-bottom: 0; }
-html.style-clay-3d .ss-quote { padding: clamp(30px, 4vw, 60px); }
-html.style-clay-3d .ss-btn { border: 0; background: #fff; color: var(--ink); box-shadow: 8px 10px 20px -8px rgba(76, 52, 160, .4), inset -4px -5px 10px rgba(76, 52, 160, .18), inset 5px 5px 8px rgba(255, 255, 255, .9); font-weight: 700; transition: transform .2s; }
-html.style-clay-3d .ss-btn--hot { background: var(--accent); color: #fff; box-shadow: 8px 10px 22px -8px rgba(124, 92, 255, .7), inset -4px -6px 10px rgba(40, 16, 120, .35), inset 5px 5px 8px rgba(255, 255, 255, .4); }
-html.style-clay-3d .ss-btn:hover { transform: scale(1.05) translateY(-2px); background: var(--accent-2); color: var(--ink); }
-html.style-clay-3d .ss-pills li, html.style-clay-3d .ss-badge { background: #fff; box-shadow: 4px 5px 10px -4px rgba(76, 52, 160, .3), inset 3px 3px 5px rgba(255, 255, 255, .9); border: 0; }
-html.style-clay-3d .ss-tl::before { width: 18px; height: 18px; top: -9px; box-shadow: 3px 4px 8px rgba(76, 52, 160, .4), inset -2px -3px 4px rgba(40, 16, 120, .35), inset 2px 2px 3px rgba(255, 255, 255, .6); }
-html.style-clay-3d .ss-h1, html.style-clay-3d .ss-display { text-shadow: 0 6px 0 rgba(124, 92, 255, .18); }
-html.style-clay-3d .ss-phone { border-radius: 48px; box-shadow: var(--clay), 0 40px 80px -30px rgba(76, 52, 160, .5); background: #2d2350; }
+/* Clay 3D: soft toys on a table.
+   Puffy trays in pastels, chunky tiles with clay icons breaking their top edge, clay coins, stepping stones, candy
+   buttons. Depth is physical (mass, tinted soft shadows, squish), never transparency. Shadows are always tinted by
+   the object's own colour, never grey. */
+
+html.style-clay-3d {
+  --cl-ink: #2b2140;
+  --cl-ink-2: rgba(43, 33, 64, .82);
+  --cl-ink-3: rgba(43, 33, 64, .72);
+  --cl-violet: #6a48f0;
+  --cl-violet-d: #4a2dc8;
+  --cl-violet-l: #a08bff;
+  --cl-spring: cubic-bezier(.34, 1.56, .64, 1);
+  background: var(--bg);
+}
+html.style-clay-3d body { background: radial-gradient(120% 60% at 50% 0%, #fbf8ff, var(--bg) 60%) var(--bg); color: var(--cl-ink); font-family: var(--font-body); }
+html.style-clay-3d em { color: var(--cl-violet); font-style: normal; }
+
+/* pastel sets: --c fill, --cd shadow (object hue, darker), --cl highlight; icons use a deeper hue of the same family */
+.cl-p0 { --c: #c9b8ff; --cd: #9f86f0; --cl: #efe9ff; --ic: #8b6cff; --il: #cbbeff; --id: #4e33c9; }
+.cl-p1 { --c: #ffc9a8; --cd: #ee9d72; --cl: #ffe9db; --ic: #ff8a4c; --il: #ffc4a1; --id: #c2531b; }
+.cl-p2 { --c: #b8f0d8; --cd: #7fd3b0; --cl: #e5fcf2; --ic: #2fc48a; --il: #9debc8; --id: #13845a; }
+.cl-p3 { --c: #ffe7a0; --cd: #ebc461; --cl: #fff6da; --ic: #ffc21f; --il: #ffe48a; --id: #b07e00; }
+.cl-p4 { --c: #a8d8ff; --cd: #6fb2ec; --cl: #e0f1ff; --ic: #3d9bff; --il: #a9d3ff; --id: #145fc2; }
+.cl-p5 { --c: #ffb3d1; --cd: #ec7faa; --cl: #ffe3ee; --ic: #ff5c9a; --il: #ffb0cd; --id: #c22a6a; }
+
+/* ---------------------------------------------------------------- type */
+.cl-h1 { font-family: var(--font-display); font-weight: 700; font-stretch: 108%; font-size: clamp(50px, 8.2vw, 138px); line-height: 1; letter-spacing: -.02em; text-wrap: balance; margin: 22px 0 22px; color: var(--cl-ink); }
+.cl-h1 em { display: inline-block; color: #8b6cff; text-shadow: 0 2px 0 #7b5cff, 0 4px 0 #6a48f0, 0 6px 0 #5a3fd6, 0 8px 0 #4e33c9, 0 18px 24px rgba(78, 51, 201, .35); }
+.cl-h2 { font-family: var(--font-display); font-weight: 600; font-stretch: 104%; font-size: clamp(34px, 4vw, 64px); line-height: 1.04; letter-spacing: -.015em; text-wrap: balance; margin: 14px 0 0; }
+.cl-h2--xl { font-size: clamp(40px, 5.4vw, 92px); line-height: 1; }
+.cl-h3 { font-family: var(--font-display); font-weight: 600; font-size: clamp(24px, 2vw, 30px); line-height: 1.1; letter-spacing: -.01em; margin: 6px 0 10px; }
+.cl-lede { font-size: clamp(17px, 1.3vw, 20px); line-height: 1.6; color: var(--cl-ink-2); max-width: 48ch; font-weight: 500; text-wrap: pretty; }
+.cl-note { margin-top: 14px; font-size: 14px; color: var(--cl-ink-3); font-weight: 600; }
+.cl-pill { display: inline-flex; align-items: center; padding: 9px 18px; border-radius: 999px; font-family: var(--font-display); font-weight: 600; font-size: 15px; letter-spacing: .01em;
+  background: #fff; color: var(--cl-ink); box-shadow: inset -3px -4px 8px rgba(160, 139, 255, .35), inset 3px 3px 6px #fff, 6px 10px 20px -8px rgba(106, 72, 240, .35); }
+.cl-pill--badge { background: #fff4c7; box-shadow: inset -3px -4px 8px #ebc461, inset 3px 3px 6px #fffbe9, 6px 10px 20px -8px rgba(176, 126, 0, .4); }
+.cl-pill--white { background: #fff; }
+
+/* ---------------------------------------------------------------- candy buttons: they push in and bounce back */
+.cl-btns { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+.cl-candy { position: relative; display: inline-flex; align-items: center; justify-content: center; padding: 17px 30px 19px; border-radius: 999px;
+  font-family: var(--font-display); font-weight: 600; font-size: 18px; letter-spacing: .01em; color: #fff; background: var(--cl-violet);
+  box-shadow: inset -5px -7px 12px var(--cl-violet-d), inset 5px 5px 10px var(--cl-violet-l), 0 8px 0 -1px #3b22a8, 0 18px 30px -8px rgba(74, 45, 200, .55);
+  transition: transform .45s var(--cl-spring), box-shadow .3s; }
+.cl-candy:hover { transform: translateY(-3px) scale(1.03); }
+.cl-candy:active { transform: translateY(6px) scale(.96); transition-duration: .08s;
+  box-shadow: inset -2px -3px 8px var(--cl-violet-d), inset 7px 8px 14px #3b22a8, 0 2px 0 -1px #3b22a8, 0 6px 12px -6px rgba(74, 45, 200, .5); }
+.cl-candy:focus-visible { outline: 3px solid var(--cl-ink); outline-offset: 5px; }
+.cl-candy--soft { background: #fff; color: var(--cl-ink);
+  box-shadow: inset -5px -7px 12px #d8ccff, inset 5px 5px 10px #fff, 0 8px 0 -1px #c6b6ff, 0 18px 30px -10px rgba(106, 72, 240, .3); }
+.cl-candy--soft:active { box-shadow: inset -2px -3px 8px #d8ccff, inset 7px 8px 14px #cfc2ff, 0 2px 0 -1px #c6b6ff; }
+.cl-candy--big { padding: 26px 54px 28px; font-size: clamp(22px, 2.2vw, 30px); }
+
+/* ---------------------------------------------------------------- nav: a floating puffy pill (opaque, never glass) */
+html.style-clay-3d .ss-nav { inset: 14px 0 auto; display: flex; justify-content: center; pointer-events: none; border: 0; background: none; backdrop-filter: none; }
+html.style-clay-3d .ss-nav.ss-solid { background: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+html.style-clay-3d .ss-nav__in { pointer-events: auto; width: min(920px, calc(100% - 24px)); padding: 8px 8px 8px 24px; border-radius: 999px; background: #fff;
+  box-shadow: inset -4px -6px 12px #ddd2ff, inset 4px 4px 10px #fff, 0 16px 30px -14px rgba(106, 72, 240, .45); }
+html.style-clay-3d .ss-wordmark { font-family: var(--font-display); font-weight: 700; font-size: 20px; }
+html.style-clay-3d .ss-nav__links { gap: 6px; color: var(--cl-ink); font-weight: 700; font-size: 15px; }
+html.style-clay-3d .ss-nav__links a { padding: 9px 16px; border-radius: 999px; transition: box-shadow .3s, background .3s; }
+html.style-clay-3d .ss-nav__links a:hover, html.style-clay-3d .ss-nav__links a.cl-on { background: #efe9ff; box-shadow: inset 3px 4px 7px #cdbfff, inset -2px -2px 5px #fff; }
+html.style-clay-3d .ss-nav .ss-btn { border: 0; border-radius: 999px; padding: 12px 20px; font-family: var(--font-display); font-weight: 600; font-size: 16px; background: var(--cl-violet); color: #fff; backdrop-filter: none;
+  box-shadow: inset -3px -4px 8px var(--cl-violet-d), inset 3px 3px 7px var(--cl-violet-l); transition: transform .4s var(--cl-spring); }
+html.style-clay-3d .ss-nav .ss-btn:hover { background: var(--cl-violet); color: #fff; transform: scale(1.04); }
+html.style-clay-3d .ss-nav .ss-btn:active { transform: translateY(2px) scale(.95); }
+
+/* ---------------------------------------------------------------- trays */
+.cl-sec { position: relative; }
+.cl-tray { --c: #fffaf2; --cd: #eadfcf; --cl: #ffffff; margin: clamp(26px, 4vw, 54px) auto; width: min(1280px, calc(100% - 2 * var(--gutter)));
+  padding: clamp(56px, 8vw, 110px) clamp(24px, 5vw, 80px); border-radius: 56px; background: var(--c);
+  box-shadow: inset -14px -16px 34px var(--cd), inset 14px 14px 30px var(--cl), 24px 34px 70px -24px color-mix(in srgb, var(--cd) 85%, #2b2140 10%);
+  transform: scale(calc(.9 + .1 * var(--k, 1))); transform-origin: 50% 0; }
+.cl-tray[id] { scroll-margin-top: 90px; }
+.cl-tray--lilac { --c: #e4dbff; --cd: #c2b0f6; --cl: #f7f3ff; }
+.cl-tray--cream { --c: #fffaf3; --cd: #eadccb; --cl: #ffffff; }
+.cl-tray--mint { --c: #cff5e4; --cd: #9fdcc0; --cl: #effdf6; }
+.cl-tray--butter { --c: #fff1c4; --cd: #ecd38a; --cl: #fffbea; }
+.cl-tray--sky { --c: #d3eaff; --cd: #a3cbf0; --cl: #f0f8ff; }
+.cl-tray--peach { --c: #ffdfcb; --cd: #f0b896; --cl: #fff3eb; }
+.cl-tray--gum { --c: #ffcfe2; --cd: #eea3c2; --cl: #fff0f6; }
+.cl-tray__in { max-width: 1100px; margin: 0 auto; }
+.cl-head { margin-bottom: clamp(50px, 7vw, 90px); max-width: 820px; }
+
+/* the clay puff: an opaque, inflated card */
+.cl-puff { border-radius: 40px; }
+.cl-puff > [data-jelly] { padding: clamp(26px, 3vw, 40px); border-radius: inherit; background: var(--c, #fff);
+  box-shadow: inset -8px -10px 20px var(--cd, #e6dcff), inset 8px 8px 16px var(--cl, #fff), 14px 22px 40px -14px color-mix(in srgb, var(--cd, #c9b8ff) 90%, transparent); }
+.cl-puff--white { --c: #ffffff; --cd: #ddd0ff; --cl: #ffffff; }
+
+/* ---------------------------------------------------------------- hero: toys on the table */
+.cl-hero { min-height: 100vh; min-height: 100svh; display: grid; grid-template-columns: minmax(0, 1fr); place-items: center; padding: 130px var(--gutter) 90px; overflow: clip; text-align: center; }
+.cl-hero__in { position: relative; z-index: 2; max-width: 1100px; display: flex; flex-direction: column; align-items: center; }
+.cl-hero--left { text-align: left; }
+.cl-hero--left .cl-hero__in { align-items: flex-start; justify-self: start; }
+.cl-hero:not(.cl-hero--left) .cl-btns { justify-content: center; }
+.cl-hero .cl-lede { font-size: clamp(18px, 1.5vw, 22px); }
+.cl-hero__seat { position: absolute; right: 9%; bottom: 14%; width: 10px; height: 10px; }
+.cl-hero__media { position: relative; z-index: 1; margin-top: 50px; }
+.cl-hero__toys { position: absolute; inset: 0; pointer-events: none; }
+.cl-toy { position: absolute; border-radius: 50%; animation: cl-bob 6s ease-in-out infinite; }
+.cl-toy--a { width: clamp(70px, 8vw, 130px); aspect-ratio: 1; left: 7%; top: 22%; background: radial-gradient(circle at 34% 28%, #fff, #ffc9a8 20%, #ff8a4c 64%, #c2531b); box-shadow: 18px 26px 40px -16px rgba(194, 83, 27, .5); }
+.cl-toy--b { width: clamp(90px, 10vw, 160px); aspect-ratio: 1; right: 8%; top: 18%; background: radial-gradient(circle, transparent 0 34%, #000 35% 100%), none;
+  -webkit-mask: radial-gradient(circle, transparent 0 30%, #000 31%); mask: radial-gradient(circle, transparent 0 30%, #000 31%);
+  background: radial-gradient(circle at 34% 28%, #fff, #b8f0d8 22%, #2fc48a 62%, #13845a); animation-delay: -2s; }
+.cl-toy--c { width: clamp(46px, 5vw, 80px); aspect-ratio: 1; left: 16%; bottom: 14%; border-radius: 30%; rotate: 16deg; background: radial-gradient(circle at 34% 28%, #fff, #ffe48a 22%, #ffc21f 62%, #b07e00); box-shadow: 12px 18px 30px -12px rgba(176, 126, 0, .5); animation-delay: -4s; }
+.cl-toy--d { width: clamp(60px, 6vw, 100px); height: clamp(28px, 2.8vw, 46px); right: 22%; bottom: 10%; border-radius: 999px; rotate: -24deg; background: radial-gradient(ellipse at 34% 28%, #fff, #ffb0cd 22%, #ff5c9a 62%, #c22a6a); box-shadow: 12px 18px 30px -12px rgba(194, 42, 106, .5); animation-delay: -3s; }
+@keyframes cl-bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -16px; } }
+.cl-hero__toys .cl-toy { transform: translateY(var(--ty, 0px)) rotate(var(--tr, 0deg)); }
+
+/* the puffy device frame: a pastel clay bezel instead of black glass */
+.cl-device .ss-phone { width: clamp(230px, 21vw, 300px); border-radius: 52px; padding: 14px; background: #c9b8ff;
+  box-shadow: inset -8px -10px 18px #9f86f0, inset 8px 8px 16px #efe9ff, 24px 36px 60px -20px rgba(78, 51, 201, .45); }
+.cl-device .ss-phone__screen { border-radius: 40px; background: #fffdf8; }
+.cl-device .ss-phone__bar i { background: #9f86f0; }
+.cl-device .ss-app__opt { border-radius: 18px; border: 0; background: #f4eeff; box-shadow: inset -2px -3px 6px #ddd2ff, inset 2px 2px 4px #fff; }
+.cl-device .ss-app__opt.is-on { background: #e4dbff; box-shadow: inset 3px 4px 8px #c2b0f6, inset 0 0 0 2px #6a48f0; }
+.cl-device .ss-app__btn { background: var(--cl-violet); box-shadow: inset -3px -4px 8px var(--cl-violet-d), inset 3px 3px 6px var(--cl-violet-l); }
+.cl-device--behind { position: absolute; translate: -46% 6%; rotate: -10deg; scale: .86; }
+.cl-blobframe { width: min(520px, 80vw); aspect-ratio: 1; border-radius: 42% 58% 55% 45% / 48% 42% 58% 52%; overflow: hidden;
+  box-shadow: inset -10px -12px 24px rgba(78, 51, 201, .3), 20px 30px 60px -20px rgba(78, 51, 201, .45); }
+.cl-blobframe img, .cl-blobframe video { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------------------------------------------------------------- intro */
+.cl-intro__in { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: clamp(30px, 5vw, 70px); align-items: end; }
+.cl-intro .cl-puff { rotate: 2deg; }
+
+/* ---------------------------------------------------------------- features: puffy tiles, a clay icon breaking the top edge */
+.cl-tiles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(22px, 3vw, 40px); padding-top: 40px; }
+.cl-tiles--2, .cl-tiles--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cl-tiles--1 { grid-template-columns: minmax(0, 520px); }
+.cl-tile { position: relative; }
+.cl-tile:nth-child(3n+2) { margin-top: 36px; }
+.cl-tile__body { position: relative; height: 100%; padding: 70px clamp(22px, 2.4vw, 34px) 34px; border-radius: 44px; background: var(--c);
+  box-shadow: inset -9px -11px 22px var(--cd), inset 9px 9px 18px var(--cl), 16px 26px 44px -16px color-mix(in srgb, var(--cd) 95%, #2b2140 5%);
+  transform-origin: 50% 100%; }
+.cl-tile__body::after { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .3s;
+  background: radial-gradient(180px circle at var(--mx, 50%) var(--my, 30%), rgba(255, 255, 255, .55), transparent 70%); }
+.cl-tile__body:hover::after { opacity: 1; }
+.cl-tile__icon { position: absolute; left: clamp(18px, 2vw, 28px); top: -52px; width: 104px; height: 104px; filter: drop-shadow(10px 16px 14px color-mix(in srgb, var(--id) 40%, transparent));
+  animation: cl-spin 7s ease-in-out infinite; transition: scale .5s var(--cl-spring); }
+.cl-tile:nth-child(2n) .cl-tile__icon { animation-delay: -2.5s; }
+.cl-tile__body:hover .cl-tile__icon { scale: 1.12 .9; }
+@keyframes cl-spin { 0%, 100% { rotate: -8deg; translate: 0 0; } 50% { rotate: 9deg; translate: 0 -6px; } }
+.cl-icon { width: 100%; height: 100%; overflow: visible; }
+.cl-tile__tag { position: absolute; right: 22px; top: 22px; padding: 5px 12px; border-radius: 999px; font: 700 13px/1.2 var(--font-display); background: rgba(255, 255, 255, .7); color: var(--cl-ink); }
+.cl-tile p { color: var(--cl-ink-2); font-size: 16px; line-height: 1.55; font-weight: 500; }
+.cl-jellybar { margin-top: 18px; height: 16px; border-radius: 999px; background: rgba(255, 255, 255, .6); box-shadow: inset 2px 3px 6px var(--cd); overflow: hidden; }
+.cl-jellybar i { display: block; height: 100%; width: calc(var(--m) * 100%); border-radius: inherit; background: radial-gradient(ellipse at 30% 25%, #fff, var(--ic) 40%, var(--id)); }
+
+/* ---------------------------------------------------------------- product */
+.cl-product__in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(30px, 5vw, 80px); align-items: center; }
+.cl-product--right .cl-product__media { order: 2; }
+.cl-product__media { position: relative; display: grid; place-items: center; min-height: 520px; }
+.cl-product__pad { position: absolute; width: 78%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 36% 30%, #ffffff, #c9b8ff 30%, #9f86f0 80%);
+  box-shadow: inset -16px -20px 40px #8b6cff, 30px 40px 80px -30px rgba(78, 51, 201, .5); opacity: .55; }
+.cl-chips { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.cl-chips li { padding: 10px 18px; border-radius: 999px; background: var(--c); font: 600 15px/1.2 var(--font-display);
+  box-shadow: inset -3px -4px 8px var(--cd), inset 3px 3px 6px var(--cl), 6px 10px 18px -8px color-mix(in srgb, var(--cd) 90%, transparent); }
+
+/* ---------------------------------------------------------------- stats: clay coins */
+.cl-coins { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(18px, 3vw, 40px); justify-items: center; }
+.cl-coins--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cl-coins--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 640px; margin: 0 auto; }
+.cl-coins--1 { grid-template-columns: minmax(0, 1fr); }
+.cl-coinbox { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 18px; }
+.cl-coin { width: clamp(150px, 15vw, 210px); aspect-ratio: 1; border-radius: 50%; display: grid; place-items: center; background: var(--c);
+  box-shadow: inset -10px -12px 22px var(--cd), inset 10px 10px 18px var(--cl), 0 0 0 10px color-mix(in srgb, var(--c) 70%, #fff), 0 0 0 11px color-mix(in srgb, var(--cd) 60%, transparent), 18px 26px 40px -12px color-mix(in srgb, var(--cd) 90%, #2b2140 10%); }
+.cl-coin__v { font-family: var(--font-display); font-weight: 700; font-size: clamp(50px, 5.4vw, 84px); line-height: 1; letter-spacing: -.02em; color: var(--cl-ink); text-shadow: 0 3px 0 rgba(255, 255, 255, .6); }
+.cl-coin__v small { font-size: .38em; font-weight: 600; margin-left: 3px; }
+.cl-coin__l { font: 600 17px/1.3 var(--font-display); max-width: 16ch; color: var(--cl-ink); }
+.cl-coins--mini { display: flex; flex-wrap: wrap; gap: 26px; justify-items: start; margin-top: 30px; }
+.cl-coins--mini .cl-coin { width: 150px; grid-template-rows: auto auto; align-content: center; gap: 4px; }
+.cl-coins--mini .cl-coin__v { font-size: 42px; }
+.cl-coins--mini .cl-coin__l { font-size: 13px; max-width: 11ch; text-align: center; }
+
+/* ---------------------------------------------------------------- timeline: stepping stones, a clay ball rolling over them */
+.cl-path { position: relative; }
+.cl-path__svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 0; }
+.cl-path__line { fill: none; stroke: #ffffff; stroke-width: 14; stroke-linecap: round; stroke-dasharray: 2 26; opacity: .95; }
+.cl-stones { list-style: none; position: relative; z-index: 1; display: grid; grid-template-columns: repeat(var(--n), minmax(0, 1fr)); gap: clamp(16px, 2.4vw, 32px); align-items: start; }
+.cl-stone:nth-child(2n) { margin-top: 110px; }
+.cl-stone__body { position: relative; padding: 48px 22px 26px; border-radius: 40px 40px 46px 46px / 34px 34px 50px 50px; background: #fff; text-align: center;
+  box-shadow: inset -7px -9px 18px #b7d4f2, inset 7px 7px 14px #fff, 14px 22px 34px -14px rgba(20, 95, 194, .35); transform-origin: 50% 100%; }
+.cl-stone__dot { position: absolute; left: 50%; top: -26px; translate: -50% 0; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
+  font: 700 20px/1 var(--font-display); color: var(--cl-ink); background: radial-gradient(circle at 34% 28%, #fff, #a9d3ff 26%, #6fb2ec 80%);
+  box-shadow: inset -3px -4px 8px #3d9bff, 4px 8px 14px -4px rgba(20, 95, 194, .45); }
+.cl-stone__when { font: 700 13px/1 var(--font-display); letter-spacing: .08em; text-transform: uppercase; color: #145fc2; }
+.cl-stone__t { font: 600 24px/1.1 var(--font-display); margin: 10px 0 8px; }
+.cl-stone p { font-size: 15px; line-height: 1.5; color: var(--cl-ink-2); font-weight: 500; }
+.cl-ball { position: absolute; left: 0; top: 0; z-index: 3; width: 40px; height: 40px; margin: -20px 0 0 -20px; border-radius: 50%; display: none;
+  background: radial-gradient(circle at 34% 28%, #fff, #ffb0cd 22%, #ff5c9a 60%, #c22a6a); box-shadow: 8px 14px 18px -6px rgba(194, 42, 106, .5); }
+.cl-ball::after { content: ""; position: absolute; inset: 22% 46% 22% 46%; border-radius: 999px; background: rgba(255, 255, 255, .6); }
+html.cl-live .cl-ball { display: block; }
+
+/* ---------------------------------------------------------------- quote: a clay speech bubble */
+.cl-quote__in { display: grid; place-items: center; }
+.cl-bubble { position: relative; max-width: 940px; margin: 0; padding-bottom: 80px; }
+.cl-bubble > [data-jelly] { padding: clamp(36px, 5vw, 70px); border-radius: 64px; background: #fff;
+  box-shadow: inset -10px -12px 24px #f0c6ae, inset 10px 10px 20px #fff, 20px 30px 60px -20px rgba(194, 83, 27, .35); transform-origin: 20% 100%; }
+.cl-bubble__tail { position: absolute; left: 90px; bottom: 50px; width: 64px; height: 64px; border-radius: 0 0 40px 0; background: #fff; rotate: 30deg; z-index: -1;
+  box-shadow: 10px 16px 24px -10px rgba(194, 83, 27, .35); }
+.cl-q { font-family: var(--font-display); font-weight: 500; font-size: clamp(26px, 3vw, 44px); line-height: 1.22; letter-spacing: -.01em; text-wrap: pretty; }
+.cl-who { position: absolute; left: 160px; bottom: 0; display: flex; align-items: center; gap: 14px; font: 600 18px/1.2 var(--font-display); }
+.cl-avatar { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; font: 700 26px/1 var(--font-display); color: var(--cl-ink);
+  background: radial-gradient(circle at 34% 28%, #fff, #ffe48a 26%, #ffc21f 80%); box-shadow: inset -4px -5px 10px #b07e00, 0 0 0 6px #fff, 8px 14px 20px -6px rgba(176, 126, 0, .5); }
+.cl-react { position: absolute; right: -10px; top: -34px; width: 96px; filter: drop-shadow(8px 14px 12px rgba(194, 42, 106, .35)); }
+html.cl-live .cl-react { scale: 0; }
+html.cl-live .cl-bubble.cl-in .cl-react { animation: cl-pop .8s var(--cl-spring) .5s both, cl-spin 5s ease-in-out 1.3s infinite; }
+
+/* ---------------------------------------------------------------- faq: pills that inflate downward */
+.cl-faq__in { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr); gap: clamp(30px, 5vw, 70px); align-items: start; }
+.cl-faq .cl-head { margin-bottom: 0; }
+.cl-faq__list { display: grid; gap: 16px; }
+.cl-q-pill { border-radius: 36px; background: #fff; box-shadow: inset -6px -8px 16px #d6c8fb, inset 6px 6px 12px #fff, 10px 16px 28px -14px rgba(106, 72, 240, .4); }
+.cl-q-pill summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 18px; padding: 20px 20px 20px 28px; font: 600 19px/1.3 var(--font-display); }
+.cl-q-pill summary::-webkit-details-marker { display: none; }
+.cl-knob { flex: none; width: 40px; height: 40px; border-radius: 50%; position: relative; background: radial-gradient(circle at 34% 28%, #fff, #cbbeff 26%, #8b6cff 85%);
+  box-shadow: inset -3px -4px 8px #4e33c9, 4px 6px 12px -4px rgba(78, 51, 201, .5); transition: rotate .5s var(--cl-spring); }
+.cl-knob::after { content: ""; position: absolute; left: 50%; top: 45%; width: 10px; height: 10px; border-right: 3.5px solid #fff; border-bottom: 3.5px solid #fff; border-radius: 2px; translate: -50% -50%; rotate: 45deg; }
+.cl-q-pill[open] .cl-knob { rotate: 180deg; }
+.cl-q-pill__a { padding: 0 28px 24px; transform-origin: 50% 0; }
+.cl-q-pill__a p { color: var(--cl-ink-2); line-height: 1.6; font-weight: 500; }
+
+/* ---------------------------------------------------------------- cta */
+.cl-cta__in { position: relative; text-align: center; display: flex; flex-direction: column; align-items: center; padding: 30px 0; }
+.cl-cta .cl-btns { justify-content: center; margin-top: 44px; }
+.cl-cta__seat { position: absolute; right: 2%; bottom: 0; width: 10px; height: 10px; }
+
+/* fallback types (gallery, strip, orbit) in a cream tray */
+.cl-wrapped .cl-tray__in > section { padding: 0; background: none; }
+.cl-wrapped .ss-kicker { color: var(--cl-violet); font-family: var(--font-display); font-weight: 600; letter-spacing: .04em; }
+.cl-wrapped .ss-display, .cl-wrapped .ss-h2 { font-family: var(--font-display); font-weight: 600; }
+.cl-wrapped .ss-tile { border: 0; border-radius: 36px; background: #fff; box-shadow: inset -6px -8px 16px #eadccb, inset 6px 6px 12px #fff, 12px 20px 34px -14px rgba(176, 126, 0, .3); }
+.cl-wrapped .ss-orbit__item { border: 0; background: #fff; box-shadow: inset -4px -5px 10px #ddd2ff, 6px 10px 18px -8px rgba(106, 72, 240, .35); color: var(--cl-ink); }
+.cl-wrapped .ss-orbit__item.is-primary { background: var(--cl-violet); color: #fff; }
+.cl-wrapped .ss-strip img { border-radius: 36px; }
+
+/* ---------------------------------------------------------------- the buddy */
+.cl-buddy { position: absolute; right: 8vw; top: 68vh; z-index: 40; width: 124px; pointer-events: none; }
+html.cl-live .cl-buddy { position: fixed; left: 0; top: 0; right: auto; will-change: transform; }
+.cl-buddy__body { position: relative; transform-origin: 50% 100%; }
+.cl-buddy__svg { display: block; width: 100%; overflow: visible; filter: drop-shadow(0 14px 14px rgba(78, 51, 201, .25)); }
+.cl-buddy__shadow { position: absolute; left: 12%; right: 12%; bottom: -8px; height: 18px; border-radius: 50%; background: radial-gradient(closest-side, rgba(78, 51, 201, .32), transparent); }
+.cl-buddy__eyes { transform-origin: 70px 70px; transform-box: view-box; }
+.cl-buddy.is-blink .cl-buddy__eyes { transform: scaleY(.1); }
+.cl-buddy__arm { transform-origin: 108px 81px; transform-box: view-box; rotate: 70deg; transition: rotate .6s var(--cl-spring); }
+.cl-buddy.is-point .cl-buddy__arm { rotate: -20deg; }
+
+/* ---------------------------------------------------------------- footer: the darkest tray */
+html.style-clay-3d .ss-footer { border: 0; margin: 20px auto 26px; width: min(1280px, calc(100% - 2 * var(--gutter))); border-radius: 48px; background: #3b2d63; color: #fff;
+  box-shadow: inset -10px -12px 24px #251a45, inset 10px 10px 20px #5a4a8a, 0 26px 50px -24px rgba(43, 33, 64, .6); }
+html.style-clay-3d .ss-footer__in { color: rgba(255, 255, 255, .9); font: 600 15px/1.5 var(--font-body); padding: 30px clamp(24px, 4vw, 48px); align-items: center; }
+html.style-clay-3d .ss-footer a { display: inline-block; padding: 6px 14px; border-radius: 999px; background: #5a4a8a; color: #fff; box-shadow: inset -2px -3px 6px #2f2252, inset 2px 2px 5px #7a69ad; }
+
+/* stack layout: trays are the panels */
+html.style-clay-3d .ss-panel { position: relative; background: transparent; border-radius: 0; box-shadow: none; min-height: 0; display: block; overflow: visible; }
+html.style-clay-3d .ss-panel > section { background: transparent; transform: none; }
+html.style-clay-3d .ss-panel::after { display: none; }
+
+/* ---------------------------------------------------------------- arrivals (runtime adds .cl-in) */
+html.cl-live .cl-drop:not(.cl-in), html.cl-live .cl-pop:not(.cl-in), html.cl-live [data-cl-words]:not(.cl-in) .cl-word { opacity: 0; }
+html.cl-live .cl-drop.cl-in { animation: cl-drop .95s both; animation-delay: calc(var(--d, 0) * 85ms); transform-origin: 50% 100%; }
+html.cl-live .cl-pop.cl-in { animation: cl-pop .8s var(--cl-spring) both; animation-delay: calc(var(--d, 0) * 110ms); }
+html.cl-live [data-cl-words].cl-in .cl-word { display: inline-block; animation: cl-drop 1s both; animation-delay: calc(var(--w) * 110ms + 80ms); transform-origin: 50% 100%; }
+@keyframes cl-drop {
+  0% { opacity: 0; transform: translateY(-110px) scale(.94, 1.08); animation-timing-function: cubic-bezier(.55, 0, .9, .45); }
+  12% { opacity: 1; }
+  52% { transform: translateY(0) scale(1.12, .84); animation-timing-function: cubic-bezier(.2, .6, .4, 1); }
+  68% { transform: translateY(-18px) scale(.95, 1.06); animation-timing-function: cubic-bezier(.55, 0, .9, .45); }
+  82% { transform: translateY(0) scale(1.04, .96); animation-timing-function: ease-out; }
+  100% { opacity: 1; transform: none; }
+}
+@keyframes cl-pop { 0% { opacity: 0; scale: .55; } 50% { opacity: 1; scale: 1.14; } 72% { scale: .94; } 88% { scale: 1.03; } 100% { opacity: 1; scale: 1; } }
+
+/* ---------------------------------------------------------------- phones */
+@media (max-width: 900px) {
+  .cl-tray { border-radius: 40px; width: calc(100% - 20px); padding: 56px 20px; margin: 18px auto; }
+  .cl-intro__in, .cl-product__in, .cl-faq__in { grid-template-columns: minmax(0, 1fr); }
+  .cl-product--right .cl-product__media { order: 0; }
+  .cl-product__media { min-height: 0; padding: 20px 0; }
+  .cl-device .ss-phone { width: min(64vw, 260px); }
+  .cl-tiles, .cl-tiles--2, .cl-tiles--4 { grid-template-columns: minmax(0, 1fr); gap: 66px; }
+  .cl-tile:nth-child(3n+2) { margin-top: 0; }
+  .cl-coins, .cl-coins--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 34px; }
+  .cl-coin { width: min(38vw, 160px); }
+  .cl-coin__v { font-size: clamp(40px, 12vw, 60px); }
+  .cl-coin__l { font-size: 15px; }
+  .cl-stones { grid-template-columns: minmax(0, 1fr); gap: 50px; }
+  .cl-stone { width: 82%; }
+  .cl-stone:nth-child(2n) { margin-top: 0; margin-left: auto; }
+  .cl-bubble > [data-jelly] { border-radius: 44px; }
+  .cl-bubble__tail { left: 50px; }
+  .cl-who { left: 100px; font-size: 16px; }
+  .cl-avatar { width: 52px; height: 52px; }
+  .cl-react { width: 70px; right: -4px; }
+  .cl-q-pill summary { font-size: 17px; padding-left: 22px; }
+  .cl-buddy { width: 64px; }
+  .cl-hero { padding-top: 110px; }
+  .cl-toy--b { right: -4%; top: 12%; }
+  .cl-toy--a { left: -3%; top: 14%; }
+  html.style-clay-3d .ss-footer { width: calc(100% - 20px); margin-bottom: 84px; border-radius: 36px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.cl-live .cl-drop.cl-in, html.cl-live .cl-pop.cl-in, html.cl-live [data-cl-words].cl-in .cl-word { animation: cl-fade .15s linear both; }
+  @keyframes cl-fade { from { opacity: 0; } to { opacity: 1; } }
+  .cl-toy, .cl-tile__icon, html.cl-live .cl-bubble.cl-in .cl-react { animation: none; scale: 1; }
+  .cl-candy, .cl-knob, .cl-buddy__arm { transition: none; }
+  .cl-tray { transform: none; }
+}
+/* a left-aligned hero with a phone or picture: copy and object side by side */
+@media (min-width: 901px) {
+  .cl-hero--left:has(.cl-hero__media) { grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr); column-gap: 40px; }
+  .cl-hero--left:has(.cl-hero__media) .cl-hero__media { margin-top: 0; justify-self: center; }
+  .cl-hero--left:has(.cl-hero__media) .cl-h1 { font-size: clamp(48px, 6.4vw, 110px); }
+}
 
 </style><style>
   /* A section's backdrop: the image fills the panel (or a wrapper in the flow layout); the section itself goes clear,
@@ -168,84 +465,206 @@ html.style-clay-3d .ss-phone { border-radius: 48px; box-shadow: var(--clay), 0 4
   <nav class="ss-nav__links"><a href="#why">Why</a><a href="#features">Features</a><a href="#how">How</a></nav>
 <a class="ss-btn" href="#get">Get Halcyon <span class="ss-arrow">→</span></a></div></header>
 
+<div class="cl-buddy" aria-hidden="true">
+  <div class="cl-buddy__shadow"></div>
+  <div class="cl-buddy__body">
+    <svg viewBox="0 0 140 150" class="cl-buddy__svg">
+      <defs>
+        <radialGradient id="clb-skin" cx="36%" cy="28%" r="78%">
+          <stop offset="0" stop-color="#ffffff" stop-opacity=".95"/>
+          <stop offset=".16" stop-color="#d9cdff"/>
+          <stop offset=".55" stop-color="#9d86ff"/>
+          <stop offset="1" stop-color="#5a3fd6"/>
+        </radialGradient>
+        <radialGradient id="clb-rim" cx="50%" cy="50%" r="50%">
+          <stop offset=".72" stop-color="#3b2496" stop-opacity="0"/>
+          <stop offset="1" stop-color="#3b2496" stop-opacity=".35"/>
+        </radialGradient>
+        <radialGradient id="clb-foot" cx="40%" cy="30%" r="80%">
+          <stop offset="0" stop-color="#b8a6ff"/>
+          <stop offset="1" stop-color="#4c33c2"/>
+        </radialGradient>
+        <radialGradient id="clb-cheek" cx="50%" cy="50%" r="50%">
+          <stop offset="0" stop-color="#ff7fb0" stop-opacity=".85"/>
+          <stop offset="1" stop-color="#ff7fb0" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="50" cy="136" rx="17" ry="11" fill="url(#clb-foot)"/>
+      <ellipse cx="90" cy="136" rx="17" ry="11" fill="url(#clb-foot)"/>
+      <g class="cl-buddy__arm"><rect x="104" y="72" width="40" height="18" rx="9" fill="url(#clb-foot)"/></g>
+      <path d="M70 12c34 0 58 26 58 62 0 36-24 64-58 64S12 110 12 74c0-36 24-62 58-62z" fill="url(#clb-skin)"/>
+      <path d="M70 12c34 0 58 26 58 62 0 36-24 64-58 64S12 110 12 74c0-36 24-62 58-62z" fill="url(#clb-rim)"/>
+      <ellipse cx="44" cy="40" rx="14" ry="8" fill="#fff" opacity=".55" transform="rotate(-28 44 40)"/>
+      <g class="cl-buddy__eyes">
+        <ellipse cx="54" cy="70" rx="7" ry="10" fill="#2b2140"/>
+        <ellipse cx="88" cy="70" rx="7" ry="10" fill="#2b2140"/>
+        <circle cx="56.5" cy="66" r="2.6" fill="#fff"/>
+        <circle cx="90.5" cy="66" r="2.6" fill="#fff"/>
+      </g>
+      <ellipse cx="40" cy="90" rx="11" ry="7" fill="url(#clb-cheek)"/>
+      <ellipse cx="102" cy="90" rx="11" ry="7" fill="url(#clb-cheek)"/>
+      <path class="cl-buddy__mouth" d="M62 92c4 6 14 6 18 0" fill="none" stroke="#2b2140" stroke-width="4.5" stroke-linecap="round"/>
+    </svg>
+  </div>
+</div>
 <main>
-<section class="ss-block ss-hero ss-hero--center">
-  <div class="ss-hero__in">
-<span class="ss-badge">New · Halcyon 2.0</span><h1 class="ss-h1">Your mornings, <em>back.</em></h1><p class="ss-lede">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>    <div class="ss-btns"><a class="ss-btn ss-btn--hot" href="#get">Try it free <span class="ss-arrow">→</span></a><a class="ss-btn" href="../../looks/">See the looks</a></div>
+
+<section class="cl-sec cl-hero cl-hero--center" data-cl="hero">
+  <div class="cl-hero__toys" aria-hidden="true">
+    <i class="cl-toy cl-toy--a"></i><i class="cl-toy cl-toy--b"></i><i class="cl-toy cl-toy--c"></i><i class="cl-toy cl-toy--d"></i>
+  </div>
+  <div class="cl-hero__in">
+<span class="cl-pill cl-pill--badge cl-drop" style="--d: 0">New · Halcyon 2.0</span>    <h1 class="cl-h1" data-cl-words>Your mornings, <em>back.</em></h1>
+<p class="cl-lede cl-drop" style="--d: 5">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p><div class="cl-btns cl-drop" style="--d: 7"><a class="cl-candy" href="#get"><span>Try it free</span></a><a class="cl-candy cl-candy--soft" href="../../looks/"><span>See the looks</span></a></div>  </div>
+  <div class="cl-hero__seat" data-seat aria-hidden="true"></div>
+</section>
+
+
+<section class="cl-sec cl-tray cl-tray--lilac cl-intro" id="why" data-cl="tray">
+  <div class="cl-tray__in cl-intro__in">
+    <div>
+<span class="cl-pill cl-drop" style="--d: 0">The problem</span>      <h2 class="cl-h2 cl-h2--xl cl-drop" style="--d: 1">Calendars fill up <em>from the top.</em></h2>
+    </div>
+    <div class="cl-puff cl-puff--white cl-drop" style="--d: 3"><div data-jelly>
+<p class="cl-lede">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>    </div></div>
   </div>
 </section>
 
-<section class="ss-block" id="why"><div class="ss-wrap ss-intro2">
-  <h2 class="ss-display ss-reveal">Calendars fill up <em>from the top.</em></h2>
-  <div class="ss-reveal">
-<span class="ss-kicker">The problem</span><p class="ss-lede">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>  </div>
-</div></section>
 
-<section class="ss-block" id="features"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">What it does</span><h2 class="ss-display">Three rules, <em>kept for you.</em></h2></div>  <div class="ss-features ss-features--3">
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">01</span>      <div><h3>Focus first</h3><p>Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">02</span>      <div><h3>Smart batching</h3><p>Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">03</span>      <div><h3>Polite no</h3><p>Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p></div>
+<section class="cl-sec cl-tray cl-tray--cream cl-features" id="features" data-cl="tray">
+  <div class="cl-tray__in">
+<header class="cl-head">
+<span class="cl-pill cl-drop" style="--d: 0">What it does</span><h2 class="cl-h2 cl-drop" style="--d: 1">Three rules, <em>kept for you.</em></h2>    </header>    <div class="cl-tiles cl-tiles--3">
+      <article class="cl-tile cl-p0 cl-drop" style="--d: 2">
+        <div class="cl-tile__body" data-jelly data-dent>
+          <div class="cl-tile__icon"><svg class="cl-icon" viewBox="0 0 100 100" aria-hidden="true">
+  <defs>
+    <radialGradient id="ci2-0" cx="34%" cy="28%" r="80%">
+      <stop offset="0" style="stop-color: #fff; stop-opacity: .95"/><stop offset=".2" style="stop-color: var(--il)"/><stop offset=".62" style="stop-color: var(--ic)"/><stop offset="1" style="stop-color: var(--id)"/>
+    </radialGradient>
+  </defs>
+<circle cx="50" cy="52" r="34" fill="url(#ci2-0)"/>
+  <ellipse cx="38" cy="34" rx="9" ry="5" fill="#fff" opacity=".6" transform="rotate(-30 38 34)"/>
+</svg>
+</div>
+<span class="cl-tile__tag">01</span>          <h3 class="cl-h3">Focus first</h3>
+<p>Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p>        </div>
+      </article>
+      <article class="cl-tile cl-p1 cl-drop" style="--d: 3">
+        <div class="cl-tile__body" data-jelly data-dent>
+          <div class="cl-tile__icon"><svg class="cl-icon" viewBox="0 0 100 100" aria-hidden="true">
+  <defs>
+    <radialGradient id="ci2-1" cx="34%" cy="28%" r="80%">
+      <stop offset="0" style="stop-color: #fff; stop-opacity: .95"/><stop offset=".2" style="stop-color: var(--il)"/><stop offset=".62" style="stop-color: var(--ic)"/><stop offset="1" style="stop-color: var(--id)"/>
+    </radialGradient>
+  </defs>
+<circle cx="50" cy="52" r="26" fill="none" stroke="url(#ci2-1)" stroke-width="20"/>
+  <ellipse cx="38" cy="34" rx="9" ry="5" fill="#fff" opacity=".6" transform="rotate(-30 38 34)"/>
+</svg>
+</div>
+<span class="cl-tile__tag">02</span>          <h3 class="cl-h3">Smart batching</h3>
+<p>Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p>        </div>
+      </article>
+      <article class="cl-tile cl-p2 cl-drop" style="--d: 4">
+        <div class="cl-tile__body" data-jelly data-dent>
+          <div class="cl-tile__icon"><svg class="cl-icon" viewBox="0 0 100 100" aria-hidden="true">
+  <defs>
+    <radialGradient id="ci2-2" cx="34%" cy="28%" r="80%">
+      <stop offset="0" style="stop-color: #fff; stop-opacity: .95"/><stop offset=".2" style="stop-color: var(--il)"/><stop offset=".62" style="stop-color: var(--ic)"/><stop offset="1" style="stop-color: var(--id)"/>
+    </radialGradient>
+  </defs>
+<rect x="14" y="36" width="72" height="34" rx="17" fill="url(#ci2-2)" transform="rotate(-32 50 53)"/>
+  <ellipse cx="38" cy="34" rx="9" ry="5" fill="#fff" opacity=".6" transform="rotate(-30 38 34)"/>
+</svg>
+</div>
+<span class="cl-tile__tag">03</span>          <h3 class="cl-h3">Polite no</h3>
+<p>Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p>        </div>
+      </article>
     </div>
   </div>
-</div></section>
-
-<section class="ss-scene ss-overlay ss-side-right ss-type-type ss-shade-auto ss-type--display" id="words" data-scene="type">
-  <div class="ss-track" style="height: 260vh">
-    <div class="ss-stage">
-      <div class="ss-visual"></div>
-      <div class="ss-shade"></div>
-      <div class="ss-captions">
-      </div>
-      
-      <div class="ss-outro"></div>
-    </div>
-  </div>
-  <script type="application/json" class="ss-config">{"mode": "swap", "text": "Halcyon keeps your", "words": ["mornings", "Fridays", "evenings", "weekends"]}</script>
-  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "none", "legend": [], "scales": []}, "layout": "overlay", "length": 2.6, "steps": []}</script>
 </section>
-<section class="ss-block ss-product ss-product--right ss-pose--beside" id="app"><div class="ss-wrap ss-product__in">
-  <div class="ss-product__media" data-float>
-<div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
+
+
+<section class="cl-sec cl-tray cl-tray--mint cl-product cl-product--right" id="app" data-cl="tray">
+  <div class="cl-tray__in cl-product__in">
+    <div class="cl-product__media cl-drop" style="--d: 1">
+      <div class="cl-product__pad" aria-hidden="true"></div>
+<div class="cl-device" data-jelly><div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
   <div class="ss-phone__bar"><span>9:41</span><i></i></div>
 <div class="ss-app">
 <div class="ss-app__name">Halcyon</div><div class="ss-app__title">Coffee with Sam</div><div class="ss-app__label">Best times</div><p class="ss-app__note">Your 8-11 focus block stays free.</p><div class="ss-app__opt is-on"><b>Tue 2:30 pm</b><small>Next to your other calls</small></div><div class="ss-app__opt"><b>Wed 4:00 pm</b><small>End of day</small></div><div class="ss-app__opt"><b>Thu 1:00 pm</b><small>After lunch</small></div><div class="ss-app__btn">Send these times</div>  </div></div></div>
+</div>    </div>
+    <div class="cl-product__copy">
+<span class="cl-pill cl-drop" style="--d: 0">The app</span>      <h2 class="cl-h2 cl-drop" style="--d: 1">Pick a slot, <em>keep the morning.</em></h2>
+<p class="cl-lede cl-drop" style="--d: 2">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><ul class="cl-chips"><li class="cl-p0 cl-pop" style="--d: 3">iPhone</li><li class="cl-p1 cl-pop" style="--d: 4">Android</li><li class="cl-p2 cl-pop" style="--d: 5">Web</li><li class="cl-p3 cl-pop" style="--d: 6">Google and Outlook</li></ul>    </div>
   </div>
-  <div class="ss-product__copy ss-reveal">
-<span class="ss-kicker">The app</span>    <h2 class="ss-h2">Pick a slot, <em>keep the morning.</em></h2>
-<p class="ss-lede">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><ul class="ss-pills"><li>iPhone</li><li>Android</li><li>Web</li><li>Google and Outlook</li></ul>    
+</section>
+
+
+<section class="cl-sec cl-tray cl-tray--butter cl-stats" data-cl="tray">
+  <div class="cl-tray__in">
+    <div class="cl-coins cl-coins--4">
+      <div class="cl-coinbox cl-pop" style="--d: 0">
+        <div class="cl-coin cl-p1" data-jelly><span class="cl-coin__v">11<small>h</small></span></div>
+        <span class="cl-coin__l">Focus hours kept per week</span>
+      </div>
+      <div class="cl-coinbox cl-pop" style="--d: 1">
+        <div class="cl-coin cl-p3" data-jelly><span class="cl-coin__v">38<small>%</small></span></div>
+        <span class="cl-coin__l">Fewer meeting fragments</span>
+      </div>
+      <div class="cl-coinbox cl-pop" style="--d: 2">
+        <div class="cl-coin cl-p5" data-jelly><span class="cl-coin__v">2<small>min</small></span></div>
+        <span class="cl-coin__l">To set up</span>
+      </div>
+      <div class="cl-coinbox cl-pop" style="--d: 3">
+        <div class="cl-coin cl-p1" data-jelly><span class="cl-coin__v">0</span></div>
+        <span class="cl-coin__l">Calendars replaced</span>
+      </div>
+    </div>
   </div>
-</div></section>
+</section>
 
-<section class="ss-block ss-band ss-band"><div class="ss-wrap ss-stats ss-stats--4">
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="11">11<sup>h</sup></div><div class="ss-l">Focus hours kept per week</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="38">38<sup>%</sup></div><div class="ss-l">Fewer meeting fragments</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="2">2<sup>min</sup></div><div class="ss-l">To set up</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="0">0</div><div class="ss-l">Calendars replaced</div></div>
-</div></section>
 
-<section class="ss-block" id="how"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">How it works</span><h2 class="ss-display">Set it up <em>over coffee.</em></h2></div>  <div class="ss-timeline ss-timeline--4">
-<div class="ss-tl ss-reveal"><span class="ss-when">Minute 1</span><h4>Connect</h4><p>Sign in with Google or Outlook; nothing moves yet.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Minute 2</span><h4>Mark your hours</h4><p>Paint the blocks you want protected.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Day 1</span><h4>It starts</h4><p>New invites are steered around your focus.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Week 1</span><h4>You notice</h4><p>A free morning, then another one.</p></div>  </div>
-</div></section>
+<section class="cl-sec cl-tray cl-tray--sky cl-timeline" id="how" data-cl="tray">
+  <div class="cl-tray__in">
+<header class="cl-head">
+<span class="cl-pill cl-drop" style="--d: 0">How it works</span><h2 class="cl-h2 cl-drop" style="--d: 1">Set it up <em>over coffee.</em></h2>    </header>    <div class="cl-path" data-path style="--n: 4">
+      <svg class="cl-path__svg" aria-hidden="true"><path class="cl-path__line"/></svg>
+      <ol class="cl-stones">
+<li class="cl-stone cl-drop" style="--d: 2; --i: 0"><div class="cl-stone__body" data-jelly><span class="cl-stone__dot" aria-hidden="true">1</span><span class="cl-stone__when">Minute 1</span><h3 class="cl-stone__t">Connect</h3><p>Sign in with Google or Outlook; nothing moves yet.</p></div></li><li class="cl-stone cl-drop" style="--d: 3; --i: 1"><div class="cl-stone__body" data-jelly><span class="cl-stone__dot" aria-hidden="true">2</span><span class="cl-stone__when">Minute 2</span><h3 class="cl-stone__t">Mark your hours</h3><p>Paint the blocks you want protected.</p></div></li><li class="cl-stone cl-drop" style="--d: 4; --i: 2"><div class="cl-stone__body" data-jelly><span class="cl-stone__dot" aria-hidden="true">3</span><span class="cl-stone__when">Day 1</span><h3 class="cl-stone__t">It starts</h3><p>New invites are steered around your focus.</p></div></li><li class="cl-stone cl-drop" style="--d: 5; --i: 3"><div class="cl-stone__body" data-jelly><span class="cl-stone__dot" aria-hidden="true">4</span><span class="cl-stone__when">Week 1</span><h3 class="cl-stone__t">You notice</h3><p>A free morning, then another one.</p></div></li>      </ol>
+      <i class="cl-ball" aria-hidden="true"></i>
+    </div>
+  </div>
+</section>
 
-<section class="ss-block"><div class="ss-wrap ss-quote ss-reveal">
-  <blockquote>I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote><cite>Priya N., product designer</cite></div></section>
 
-<section class="ss-block ss-faq"><div class="ss-wrap ss-faq__in">
-  <div class="ss-head ss-reveal"><h2 class="ss-h2">Questions</h2></div>
-  <div class="ss-faq__list">
-<details class="ss-reveal" open><summary>Does it replace my calendar?</summary><p>No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></details><details class="ss-reveal"><summary>What do the people I meet see?</summary><p>A short list of times that work for both of you. No new app to install.</p></details><details class="ss-reveal"><summary>Can I override it?</summary><p>Always. Drag anything anywhere; Halcyon learns from what you move.</p></details>  </div>
-</div></section>
-<section class="ss-block ss-cta" id="get">
-  <div class="ss-cta__in">
-<span class="ss-kicker ss-reveal">Free for 30 days</span>    <h2 class="ss-display ss-reveal">Keep <em>tomorrow morning.</em></h2>
-<a class="ss-btn ss-btn--hot ss-reveal" href="#">Get Halcyon <span class="ss-arrow">→</span></a>  </div>
+<section class="cl-sec cl-tray cl-tray--peach cl-quote" data-cl="tray">
+  <div class="cl-tray__in cl-quote__in">
+    <figure class="cl-bubble cl-drop" style="--d: 0">
+      <div data-jelly>
+        <blockquote class="cl-q">I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote>
+      </div>
+      <i class="cl-bubble__tail" aria-hidden="true"></i>
+<figcaption class="cl-who"><span class="cl-avatar" aria-hidden="true">P</span><span>Priya N., product designer</span></figcaption>      <span class="cl-react" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><radialGradient id="cr6" cx="34%" cy="28%" r="80%"><stop offset="0" stop-color="#fff"/><stop offset=".22" stop-color="#ffb3d1"/><stop offset=".65" stop-color="#ff5c9a"/><stop offset="1" stop-color="#c22a6a"/></radialGradient></defs><path d="M50 86C26 70 12 56 12 40c0-12 9-21 20-21 8 0 14 4 18 11 4-7 10-11 18-11 11 0 20 9 20 21 0 16-14 30-38 46z" fill="url(#cr6)"/><ellipse cx="34" cy="34" rx="8" ry="5" fill="#fff" opacity=".7" transform="rotate(-30 34 34)"/></svg></span>
+    </figure>
+  </div>
+</section>
+
+
+<section class="cl-sec cl-tray cl-tray--lilac cl-faq" data-cl="tray">
+  <div class="cl-tray__in cl-faq__in">
+    <header class="cl-head"><h2 class="cl-h2 cl-drop" style="--d: 1">Questions</h2></header>
+    <div class="cl-faq__list">
+<details class="cl-q-pill cl-drop" style="--d: 2" open><summary><span>Does it replace my calendar?</span><i class="cl-knob" aria-hidden="true"></i></summary><div class="cl-q-pill__a"><p>No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></div></details><details class="cl-q-pill cl-drop" style="--d: 3"><summary><span>What do the people I meet see?</span><i class="cl-knob" aria-hidden="true"></i></summary><div class="cl-q-pill__a"><p>A short list of times that work for both of you. No new app to install.</p></div></details><details class="cl-q-pill cl-drop" style="--d: 4"><summary><span>Can I override it?</span><i class="cl-knob" aria-hidden="true"></i></summary><div class="cl-q-pill__a"><p>Always. Drag anything anywhere; Halcyon learns from what you move.</p></div></details>    </div>
+  </div>
+</section>
+
+
+<section class="cl-sec cl-tray cl-tray--gum cl-cta" id="get" data-cl="tray">
+  <div class="cl-tray__in cl-cta__in">
+<span class="cl-pill cl-pill--white cl-drop" style="--d: 0">Free for 30 days</span>    <h2 class="cl-h2 cl-h2--xl cl-drop" style="--d: 1">Keep <em>tomorrow morning.</em></h2>
+<div class="cl-btns cl-drop" style="--d: 3"><a class="cl-candy cl-candy--big" href="#"><span>Get Halcyon</span></a></div>    <div class="cl-cta__seat" data-seat="cta" aria-hidden="true"></div>
+  </div>
 </section>
 
 </main>
@@ -258,9 +677,9 @@ html.style-clay-3d .ss-phone { border-radius: 48px; box-shadow: var(--clay), 0 4
 <script>window.__ssScroll = { speed: 1.0 };</script>
 <script type="module" src="../../runtime/index.js"></script>
 <nav class="ss-looks" aria-label="Looks">
-  <a href="../isometric/" aria-label="Previous look">←</a>
-  <a class="ss-looks__name" href="../">Clay 3D <small>9/20</small></a>
-  <a href="../ascii-art/" aria-label="Next look">→</a>
+  <a href="../blueprint/" aria-label="Previous look">←</a>
+  <a class="ss-looks__name" href="../">Clay 3D <small>6/21</small></a>
+  <a href="../comic-book/" aria-label="Next look">→</a>
 </nav>
 <style>
   .ss-looks { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 990; display: flex; align-items: center; gap: 4px; padding: 5px;

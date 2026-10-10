@@ -1,64 +1,306 @@
 <!doctype html>
-<html lang="en" data-fx='{}' class="mode-dark layout-flow style-liquid-morph">
+<html lang="en" data-style="liquid-morph" class="mode-light layout-flow style-liquid-morph">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Halcyon</title>
 <meta name="description" content="The calendar that guards your mornings. One page, built in twenty styles by Scroll Studio."><meta name="generator" content="Scroll Studio">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23ff5fa2%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%231a0610%22%3EH%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23ff6b9a%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%231b1530%22%3EH%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root {
-  --bg: #0b0614;
-  --bg-2: #140b22;
-  --ink: #f6efff;
-  --ink-rgb: 246, 239, 255;
-  --bg-rgb: 11, 6, 20;
-  --ink-2: rgba(246, 239, 255, 0.68);
-  --ink-3: rgba(246, 239, 255, 0.48);
-  --line: rgba(246, 239, 255, .13);
-  --accent: #ff5fa2;
-  --accent-2: #ffa0c8;
-  --accent-ink: #1a0610;
-  --accent-text: #ff5fa2;
-  --accent-rgb: 255, 95, 162;
-  --font-display: "Syne", system-ui, sans-serif;
-  --font-body: "Manrope", system-ui, sans-serif;
+  --bg: #fff4ec;
+  --bg-2: #efe7ff;
+  --ink: #1b1530;
+  --ink-rgb: 27, 21, 48;
+  --bg-rgb: 255, 244, 236;
+  --ink-2: rgba(27, 21, 48, 0.76);
+  --ink-3: rgba(27, 21, 48, 0.62);
+  --line: rgba(27, 21, 48, .13);
+  --accent: #ff6b9a;
+  --accent-2: #8b7bff;
+  --accent-ink: #1b1530;
+  --accent-text: #a44970;
+  --accent-rgb: 255, 107, 154;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
   --font-mono: "DM Mono", ui-monospace, monospace;
-  --display-weight: 700;
+  --display-weight: 560;
   --em-style: normal;
   --radius: 999px;
-  color-scheme: dark;
+  color-scheme: light;
 }
-.ss-surface-dark { --btn-bg: #ff5fa2; --btn-ink: #000000; --bg: #040208; --bg-2: #0b0614; --ink: #f6efff; --ink-rgb: 246, 239, 255; --bg-rgb: 4, 2, 8; --ink-2: rgba(246, 239, 255, 0.68); --ink-3: rgba(246, 239, 255, 0.48); --line: rgba(246, 239, 255, .14); --accent-text: #ff5fa2; --em-color: #ffa0c8; color-scheme: dark; background: var(--bg); color: var(--ink); }
-.ss-surface-light { --btn-bg: #0b0614; --btn-ink: #ffffff; --bg: #f6efff; --bg-2: #221d2b; --ink: #0b0614; --ink-rgb: 11, 6, 20; --bg-rgb: 246, 239, 255; --ink-2: rgba(11, 6, 20, 1.0); --ink-3: rgba(11, 6, 20, 1.0); --line: rgba(11, 6, 20, .14); --accent-text: #0b0614; --em-color: #0b0614; color-scheme: light; background: var(--bg); color: var(--ink); }
-.ss-surface-accent { --btn-bg: #ff5fa2; --btn-ink: #000000; --bg: #482c41; --bg-2: #ece3f4; --ink: #f6efff; --ink-rgb: 246, 239, 255; --bg-rgb: 72, 44, 65; --ink-2: rgba(246, 239, 255, 1.0); --ink-3: rgba(246, 239, 255, 1.0); --line: rgba(246, 239, 255, .14); --accent-text: #f6efff; --em-color: #f6efff; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-dark { --btn-bg: #ff6b9a; --btn-ink: #000000; --bg: #1b1530; --bg-2: #2d273f; --ink: #fff4ec; --ink-rgb: 255, 244, 236; --bg-rgb: 27, 21, 48; --ink-2: rgba(255, 244, 236, 0.68); --ink-3: rgba(255, 244, 236, 0.51); --line: rgba(255, 244, 236, .14); --accent-text: #ff6b9a; --em-color: #ff6b9a; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #1b1530; --btn-ink: #ffffff; --bg: #efe7ff; --bg-2: #fff4ec; --ink: #1b1530; --ink-rgb: 27, 21, 48; --bg-rgb: 239, 231, 255; --ink-2: rgba(27, 21, 48, 0.76); --ink-3: rgba(27, 21, 48, 0.62); --line: rgba(27, 21, 48, .14); --accent-text: #a44970; --em-color: #1b1530; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #1b1530; --btn-ink: #ffffff; --bg: #bfb6ff; --bg-2: #251f3c; --ink: #1b1530; --ink-rgb: 27, 21, 48; --bg-rgb: 191, 182, 255; --ink-2: rgba(27, 21, 48, 1.0); --ink-3: rgba(27, 21, 48, 1.0); --line: rgba(27, 21, 48, .14); --accent-text: #1b1530; --em-color: #1b1530; color-scheme: light; background: var(--bg); color: var(--ink); }
 </style>
 <link rel="stylesheet" href="../../runtime/studio.css">
 <style id="ss-style">
-/* liquid morph: gooey colour blobs melt behind hero and CTA; blobby buttons and cards */
-@keyframes ss-blob {
-  0%, 100% { border-radius: 42% 58% 63% 37% / 41% 44% 56% 59%; transform: translate(0, 0) rotate(0deg) scale(1); }
-  33% { border-radius: 63% 37% 39% 61% / 55% 62% 38% 45%; transform: translate(8%, -6%) rotate(60deg) scale(1.08); }
-  66% { border-radius: 36% 64% 52% 48% / 62% 38% 62% 38%; transform: translate(-6%, 5%) rotate(-40deg) scale(.94); }
+/* Liquid morph ("candy fluid"): every section is a region of one liquid. Without WebGL the regions are flat colour
+   bands; with it (.lq-gl) one canvas paints the regions with moving, wobbling menisci between them plus the glossy
+   protagonist blob, the droplets that carry the stats and features, and the pointer's droplet, under the text.
+   Soft containers, no hard corners, organic left/right flow. Letters melt in and end crisp. */
+
+html.style-liquid-morph {
+  --lq-spring: cubic-bezier(.3, 1.45, .45, 1);
+  --lq-ease: cubic-bezier(.2, .8, .2, 1);
+  --em: #c8326a;
+  --milk: #fffaf6;
 }
-@keyframes ss-wobble { 0%, 100% { border-radius: 999px; } 30% { border-radius: 44% 56% 48% 52% / 60% 40% 60% 40%; } 60% { border-radius: 56% 44% 60% 40% / 42% 58% 42% 58%; } }
-html.style-liquid-morph .ss-hero, html.style-liquid-morph .ss-cta { isolation: isolate; }
-html.style-liquid-morph .ss-hero:not(.ss-hero--media)::before, html.style-liquid-morph .ss-cta::before,
-html.style-liquid-morph .ss-hero:not(.ss-hero--media)::after, html.style-liquid-morph .ss-cta::after {
-  content: ""; position: absolute; z-index: -1; width: min(60vw, 720px); aspect-ratio: 1; filter: blur(50px); opacity: .7; pointer-events: none;
-  animation: ss-blob 18s ease-in-out infinite; }
-html.style-liquid-morph .ss-hero:not(.ss-hero--media)::before, html.style-liquid-morph .ss-cta::before { left: -10%; top: 5%; background: radial-gradient(circle at 30% 30%, var(--accent), #7b2cff 70%); }
-html.style-liquid-morph .ss-hero:not(.ss-hero--media)::after, html.style-liquid-morph .ss-cta::after { right: -12%; bottom: -10%; background: radial-gradient(circle at 60% 40%, #2cd6ff, #3b1d8f 70%); animation-duration: 23s; animation-direction: reverse; }
-html.style-liquid-morph .ss-btn:hover { animation: ss-wobble 1.2s ease-in-out infinite; }
-html.style-liquid-morph .ss-features { gap: 18px; background: none; border: 0; }
-html.style-liquid-morph .ss-feature { border-radius: 40px 40px 40px 12px; background: rgba(var(--ink-rgb), .04); border: 1px solid var(--line); }
-html.style-liquid-morph .ss-feature:nth-child(2n) { border-radius: 40px 12px 40px 40px; }
-html.style-liquid-morph .ss-feature:hover { background: rgba(var(--accent-rgb), .08); border-color: rgba(var(--accent-rgb), .4); }
-html.style-liquid-morph .ss-h1, html.style-liquid-morph .ss-display { letter-spacing: -.045em; }
-html.style-liquid-morph .ss-tile { border-radius: 36px; }
-html.style-liquid-morph .ss-tl::before { border-radius: 40% 60% 55% 45%; width: 14px; height: 12px; }
-@media (prefers-reduced-motion: reduce) { html.style-liquid-morph *::before, html.style-liquid-morph *::after, html.style-liquid-morph .ss-btn:hover { animation: none !important; } }
+html.style-liquid-morph body { background: #fff4ec; }
+html.style-liquid-morph em { color: var(--em); font-style: italic; }
+
+/* ------------------------------------------------------------- regions (tones) */
+.lq-sec { position: relative; background: var(--tone); color: var(--ink); overflow-x: clip; }
+.lq-tone--peach { --tone: #fff4ec; }
+.lq-tone--lilac { --tone: #efe7ff; }
+.lq-tone--candy { --tone: #ffd3e1; --ink-2: rgba(27, 21, 48, .84); --ink-3: rgba(27, 21, 48, .74); --accent-text: #9c1f4f; --em: #9c1f4f; }
+.lq-tone--plum { --tone: #1b1530; --ink: #fff4ec; --ink-rgb: 255, 244, 236; --ink-2: rgba(255, 244, 236, .84); --ink-3: rgba(255, 244, 236, .7); --accent-text: #ff9cc0; --em: #ff9cc0; --line: rgba(255, 244, 236, .16); }
+html.style-liquid-morph .ss-footer { background: #120d22; color: #fff4ec; border: 0; position: relative; }
+html.style-liquid-morph .ss-footer__in { color: rgba(255, 244, 236, .74); font-family: var(--font-body); font-size: 14px; padding-block: 48px 64px; }
+html.style-liquid-morph .ss-footer a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(255, 244, 236, .4); }
+.lq-gl .lq-sec, .lq-gl .ss-footer, .lq-gl main > .ss-block, .lq-gl main > * > .ss-block { background: transparent; }
+.lq-gl body { background: transparent; }
+
+.lq-fluid { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+.lq-canvas { width: 100%; height: 100%; display: block; }
+html.style-liquid-morph main, html.style-liquid-morph .ss-footer { position: relative; z-index: 1; }
+html:not(.lq-gl) .lq-fluid { display: none; }
+
+/* stack layout: the liquid is continuous, so panels go flat */
+html.style-liquid-morph .ss-panel { position: relative; top: 0 !important; min-height: 0; display: block; border-radius: 0; box-shadow: none; overflow: visible; background: transparent; }
+html.style-liquid-morph .ss-panel::after { display: none; }
+html.style-liquid-morph .ss-panel > section { transform: none; }
+
+/* ------------------------------------------------------------- nav: a floating capsule with a gooey indicator */
+html.style-liquid-morph .ss-nav, html.style-liquid-morph .ss-nav.ss-solid { background: none; backdrop-filter: none; -webkit-backdrop-filter: none; border-color: transparent; }
+html.style-liquid-morph .ss-wordmark { font-family: var(--font-display); font-style: italic; font-size: 22px; font-weight: 600; font-variation-settings: "SOFT" 100, "WONK" 1;
+  padding: 8px 16px; border-radius: 999px; background: rgba(255, 250, 246, .7); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); color: #1b1530; }
+html.style-liquid-morph .ss-nav__links { position: relative; gap: 0; padding: 5px; border-radius: 999px; background: rgba(255, 250, 246, .7); border: 1px solid rgba(27, 21, 48, .07);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); font-size: 14px; font-weight: 500; color: #1b1530; }
+html.style-liquid-morph .ss-nav__links a { position: relative; z-index: 1; padding: 9px 18px; border-radius: 999px; color: rgba(27, 21, 48, .82); transition: color .35s; }
+html.style-liquid-morph .ss-nav__links a.is-on { color: #fff4ec; }
+.lq-pill { position: absolute; z-index: 0; top: 5px; bottom: 5px; left: 0; width: 0; border-radius: 999px; background: #1b1530; opacity: 0; transition: opacity .3s; }
+.lq-pill.is-on { opacity: 1; }
+html.style-liquid-morph .ss-nav .ss-btn { background: #1b1530; color: #fff4ec; border: 0; padding: 13px 22px; backdrop-filter: none; }
+html.style-liquid-morph .ss-nav .ss-btn:hover { background: #c8326a; color: #fff; }
+
+/* ------------------------------------------------------------- type */
+.lq-h1, .lq-h2 { font-family: var(--font-display); font-optical-sizing: auto; font-weight: 560; font-variation-settings: "SOFT" 0, "WONK" 0; letter-spacing: -.03em; text-wrap: balance; }
+.lq-h1 { font-size: clamp(52px, 8.2vw, 136px); line-height: .94; margin: 22px 0 26px; }
+.lq-h2 { font-size: clamp(38px, 5vw, 80px); line-height: .98; margin: 14px 0 22px; }
+.lq-h1 em, .lq-h2 em { font-weight: 480; }
+.lq-kicker { font-family: var(--font-mono); font-size: 13px; letter-spacing: .06em; color: var(--accent-text); display: inline-flex; align-items: center; gap: 10px; }
+.lq-kicker::before { content: ""; width: 10px; height: 13px; background: currentColor; border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; transform: rotate(180deg); }
+.lq-lede { font-size: clamp(17px, 1.3vw, 20px); line-height: 1.6; color: var(--ink-2); max-width: 46ch; text-wrap: pretty; }
+/* melting letters: thin and soft and stretched, then they settle crisp (the runtime splits them into spans) */
+.lq-live .lq-melt .sx-ch { opacity: 0; transform: translateY(-.32em) scaleY(1.45); filter: blur(7px); font-variation-settings: "SOFT" 100, "WONK" 1, "wght" 220;
+  transform-origin: 50% 0; transition: opacity .45s var(--lq-ease), transform .85s var(--lq-spring), filter .7s var(--lq-ease), font-variation-settings .9s var(--lq-ease);
+  transition-delay: calc(min(var(--i), 22) * 19ms); }
+.lq-live .lq-melt.is-in .sx-ch { opacity: 1; transform: none; filter: blur(0); font-variation-settings: "SOFT" 0, "WONK" 0, "wght" 560; }
+.lq-live .lq-melt em .sx-ch, .lq-live .lq-melt.is-in em .sx-ch { font-variation-settings: "SOFT" 0, "WONK" 1, "wght" 480; }
+.lq-live .lq-melt:not(.is-in) em .sx-ch { font-variation-settings: "SOFT" 100, "WONK" 1, "wght" 220; }
+
+/* ------------------------------------------------------------- buttons: liquid fill, magnetic, elastic press */
+.lq-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
+.lq-btn { position: relative; isolation: isolate; overflow: hidden; display: inline-flex; align-items: center; justify-content: center; padding: 16px 28px; border-radius: 999px;
+  border: 1.5px solid var(--ink); color: var(--ink); font-weight: 600; font-size: 15px; letter-spacing: -.005em;
+  translate: var(--tx, 0) var(--ty, 0); transition: scale .5s var(--lq-spring), color .4s .05s, border-color .4s, translate .5s var(--lq-spring); }
+.lq-btn span { position: relative; z-index: 1; }
+.lq-btn::before { content: ""; position: absolute; left: 50%; top: calc(100% + 26px); width: max(320%, 300px); aspect-ratio: 1; border-radius: 41%; background: var(--fill, var(--ink));
+  transform: translateX(-50%) rotate(0deg); animation: lq-slosh 7s linear infinite; transition: top .8s var(--lq-spring); z-index: 0; }
+.lq-btn:hover::before, .lq-btn:focus-visible::before { top: -12px; }
+.lq-btn:hover, .lq-btn:focus-visible { color: var(--tone, #fff4ec); }
+.lq-btn:active { scale: .95; transition-duration: .12s; }
+.lq-btn--fill { background: var(--ink); color: var(--tone, #fff4ec); --fill: #c8326a; border-color: var(--ink); }
+.lq-btn--fill:hover, .lq-btn--fill:focus-visible { color: #fff; border-color: #c8326a; }
+@keyframes lq-slosh { to { transform: translateX(-50%) rotate(360deg); } }
+
+/* ------------------------------------------------------------- hero */
+.lq-hero { min-height: 100vh; min-height: 100svh; display: flex; align-items: center; padding: 120px var(--gutter) 90px; }
+.lq-hero__in { position: relative; z-index: 2; width: min(760px, 58vw); }
+.lq-badge { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 10px; border-radius: 999px; background: var(--milk); font-size: 14px; font-weight: 500; box-shadow: 0 6px 22px -10px rgba(27, 21, 48, .3); }
+.lq-badge i { width: 14px; height: 14px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff 0 18%, #ffb86b 40%, #ff6b9a 70%, #8b7bff); }
+.lq-hero__media { position: absolute; right: var(--gutter); top: 50%; width: min(40vw, 620px); aspect-ratio: 1; transform: translateY(-50%); overflow: hidden; z-index: 1; }
+.lq-hero__media img, .lq-hero__media video { width: 100%; height: 100%; object-fit: cover; }
+.lq-blobmask { border-radius: 58% 42% 49% 51% / 46% 54% 46% 54%; animation: lq-breathe 14s ease-in-out infinite; }
+@keyframes lq-breathe { 50% { border-radius: 44% 56% 57% 43% / 55% 43% 57% 45%; } }
+.lq-hero__phone { position: absolute; right: 12vw; bottom: -10vh; z-index: 1; }
+.lq-scrollcue { position: absolute; left: var(--gutter); bottom: 34px; display: flex; align-items: center; gap: 12px; font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .04em; color: var(--ink-2); }
+.lq-scrollcue i { width: 12px; height: 16px; background: var(--ink); border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%; transform: rotate(180deg); animation: lq-drip 2.2s var(--lq-spring) infinite; }
+@keyframes lq-drip { 0%, 100% { transform: rotate(180deg) translateY(0) scaleY(1); } 50% { transform: rotate(180deg) translateY(-6px) scaleY(1.25); } }
+
+/* ------------------------------------------------------------- intro: the copy flows around the drip on the left */
+.lq-intro { padding: clamp(120px, 20vh, 220px) var(--gutter); min-height: 90vh; display: flex; align-items: center; }
+.lq-intro__in { margin-left: auto; width: min(760px, 56vw); margin-right: 4vw; }
+
+/* ------------------------------------------------------------- features: a fusion carousel of droplets */
+.lq-features { padding: clamp(110px, 16vh, 170px) var(--gutter); }
+.lq-features__head { max-width: 760px; margin-bottom: 50px; }
+.lq-drops { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 28px; }
+.lq-drop { aspect-ratio: 1; border-radius: 50%; background: var(--milk); box-shadow: inset 0 -18px 40px -20px rgba(255, 107, 154, .35), 0 24px 60px -30px rgba(27, 21, 48, .35);
+  display: grid; place-items: center; text-align: center; padding: 14%; outline-offset: 8px; color: #1b1530; }
+.lq-drop__tag { font-family: var(--font-mono); font-size: 12.5px; color: #9c1f4f; letter-spacing: .06em; }
+.lq-drop h3 { font-family: var(--font-display); font-weight: 560; font-size: clamp(26px, 2.3vw, 36px); line-height: 1.02; letter-spacing: -.025em; margin: 10px 0 12px; }
+.lq-drop p { font-size: 15.5px; line-height: 1.5; color: rgba(27, 21, 48, .8); max-width: 26ch; margin-inline: auto; }
+.lq-meter { margin: 16px auto 0; width: 120px; height: 10px; border-radius: 999px; background: rgba(27, 21, 48, .1); overflow: hidden; }
+.lq-meter i { display: block; height: 100%; width: calc(var(--m) * 100%); border-radius: inherit; background: linear-gradient(90deg, #ffb86b, #ff6b9a); }
+.lq-features__hint { display: none; }
+.lq-live .lq-features { height: calc(100vh + var(--n) * 62vh); height: calc(100svh + var(--n) * 62svh); padding: 0; }
+.lq-live .lq-features__stage { position: sticky; top: 0; height: 100vh; height: 100svh; padding: clamp(100px, 14vh, 150px) var(--gutter) 0; overflow: hidden; }
+.lq-live .lq-features__head { margin-bottom: 0; position: relative; z-index: 2; }
+.lq-live .lq-drops { display: block; position: absolute; left: 50%; top: 62%; width: 0; height: 0; }
+.lq-live .lq-drop { --d: clamp(300px, 29vw, 430px); position: absolute; left: calc(var(--d) / -2); top: calc(var(--d) / -2); width: var(--d); height: var(--d);
+  transform: translateX(var(--x, 0px)) scale(var(--s, 1)); will-change: transform; }
+.lq-live .lq-drop p, .lq-live .lq-drop .lq-meter { opacity: var(--b, 1); }
+.lq-live .lq-features__hint { display: block; position: absolute; right: var(--gutter); bottom: 34px; font-family: var(--font-mono); font-size: 13px; color: var(--ink-2); }
+.lq-live .lq-features__hint span { color: var(--ink); }
+.lq-gl .lq-drop { background: transparent; box-shadow: none; }
+
+/* ------------------------------------------------------------- product */
+.lq-product { padding: clamp(110px, 16vh, 170px) var(--gutter); min-height: 100vh; display: flex; align-items: center; }
+.lq-product__in { width: 100%; max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 6vw; align-items: center; }
+.lq-product--right .lq-product__media { order: 2; }
+.lq-product__media { position: relative; display: grid; place-items: center; min-height: min(72vh, 720px); }
+.lq-product__media .ss-phone { width: clamp(230px, 20vw, 300px); }
+.lq-phone { position: relative; z-index: 2; animation: lq-bob 7s ease-in-out infinite; }
+.lq-phone--behind { position: absolute; z-index: 1; transform: translate(-42%, 4%) rotate(-9deg) scale(.86); animation: none; }
+@keyframes lq-bob { 50% { transform: translateY(-14px) rotate(1.5deg); } }
+.lq-product__img { width: 100%; max-height: 64vh; object-fit: cover; aspect-ratio: 1; }
+.lq-pills { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 26px; }
+.lq-pills li { padding: 9px 16px; border-radius: 999px; background: var(--milk); font-size: 14px; font-weight: 500; color: #1b1530; box-shadow: 0 6px 16px -10px rgba(27, 21, 48, .35);
+  transition: border-radius .6s var(--lq-spring), transform .6s var(--lq-spring); }
+.lq-pills li:hover { border-radius: 40% 60% 55% 45% / 60% 45% 55% 40%; transform: scale(1.06); }
+.lq-minis { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 26px; }
+.lq-minis div { display: grid; place-items: center; text-align: center; width: 130px; aspect-ratio: 1; border-radius: 50%; background: var(--milk); color: #1b1530; padding: 16px; }
+.lq-minis dd { font-family: var(--font-display); font-size: 34px; font-weight: 560; letter-spacing: -.03em; line-height: 1; }
+.lq-minis small { font-size: .45em; margin-left: 2px; }
+.lq-minis dt { font-size: 12px; line-height: 1.3; color: rgba(27, 21, 48, .8); }
+.lq-note { margin-top: 18px; font-size: 14px; color: var(--ink-2); }
+
+/* ------------------------------------------------------------- stats: one drop divides into the numbers */
+.lq-stats { padding: clamp(110px, 16vh, 170px) var(--gutter); }
+.lq-stats__note { font-family: var(--font-mono); font-size: 13px; color: var(--accent-text); text-align: center; margin-bottom: 40px; }
+.lq-cells { list-style: none; display: grid; grid-template-columns: repeat(min(var(--n), 4), minmax(0, 1fr)); gap: 3vw; max-width: 1240px; margin: 0 auto; }
+.lq-cells--5, .lq-cells--6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.lq-cell { display: grid; place-items: center; }
+.lq-cell__drop { width: min(100%, 250px); aspect-ratio: 1; border-radius: 50%; background: var(--milk); color: #1b1530; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  text-align: center; padding: 14%; box-shadow: inset 0 -16px 36px -18px rgba(255, 107, 154, .4); }
+.lq-cell__v { font-family: var(--font-display); font-weight: 560; font-size: clamp(52px, 5.4vw, 88px); letter-spacing: -.04em; line-height: .95; font-variant-numeric: tabular-nums; }
+.lq-cell__v b { font-weight: inherit; }
+.lq-cell__v small { font-size: .38em; margin-left: 3px; color: #9c1f4f; letter-spacing: 0; }
+.lq-cell__l { margin-top: 10px; font-size: 14px; line-height: 1.35; color: rgba(27, 21, 48, .82); max-width: 16ch; }
+.lq-live .lq-stats { height: 220vh; height: 220svh; padding: 0; }
+.lq-live .lq-stats__stage { position: sticky; top: 0; height: 100vh; height: 100svh; display: flex; flex-direction: column; justify-content: center; padding: 0 var(--gutter); }
+.lq-live .lq-cell__drop { transform: translate(var(--dx, 0px), var(--dy, 0px)) scale(var(--ds, 1)); will-change: transform; }
+.lq-live .lq-cell__drop > * { opacity: var(--do, 1); }
+.lq-gl .lq-cell__drop { background: transparent; box-shadow: none; }
+
+/* ------------------------------------------------------------- timeline: a stream where each step lands */
+.lq-timeline { padding: clamp(110px, 16vh, 170px) var(--gutter); }
+.lq-timeline__in { max-width: 1240px; margin: 0 auto; }
+.lq-timeline__head { text-align: center; max-width: 760px; margin: 0 auto 70px; }
+.lq-stream { list-style: none; position: relative; display: grid; gap: clamp(40px, 9vh, 90px); padding: 20px 0 40px; }
+.lq-stream::before { content: ""; position: absolute; left: 50%; top: 0; bottom: 0; width: 6px; margin-left: -3px; border-radius: 3px; background: linear-gradient(#ffb86b, #ff6b9a, #8b7bff); opacity: .5; }
+.lq-live .lq-stream::before { display: none; }
+.lq-flow { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; }
+.lq-landing { position: relative; width: calc(50% - 60px); }
+.lq-landing:nth-child(odd) { margin-left: calc(50% + 60px); }
+.lq-landing:nth-child(even) { text-align: right; }
+.lq-landing__drop { position: absolute; top: 4px; width: 26px; height: 26px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff 0 14%, #ffb86b 38%, #ff6b9a 70%, #8b7bff);
+  box-shadow: 0 8px 18px -8px rgba(200, 50, 106, .7); }
+.lq-landing:nth-child(odd) .lq-landing__drop { left: -73px; }
+.lq-landing:nth-child(even) .lq-landing__drop { right: -73px; }
+.lq-live .lq-landing__drop { transform: scale(.001); transition: transform .5s var(--lq-ease); }
+.lq-live .lq-landing.is-landed .lq-landing__drop { transform: scale(1); transition: transform .9s var(--lq-spring); }
+.lq-live .lq-landing > :not(.lq-landing__drop) { opacity: .34; transform: translateY(14px); transition: opacity .6s, transform .9s var(--lq-spring); }
+.lq-live .lq-landing.is-landed > :not(.lq-landing__drop) { opacity: 1; transform: none; }
+.lq-landing__when { font-family: var(--font-mono); font-size: 13px; color: var(--accent-text); }
+.lq-landing h3 { font-family: var(--font-display); font-weight: 560; font-size: clamp(26px, 2.3vw, 38px); letter-spacing: -.025em; line-height: 1.05; margin: 8px 0 8px; }
+.lq-landing p:not(.lq-landing__when) { font-size: 16px; line-height: 1.55; color: var(--ink-2); max-width: 36ch; }
+.lq-landing:nth-child(even) p:not(.lq-landing__when) { margin-left: auto; }
+
+/* ------------------------------------------------------------- quote: a speech blob that breathes */
+.lq-quote { padding: clamp(130px, 22vh, 240px) var(--gutter); display: grid; place-items: center; }
+.lq-quote__blob { position: relative; width: min(960px, 100%); margin: 0; padding: clamp(60px, 9vw, 130px) clamp(40px, 8vw, 120px); text-align: center; color: #1b1530;
+  background: var(--milk); border-radius: 50% 50% 46% 54% / 54% 50% 50% 46%; animation: lq-breathe 12s ease-in-out infinite; }
+.lq-gl .lq-quote__blob { background: transparent; animation: none; }
+.lq-quote blockquote { font-family: var(--font-display); font-style: italic; font-weight: 420; font-variation-settings: "SOFT" 60, "WONK" 1; font-size: clamp(28px, 3.3vw, 54px); line-height: 1.12; letter-spacing: -.02em; text-wrap: balance; }
+.lq-quote figcaption { margin-top: 28px; display: inline-flex; align-items: center; gap: 10px; font-size: 15px; font-weight: 600; color: rgba(27, 21, 48, .82); }
+.lq-quote figcaption i { width: 28px; height: 28px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fff 0 14%, #ffb86b 38%, #ff6b9a 70%, #8b7bff); }
+
+/* ------------------------------------------------------------- faq: membranes that bend as answers spring open */
+.lq-faq { padding: clamp(120px, 18vh, 200px) var(--gutter) clamp(160px, 24vh, 260px); }
+.lq-faq__in { max-width: var(--max); margin: 0 auto; display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.4fr); gap: 6vw; align-items: start; }
+.lq-q { position: relative; padding: 4px 0; }
+.lq-q__membrane { position: absolute; left: 0; top: -10px; width: 100%; height: 20px; overflow: visible; }
+.lq-q__membrane path { fill: none; stroke: rgba(var(--ink-rgb), .3); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+.lq-q summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 24px; padding: 26px 0; font-family: var(--font-display);
+  font-weight: 520; font-size: clamp(20px, 1.7vw, 27px); letter-spacing: -.02em; line-height: 1.2; }
+.lq-q summary::-webkit-details-marker { display: none; }
+.lq-q summary i { flex: none; position: relative; width: 30px; height: 30px; border-radius: 50%; background: var(--ink); transition: border-radius .6s var(--lq-spring), transform .6s var(--lq-spring); }
+.lq-q summary i::before, .lq-q summary i::after { content: ""; position: absolute; left: 9px; top: 14px; width: 12px; height: 2px; border-radius: 2px; background: var(--tone, #fff4ec); transition: transform .5s var(--lq-spring); }
+.lq-q summary i::after { transform: rotate(90deg); }
+.lq-q[open] summary i { border-radius: 42% 58% 50% 50% / 60% 45% 55% 40%; transform: scale(1.1); }
+.lq-q[open] summary i::after { transform: rotate(0deg); }
+.lq-q__a { overflow: hidden; }
+.lq-q__a p { padding: 0 0 26px; max-width: 60ch; font-size: 17px; line-height: 1.65; color: var(--ink-2); }
+
+/* ------------------------------------------------------------- cta: the flood, and a button the blob pools around */
+.lq-cta { min-height: 100vh; min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 130px var(--gutter) 130px; }
+.lq-cta__bg { position: absolute; inset: 14vh 18vw; background-size: cover; background-position: center; opacity: .35; }
+.lq-cta__in { position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; }
+.lq-cta .lq-h1 { font-size: clamp(50px, 8.6vw, 150px); max-width: 11em; margin-bottom: 72px; }
+.lq-btn--pour { padding: 24px 46px; font-size: 19px; border-color: #fff4ec; color: #1b1530; background: #fff4ec; --fill: #ff6b9a; }
+.lq-btn--pour:hover, .lq-btn--pour:focus-visible { color: #1b1530; border-color: #ff6b9a; }
+
+/* ------------------------------------------------------------- default blocks inside the fluid */
+html.style-liquid-morph .ss-display, html.style-liquid-morph .ss-h2, html.style-liquid-morph .ss-h1 { font-weight: 560; }
+html.style-liquid-morph .ss-tile { border-radius: 36px; border: 0; background: var(--milk); }
+html.style-liquid-morph .ss-tile__media { border-radius: 36px 36px 0 0; }
+html.style-liquid-morph .ss-strip img { border-radius: 42% 58% 50% 50% / 50% 45% 55% 50%; }
+html.style-liquid-morph .ss-btn { border-radius: 999px; }
+
+/* ------------------------------------------------------------- phones */
+@media (max-width: 900px) {
+  html.style-liquid-morph .ss-wordmark { font-size: 19px; }
+  .lq-hero { align-items: flex-end; padding: 110px var(--gutter) 90px; }
+  .lq-hero__in { width: 100%; }
+  .lq-h1 { font-size: clamp(46px, 13vw, 76px); }
+  .lq-h2 { font-size: clamp(34px, 9.6vw, 52px); }
+  .lq-hero__media { width: 70vw; top: 140px; right: -6vw; transform: none; }
+  .lq-scrollcue { display: none; }
+  .lq-intro { padding: 50vh var(--gutter) 90px; min-height: 0; }
+  .lq-intro__in { width: 100%; margin: 0; }
+  .lq-live .lq-features__stage { padding-top: 92px; }
+  .lq-live .lq-drops { top: 64%; }
+  .lq-live .lq-drop { --d: min(80vw, 330px); }
+  .lq-drop { padding: 12%; }
+  .lq-drop h3 { font-size: 25px; }
+  .lq-drop p { font-size: 14px; }
+  .lq-product__in { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+  .lq-product--right .lq-product__media { order: 0; }
+  .lq-product__media { min-height: 52vh; }
+  .lq-product__media .ss-phone { width: min(56vw, 230px); }
+  .lq-cells, .lq-cells--5, .lq-cells--6 { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .lq-cell__drop { width: min(100%, 44vw); padding: 12%; }
+  .lq-cell__v { font-size: 42px; }
+  .lq-cell__l { font-size: 12.5px; }
+  .lq-stream { gap: 44px; }
+  .lq-landing, .lq-landing:nth-child(odd) { width: auto; margin-left: 58px; text-align: left; }
+  .lq-landing:nth-child(odd) .lq-landing__drop, .lq-landing:nth-child(even) .lq-landing__drop { left: -52px; right: auto; }
+  .lq-landing:nth-child(even) p:not(.lq-landing__when) { margin-left: 0; }
+  .lq-stream::before { left: 13px; }
+  .lq-timeline__head { text-align: left; margin-bottom: 50px; }
+  .lq-quote__blob { padding: 70px 30px; }
+  .lq-faq__in { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .lq-cta .lq-h1 { font-size: clamp(46px, 13vw, 76px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lq-blobmask, .lq-phone, .lq-scrollcue i, .lq-quote__blob { animation: none; }
+  .lq-btn::before { animation: none; transition: top .2s; }
+  .lq-live .lq-melt .sx-ch { transition-duration: .2s; transition-delay: 0s; transform: none; filter: none; }
+}
 
 </style><style>
   /* A section's backdrop: the image fills the panel (or a wrapper in the flow layout); the section itself goes clear,
@@ -171,86 +413,168 @@ html.style-liquid-morph .ss-tl::before { border-radius: 40% 60% 55% 45%; width: 
   <nav class="ss-nav__links"><a href="#why">Why</a><a href="#features">Features</a><a href="#how">How</a></nav>
 <a class="ss-btn" href="#get">Get Halcyon <span class="ss-arrow">→</span></a></div></header>
 
+<div class="lq-fluid" aria-hidden="true"><canvas class="lq-canvas"></canvas></div>
 <main>
-<section class="ss-block ss-hero ss-hero--center">
-  <div class="ss-hero__in">
-<span class="ss-badge">New · Halcyon 2.0</span><h1 class="ss-h1">Your mornings, <em>back.</em></h1><p class="ss-lede">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>    <div class="ss-btns"><a class="ss-btn ss-btn--hot" href="#get">Try it free <span class="ss-arrow">→</span></a><a class="ss-btn" href="../../looks/">See the looks</a></div>
+
+<section class="lq-sec lq-hero lq-tone--peach" data-lq="hero" data-tone="peach">
+  <div class="lq-hero__in">
+<p class="lq-badge"><i aria-hidden="true"></i>New · Halcyon 2.0</p><h1 class="lq-h1 lq-melt">Your mornings, <em>back.</em></h1><p class="lq-lede">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>    <div class="lq-btns"><a class="lq-btn lq-btn--fill" href="#get"><span>Try it free</span></a><a class="lq-btn" href="../../looks/"><span>See the looks</span></a></div>
+  </div>
+  <p class="lq-scrollcue" aria-hidden="true"><i></i>scroll slowly, or fling it</p>
+</section>
+
+
+<section class="lq-sec lq-intro lq-tone--lilac" data-lq="intro" data-tone="lilac" id="why">
+  <div class="lq-intro__in">
+<p class="lq-kicker">The problem</p>    <h2 class="lq-h2 lq-melt">Calendars fill up <em>from the top.</em></h2>
+<p class="lq-lede">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>  </div>
+</section>
+
+
+<section class="lq-sec lq-features lq-tone--peach" data-lq="features" data-tone="peach" style="--n: 3" id="features">
+  <div class="lq-features__stage">
+<header class="lq-features__head">
+<p class="lq-kicker">What it does</p><h2 class="lq-h2 lq-melt">Three rules, <em>kept for you.</em></h2>    </header>    <ol class="lq-drops">
+      <li class="lq-drop" data-i="0" tabindex="0">
+        <div class="lq-drop__in">
+          <span class="lq-drop__tag">01</span>
+          <h3>Focus first</h3>
+<p>Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p>        </div>
+      </li>
+      <li class="lq-drop" data-i="1" tabindex="0">
+        <div class="lq-drop__in">
+          <span class="lq-drop__tag">02</span>
+          <h3>Smart batching</h3>
+<p>Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p>        </div>
+      </li>
+      <li class="lq-drop" data-i="2" tabindex="0">
+        <div class="lq-drop__in">
+          <span class="lq-drop__tag">03</span>
+          <h3>Polite no</h3>
+<p>Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p>        </div>
+      </li>
+    </ol>
+    <p class="lq-features__hint" aria-hidden="true"><span>01</span> / 03</p>
   </div>
 </section>
 
-<section class="ss-block" id="why"><div class="ss-wrap ss-intro2">
-  <h2 class="ss-display ss-reveal">Calendars fill up <em>from the top.</em></h2>
-  <div class="ss-reveal">
-<span class="ss-kicker">The problem</span><p class="ss-lede">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>  </div>
-</div></section>
 
-<section class="ss-block" id="features"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">What it does</span><h2 class="ss-display">Three rules, <em>kept for you.</em></h2></div>  <div class="ss-features ss-features--3">
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">01</span>      <div><h3>Focus first</h3><p>Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">02</span>      <div><h3>Smart batching</h3><p>Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">03</span>      <div><h3>Polite no</h3><p>Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p></div>
-    </div>
-  </div>
-</div></section>
-
-<section class="ss-scene ss-overlay ss-side-right ss-type-type ss-shade-auto ss-type--display" id="words" data-scene="type">
-  <div class="ss-track" style="height: 260vh">
-    <div class="ss-stage">
-      <div class="ss-visual"></div>
-      <div class="ss-shade"></div>
-      <div class="ss-captions">
-      </div>
-      
-      <div class="ss-outro"></div>
-    </div>
-  </div>
-  <script type="application/json" class="ss-config">{"mode": "swap", "text": "Halcyon keeps your", "words": ["mornings", "Fridays", "evenings", "weekends"]}</script>
-  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "none", "legend": [], "scales": []}, "layout": "overlay", "length": 2.6, "steps": []}</script>
-</section>
-<section class="ss-block ss-product ss-product--right ss-pose--beside" id="app"><div class="ss-wrap ss-product__in">
-  <div class="ss-product__media" data-float>
-<div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
+<section class="lq-sec lq-product lq-product--right lq-tone--lilac" data-lq="product" data-side="right" data-tone="lilac" id="app">
+  <div class="lq-product__in">
+    <div class="lq-product__media" data-lq-anchor>
+<div class="lq-phone"><div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
   <div class="ss-phone__bar"><span>9:41</span><i></i></div>
 <div class="ss-app">
 <div class="ss-app__name">Halcyon</div><div class="ss-app__title">Coffee with Sam</div><div class="ss-app__label">Best times</div><p class="ss-app__note">Your 8-11 focus block stays free.</p><div class="ss-app__opt is-on"><b>Tue 2:30 pm</b><small>Next to your other calls</small></div><div class="ss-app__opt"><b>Wed 4:00 pm</b><small>End of day</small></div><div class="ss-app__opt"><b>Thu 1:00 pm</b><small>After lunch</small></div><div class="ss-app__btn">Send these times</div>  </div></div></div>
+</div>    </div>
+    <div class="lq-product__copy">
+<p class="lq-kicker">The app</p>      <h2 class="lq-h2 lq-melt">Pick a slot, <em>keep the morning.</em></h2>
+<p class="lq-lede">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><ul class="lq-pills"><li>iPhone</li><li>Android</li><li>Web</li><li>Google and Outlook</li></ul>      
+    </div>
   </div>
-  <div class="ss-product__copy ss-reveal">
-<span class="ss-kicker">The app</span>    <h2 class="ss-h2">Pick a slot, <em>keep the morning.</em></h2>
-<p class="ss-lede">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><ul class="ss-pills"><li>iPhone</li><li>Android</li><li>Web</li><li>Google and Outlook</li></ul>    
-  </div>
-</div></section>
-
-<section class="ss-block ss-band ss-band"><div class="ss-wrap ss-stats ss-stats--4">
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="11">11<sup>h</sup></div><div class="ss-l">Focus hours kept per week</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="38">38<sup>%</sup></div><div class="ss-l">Fewer meeting fragments</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="2">2<sup>min</sup></div><div class="ss-l">To set up</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="0">0</div><div class="ss-l">Calendars replaced</div></div>
-</div></section>
-
-<section class="ss-block" id="how"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">How it works</span><h2 class="ss-display">Set it up <em>over coffee.</em></h2></div>  <div class="ss-timeline ss-timeline--4">
-<div class="ss-tl ss-reveal"><span class="ss-when">Minute 1</span><h4>Connect</h4><p>Sign in with Google or Outlook; nothing moves yet.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Minute 2</span><h4>Mark your hours</h4><p>Paint the blocks you want protected.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Day 1</span><h4>It starts</h4><p>New invites are steered around your focus.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Week 1</span><h4>You notice</h4><p>A free morning, then another one.</p></div>  </div>
-</div></section>
-
-<section class="ss-block"><div class="ss-wrap ss-quote ss-reveal">
-  <blockquote>I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote><cite>Priya N., product designer</cite></div></section>
-
-<section class="ss-block ss-faq"><div class="ss-wrap ss-faq__in">
-  <div class="ss-head ss-reveal"><h2 class="ss-h2">Questions</h2></div>
-  <div class="ss-faq__list">
-<details class="ss-reveal" open><summary>Does it replace my calendar?</summary><p>No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></details><details class="ss-reveal"><summary>What do the people I meet see?</summary><p>A short list of times that work for both of you. No new app to install.</p></details><details class="ss-reveal"><summary>Can I override it?</summary><p>Always. Drag anything anywhere; Halcyon learns from what you move.</p></details>  </div>
-</div></section>
-<section class="ss-block ss-cta" id="get">
-  <div class="ss-cta__in">
-<span class="ss-kicker ss-reveal">Free for 30 days</span>    <h2 class="ss-display ss-reveal">Keep <em>tomorrow morning.</em></h2>
-<a class="ss-btn ss-btn--hot ss-reveal" href="#">Get Halcyon <span class="ss-arrow">→</span></a>  </div>
 </section>
 
+
+<section class="lq-sec lq-stats lq-tone--candy" data-lq="stats" data-tone="candy" style="--n: 4">
+  <div class="lq-stats__stage">
+    <p class="lq-stats__note" aria-hidden="true">one drop, divided</p>
+    <ol class="lq-cells lq-cells--4">
+      <li class="lq-cell" data-i="0">
+        <div class="lq-cell__drop">
+          <span class="lq-cell__v" data-n="11"><b>11</b><small>h</small></span>
+          <span class="lq-cell__l">Focus hours kept per week</span>
+        </div>
+      </li>
+      <li class="lq-cell" data-i="1">
+        <div class="lq-cell__drop">
+          <span class="lq-cell__v" data-n="38"><b>38</b><small>%</small></span>
+          <span class="lq-cell__l">Fewer meeting fragments</span>
+        </div>
+      </li>
+      <li class="lq-cell" data-i="2">
+        <div class="lq-cell__drop">
+          <span class="lq-cell__v" data-n="2"><b>2</b><small>min</small></span>
+          <span class="lq-cell__l">To set up</span>
+        </div>
+      </li>
+      <li class="lq-cell" data-i="3">
+        <div class="lq-cell__drop">
+          <span class="lq-cell__v" data-n="0"><b>0</b></span>
+          <span class="lq-cell__l">Calendars replaced</span>
+        </div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+
+<section class="lq-sec lq-timeline lq-tone--lilac" data-lq="timeline" data-tone="lilac" id="how">
+  <div class="lq-timeline__in">
+<header class="lq-timeline__head">
+<p class="lq-kicker">How it works</p><h2 class="lq-h2 lq-melt">Set it up <em>over coffee.</em></h2>    </header>    <ol class="lq-stream">
+      <li class="lq-landing" data-i="0">
+        <span class="lq-landing__drop" aria-hidden="true"></span>
+        <p class="lq-landing__when">Minute 1</p>
+        <h3>Connect</h3>
+<p>Sign in with Google or Outlook; nothing moves yet.</p>      </li>
+      <li class="lq-landing" data-i="1">
+        <span class="lq-landing__drop" aria-hidden="true"></span>
+        <p class="lq-landing__when">Minute 2</p>
+        <h3>Mark your hours</h3>
+<p>Paint the blocks you want protected.</p>      </li>
+      <li class="lq-landing" data-i="2">
+        <span class="lq-landing__drop" aria-hidden="true"></span>
+        <p class="lq-landing__when">Day 1</p>
+        <h3>It starts</h3>
+<p>New invites are steered around your focus.</p>      </li>
+      <li class="lq-landing" data-i="3">
+        <span class="lq-landing__drop" aria-hidden="true"></span>
+        <p class="lq-landing__when">Week 1</p>
+        <h3>You notice</h3>
+<p>A free morning, then another one.</p>      </li>
+    </ol>
+  </div>
+</section>
+
+
+<section class="lq-sec lq-quote lq-tone--peach" data-lq="quote" data-tone="peach">
+  <figure class="lq-quote__blob">
+    <blockquote>I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote>
+<figcaption><i aria-hidden="true"></i>Priya N., product designer</figcaption>  </figure>
+</section>
+
+
+<section class="lq-sec lq-faq lq-tone--lilac" data-lq="faq" data-tone="lilac">
+  <div class="lq-faq__in">
+    <header>
+      <h2 class="lq-h2 lq-melt">Questions</h2>
+    </header>
+    <div class="lq-faq__list">
+      <details class="lq-q" open>
+        <summary><span>Does it replace my calendar?</span><i aria-hidden="true"></i></summary>
+        <div class="lq-q__a"><p>No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></div>
+        <svg class="lq-q__membrane" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q50 10 100 10"/></svg>
+      </details>
+      <details class="lq-q">
+        <summary><span>What do the people I meet see?</span><i aria-hidden="true"></i></summary>
+        <div class="lq-q__a"><p>A short list of times that work for both of you. No new app to install.</p></div>
+        <svg class="lq-q__membrane" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q50 10 100 10"/></svg>
+      </details>
+      <details class="lq-q">
+        <summary><span>Can I override it?</span><i aria-hidden="true"></i></summary>
+        <div class="lq-q__a"><p>Always. Drag anything anywhere; Halcyon learns from what you move.</p></div>
+        <svg class="lq-q__membrane" viewBox="0 0 100 20" preserveAspectRatio="none" aria-hidden="true"><path d="M0 10 Q50 10 100 10"/></svg>
+      </details>
+    </div>
+  </div>
+</section>
+
+
+<section class="lq-sec lq-cta lq-tone--plum" data-lq="cta" data-tone="plum" id="get">
+  <div class="lq-cta__in">
+<p class="lq-kicker">Free for 30 days</p>    <h2 class="lq-h1 lq-melt">Keep <em>tomorrow morning.</em></h2>
+<a class="lq-btn lq-btn--pour" href="#"><span>Get Halcyon</span></a>  </div>
+</section>
 </main>
 
 <footer class="ss-footer"><div class="ss-wrap ss-footer__in">
@@ -261,9 +585,9 @@ html.style-liquid-morph .ss-tl::before { border-radius: 40% 60% 55% 45%; width: 
 <script>window.__ssScroll = { speed: 1.0 };</script>
 <script type="module" src="../../runtime/index.js"></script>
 <nav class="ss-looks" aria-label="Looks">
-  <a href="../particles/" aria-label="Previous look">←</a>
-  <a class="ss-looks__name" href="../">Liquid morph <small>2/20</small></a>
-  <a href="../holographic/" aria-label="Next look">→</a>
+  <a href="../kinetic-type/" aria-label="Previous look">←</a>
+  <a class="ss-looks__name" href="../">Liquid morph <small>14/21</small></a>
+  <a href="../neo-brutalism/" aria-label="Next look">→</a>
 </nav>
 <style>
   .ss-looks { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 990; display: flex; align-items: center; gap: 4px; padding: 5px;

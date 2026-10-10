@@ -1,74 +1,400 @@
 <!doctype html>
-<html lang="en" data-fx='{}' class="mode-light layout-flow style-bauhaus">
+<html lang="en" data-style="bauhaus" class="mode-light layout-flow style-bauhaus">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Halcyon</title>
 <meta name="description" content="The calendar that guards your mornings. One page, built in twenty styles by Scroll Studio."><meta name="generator" content="Scroll Studio">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23d7262b%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EH%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23be1e2d%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23ffffff%22%3EH%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root {
-  --bg: #f2ede1;
-  --bg-2: #e8e1d0;
+  --bg: #efe8da;
+  --bg-2: #e6ddca;
   --ink: #111111;
   --ink-rgb: 17, 17, 17;
-  --bg-rgb: 242, 237, 225;
-  --ink-2: rgba(17, 17, 17, 0.74);
-  --ink-3: rgba(17, 17, 17, 0.6);
+  --bg-rgb: 239, 232, 218;
+  --ink-2: rgba(17, 17, 17, 0.75);
+  --ink-3: rgba(17, 17, 17, 0.61);
   --line: rgba(17, 17, 17, .13);
-  --accent: #d7262b;
-  --accent-2: #1d4fc4;
+  --accent: #be1e2d;
+  --accent-2: #1f4e9c;
   --accent-ink: #ffffff;
-  --accent-text: #bf2328;
-  --accent-rgb: 215, 38, 43;
-  --font-display: "Josefin Sans", system-ui, sans-serif;
-  --font-body: "Josefin Sans", system-ui, sans-serif;
-  --font-mono: "Space Mono", ui-monospace, monospace;
+  --accent-text: #a51a27;
+  --accent-rgb: 190, 30, 45;
+  --font-display: "Jost", system-ui, sans-serif;
+  --font-body: "Jost", system-ui, sans-serif;
+  --font-mono: "Jost", ui-monospace, monospace;
   --display-weight: 700;
   --em-style: normal;
   --radius: 0px;
   color-scheme: light;
 }
-.ss-surface-dark { --btn-bg: #d7262b; --btn-ink: #ffffff; --bg: #111111; --bg-2: #232322; --ink: #f2ede1; --ink-rgb: 242, 237, 225; --bg-rgb: 17, 17, 17; --ink-2: rgba(242, 237, 225, 0.68); --ink-3: rgba(242, 237, 225, 0.51); --line: rgba(242, 237, 225, .14); --accent-text: #df6262; --em-color: #d7262b; color-scheme: dark; background: var(--bg); color: var(--ink); }
-.ss-surface-light { --btn-bg: #d7262b; --btn-ink: #ffffff; --bg: #e8e1d0; --bg-2: #f2ede1; --ink: #111111; --ink-rgb: 17, 17, 17; --bg-rgb: 232, 225, 208; --ink-2: rgba(17, 17, 17, 0.74); --ink-3: rgba(17, 17, 17, 0.6); --line: rgba(17, 17, 17, .14); --accent-text: #bf2328; --em-color: #1d4fc4; color-scheme: light; background: var(--bg); color: var(--ink); }
-.ss-surface-accent { --btn-bg: #111111; --btn-ink: #ffffff; --bg: #839edf; --bg-2: #18191d; --ink: #111111; --ink-rgb: 17, 17, 17; --bg-rgb: 131, 158, 223; --ink-2: rgba(17, 17, 17, 1.0); --ink-3: rgba(17, 17, 17, 1.0); --line: rgba(17, 17, 17, .14); --accent-text: #111111; --em-color: #111111; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-dark { --btn-bg: #be1e2d; --btn-ink: #ffffff; --bg: #111111; --bg-2: #232221; --ink: #efe8da; --ink-rgb: 239, 232, 218; --bg-rgb: 17, 17, 17; --ink-2: rgba(239, 232, 218, 0.68); --ink-3: rgba(239, 232, 218, 0.52); --line: rgba(239, 232, 218, .14); --accent-text: #d16b6f; --em-color: #efe8da; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #be1e2d; --btn-ink: #ffffff; --bg: #e6ddca; --bg-2: #efe8da; --ink: #111111; --ink-rgb: 17, 17, 17; --bg-rgb: 230, 221, 202; --ink-2: rgba(17, 17, 17, 0.75); --ink-3: rgba(17, 17, 17, 0.61); --line: rgba(17, 17, 17, .14); --accent-text: #be1e2d; --em-color: #1f4e9c; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #111111; --btn-ink: #ffffff; --bg: #849ec9; --bg-2: #18191c; --ink: #111111; --ink-rgb: 17, 17, 17; --bg-rgb: 132, 158, 201; --ink-2: rgba(17, 17, 17, 1.0); --ink-3: rgba(17, 17, 17, 1.0); --line: rgba(17, 17, 17, .14); --accent-text: #111111; --em-color: #111111; color-scheme: light; background: var(--bg); color: var(--ink); }
 </style>
 <link rel="stylesheet" href="../../runtime/studio.css">
 <style id="ss-style">
-/* bauhaus: primary colours, circles, squares and triangles; everything sits on a hard grid */
-html.style-bauhaus { --red: #d7262b; --blue: #1d4fc4; --yellow: #f2b707; }
-html.style-bauhaus .ss-hero:not(.ss-hero--media), html.style-bauhaus .ss-cta { position: relative; isolation: isolate; overflow: hidden; }
-html.style-bauhaus .ss-hero:not(.ss-hero--media)::before { content: ""; position: absolute; z-index: -1; right: -12vw; top: 8vh; width: min(38vw, 520px); aspect-ratio: 1; border-radius: 50%; background: var(--red);
-  transform: translateY(calc(var(--hero-p, 0) * 120px)); }
-html.style-bauhaus .ss-hero:not(.ss-hero--media)::after { content: ""; position: absolute; z-index: -1; left: -4vw; bottom: -2vh; width: min(30vw, 400px); aspect-ratio: 1; background: var(--blue);
-  clip-path: polygon(0 100%, 50% 0, 100% 100%); transform: rotate(calc(var(--hero-p, 0) * 30deg)); }
-html.style-bauhaus .ss-cta::before { content: ""; position: absolute; z-index: -1; left: 3vw; top: 6vh; width: min(12vw, 170px); aspect-ratio: 1; background: var(--yellow); }
-html.style-bauhaus .ss-cta::after { content: ""; position: absolute; z-index: -1; right: -4vw; bottom: -6vh; width: min(22vw, 300px); aspect-ratio: 1; border-radius: 50%; border: 28px solid var(--blue); }
-html.style-bauhaus .ss-h1, html.style-bauhaus .ss-h2, html.style-bauhaus .ss-display { text-transform: uppercase; letter-spacing: -.01em; line-height: .92; }
-html.style-bauhaus em { font-style: normal; color: var(--blue); }
-html.style-bauhaus .ss-hero .ss-h1 em { color: var(--ink); background: var(--yellow); padding: 0 .12em; }
-html.style-bauhaus .ss-features { background: none; border: 0; gap: 0; }
-html.style-bauhaus .ss-feature { border: 4px solid var(--ink); margin: -2px; }
-html.style-bauhaus .ss-feature { position: relative; overflow: hidden; }
-html.style-bauhaus .ss-feature::after { content: ""; position: absolute; right: 22px; top: 22px; width: 44px; height: 44px; }
-html.style-bauhaus .ss-feature:nth-child(3n+1)::after { border-radius: 50%; background: var(--red); }
-html.style-bauhaus .ss-feature:nth-child(3n+2)::after { background: var(--blue); }
-html.style-bauhaus .ss-feature:nth-child(3n)::after { background: var(--yellow); clip-path: polygon(0 100%, 50% 0, 100% 100%); }
-html.style-bauhaus .ss-feature h3 { text-transform: uppercase; }
-html.style-bauhaus .ss-stats > div { border-top: 10px solid var(--red); padding-top: 18px; }
-html.style-bauhaus .ss-stats > div:nth-child(2n) { border-color: var(--blue); }
-html.style-bauhaus .ss-stats > div:nth-child(3n) { border-color: var(--yellow); }
-html.style-bauhaus .ss-btn { border: 3px solid var(--ink); background: var(--bg); color: var(--ink); text-transform: uppercase; font-weight: 700; letter-spacing: .06em; }
-html.style-bauhaus .ss-btn--hot { background: var(--blue); color: #fff; }
-html.style-bauhaus .ss-btn:hover { background: var(--yellow); color: var(--ink); border-color: var(--ink); }
-html.style-bauhaus .ss-tl::before { border-radius: 0; width: 14px; height: 14px; top: -7px; background: var(--red); box-shadow: none; }
-html.style-bauhaus .ss-tl:nth-child(2n)::before { background: var(--blue); border-radius: 50%; }
-html.style-bauhaus .ss-tl:nth-child(3n)::before { background: var(--yellow); clip-path: polygon(0 100%, 50% 0, 100% 100%); }
-html.style-bauhaus .ss-band { background: var(--bg-2); border-block: 4px solid var(--ink); }
-html.style-bauhaus .ss-kicker { color: var(--ink); font-weight: 700; }
-html.style-bauhaus .ss-kicker::before { content: ""; display: inline-block; width: 12px; height: 12px; background: var(--red); border-radius: 50%; margin-right: 10px; vertical-align: -1px; }
-html.style-bauhaus .ss-tile { border: 4px solid var(--ink); border-radius: 0; }
+/* Bauhaus: one poster that recomposes. Flat red, yellow, blue and black on paper; no shadows, no radius, no borders
+   around boxes; heavy bars and rules; lowercase geometric sans. Static posters without JavaScript (html without
+   .bh-live); with it, posters are fixed layers over one stage of persistent primitives (runtime/src/styles/bauhaus.ts). */
+html.style-bauhaus {
+  --red: #be1e2d; --yellow: #f2c230; --blue: #1f4e9c; --black: #111111; --paper: #efe8da;
+  --strip: 64px; --top: 0px;
+  --t: var(--black); --t2: rgba(17, 17, 17, .78);
+  background: var(--paper);
+}
+html.style-bauhaus body { background: var(--paper); color: var(--black); font-family: "Jost", system-ui, sans-serif; }
+html.style-bauhaus em { color: inherit; font-style: normal; }
+html.style-bauhaus .ss-nav { display: none; }
+html.style-bauhaus ::selection { background: var(--yellow); color: var(--black); }
+html.style-bauhaus :focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; }
+
+/* ---------------------------------------------------------------- index strip (nav) */
+.bh-index { position: fixed; left: 0; top: 0; bottom: 0; width: var(--strip); z-index: 60; background: var(--black); color: var(--paper);
+  display: flex; flex-direction: column; align-items: center; justify-content: space-between; padding: 18px 0; }
+.bh-index a { color: var(--paper); }
+.bh-index__mark { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.bh-index__mark i { width: 22px; height: 22px; border-radius: 50%; background: var(--red); display: block; }
+.bh-index__mark span, .bh-index__links span, .bh-index__cta span { writing-mode: vertical-rl; transform: rotate(180deg); text-transform: lowercase;
+  font-weight: 500; font-size: 15px; letter-spacing: .02em; }
+.bh-index__mark span { font-weight: 700; font-size: 17px; }
+.bh-index__links { display: flex; flex-direction: column; align-items: center; gap: 26px; }
+.bh-index__links a { display: flex; flex-direction: column; align-items: center; gap: 8px; position: relative; padding: 4px 6px; }
+.bh-index__links b { font-weight: 700; font-size: 13px; }
+.bh-index__links a::before { content: ""; position: absolute; left: -9px; top: 6px; width: 8px; height: 8px; background: var(--red); transform: scale(0); transition: transform .2s steps(2); }
+.bh-index__links a.is-on::before, .bh-index__links a:hover::before { transform: none; }
+.bh-index__cta { background: var(--red); color: #fff; padding: 14px 8px; display: block; }
+.bh-index__cta:hover { background: var(--blue); }
+
+/* ---------------------------------------------------------------- shared type */
+.bh { position: relative; }
+.bh-poster { position: relative; min-height: 100vh; min-height: 100svh; margin-left: var(--strip); display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr)); grid-template-rows: repeat(8, minmax(0, 1fr)); color: var(--t); }
+.bh-head { font-family: "Jost", sans-serif; font-weight: 700; text-transform: lowercase; letter-spacing: -.04em; line-height: .9;
+  font-size: clamp(54px, 8.2vw, 150px); margin: 0; text-wrap: balance; }
+.bh-head em { color: var(--accent-word, var(--red)); }
+.bh-head--s { font-size: clamp(40px, 5.4vw, 100px); line-height: .92; }
+.bh-head--q { font-size: clamp(32px, 4.4vw, 80px); line-height: 1; font-weight: 600; letter-spacing: -.03em; }
+.bh-cap, .bh-margin { font-size: 13px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; color: var(--t); }
+.bh-margin { display: flex; align-items: flex-end; gap: 14px; text-transform: lowercase; letter-spacing: .02em; font-size: 17px; }
+.bh-margin b { font-size: clamp(64px, 8vw, 128px); line-height: .75; font-weight: 800; letter-spacing: -.05em; }
+.bh-body { font-size: clamp(17px, 1.3vw, 21px); line-height: 1.45; max-width: 34ch; color: var(--t); font-weight: 400; }
+.bh-note { font-size: 14px; letter-spacing: .04em; color: var(--t); }
+
+/* buttons: flat rectangles; the arrow turns a rigid 90 degrees on hover */
+.bh-btns { display: flex; flex-wrap: wrap; gap: 0; }
+.bh-btn { display: inline-flex; align-items: center; gap: 18px; padding: 17px 24px; background: var(--black); color: var(--paper);
+  font-weight: 600; font-size: 16px; text-transform: lowercase; letter-spacing: .01em; }
+.bh-btn--hot { background: var(--red); color: #fff; }
+.bh-btn:hover { background: var(--blue); color: #fff; }
+.bh-arrow { width: 14px; height: 14px; position: relative; display: inline-block; transition: transform .22s cubic-bezier(.7, 0, .3, 1); }
+.bh-arrow::before { content: ""; position: absolute; left: 0; top: 6px; width: 14px; height: 2px; background: currentColor; }
+.bh-arrow::after { content: ""; position: absolute; right: 0; top: 2px; width: 0; height: 0; border-left: 7px solid currentColor; border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+.bh-btn:hover .bh-arrow { transform: rotate(90deg); }
+
+/* ---------------------------------------------------------------- per poster layout (12 x 8 grid, landscape) */
+.bh--hero .bh-cap { grid-column: 2 / 8; grid-row: 2; align-self: end; padding-bottom: 18px; }
+.bh--hero .bh-head { grid-column: 2 / 9; grid-row: 3 / 6; align-self: start; }
+.bh--hero .bh-body { grid-column: 2 / 6; grid-row: 6 / 7; align-self: start; }
+.bh--hero .bh-poster > div.bh-slide { grid-column: 2 / 8; grid-row: 7 / 8; align-self: center; }
+.bh--hero .bh-device { grid-column: 9 / 12; grid-row: 2 / 8; }
+
+.bh--intro .bh-margin { grid-column: 2 / 8; grid-row: 1 / 3; align-self: end; padding-bottom: 20px; }
+.bh--intro .bh-head { grid-column: 2 / 10; grid-row: 3 / 6; align-self: start; }
+.bh--intro .bh-body { grid-column: 6 / 11; grid-row: 6 / 8; align-self: start; padding-top: 18px; }
+.bh--intro .bh-poster > div.bh-slide { grid-column: 2 / 6; grid-row: 6 / 8; align-self: start; padding-top: 18px; }
+
+.bh--features .bh-margin { grid-column: 2 / 7; grid-row: 1 / 2; align-self: end; }
+.bh--features .bh-head { grid-column: 2 / 7; grid-row: 2 / 4; align-self: start; padding-top: 16px; }
+.bh-feats { list-style: none; grid-column: 2 / 7; grid-row: 4 / 9; display: grid; gap: 28px; align-content: start; padding-top: 18px; }
+.bh-feat { display: grid; grid-template-columns: auto 1fr; gap: 0 22px; align-items: start; }
+.bh-feat__no { font-weight: 800; font-size: 44px; line-height: .8; letter-spacing: -.04em; }
+.bh-feat h3 { font-size: clamp(24px, 2.3vw, 38px); font-weight: 700; text-transform: lowercase; letter-spacing: -.02em; line-height: 1; margin-bottom: 10px; }
+.bh-feat p { font-size: 17px; line-height: 1.45; max-width: 34ch; }
+.bh-meter { margin-top: 14px; height: 10px; background: rgba(17, 17, 17, .14); max-width: 280px; }
+.bh-meter i { display: block; height: 100%; background: var(--black); }
+
+.bh--product .bh-margin { grid-column: 2 / 7; grid-row: 1 / 3; align-self: end; padding-bottom: 18px; }
+.bh--product .bh-head { grid-column: 2 / 8; grid-row: 3 / 5; align-self: start; }
+.bh--product .bh-body { grid-column: 2 / 6; grid-row: 5 / 6; align-self: start; padding-top: 10px; }
+.bh--product .bh-tags, .bh--product .bh-mini { grid-column: 2 / 7; grid-row: 6 / 7; align-self: start; padding-top: 6px; }
+.bh--product .bh-poster > div.bh-slide { grid-column: 2 / 8; grid-row: 7 / 8; align-self: center; }
+.bh--product .bh-note { grid-column: 2 / 8; grid-row: 8; align-self: center; }
+.bh--product .bh-device { grid-column: 8 / 12; grid-row: 1 / 9; display: grid; place-items: center; margin: 0; position: relative; }
+.bh--left .bh-device { grid-column: 2 / 6; }
+.bh--left .bh-margin, .bh--left .bh-head { grid-column: 7 / 12; }
+.bh--left .bh-body, .bh--left .bh-tags, .bh--left .bh-mini, .bh--left .bh-poster > div.bh-slide, .bh--left .bh-note { grid-column: 7 / 12; }
+.bh-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0; }
+.bh-tags li { font-size: 14px; font-weight: 500; text-transform: lowercase; padding: 8px 18px 8px 0; margin-right: 18px; border-right: 4px solid var(--t); line-height: 1; }
+.bh-tags li:last-child { border-right: 0; }
+.bh-mini { list-style: none; display: flex; gap: 32px; }
+.bh-mini b { display: block; font-size: 48px; font-weight: 800; letter-spacing: -.04em; line-height: .9; }
+.bh-mini small { font-size: .45em; margin-left: 3px; }
+.bh-mini span { font-size: 14px; }
+
+/* the phone, made Bauhaus: a hard black slab, flat grey screen, no radius */
+.style-bauhaus .bh-device .ss-phone { width: min(300px, 100%); aspect-ratio: 9 / 19; border-radius: 0; background: var(--black); padding: 10px; box-shadow: none; position: relative; z-index: 1; }
+.style-bauhaus .bh-device .ss-phone__screen { border-radius: 0; background: #fafaf6; color: var(--black); height: 100%; overflow: hidden; }
+.style-bauhaus .bh-device .ss-phone__bar { font-size: 11px; padding: 10px 14px 0; display: flex; justify-content: space-between; font-weight: 600; }
+.style-bauhaus .bh-device .ss-phone__bar i { width: 18px; height: 8px; background: var(--black); display: block; }
+.style-bauhaus .bh-device .ss-app { padding: 16px 14px; display: grid; gap: 8px; text-transform: lowercase; }
+.style-bauhaus .bh-device .ss-app__name { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; font-weight: 600; color: var(--red); }
+.style-bauhaus .bh-device .ss-app__title { font-size: 25px; font-weight: 700; letter-spacing: -.03em; line-height: 1; }
+.style-bauhaus .bh-device .ss-app__label { font-size: 11px; letter-spacing: .14em; text-transform: uppercase; margin-top: 8px; }
+.style-bauhaus .bh-device .ss-app__note { font-size: 12px; line-height: 1.35; }
+.style-bauhaus .bh-device .ss-app__opt { padding: 10px 12px; background: #ebe6da; display: grid; gap: 2px; }
+.style-bauhaus .bh-device .ss-app__opt b { font-size: 14px; font-weight: 600; }
+.style-bauhaus .bh-device .ss-app__opt small { font-size: 11px; }
+.style-bauhaus .bh-device .ss-app__opt.is-on { background: var(--blue); color: #fff; }
+.style-bauhaus .bh-device .ss-app__btn { margin-top: 6px; background: var(--red); color: #fff; padding: 12px; font-weight: 600; font-size: 13px; text-align: center; }
+.style-bauhaus .bh-photo { width: 100%; max-height: 70vh; object-fit: cover; filter: grayscale(1) contrast(1.35); clip-path: circle(48% at 50% 50%); }
+
+/* stats: number as shape */
+.bh-stats { list-style: none; grid-column: 2 / 12; grid-row: 2 / 8; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 40px; align-content: center; }
+.bh-stat { display: grid; gap: 10px; align-content: start; }
+.bh-stat__v { font-size: clamp(80px, 9vw, 160px); font-weight: 800; letter-spacing: -.06em; line-height: .82; }
+.bh-stat__v small { font-size: .32em; letter-spacing: -.01em; margin-left: .06em; font-weight: 700; }
+.bh-stat__l { font-size: 16px; max-width: 22ch; line-height: 1.35; padding-top: 12px; border-top: 6px solid var(--t); }
+.bh-stat__fig { display: none; }
+
+.bh--timeline .bh-margin { grid-column: 2 / 7; grid-row: 1 / 2; align-self: end; }
+.bh--timeline .bh-head { grid-column: 2 / 7; grid-row: 2 / 4; align-self: start; padding-top: 16px; }
+.bh-steps { list-style: none; grid-column: 2 / 12; grid-row: 4 / 9; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; align-content: start; padding-top: 20px; }
+.bh-step { display: grid; gap: 14px; align-content: start; }
+.bh-step__no { width: 48px; height: 48px; border-radius: 50%; background: var(--black); color: var(--paper); display: grid; place-items: center; font-weight: 700; font-size: 20px; }
+.bh-step__when { font-size: 13px; font-weight: 500; letter-spacing: .16em; text-transform: uppercase; display: block; margin-bottom: 8px; }
+.bh-step h3 { font-size: clamp(24px, 2.2vw, 36px); font-weight: 700; text-transform: lowercase; letter-spacing: -.02em; line-height: 1; margin-bottom: 8px; }
+.bh-step p { font-size: 16px; line-height: 1.45; max-width: 30ch; }
+
+.bh--quote .bh-quote { grid-column: 2 / 12; grid-row: 2 / 8; align-self: center; margin: 0; display: grid; gap: 30px; }
+.bh-qmark { display: flex; gap: 14px; }
+.bh-qmark i { width: 46px; height: 46px; background: var(--black); display: block; }
+.bh-qmark i:last-child { transform: translateY(18px); }
+.bh--quote .bh-head--q { max-width: 20ch; }
+.bh--quote figcaption { font-size: 15px; }
+
+.bh--faq .bh-margin { grid-column: 2 / 6; grid-row: 1 / 2; align-self: end; }
+.bh--faq .bh-head { grid-column: 2 / 6; grid-row: 2 / 4; align-self: start; padding-top: 16px; }
+.bh-faq { grid-column: 7 / 12; grid-row: 2 / 8; align-self: center; }
+.bh-faq details { border-top: 6px solid var(--t); }
+.bh-faq details:last-child { border-bottom: 6px solid var(--t); }
+.bh-faq summary { list-style: none; display: grid; grid-template-columns: 54px 1fr 30px; align-items: center; gap: 12px; padding: 20px 0; cursor: pointer;
+  font-size: clamp(19px, 1.5vw, 24px); font-weight: 600; text-transform: lowercase; letter-spacing: -.01em; line-height: 1.15; }
+.bh-faq summary::-webkit-details-marker { display: none; }
+.bh-faq summary b { font-size: 40px; font-weight: 800; letter-spacing: -.05em; line-height: .8; }
+.bh-faq p { padding: 0 0 22px 66px; font-size: 17px; line-height: 1.45; max-width: 46ch; }
+.bh-plus { width: 26px; height: 26px; position: relative; transition: transform .22s cubic-bezier(.7, 0, .3, 1); }
+.bh-plus::before, .bh-plus::after { content: ""; position: absolute; background: var(--t); left: 0; top: 11px; width: 26px; height: 4px; }
+.bh-plus::after { transform: rotate(90deg); }
+.bh-faq details[open] .bh-plus { transform: rotate(45deg); }
+.bh-faq summary:hover b { color: var(--red); }
+
+.bh--cta .bh-cap { grid-column: 2 / 8; grid-row: 1 / 2; align-self: end; }
+.bh--cta .bh-head { grid-column: 2 / 10; grid-row: 2 / 5; align-self: start; padding-top: 16px; }
+.bh-go { grid-column: 9 / 12; grid-row: 5 / 8; align-self: center; justify-self: center; width: min(26vw, 300px); aspect-ratio: 1; border-radius: 50%; background: var(--red); color: #fff;
+  display: grid; place-items: center; text-align: center; font-weight: 700; font-size: clamp(17px, 1.5vw, 24px); text-transform: lowercase; letter-spacing: -.01em; padding: 0 1.1em; line-height: 1.05; }
+.bh-go:hover { background: var(--blue); }
+.bh-go span::after { content: ""; display: block; width: 26px; height: 4px; background: currentColor; margin: 14px auto 0; transition: transform .22s cubic-bezier(.7, 0, .3, 1); }
+.bh-go:hover span::after { transform: rotate(90deg); }
+
+/* ---------------------------------------------------------------- static primitives (no JavaScript) */
+.bh-static { position: absolute; inset: 0 0 0 var(--strip); overflow: hidden; pointer-events: none; z-index: 0; }
+.bh-static i { position: absolute; display: block; }
+.bh-poster { z-index: 1; }
+.bh-static .s-c { border-radius: 50%; background: var(--red); }
+.bh-static .s-b { background: var(--black); }
+.bh-static .s-t { background: var(--yellow); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.bh-static .s-q { background: var(--blue); }
+.bh-static--hero .s-c { width: 56vmin; height: 56vmin; right: 8%; top: 12%; }
+.bh-static--hero .s-b { width: 70%; height: 4vmin; right: -6%; top: 64%; transform: rotate(24deg); }
+.bh-static--hero .s-t { width: 22vmin; height: 22vmin; right: 34%; bottom: 4%; }
+.bh-static--hero .s-q { width: 12vmin; height: 12vmin; right: 4%; bottom: 8%; }
+.bh-static--intro .s-c { width: 18vmin; height: 18vmin; right: 8%; top: 8%; }
+.bh-static--intro .s-b { width: 52%; height: 3.4vmin; left: 6%; top: 70%; }
+.bh-static--intro .s-t { width: 40vmin; height: 40vmin; right: 2%; top: 44%; transform: rotate(90deg); }
+.bh-static--intro .s-q { display: none; }
+.bh-static--features .s-c { width: 40vmin; height: 40vmin; right: 8%; top: 22%; }
+.bh-static--features .s-b { width: 2vmin; height: 78%; left: 51%; top: 10%; }
+.bh-static--features .s-t { width: 10vmin; height: 10vmin; right: 40%; bottom: 6%; }
+.bh-static--features .s-q { width: 8vmin; height: 8vmin; right: 4%; bottom: 6%; }
+.bh-static--product .s-c { width: 46vmin; height: 46vmin; right: 6%; top: 10%; }
+.bh-static--product .s-b { width: 50%; height: 3vmin; left: 6%; bottom: 5%; }
+.bh-static--product .s-t, .bh-static--product .s-q { display: none; }
+.bh-static--stats .s-c { width: 16vmin; height: 16vmin; right: 6%; top: 6%; }
+.bh-static--stats .s-b { width: 40%; height: 2.6vmin; left: 6%; bottom: 8%; }
+.bh-static--stats .s-t { width: 12vmin; height: 12vmin; right: 4%; bottom: 6%; }
+.bh-static--stats .s-q { display: none; }
+.bh-static--timeline .s-b { width: 110%; height: 4vmin; left: -4%; top: 52%; transform: rotate(-24deg); }
+.bh-static--timeline .s-c { width: 10vmin; height: 10vmin; left: 20%; top: 64%; }
+.bh-static--timeline .s-t { width: 14vmin; height: 14vmin; right: 6%; bottom: 6%; transform: rotate(180deg); }
+.bh-static--timeline .s-q { width: 8vmin; height: 8vmin; left: 4%; top: 6%; }
+.bh-static--quote .s-c { display: none; }
+.bh-static--quote .s-b { width: 90%; height: 2vmin; left: 5%; bottom: 6%; }
+.bh-static--quote .s-t { width: 20vmin; height: 20vmin; right: 6%; top: 8%; transform: rotate(180deg); }
+.bh-static--quote .s-q { width: 10vmin; height: 10vmin; left: 4%; bottom: 12%; }
+.bh-static--faq .s-c { width: 26vmin; height: 26vmin; left: 6%; bottom: 8%; }
+.bh-static--faq .s-b { width: 1.6vmin; height: 86%; left: 44%; top: 7%; }
+.bh-static--faq .s-t, .bh-static--faq .s-q { display: none; }
+.bh-static--cta .s-b { width: 46%; height: 5vmin; left: 14%; top: 64%; }
+.bh-static--cta .s-t { width: 16vmin; height: 16vmin; left: 58%; top: calc(64% - 5.5vmin); transform: rotate(90deg); }
+.bh-static--cta .s-c, .bh-static--cta .s-q { display: none; }
+/* static poster colours */
+.bh--intro .bh-poster { --t: #fff; }
+.bh--intro { background: var(--blue); }
+.bh--product { background: var(--yellow); }
+.bh--quote { background: var(--red); }
+.bh--quote .bh-poster { --t: #fff; }
+html:not(.bh-live) .bh--quote .bh-qmark i { background: var(--black); }
+
+/* ---------------------------------------------------------------- live: one stage, fixed posters */
+html.bh-live .bh-static { display: none; }
+html.bh-live .bh { background: none; height: calc(var(--n, 1) * 100svh); }
+html.bh-live .bh-poster { position: fixed; left: var(--strip); top: var(--top); right: 0; bottom: 0; margin: 0; min-height: 0; z-index: 4;
+  visibility: hidden; pointer-events: none; }
+html.bh-live .bh-poster.is-on { visibility: visible; pointer-events: auto; }
+html.bh-live .bh-poster[data-bg="blue"], html.bh-live .bh-poster[data-bg="red"] { --t: #ffffff; --accent-word: var(--yellow); }
+html.bh-live .bh-poster[data-bg="yellow"], html.bh-live .bh-poster[data-bg="paper"] { --t: var(--black); --accent-word: var(--red); }
+html.bh-live .bh-poster[data-bg="red"] { --accent-word: var(--black); }
+html.bh-live .bh-poster[data-bg="yellow"] { --accent-word: var(--blue); }
+html.bh-live .bh-poster[data-bg="yellow"] .bh-btn--hot { background: var(--black); }
+html.bh-live .bh-poster[data-bg="red"] .bh-btn--hot, html.bh-live .bh-poster[data-bg="blue"] .bh-btn--hot { background: var(--black); }
+.bh-stage { position: fixed; left: 0; top: 0; width: 100vw; height: 100vh; height: 100svh; z-index: 1; pointer-events: none; overflow: hidden; background: var(--paper); }
+.bh-stage__bg, .bh-stage__wipe { position: absolute; inset: 0; }
+.bh-stage__wipe { will-change: clip-path; }
+.bh-sh { position: absolute; left: 0; top: 0; display: block; transform-origin: 50% 50%; will-change: transform; }
+.bh-sh--c, .bh-sh--d { border-radius: 50%; }
+.bh-sh--c { background: var(--red); }
+.bh-sh--d { background: var(--black); }
+.bh-sh--b, .bh-sh--r1, .bh-sh--r2 { background: var(--black); }
+.bh-sh--t { background: var(--yellow); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.bh-sh--q { background: var(--blue); }
+.bh-sh--h { background: var(--black); clip-path: inset(0 0 50% 0 round 50% 50% 0 0); border-radius: 50%; }
+.bh-band { position: fixed; inset: 0; z-index: 8; pointer-events: none; background: var(--black); clip-path: polygon(0 0, 0 0, 0 0, 0 0); }
+
+/* live head words: each word hides behind the poster's left edge and slides out to lock against it */
+html.bh-live .bh-words { clip-path: inset(-40% -40% -40% 0); }
+.bh-w { display: inline-block; white-space: nowrap; }
+html.bh-live .bh-poster .bh-slide, html.bh-live .bh-w { will-change: transform; }
+
+/* features, live: the active one holds the copy column, the others park in a legend strip by their primitive */
+html.bh-live .bh-feats { display: block; position: static; padding: 0; }
+html.bh-live .bh-feat { position: absolute; left: 0; top: 0; width: var(--fw, 460px); transform-origin: 0 0; will-change: transform; }
+html.bh-live .bh-feat__no { font-size: clamp(70px, 8vw, 140px); }
+html.bh-live .bh-feat { grid-template-columns: 1fr; gap: 14px; }
+html.bh-live .bh-feat h3 { font-size: clamp(30px, 3.2vw, 54px); }
+html.bh-live .bh-feat p, html.bh-live .bh-feat .bh-meter { opacity: var(--a, 0); }
+
+/* stats, live */
+html.bh-live .bh-stats { display: block; }
+html.bh-live .bh-stat { position: absolute; inset: 0; display: block; pointer-events: none; }
+html.bh-live .bh-stat__v { position: absolute; left: 0; top: 0; transform-origin: 0 0; font-size: clamp(120px, 30vh, 330px); white-space: nowrap; will-change: transform; color: var(--t); }
+html.bh-live .bh-stat__l { position: absolute; left: calc(100% / 12); width: min(26ch, 30%); top: 62%; font-size: clamp(19px, 1.6vw, 26px); font-weight: 500; opacity: var(--a, 0); border-top-width: 8px; }
+html.bh-live .bh-stat__fig { display: block; position: absolute; left: 0; top: 0; opacity: var(--a, 0); z-index: 0; }
+html.bh-live .bh-stat__v { z-index: 1; }
+.bh-stat__fig i { position: absolute; display: block; background: var(--blue); }
+.bh-legend-mark { position: absolute; width: 10px; height: 10px; background: var(--red); left: 0; top: 0; will-change: transform; }
+
+/* timeline, live: numbered circles ride the diagonal bar */
+html.bh-live .bh-steps { display: block; padding: 0; }
+html.bh-live .bh-step { position: absolute; left: 0; top: 0; display: block; }
+html.bh-live .bh-step__no { position: absolute; width: 44px; height: 44px; margin: -22px 0 0 -22px; z-index: 2; transition: background .2s steps(1), color .2s steps(1); background: var(--paper); color: var(--black); box-shadow: inset 0 0 0 5px var(--black); }
+html.bh-live .bh-step.is-on .bh-step__no { background: transparent; color: #fff; box-shadow: none; }
+html.bh-live .bh-step__txt { position: absolute; width: min(330px, 42vw); opacity: var(--a, 0); visibility: hidden; }
+html.bh-live .bh-step.is-shown .bh-step__txt { visibility: visible; }
+
+/* cta, live: the red circle is the button */
+html.bh-live .bh-go { position: absolute; grid-column: auto; grid-row: auto; left: 0; top: 0; width: var(--d, 260px); background: transparent; z-index: 3; opacity: var(--a, 0); }
+html.bh-live .bh-go:hover { background: rgba(31, 78, 156, 1); }
+
+/* footer: the colophon, set over the stage */
+html.style-bauhaus .ss-footer { position: relative; z-index: 9; background: var(--black); color: var(--paper); margin-left: 0; padding-left: var(--strip); border: 0; }
+html.style-bauhaus .ss-footer .ss-footer__in { padding: 56px var(--gutter) 64px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; font-size: 14px; letter-spacing: .02em; text-transform: lowercase; }
+html.style-bauhaus .ss-footer a { text-decoration: underline; text-underline-offset: 3px; }
+.bh-colophon { position: relative; z-index: 9; height: 0; }
+.bh-colophon { display: none; }
+html.style-bauhaus .ss-footer::after { content: ""; position: absolute; right: 6vw; top: 50%; width: 64px; height: 64px; margin-top: -32px; background: var(--yellow); clip-path: polygon(0 0, 100% 50%, 0 100%); }
+.bh-colophon__b { display: none; }
+
+/* sections the style doesn't draw (gallery, strip, scenes...) scroll over the stage as plain paper sheets */
+html.style-bauhaus main > section:not(.bh), html.style-bauhaus main > div:not(.ss-panel) > section:not(.bh) { position: relative; z-index: 9; background: var(--paper); margin-left: var(--strip); }
+html.style-bauhaus main .ss-panel { position: relative !important; top: auto !important; }
+html.style-bauhaus .ss-block:not(.bh) .ss-display, html.style-bauhaus .ss-block:not(.bh) .ss-h2 { font-family: "Jost", sans-serif; font-weight: 700; text-transform: lowercase; letter-spacing: -.04em; }
+html.style-bauhaus .ss-block:not(.bh) .ss-kicker { color: var(--red); font-family: "Jost", sans-serif; }
+html.style-bauhaus .ss-tile, html.style-bauhaus .ss-feature { border-radius: 0; box-shadow: none; border: 0; border-top: 6px solid var(--black); background: none; }
+html.style-bauhaus .ss-tile img, html.style-bauhaus .ss-strip img { filter: grayscale(1) contrast(1.3); border-radius: 0; }
+html.style-bauhaus .ss-btn { border-radius: 0; background: var(--black); color: var(--paper); border: 0; backdrop-filter: none; text-transform: lowercase; }
+html.style-bauhaus .ss-btn--hot { background: var(--red); color: #fff; }
+html.style-bauhaus .ss-orbit__item { border-radius: 50%; background: var(--yellow); color: var(--black); border: 0; box-shadow: none; }
+html.style-bauhaus .ss-orbit__item.is-primary { background: var(--red); color: #fff; }
+
+/* ---------------------------------------------------------------- phones and portrait screens: 6 x 12 grid, top bar */
+@media (max-width: 760px), (max-aspect-ratio: 4/5) {
+  html.style-bauhaus { --strip: 0px; --top: 56px; }
+  .bh-index { inset: 0 0 auto 0; width: auto; height: 56px; flex-direction: row; padding: 0 0 0 14px; }
+  .bh-index__mark { flex-direction: row; gap: 10px; }
+  .bh-index__mark span, .bh-index__links span, .bh-index__cta span { writing-mode: horizontal-tb; transform: none; }
+  .bh-index__links { flex-direction: row; gap: 12px; }
+  .bh-index__links span { display: none; }
+  .bh-index__links a { padding: 8px; }
+  .bh-index__links a::before { left: 50%; top: auto; bottom: -2px; margin-left: -4px; }
+  .bh-index__links b { font-size: 16px; }
+  .bh-index__cta { padding: 0 16px; height: 56px; display: flex; align-items: center; font-size: 14px; }
+  .bh-poster { grid-template-columns: repeat(6, minmax(0, 1fr)); grid-template-rows: repeat(12, minmax(0, 1fr)); padding-top: var(--top); min-height: 100svh; }
+  html.bh-live .bh-poster { padding-top: 0; }
+  .bh-head { font-size: clamp(44px, 13vw, 76px); }
+  .bh-head--s { font-size: clamp(34px, 9.6vw, 56px); }
+  .bh-head--q { font-size: clamp(26px, 7.4vw, 42px); }
+  .bh-margin b { font-size: 60px; }
+  .bh-body { font-size: 16px; }
+  .bh--hero .bh-cap { grid-column: 1 / 7; grid-row: 6; padding: 0 20px 8px; }
+  .bh--hero .bh-head { grid-column: 1 / 7; grid-row: 7 / 10; padding: 0 20px; }
+  .bh--hero .bh-body { grid-column: 1 / 7; grid-row: 10 / 12; padding: 0 20px; }
+  .bh--hero .bh-poster > div.bh-slide { grid-column: 1 / 7; grid-row: 12; padding: 0 20px; align-self: start; }
+  .bh--hero .bh-device { display: none; }
+  .bh--intro .bh-margin { grid-column: 1 / 7; grid-row: 5 / 6; padding: 0 20px 10px; }
+  .bh--intro .bh-head { grid-column: 1 / 7; grid-row: 6 / 9; padding: 0 20px; }
+  .bh--intro .bh-body { grid-column: 1 / 7; grid-row: 9 / 13; padding: 0 20px; }
+  .bh--intro .bh-poster > div.bh-slide { grid-column: 1 / 7; grid-row: 12; padding: 0 20px; }
+  .bh--features .bh-margin, .bh--timeline .bh-margin, .bh--faq .bh-margin { grid-column: 1 / 7; grid-row: 1 / 2; padding: 0 20px; align-self: end; }
+  .bh--features .bh-margin b, .bh--timeline .bh-margin b, .bh--faq .bh-margin b { font-size: 44px; }
+  .bh--features .bh-head, .bh--timeline .bh-head, .bh--faq .bh-head { grid-column: 1 / 7; grid-row: 2 / 4; padding: 10px 20px 0; }
+  .bh-feats, .bh-steps { grid-column: 1 / 7; grid-row: 4 / 13; padding: 0 20px; }
+  html.bh-live .bh--features .bh-feats { grid-row: 8 / 13; }
+  .bh--product .bh-margin { grid-column: 1 / 7; grid-row: 6; padding: 0 20px 8px; }
+  .bh--product .bh-head { grid-column: 1 / 7; grid-row: 7 / 9; padding: 0 20px; }
+  .bh--product .bh-body { grid-column: 1 / 7; grid-row: 9 / 11; padding: 0 20px; }
+  .bh--product .bh-tags, .bh--product .bh-mini { grid-column: 1 / 7; grid-row: 11; padding: 0 20px; }
+  .bh--product .bh-poster > div.bh-slide { grid-column: 1 / 7; grid-row: 12; padding: 0 20px; }
+  .bh--product .bh-note { display: none; }
+  .bh--product .bh-device, .bh--left .bh-device { grid-column: 3 / 7; grid-row: 1 / 6; }
+  .style-bauhaus .bh-device .ss-phone { width: min(150px, 100%); padding: 6px; transform: scale(1); }
+  .style-bauhaus .bh-device .ss-app { padding: 8px; gap: 4px; }
+  .style-bauhaus .bh-device .ss-app__title { font-size: 15px; }
+  .style-bauhaus .bh-device .ss-app__note, .style-bauhaus .bh-device .ss-app__label { display: none; }
+  .style-bauhaus .bh-device .ss-app__opt { padding: 5px 6px; }
+  .style-bauhaus .bh-device .ss-app__opt b { font-size: 10px; }
+  .style-bauhaus .bh-device .ss-app__opt small { display: none; }
+  .style-bauhaus .bh-device .ss-app__btn { padding: 6px; font-size: 10px; }
+  .bh-stats { grid-column: 1 / 7; grid-row: 1 / 13; padding: 0 20px; grid-template-columns: 1fr 1fr; gap: 24px; }
+  html.bh-live .bh-stat__v { font-size: clamp(90px, 15vh, 150px); }
+  html.bh-live .bh-stat__l { left: 20px; width: calc(100% - 40px); top: 64%; font-size: 18px; }
+  .bh--quote .bh-quote { grid-column: 1 / 7; grid-row: 3 / 12; padding: 0 20px; }
+  .bh-faq { grid-column: 1 / 7; grid-row: 4 / 13; padding: 0 20px; align-self: start; }
+  .bh-faq summary { grid-template-columns: 38px 1fr 26px; padding: 14px 0; font-size: 17px; }
+  .bh-faq summary b { font-size: 28px; }
+  .bh-faq p { padding-left: 50px; font-size: 15px; }
+  .bh--cta .bh-cap { grid-column: 1 / 7; grid-row: 1 / 2; padding: 0 20px; }
+  .bh--cta .bh-head { grid-column: 1 / 7; grid-row: 2 / 6; padding: 10px 20px 0; }
+  .bh-go { grid-column: 2 / 6; grid-row: 7 / 12; width: 60vw; }
+  html.style-bauhaus .ss-footer .ss-footer__in { grid-template-columns: 1fr; }
+  html.bh-live .bh-step__txt { width: calc(100vw - 40px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html.bh-live .bh-poster { transition: opacity .3s linear; }
+  .bh-stage { transition: opacity .25s linear; }
+}
 
 </style><style>
   /* A section's backdrop: the image fills the panel (or a wrapper in the flow layout); the section itself goes clear,
@@ -181,87 +507,129 @@ html.style-bauhaus .ss-tile { border: 4px solid var(--ink); border-radius: 0; }
   <nav class="ss-nav__links"><a href="#why">Why</a><a href="#features">Features</a><a href="#how">How</a></nav>
 <a class="ss-btn" href="#get">Get Halcyon <span class="ss-arrow">→</span></a></div></header>
 
+<header class="bh-index">
+  <a class="bh-index__mark" href="#" aria-label="Halcyon, top"><i aria-hidden="true"></i><span>Halcyon</span></a>
+  <nav class="bh-index__links" aria-label="Sections">
+<a href="#why" data-target="#why"><b>1</b><span>Why</span></a><a href="#features" data-target="#features"><b>2</b><span>Features</span></a><a href="#how" data-target="#how"><b>3</b><span>How</span></a>  </nav>
+<a class="bh-index__cta" href="#get"><span>Get Halcyon</span></a></header>
 <main>
-<section class="ss-block ss-hero ss-hero--center">
-  <div class="ss-hero__in">
-<span class="ss-badge">New · Halcyon 2.0</span><h1 class="ss-h1">Your mornings, <em>back.</em></h1><p class="ss-lede">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>    <div class="ss-btns"><a class="ss-btn ss-btn--hot" href="#get">Try it free <span class="ss-arrow">→</span></a><a class="ss-btn" href="../../looks/">See the looks</a></div>
+<section class="bh bh--hero" data-bh="hero">
+  <div class="bh-static bh-static--hero" aria-hidden="true"><i class="s-c"></i><i class="s-b"></i><i class="s-t"></i><i class="s-q"></i></div>
+  <div class="bh-poster">
+<p class="bh-cap bh-slide" data-from="t">New · Halcyon 2.0</p><h1 class="bh-head bh-words">Your mornings, <em>back.</em></h1><p class="bh-body bh-slide" data-from="b">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p><div class="bh-slide" data-from="r"><div class="bh-btns"><a class="bh-btn bh-btn--hot" href="#get"><span>Try it free</span><i class="bh-arrow" aria-hidden="true"></i></a><a class="bh-btn" href="../../looks/"><span>See the looks</span><i class="bh-arrow" aria-hidden="true"></i></a></div></div>  </div>
+</section>
+
+<section class="bh bh--intro" data-bh="intro" id="why">
+  <div class="bh-static bh-static--intro" aria-hidden="true"><i class="s-c"></i><i class="s-b"></i><i class="s-t"></i><i class="s-q"></i></div>
+  <div class="bh-poster">
+    <p class="bh-margin bh-slide" data-from="b"><b>2</b> The problem</p>
+    <h2 class="bh-head bh-words">Calendars fill up <em>from the top.</em></h2>
+<p class="bh-body bh-slide" data-from="r">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>  </div>
+</section>
+
+<section class="bh bh--features" data-bh="features" data-steps="3" id="features">
+  <div class="bh-static bh-static--features" aria-hidden="true"><i class="s-c"></i><i class="s-b"></i><i class="s-t"></i><i class="s-q"></i></div>
+  <div class="bh-poster">
+    <p class="bh-margin bh-slide" data-from="b"><b>3</b> What it does</p>
+<h2 class="bh-head bh-head--s bh-words">Three rules, <em>kept for you.</em></h2>    <ol class="bh-feats">
+      <li class="bh-feat" data-shape="t">
+        <span class="bh-feat__no" aria-hidden="true">01</span>
+        <div class="bh-feat__txt"><h3>Focus first</h3><p>Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p></div>
+      </li>
+      <li class="bh-feat" data-shape="q">
+        <span class="bh-feat__no" aria-hidden="true">02</span>
+        <div class="bh-feat__txt"><h3>Smart batching</h3><p>Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p></div>
+      </li>
+      <li class="bh-feat" data-shape="c">
+        <span class="bh-feat__no" aria-hidden="true">03</span>
+        <div class="bh-feat__txt"><h3>Polite no</h3><p>Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p></div>
+      </li>
+    </ol>
   </div>
 </section>
 
-<section class="ss-block" id="why"><div class="ss-wrap ss-intro2">
-  <h2 class="ss-display ss-reveal">Calendars fill up <em>from the top.</em></h2>
-  <div class="ss-reveal">
-<span class="ss-kicker">The problem</span><p class="ss-lede">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>  </div>
-</div></section>
-
-<section class="ss-block" id="features"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">What it does</span><h2 class="ss-display">Three rules, <em>kept for you.</em></h2></div>  <div class="ss-features ss-features--3">
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">01</span>      <div><h3>Focus first</h3><p>Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">02</span>      <div><h3>Smart batching</h3><p>Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">03</span>      <div><h3>Polite no</h3><p>Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p></div>
-    </div>
-  </div>
-</div></section>
-
-<section class="ss-scene ss-overlay ss-side-right ss-type-type ss-shade-auto ss-type--display" id="words" data-scene="type">
-  <div class="ss-track" style="height: 260vh">
-    <div class="ss-stage">
-      <div class="ss-visual"></div>
-      <div class="ss-shade"></div>
-      <div class="ss-captions">
-      </div>
-      
-      <div class="ss-outro"></div>
-    </div>
-  </div>
-  <script type="application/json" class="ss-config">{"mode": "swap", "text": "Halcyon keeps your", "words": ["mornings", "Fridays", "evenings", "weekends"]}</script>
-  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "none", "legend": [], "scales": []}, "layout": "overlay", "length": 2.6, "steps": []}</script>
-</section>
-<section class="ss-block ss-product ss-product--right ss-pose--beside" id="app"><div class="ss-wrap ss-product__in">
-  <div class="ss-product__media" data-float>
+<section class="bh bh--product bh--right" data-bh="product" id="app">
+  <div class="bh-static bh-static--product" aria-hidden="true"><i class="s-c"></i><i class="s-b"></i><i class="s-t"></i><i class="s-q"></i></div>
+  <div class="bh-poster">
+<figure class="bh-device bh-slide" data-from="r">
 <div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
   <div class="ss-phone__bar"><span>9:41</span><i></i></div>
 <div class="ss-app">
 <div class="ss-app__name">Halcyon</div><div class="ss-app__title">Coffee with Sam</div><div class="ss-app__label">Best times</div><p class="ss-app__note">Your 8-11 focus block stays free.</p><div class="ss-app__opt is-on"><b>Tue 2:30 pm</b><small>Next to your other calls</small></div><div class="ss-app__opt"><b>Wed 4:00 pm</b><small>End of day</small></div><div class="ss-app__opt"><b>Thu 1:00 pm</b><small>After lunch</small></div><div class="ss-app__btn">Send these times</div>  </div></div></div>
-  </div>
-  <div class="ss-product__copy ss-reveal">
-<span class="ss-kicker">The app</span>    <h2 class="ss-h2">Pick a slot, <em>keep the morning.</em></h2>
-<p class="ss-lede">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><ul class="ss-pills"><li>iPhone</li><li>Android</li><li>Web</li><li>Google and Outlook</li></ul>    
-  </div>
-</div></section>
-
-<section class="ss-block ss-band ss-band"><div class="ss-wrap ss-stats ss-stats--4">
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="11">11<sup>h</sup></div><div class="ss-l">Focus hours kept per week</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="38">38<sup>%</sup></div><div class="ss-l">Fewer meeting fragments</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="2">2<sup>min</sup></div><div class="ss-l">To set up</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="0">0</div><div class="ss-l">Calendars replaced</div></div>
-</div></section>
-
-<section class="ss-block" id="how"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">How it works</span><h2 class="ss-display">Set it up <em>over coffee.</em></h2></div>  <div class="ss-timeline ss-timeline--4">
-<div class="ss-tl ss-reveal"><span class="ss-when">Minute 1</span><h4>Connect</h4><p>Sign in with Google or Outlook; nothing moves yet.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Minute 2</span><h4>Mark your hours</h4><p>Paint the blocks you want protected.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Day 1</span><h4>It starts</h4><p>New invites are steered around your focus.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Week 1</span><h4>You notice</h4><p>A free morning, then another one.</p></div>  </div>
-</div></section>
-
-<section class="ss-block"><div class="ss-wrap ss-quote ss-reveal">
-  <blockquote>I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote><cite>Priya N., product designer</cite></div></section>
-
-<section class="ss-block ss-faq"><div class="ss-wrap ss-faq__in">
-  <div class="ss-head ss-reveal"><h2 class="ss-h2">Questions</h2></div>
-  <div class="ss-faq__list">
-<details class="ss-reveal" open><summary>Does it replace my calendar?</summary><p>No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></details><details class="ss-reveal"><summary>What do the people I meet see?</summary><p>A short list of times that work for both of you. No new app to install.</p></details><details class="ss-reveal"><summary>Can I override it?</summary><p>Always. Drag anything anywhere; Halcyon learns from what you move.</p></details>  </div>
-</div></section>
-<section class="ss-block ss-cta" id="get">
-  <div class="ss-cta__in">
-<span class="ss-kicker ss-reveal">Free for 30 days</span>    <h2 class="ss-display ss-reveal">Keep <em>tomorrow morning.</em></h2>
-<a class="ss-btn ss-btn--hot ss-reveal" href="#">Get Halcyon <span class="ss-arrow">→</span></a>  </div>
+    </figure>    <p class="bh-margin bh-slide" data-from="b"><b>4</b> The app</p>
+    <h2 class="bh-head bh-head--s bh-words">Pick a slot, <em>keep the morning.</em></h2>
+<p class="bh-body bh-slide" data-from="l">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><ul class="bh-tags bh-slide" data-from="l"><li>iPhone</li><li>Android</li><li>Web</li><li>Google and Outlook</li></ul>  </div>
 </section>
 
+<section class="bh bh--stats" data-bh="stats" data-steps="4">
+  <div class="bh-static bh-static--stats" aria-hidden="true"><i class="s-c"></i><i class="s-b"></i><i class="s-t"></i><i class="s-q"></i></div>
+  <div class="bh-poster">
+    <ul class="bh-stats">
+      <li class="bh-stat" data-v="11" data-unit="h">
+        <span class="bh-stat__v">11<small>h</small></span>
+        <span class="bh-stat__l">Focus hours kept per week</span>
+        <span class="bh-stat__fig" aria-hidden="true"></span>
+      </li>
+      <li class="bh-stat" data-v="38" data-unit="%">
+        <span class="bh-stat__v">38<small>%</small></span>
+        <span class="bh-stat__l">Fewer meeting fragments</span>
+        <span class="bh-stat__fig" aria-hidden="true"></span>
+      </li>
+      <li class="bh-stat" data-v="2" data-unit="min">
+        <span class="bh-stat__v">2<small>min</small></span>
+        <span class="bh-stat__l">To set up</span>
+        <span class="bh-stat__fig" aria-hidden="true"></span>
+      </li>
+      <li class="bh-stat" data-v="0" data-unit="">
+        <span class="bh-stat__v">0</span>
+        <span class="bh-stat__l">Calendars replaced</span>
+        <span class="bh-stat__fig" aria-hidden="true"></span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="bh bh--timeline" data-bh="timeline" data-steps="4" id="how">
+  <div class="bh-static bh-static--timeline" aria-hidden="true"><i class="s-c"></i><i class="s-b"></i><i class="s-t"></i><i class="s-q"></i></div>
+  <div class="bh-poster">
+    <p class="bh-margin bh-slide" data-from="b"><b>6</b> How it works</p>
+<h2 class="bh-head bh-head--s bh-words">Set it up <em>over coffee.</em></h2>    <ol class="bh-steps">
+      <li class="bh-step"><span class="bh-step__no" aria-hidden="true">1</span><div class="bh-step__txt"><span class="bh-step__when">Minute 1</span><h3>Connect</h3><p>Sign in with Google or Outlook; nothing moves yet.</p></div></li>
+      <li class="bh-step"><span class="bh-step__no" aria-hidden="true">2</span><div class="bh-step__txt"><span class="bh-step__when">Minute 2</span><h3>Mark your hours</h3><p>Paint the blocks you want protected.</p></div></li>
+      <li class="bh-step"><span class="bh-step__no" aria-hidden="true">3</span><div class="bh-step__txt"><span class="bh-step__when">Day 1</span><h3>It starts</h3><p>New invites are steered around your focus.</p></div></li>
+      <li class="bh-step"><span class="bh-step__no" aria-hidden="true">4</span><div class="bh-step__txt"><span class="bh-step__when">Week 1</span><h3>You notice</h3><p>A free morning, then another one.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="bh bh--quote" data-bh="quote">
+  <div class="bh-static bh-static--quote" aria-hidden="true"><i class="s-c"></i><i class="s-b"></i><i class="s-t"></i><i class="s-q"></i></div>
+  <div class="bh-poster">
+    <figure class="bh-quote">
+      <span class="bh-qmark bh-slide" data-from="t" aria-hidden="true"><i></i><i></i></span>
+      <blockquote class="bh-head bh-head--q bh-words">I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote>
+<figcaption class="bh-cap bh-slide" data-from="r">Priya N., product designer</figcaption>    </figure>
+  </div>
+</section>
+
+<section class="bh bh--faq" data-bh="faq">
+  <div class="bh-static bh-static--faq" aria-hidden="true"><i class="s-c"></i><i class="s-b"></i><i class="s-t"></i><i class="s-q"></i></div>
+  <div class="bh-poster">
+    <p class="bh-margin bh-slide" data-from="b"><b>8</b></p>
+    <h2 class="bh-head bh-head--s bh-words">Questions</h2>
+    <div class="bh-faq bh-slide" data-from="r">
+<details open><summary><b>1</b><span>Does it replace my calendar?</span><i class="bh-plus" aria-hidden="true"></i></summary><p>No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></details><details><summary><b>2</b><span>What do the people I meet see?</span><i class="bh-plus" aria-hidden="true"></i></summary><p>A short list of times that work for both of you. No new app to install.</p></details><details><summary><b>3</b><span>Can I override it?</span><i class="bh-plus" aria-hidden="true"></i></summary><p>Always. Drag anything anywhere; Halcyon learns from what you move.</p></details>    </div>
+  </div>
+</section>
+
+<section class="bh bh--cta" data-bh="cta" id="get">
+  <div class="bh-static bh-static--cta" aria-hidden="true"><i class="s-c"></i><i class="s-b"></i><i class="s-t"></i><i class="s-q"></i></div>
+  <div class="bh-poster">
+<p class="bh-cap bh-slide" data-from="t">Free for 30 days</p>    <h2 class="bh-head bh-words">Keep <em>tomorrow morning.</em></h2>
+<a class="bh-go" href="#"><span>Get Halcyon</span></a>  </div>
+</section>
 </main>
+<div class="bh-colophon" aria-hidden="true"><i class="bh-colophon__c"></i><i class="bh-colophon__b"></i></div>
 
 <footer class="ss-footer"><div class="ss-wrap ss-footer__in">
   <span>© Halcyon. A concept site; the product is fictional.</span>
@@ -271,9 +639,9 @@ html.style-bauhaus .ss-tile { border: 4px solid var(--ink); border-radius: 0; }
 <script>window.__ssScroll = { speed: 1.0 };</script>
 <script type="module" src="../../runtime/index.js"></script>
 <nav class="ss-looks" aria-label="Looks">
-  <a href="../halftone/" aria-label="Previous look">←</a>
-  <a class="ss-looks__name" href="../">Bauhaus <small>16/20</small></a>
-  <a href="../pixel-art/" aria-label="Next look">→</a>
+  <a href="../ascii-art/" aria-label="Previous look">←</a>
+  <a class="ss-looks__name" href="../">Bauhaus <small>4/21</small></a>
+  <a href="../blueprint/" aria-label="Next look">→</a>
 </nav>
 <style>
   .ss-looks { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 990; display: flex; align-items: center; gap: 4px; padding: 5px;

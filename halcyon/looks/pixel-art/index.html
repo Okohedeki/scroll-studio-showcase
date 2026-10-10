@@ -1,76 +1,341 @@
 <!doctype html>
-<html lang="en" data-fx='{}' class="mode-dark layout-flow style-pixel-art">
+<html lang="en" data-style="pixel-art" class="mode-dark layout-flow style-pixel-art">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Halcyon</title>
 <meta name="description" content="The calendar that guards your mornings. One page, built in twenty styles by Scroll Studio."><meta name="generator" content="Scroll Studio">
-<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23ffd23f%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%231b1035%22%3EH%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23ffec27%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%231d2b53%22%3EH%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root {
-  --bg: #1b1035;
-  --bg-2: #241548;
-  --ink: #fff8e7;
-  --ink-rgb: 255, 248, 231;
-  --bg-rgb: 27, 16, 53;
-  --ink-2: rgba(255, 248, 231, 0.68);
-  --ink-3: rgba(255, 248, 231, 0.48);
-  --line: rgba(255, 248, 231, .13);
-  --accent: #ffd23f;
-  --accent-2: #3ee089;
-  --accent-ink: #1b1035;
-  --accent-text: #ffd23f;
-  --accent-rgb: 255, 210, 63;
+  --bg: #1d2b53;
+  --bg-2: #111a36;
+  --ink: #fff1e8;
+  --ink-rgb: 255, 241, 232;
+  --bg-rgb: 29, 43, 83;
+  --ink-2: rgba(255, 241, 232, 0.68);
+  --ink-3: rgba(255, 241, 232, 0.53);
+  --line: rgba(255, 241, 232, .13);
+  --accent: #ffec27;
+  --accent-2: #00e436;
+  --accent-ink: #1d2b53;
+  --accent-text: #ffec27;
+  --accent-rgb: 255, 236, 39;
   --font-display: "Press Start 2P", system-ui, sans-serif;
   --font-body: "Pixelify Sans", system-ui, sans-serif;
-  --font-mono: "Pixelify Sans", ui-monospace, monospace;
+  --font-mono: "Silkscreen", ui-monospace, monospace;
   --display-weight: 400;
   --em-style: normal;
   --radius: 0px;
   color-scheme: dark;
 }
-.ss-surface-dark { --btn-bg: #ffd23f; --btn-ink: #000000; --bg: #0b0615; --bg-2: #1b1035; --ink: #fff8e7; --ink-rgb: 255, 248, 231; --bg-rgb: 11, 6, 21; --ink-2: rgba(255, 248, 231, 0.68); --ink-3: rgba(255, 248, 231, 0.47); --line: rgba(255, 248, 231, .14); --accent-text: #ffd23f; --em-color: #ffd23f; color-scheme: dark; background: var(--bg); color: var(--ink); }
-.ss-surface-light { --btn-bg: #1b1035; --btn-ink: #ffffff; --bg: #fff8e7; --bg-2: #322747; --ink: #1b1035; --ink-rgb: 27, 16, 53; --bg-rgb: 255, 248, 231; --ink-2: rgba(27, 16, 53, 1.0); --ink-3: rgba(27, 16, 53, 1.0); --line: rgba(27, 16, 53, .14); --accent-text: #1b1035; --em-color: #1b1035; color-scheme: light; background: var(--bg); color: var(--ink); }
-.ss-surface-accent { --btn-bg: #ffd23f; --btn-ink: #000000; --bg: #24444a; --bg-2: #f2edde; --ink: #fff8e7; --ink-rgb: 255, 248, 231; --bg-rgb: 36, 68, 74; --ink-2: rgba(255, 248, 231, 1.0); --ink-3: rgba(255, 248, 231, 1.0); --line: rgba(255, 248, 231, .14); --accent-text: #fff8e7; --em-color: #fff8e7; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-dark { --btn-bg: #ffec27; --btn-ink: #000000; --bg: #0c1121; --bg-2: #1d2b53; --ink: #fff1e8; --ink-rgb: 255, 241, 232; --bg-rgb: 12, 17, 33; --ink-2: rgba(255, 241, 232, 0.68); --ink-3: rgba(255, 241, 232, 0.53); --line: rgba(255, 241, 232, .14); --accent-text: #ffec27; --em-color: #ffec27; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #1d2b53; --btn-ink: #ffffff; --bg: #fff1e8; --bg-2: #343f62; --ink: #1d2b53; --ink-rgb: 29, 43, 83; --bg-rgb: 255, 241, 232; --ink-2: rgba(29, 43, 83, 1.0); --ink-3: rgba(29, 43, 83, 1.0); --line: rgba(29, 43, 83, .14); --accent-text: #1d2b53; --em-color: #1d2b53; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #ffec27; --btn-ink: #000000; --bg: #16594c; --bg-2: #f1e8df; --ink: #fff1e8; --ink-rgb: 255, 241, 232; --bg-rgb: 22, 89, 76; --ink-2: rgba(255, 241, 232, 1.0); --ink-3: rgba(255, 241, 232, 1.0); --line: rgba(255, 241, 232, .14); --accent-text: #fff1e8; --em-color: #fff1e8; color-scheme: dark; background: var(--bg); color: var(--ink); }
 </style>
 <link rel="stylesheet" href="../../runtime/studio.css">
 <style id="ss-style">
-/* pixel art: chunky pixel type, stepped (notched) borders, 8-bit buttons and a twinkling pixel sky */
-@keyframes ss-twinkle { 50% { opacity: .35; } }
-html.style-pixel-art { --px: 4px; image-rendering: pixelated; }
-html.style-pixel-art body { background-color: var(--bg);
-  background-image: linear-gradient(#fff 0 0), linear-gradient(#fff 0 0), linear-gradient(var(--accent) 0 0), linear-gradient(#fff 0 0), linear-gradient(var(--accent-2) 0 0);
-  background-size: 4px 4px; background-repeat: no-repeat; background-position: 12% 18%, 78% 9%, 40% 70%, 88% 56%, 22% 92%; background-attachment: fixed; }
-html.style-pixel-art .ss-block, html.style-pixel-art .ss-hero:not(.ss-hero--media), html.style-pixel-art .ss-panel, html.style-pixel-art .ss-panel > section { background: transparent; }
-html.style-pixel-art .ss-band { background: var(--bg-2); border: 0; box-shadow: 0 -4px 0 #000, 0 4px 0 #000; }
-html.style-pixel-art .ss-h1, html.style-pixel-art .ss-h2, html.style-pixel-art .ss-display { letter-spacing: 0; line-height: 1.25; text-shadow: 4px 4px 0 #000; }
-html.style-pixel-art .ss-h1 { font-size: clamp(30px, 4.6vw, 72px); }
-html.style-pixel-art .ss-h2, html.style-pixel-art .ss-display { font-size: clamp(24px, 3.2vw, 52px); }
-html.style-pixel-art .ss-cta .ss-display { font-size: clamp(30px, 4.8vw, 78px); }
-html.style-pixel-art .ss-v { font-size: clamp(30px, 4vw, 64px); letter-spacing: 0; color: var(--accent); text-shadow: 4px 4px 0 #000; }
-html.style-pixel-art em { font-style: normal; color: var(--accent); }
-html.style-pixel-art .ss-lede, html.style-pixel-art .ss-body { font-size: 20px; }
-html.style-pixel-art .ss-kicker { font-family: var(--font-display); font-size: 11px; letter-spacing: .05em; color: var(--accent-2); }
-/* notched pixel frame: a box-shadow ring with the corners left out */
-html.style-pixel-art .ss-feature, html.style-pixel-art .ss-tile, html.style-pixel-art .ss-stats > div, html.style-pixel-art .ss-quote, html.style-pixel-art .ss-faq__list details {
-  border: 0; border-radius: 0; background: #2d1d5c; box-shadow: 0 -4px 0 #fff8e7, 0 4px 0 #fff8e7, -4px 0 0 #fff8e7, 4px 0 0 #fff8e7, 8px 8px 0 #000; margin: 4px; }
-html.style-pixel-art .ss-features { gap: 22px; background: none; border: 0; }
-html.style-pixel-art .ss-feature h3 { font-family: var(--font-display); font-size: 15px; line-height: 1.5; letter-spacing: 0; }
-html.style-pixel-art .ss-feature p { font-size: 18px; }
-html.style-pixel-art .ss-stats > div { padding: 22px; }
-html.style-pixel-art .ss-quote { padding: 32px; }
-html.style-pixel-art .ss-faq__list details { padding: 16px 20px; margin-bottom: 18px; }
-html.style-pixel-art .ss-btn { border: 0; border-radius: 0; background: #fff8e7; color: #1b1035; font-family: var(--font-display); font-size: 12px; padding: 14px 20px;
-  box-shadow: 0 -4px 0 #000, 0 4px 0 #000, -4px 0 0 #000, 4px 0 0 #000, inset -4px -4px 0 rgba(0, 0, 0, .25); }
-html.style-pixel-art .ss-btn--hot { background: var(--accent); color: #1b1035; }
-html.style-pixel-art .ss-btn:hover { background: var(--accent-2); color: #1b1035; transform: translateY(2px); box-shadow: 0 -4px 0 #000, 0 4px 0 #000, -4px 0 0 #000, 4px 0 0 #000, inset 4px 4px 0 rgba(0, 0, 0, .25); }
-html.style-pixel-art .ss-tl::before { border-radius: 0; width: 12px; height: 12px; top: -6px; background: var(--accent); box-shadow: 4px 4px 0 #000; }
-html.style-pixel-art .ss-pills li, html.style-pixel-art .ss-badge { border-radius: 0; border: 0; background: #2d1d5c; box-shadow: 0 -2px 0 #fff8e7, 0 2px 0 #fff8e7, -2px 0 0 #fff8e7, 2px 0 0 #fff8e7; }
-html.style-pixel-art .ss-phone { border-radius: 0; box-shadow: 0 -8px 0 #000, 0 8px 0 #000, -8px 0 0 #000, 8px 0 0 #000, 16px 16px 0 rgba(0, 0, 0, .4); }
-html.style-pixel-art .ss-phone__screen { border-radius: 0; }
-html.style-pixel-art .ss-nav.ss-solid { background: var(--bg); box-shadow: 0 4px 0 #000; backdrop-filter: none; }
-@media (max-width: 900px) { html.style-pixel-art .ss-h1 { font-size: clamp(22px, 7vw, 36px); } html.style-pixel-art .ss-h2 { font-size: clamp(20px, 6vw, 30px); } }
+/* Pixel art: two readings of the same sections. In the game (html.px-game, set by the runtime) a fixed canvas draws
+   the level and each section is a window that opens when the player reaches it. Without JavaScript, or with
+   READ AS PAGE, the sections are the pages of a game manual. One art pixel = 4 CSS px (3 on phones); borders are
+   stepped, shadows are stepped, nothing eases. */
+
+html.style-pixel-art {
+  --px: 4px; --K: #000; --W: #fff1e8; --Y: #ffec27; --G: #00e436; --R: #ff004d; --B: #29adff; --N: #1d2b53; --O: #ffa300; --L: #c2c3c7;
+  --hud-h: 56px; --px-ground: 136px;
+  --frame: -4px 0 0 0 var(--W), 4px 0 0 0 var(--W), 0 -4px 0 0 var(--W), 0 4px 0 0 var(--W),
+           -8px 0 0 0 var(--K), 8px 0 0 0 var(--K), 0 -8px 0 0 var(--K), 0 8px 0 0 var(--K),
+           -4px -4px 0 0 var(--K), 4px -4px 0 0 var(--K), -4px 4px 0 0 var(--K), 4px 4px 0 0 var(--K);
+  background: var(--N); image-rendering: pixelated;
+}
+html.style-pixel-art body { background: var(--N); color: var(--W); font: 400 20px/1.5 "Pixelify Sans", var(--font-body); -webkit-font-smoothing: none; }
+html.style-pixel-art .ss-nav { display: none; }
+html.style-pixel-art em { font-style: normal; color: var(--Y); }
+html.style-pixel-art :focus-visible { outline: 4px solid var(--Y); outline-offset: 4px; }
+html.style-pixel-art ::selection { background: var(--Y); color: var(--N); }
+html.px-game .px-sr { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.px-typed { display: none; }
+html.px-game .px-typed { display: block; min-height: 3em; }
+
+/* ---------------------------------------------------------------- the HUD */
+.px-hud { position: sticky; top: 0; z-index: 60; display: flex; align-items: center; gap: 22px; height: var(--hud-h); padding: 0 20px; background: var(--K); color: var(--W);
+  box-shadow: 0 4px 0 0 var(--W), 0 8px 0 0 var(--K); font: 400 14px/1 "Silkscreen", monospace; }
+html.px-game .px-hud { position: fixed; left: 0; right: 0; }
+.px-hud__name { font: 400 16px/1 "Press Start 2P", monospace; color: var(--Y); text-transform: uppercase; white-space: nowrap; }
+.px-hud__stat { display: flex; flex-direction: column; gap: 4px; text-transform: uppercase; }
+.px-hud__stat small { font: 700 12px/1 "Silkscreen", monospace; color: var(--L); }
+.px-hud__stat b { font: 400 16px/1 "Press Start 2P", monospace; font-variant-numeric: tabular-nums; display: flex; align-items: center; gap: 4px; }
+.px-star { display: inline-block; width: 12px; height: 12px; background: var(--Y); clip-path: polygon(50% 0, 62% 36%, 100% 38%, 70% 60%, 80% 100%, 50% 76%, 20% 100%, 30% 60%, 0 38%, 38% 36%); }
+.px-hud__levels { display: flex; gap: 6px; margin-left: 8px; }
+.px-hud__levels a { padding: 6px 8px 5px; font: 700 13px/1 "Silkscreen", monospace; text-transform: uppercase; color: var(--W); }
+.px-hud__levels a b { color: var(--Y); }
+.px-hud__levels a:hover, .px-hud__levels a:focus-visible { background: var(--W); color: var(--K); outline: none; }
+.px-hud__levels a:hover b { color: var(--R); }
+.px-hud__sp { flex: 1; }
+.px-mode, .px-startbtn { font: 700 13px/1 "Silkscreen", monospace; text-transform: uppercase; color: var(--W); background: var(--K); border: 0; padding: 9px 10px 8px; cursor: pointer; box-shadow: inset 0 0 0 2px var(--W); }
+.px-mode:hover, .px-startbtn:hover { background: var(--W); color: var(--K); }
+.px-mode[hidden], .px-startbtn[hidden] { display: none; }
+.px-startbtn { display: none; }
+.px-coin { display: inline-flex; align-items: center; gap: 10px; padding: 10px 12px 9px; background: var(--Y); color: var(--K); font: 400 12px/1 "Press Start 2P", monospace; text-transform: uppercase; white-space: nowrap;
+  box-shadow: 0 4px 0 0 #ab5236; }
+.px-coin i { width: 12px; height: 16px; background: var(--O); box-shadow: inset 4px 0 0 0 var(--Y), inset -2px 0 0 0 #ab5236; }
+.px-coin:hover { background: var(--W); }
+.px-coin:active { transform: translate(var(--px), var(--px)); box-shadow: none; }
+@media (max-width: 1100px) { .px-hud__levels, .px-hud__time { display: none; } .px-startbtn:not([hidden]) { display: inline-block; } }
+@media (max-width: 700px) {
+  html.style-pixel-art { --hud-h: 50px; }
+  .px-hud { gap: 12px; padding: 0 10px; }
+  .px-hud__name, .px-hud__score, .px-mode { display: none !important; }
+  .px-hud__stat b { font-size: 12px; }
+  .px-coin { font-size: 10px; padding: 9px 8px 8px; gap: 6px; }
+}
+.px-pause { position: fixed; z-index: 70; left: 50%; top: 50%; transform: translate(-50%, -50%); width: min(420px, calc(100vw - 48px)); padding: 24px 26px; background: var(--K); box-shadow: var(--frame), 0 0 0 100vmax rgba(0, 0, 0, .6); }
+.px-pause[hidden] { display: none; }
+.px-pause__h { font: 400 20px/1 "Press Start 2P", monospace; text-transform: uppercase; color: var(--Y); margin-bottom: 18px; text-align: center; }
+.px-pause__list { display: grid; gap: 4px; }
+.px-pause__list a, .px-pause__list button { text-align: left; padding: 8px 10px; font: 400 20px/1.2 "Pixelify Sans", sans-serif; color: var(--W); background: none; border: 0; cursor: pointer; }
+.px-pause__list .is-sel, .px-pause__list a:hover, .px-pause__list button:hover { background: var(--W); color: var(--K); }
+
+/* ---------------------------------------------------------------- shared window and type */
+.px-win { position: relative; background: var(--K); color: var(--W); padding: 26px 30px 28px; box-shadow: var(--frame); }
+.px-h { font: 400 clamp(16px, 2vw, 22px)/1.5 "Press Start 2P", monospace; text-transform: uppercase; color: var(--W); margin-bottom: 14px; }
+.px-h em { color: var(--Y); }
+.px-body { font: 400 clamp(19px, 1.6vw, 22px)/1.5 "Pixelify Sans", sans-serif; color: var(--W); max-width: 46ch; }
+.px-name { display: inline-block; margin-bottom: 12px; padding: 6px 10px 5px; background: var(--W); color: var(--K); font: 700 14px/1 "Silkscreen", monospace; text-transform: uppercase; }
+.px-world { display: flex; gap: 14px; margin-bottom: 14px; font: 700 14px/1 "Silkscreen", monospace; text-transform: uppercase; color: var(--Y); }
+.px-world span + span { color: var(--L); }
+.px-badge { display: inline-block; font: 700 14px/1 "Silkscreen", monospace; text-transform: uppercase; color: var(--G); margin-bottom: 14px; }
+.px-note { margin-top: 12px; font: 400 16px/1.4 "Pixelify Sans", sans-serif; color: var(--L); }
+.px-next { position: absolute; right: 22px; bottom: 14px; color: var(--Y); font: 400 14px/1 "Press Start 2P", monospace; animation: px-bob .5s steps(1) infinite; }
+@keyframes px-bob { 50% { transform: translateY(4px); } }
+
+/* menus: a ▶ cursor on the selected item */
+.px-menu, .px-askmenu { display: grid; gap: 6px; margin-top: 18px; justify-items: start; }
+.px-menu__i { position: relative; display: inline-block; padding: 6px 10px 6px 34px; font: 400 14px/1.4 "Press Start 2P", monospace; text-transform: uppercase; color: var(--W); background: none; border: 0; text-align: left; cursor: pointer; }
+.px-menu__i::before { content: "▶"; position: absolute; left: 8px; top: 6px; visibility: hidden; color: var(--Y); }
+.px-menu__i.is-sel::before, .px-menu__i:hover::before, .px-menu__i:focus-visible::before { visibility: visible; animation: px-blink 1s steps(1) infinite; }
+.px-menu__i:hover, .px-menu__i:focus-visible, .px-menu__i.is-sel { color: var(--Y); outline: none; }
+.px-menu__i:active { transform: translate(var(--px), var(--px)); }
+@keyframes px-blink { 50% { visibility: hidden; } }
+
+/* item icons, bars */
+.px-icon { flex: none; width: 48px; height: 48px; background-size: 100% 100%; image-rendering: pixelated; }
+.px-bar, .px-seg { position: relative; display: block; height: 16px; width: 100%; max-width: 288px;
+  background: repeating-linear-gradient(90deg, #3a3550 0 14px, transparent 14px 18px); }
+.px-bar::after, .px-seg::after { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: calc(var(--fill, 1) * 100%);
+  background: repeating-linear-gradient(90deg, var(--G) 0 14px, transparent 14px 18px); background-size: 288px 100%; }
+@supports (width: calc(round(down, 1.5, 1) * 1%)) { .px-seg::after, .px-bar::after { width: calc(round(down, var(--fill, 1) * 16, 1) / 16 * 100%); } }
+
+/* the phone on a TV stand */
+.px-tv { position: relative; display: grid; place-items: center; padding: 24px; background: #5f574f; box-shadow: var(--frame); }
+.px-tv::after { content: ""; position: absolute; left: 30%; right: 30%; bottom: -24px; height: 12px; background: #5f574f; box-shadow: 0 4px 0 0 var(--K); }
+.px-tv .ss-phone { width: 210px; border-radius: 0; box-shadow: 0 0 0 4px var(--K), 8px 8px 0 0 rgba(0, 0, 0, .35); image-rendering: pixelated; font-family: "Pixelify Sans", sans-serif; }
+.px-tv .ss-phone__screen { border-radius: 0; }
+.px-tv .ss-app__opt, .px-tv .ss-app__btn { border-radius: 0; }
+.px-shot { max-height: 50vh; width: auto; image-rendering: pixelated; }
+
+/* ---------------------------------------------------------------- the manual (no JavaScript, or READ AS PAGE) */
+html:not(.px-game) .px-canvas, html:not(.px-game) .px-banner { display: none; }
+html:not(.px-game) main { max-width: 1000px; margin: 0 auto; padding: 72px 24px 40px; }
+html:not(.px-game) .px-sec { margin: 0 0 64px; }
+html:not(.px-game) .px-title { text-align: center; padding: 56px 30px 48px; background: var(--N); box-shadow: none; }
+html:not(.px-game) .px-title .px-menu { justify-items: center; }
+html:not(.px-game) .px-item { display: flex; gap: 20px; align-items: flex-start; padding: 16px 0; border-top: 4px dotted #3a3550; }
+html:not(.px-game) .px-item:first-child { border-top: 0; }
+html:not(.px-game) .px-askmenu, html:not(.px-game) .px-answer { display: none; }
+html:not(.px-game) .px-next, html:not(.px-game) .px-start, html:not(.px-game) .px-clear__big, html:not(.px-game) .px-continue, html:not(.px-game) .px-lvup { display: none; }
+html:not(.px-game) .px-portrait { float: left; margin: 0 20px 10px 0; }
+html:not(.px-game) .px-map__nodes { display: grid; gap: 16px; }
+html:not(.px-game) .px-credits { display: none; }
+.px-items__list, .px-map__nodes { list-style: none; }
+
+/* title */
+.px-logo { font: 400 clamp(28px, 5.4vw, 64px)/1.25 "Press Start 2P", monospace; text-transform: uppercase; color: var(--W); text-shadow: 4px 4px 0 var(--K), 8px 8px 0 #ab5236; max-width: 14em; margin: 0 auto 26px; }
+.px-logo em { color: var(--Y); }
+.px-start { font: 400 18px/1 "Press Start 2P", monospace; text-transform: uppercase; color: var(--Y); text-shadow: 4px 4px 0 var(--K); margin-bottom: 28px; animation: px-blink 1s steps(1) infinite; cursor: pointer; }
+.px-title__body { margin: 0 auto; }
+
+/* gear */
+.px-gear { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 40px; align-items: center; }
+.px-side--left.px-gear .px-tv { order: -1; }
+.px-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+.px-tags li { padding: 6px 10px 5px; font: 700 14px/1 "Silkscreen", monospace; text-transform: uppercase; color: var(--K); background: var(--B); box-shadow: 0 4px 0 0 var(--N); }
+.px-kv { display: grid; gap: 6px; margin-top: 16px; }
+.px-kv div { display: flex; justify-content: space-between; gap: 16px; max-width: 360px; }
+.px-kv dd { color: var(--Y); }
+
+/* status sheet */
+.px-status__who { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; font: 400 16px/1 "Press Start 2P", monospace; text-transform: uppercase; }
+.px-status__who b { color: var(--Y); font-weight: 400; margin-left: auto; }
+.px-status__face { width: 40px; height: 40px; background: var(--B) center / 100% 100% no-repeat; image-rendering: pixelated; box-shadow: 0 0 0 4px var(--W); }
+.px-status__list { display: grid; gap: 14px; }
+.px-stat dt { font: 700 14px/1.3 "Silkscreen", monospace; text-transform: uppercase; color: var(--L); margin-bottom: 6px; }
+.px-stat dd { display: flex; align-items: center; gap: 16px; }
+.px-stat__v { flex: none; font: 400 16px/1 "Press Start 2P", monospace; color: var(--W); min-width: 5ch; }
+.px-stat__v small { font-size: 12px; margin-left: 4px; color: var(--Y); }
+.px-lvup { position: absolute; right: 24px; top: -14px; padding: 6px 8px; background: var(--Y); color: var(--K); font: 400 12px/1 "Press Start 2P", monospace; }
+
+/* overworld map */
+.px-node { position: relative; padding-left: 40px; }
+.px-node__dot { position: absolute; left: 0; top: 4px; width: 20px; height: 20px; background: var(--R); box-shadow: 0 0 0 4px var(--W); }
+.px-node.is-done .px-node__dot, html:not(.px-game) .px-node__dot { background: var(--G); }
+.px-node__when { font: 700 14px/1 "Silkscreen", monospace; text-transform: uppercase; color: var(--Y); }
+.px-node__t { font: 400 15px/1.5 "Press Start 2P", monospace; text-transform: uppercase; margin: 6px 0; }
+
+/* NPC dialog */
+.px-portrait { display: block; flex: none; width: 80px; height: 56px; background: var(--N) center / 100% 100% no-repeat; image-rendering: pixelated; box-shadow: 0 0 0 4px var(--W); }
+.px-say { quotes: none; }
+
+/* ask about */
+.px-qa { display: grid; gap: 18px; }
+.px-qa dt { font: 400 14px/1.6 "Press Start 2P", monospace; text-transform: uppercase; color: var(--Y); margin-bottom: 6px; }
+.px-answer { position: relative; margin-top: 18px; padding: 18px 22px; background: var(--N); box-shadow: inset 0 0 0 4px var(--W); }
+
+/* course clear */
+.px-clear { text-align: center; }
+.px-clear__big { font: 400 clamp(22px, 4vw, 44px)/1.2 "Press Start 2P", monospace; text-transform: uppercase; color: var(--Y); text-shadow: 4px 4px 0 #ab5236; margin-bottom: 20px; }
+.px-clear__h { margin: 0 auto 18px; max-width: 26em; }
+.px-tally { display: grid; gap: 8px; max-width: 420px; margin: 0 auto 22px; font: 400 14px/1 "Press Start 2P", monospace; text-transform: uppercase; }
+.px-tally div { display: flex; justify-content: space-between; }
+.px-tally dd { color: var(--Y); }
+.px-continue { font: 400 18px/1 "Press Start 2P", monospace; text-transform: uppercase; color: var(--W); margin-bottom: 4px; }
+.px-menu--continue { justify-items: center; }
+
+/* credits, footer */
+.px-credits { text-align: center; padding: 80px 20px 40px; background: var(--K); }
+.px-credits__k { font: 400 16px/1.6 "Press Start 2P", monospace; text-transform: uppercase; color: var(--Y); }
+.px-credits__n { font: 400 28px/1.4 "Press Start 2P", monospace; text-transform: uppercase; margin-top: 16px; }
+html.style-pixel-art .ss-footer { background: var(--K); border-top: 0; position: relative; z-index: 6; }
+html.style-pixel-art .ss-footer__in { justify-content: center; text-align: center; font: 700 13px/1.6 "Silkscreen", monospace; text-transform: uppercase; color: var(--L); }
+
+/* ---------------------------------------------------------------- the game */
+html.px-game .px-canvas { position: fixed; left: 0; top: 0; z-index: 1; image-rendering: pixelated; image-rendering: crisp-edges; }
+html.px-game main { position: relative; z-index: 2; }
+html.px-game .px-sec { position: fixed; left: 0; right: 0; top: calc(var(--hud-h) + 26px); bottom: calc(var(--px-ground) + var(--px-s, 4) * 30px); z-index: 5; display: none;
+  padding: 0 24px; pointer-events: none; }
+html.px-game .px-sec.is-on { display: flex; }
+html.px-game .px-win { pointer-events: auto; max-height: 100%; overflow: auto; scrollbar-width: none; animation: px-open .2s steps(3) both; transform-origin: 50% 100%; }
+@keyframes px-open { from { transform: scaleY(.2); } }
+html.px-game .px-world { display: none; }
+html.px-mosaic .px-sec { visibility: hidden; }
+
+/* title screen: over the level, no box */
+html.px-game .px-sec--hero { align-items: center; justify-content: center; text-align: center; }
+html.px-game .px-title { background: none; box-shadow: none; padding: 0; max-width: 1000px; overflow: visible; animation: none; }
+html.px-game .px-logo { animation: px-drop .7s steps(7) both; }
+@keyframes px-drop { 0% { transform: translateY(-60vh); } 45% { transform: translateY(0); } 60% { transform: translateY(-28px); } 75% { transform: translateY(0); } 87% { transform: translateY(-8px); } 100% { transform: translateY(0); } }
+html.px-game .px-title .px-badge { padding: 6px 10px; background: var(--K); }
+html.px-game .px-title__body { display: inline-block; padding: 14px 18px; background: rgba(0, 0, 0, .78); box-shadow: var(--frame); max-width: 40ch; }
+html.px-game .px-title .px-menu { justify-items: center; margin-top: 22px; }
+html.px-game .px-title .px-menu__i { background: var(--K); }
+html.px-game .px-tv--hero { display: none; }
+
+/* signs and NPCs: a dialog just above the player */
+html.px-game .px-sec--intro, html.px-game .px-sec--quote, html.px-game .px-sec--other { align-items: flex-end; justify-content: center; }
+html.px-game .px-dialog { width: min(820px, 100%); min-height: 210px; }
+html.px-game .px-dialog--npc { display: flex; gap: 22px; align-items: flex-start; }
+html.px-game .px-dialog--npc .px-npc { flex: 1; }
+html.px-game .is-last .px-next { content: ""; }
+html.px-game .px-sec--quote.is-last .px-next { display: none; }
+
+/* items: one ITEM GET! card at a time */
+html.px-game .px-sec--features { align-items: flex-start; justify-content: center; }
+html.px-game .px-items { width: min(720px, 100%); }
+html.px-game .px-items .px-h { font-size: 14px; color: var(--L); margin-bottom: 12px; }
+html.px-game .px-item { display: none; gap: 22px; align-items: flex-start; }
+html.px-game .px-item.is-on { display: flex; animation: px-open .2s steps(3) both; }
+html.px-game .px-item__get { font: 400 18px/1 "Press Start 2P", monospace; text-transform: uppercase; color: var(--Y); margin-bottom: 12px; }
+html.px-game .px-item__get span { color: var(--L); font-size: 12px; }
+html.px-game .px-icon { width: 64px; height: 64px; animation: px-bob .5s steps(1) infinite; }
+.px-item__get { font: 700 14px/1 "Silkscreen", monospace; text-transform: uppercase; color: var(--Y); margin-bottom: 8px; }
+.px-item__name { font: 400 16px/1.5 "Press Start 2P", monospace; text-transform: uppercase; margin-bottom: 8px; }
+
+/* gear, status, map, ask, clear */
+html.px-game .px-sec--product { align-items: flex-start; justify-content: flex-end; }
+html.px-game .px-sec--product:has(.px-side--left) { justify-content: flex-start; }
+html.px-game .px-gear { width: min(940px, 100%); }
+html.px-game .px-gear .ss-phone { width: 170px; }
+html.px-game .px-sec--stats { align-items: flex-start; justify-content: center; }
+html.px-game .px-status { width: min(620px, 100%); }
+html.px-game .px-lvup { display: none; }
+html.px-game .is-fill .px-seg::after { animation: px-fill .9s steps(16) both; }
+html.px-game .is-fill .px-lvup { display: block; animation: px-lv 1.4s steps(1) both; }
+@keyframes px-fill { from { width: 0; } }
+@keyframes px-lv { 0%, 60% { visibility: hidden; } 61%, 100% { visibility: visible; } }
+html.px-game .px-sec--timeline { align-items: flex-start; justify-content: center; }
+html.px-game .px-map { width: min(900px, 100%); }
+html.px-game .px-map__nodes { display: flex; justify-content: space-between; position: relative; padding: 12px 0 0; margin-bottom: 4px; }
+html.px-game .px-map__nodes::before { content: ""; position: absolute; left: 10px; right: 10px; top: 22px; border-top: 4px dashed var(--L); }
+html.px-game .px-node { padding: 38px 0 0; flex: 1; min-width: 0; }
+html.px-game .px-node__dot { top: 0; left: 0; }
+html.px-game .px-node .px-node__when { display: block; }
+html.px-game .px-node .px-node__t, html.px-game .px-node .px-body { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+html.px-game .px-node.is-on .px-node__dot { background: var(--Y); animation: px-blink 1s steps(1) infinite; }
+html.px-game .px-node.is-on .px-node__when { color: var(--W); }
+.px-map__detail { display: none; }
+html.px-game .px-map__detail { display: block; margin-top: 18px; padding: 16px 18px; background: var(--N); box-shadow: inset 0 0 0 4px var(--W); min-height: 110px; }
+html.px-game .px-map__detail .px-node__t { margin: 0 0 6px; }
+html.px-game .px-sec--faq { align-items: flex-end; justify-content: center; }
+html.px-game .px-ask { width: min(940px, 100%); display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: 0 24px; align-items: start; }
+html.px-game .px-ask .px-ask__h, html.px-game .px-ask .px-name { grid-column: 1 / -1; }
+html.px-game .px-ask .px-askmenu { margin-top: 0; }
+html.px-game .px-askmenu .px-menu__i { font-size: 12px; line-height: 1.6; }
+html.px-game .px-answer { margin-top: 0; min-height: 150px; }
+html.px-game .px-sec--cta { align-items: center; justify-content: center; }
+html.px-game .px-clear { width: min(680px, 100%); }
+html.px-game .px-clear .px-continue, html.px-game .px-clear .px-menu--continue { visibility: hidden; }
+html.px-game .px-sec--cta.is-menu .px-continue, html.px-game .px-sec--cta.is-menu .px-menu--continue { visibility: visible; }
+html.px-game .px-clear__big { animation: px-blink .5s steps(1) 4; }
+
+/* the banner that names each world as you enter it */
+.px-banner { position: fixed; z-index: 4; left: 24px; bottom: calc(var(--px-ground) + var(--px-s, 4) * 6px); font: 400 18px/1 "Press Start 2P", monospace; text-transform: uppercase; color: var(--W);
+  text-shadow: 4px 4px 0 var(--K); visibility: hidden; pointer-events: none; white-space: nowrap; }
+.px-banner.is-on { animation: px-ban 1.4s steps(1) both; }
+@keyframes px-ban { 0% { visibility: visible; } 100% { visibility: hidden; } }
+html.px-game .px-credits { position: relative; z-index: 6; }
+
+/* sections without their own markup (and scenes, which switch the page to the manual) */
+html.style-pixel-art main > .ss-block { background: var(--K); box-shadow: var(--frame); margin: 0 8px 64px; }
+html.style-pixel-art .ss-display, html.style-pixel-art .ss-h2 { font-family: "Press Start 2P", monospace; text-transform: uppercase; font-size: clamp(18px, 2.4vw, 28px); line-height: 1.5; letter-spacing: 0; }
+html.style-pixel-art .ss-btn { border-radius: 0; font-family: "Press Start 2P", monospace; font-size: 12px; text-transform: uppercase; box-shadow: 0 4px 0 0 var(--K); }
+
+/* phones */
+@media (max-width: 700px) {
+  html.style-pixel-art body { font-size: 19px; }
+  .px-win { padding: 20px 18px 22px; }
+  html.px-game .px-sec { padding: 0 14px; top: calc(var(--hud-h) + 22px); }
+  html.px-game .px-dialog { min-height: 0; }
+  html.px-game .px-dialog--npc { flex-direction: column; gap: 12px; }
+  html.px-game .px-portrait { width: 60px; height: 42px; }
+  .px-gear, html.px-game .px-ask { grid-template-columns: minmax(0, 1fr); }
+  html.px-game .px-gear .px-tv { display: none; }
+  html.px-game .px-ask .px-askmenu { margin-bottom: 14px; }
+  html.px-game .px-icon { width: 48px; height: 48px; }
+  html.px-game .px-item__get { font-size: 14px; }
+  .px-logo { text-shadow: 3px 3px 0 var(--K), 6px 6px 0 #ab5236; }
+  .px-start { font-size: 14px; }
+  .px-h { font-size: 15px; }
+  .px-menu__i { font-size: 12px; }
+  html.px-game .px-map__nodes .px-node__when { font-size: 11px; }
+}
+
+/* reduced motion: no blinking, bobbing, dropping or stepped openings; text appears at once (runtime) */
+@media (prefers-reduced-motion: reduce) {
+  .px-start, .px-next, .px-menu__i::before, html.px-game .px-icon, html.px-game .px-logo, html.px-game .px-win, html.px-game .px-item.is-on,
+  html.px-game .px-clear__big, html.px-game .px-node.is-on .px-node__dot { animation: none !important; }
+}
+html:not(.px-game) .px-sec { scroll-margin-top: calc(var(--hud-h) + 24px); }
+
+/* sections without their own markup, shown as a sign's window in the game */
+.px-generic { width: min(980px, 100%); }
+.px-generic .ss-wrap { max-width: none; }
+html.px-game .px-sec--other.ss-block { padding: 0 24px; background: none; box-shadow: none; margin: 0; }
+html.px-game .px-generic .ss-gallery { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+html.px-game .px-generic .ss-orbit__stage { max-height: 50vh; }
+/* a hero further down the page is a level title card */
+html.px-game .px-sec--hero ~ .px-sec--hero .px-logo { font-size: clamp(22px, 3.6vw, 44px); }
+html.px-page .px-hud__stat, html:not(.px-game) .px-again { display: none !important; }
 
 </style><style>
   /* A section's backdrop: the image fills the panel (or a wrapper in the flow layout); the section itself goes clear,
@@ -183,88 +448,169 @@ html.style-pixel-art .ss-nav.ss-solid { background: var(--bg); box-shadow: 0 4px
   <nav class="ss-nav__links"><a href="#why">Why</a><a href="#features">Features</a><a href="#how">How</a></nav>
 <a class="ss-btn" href="#get">Get Halcyon <span class="ss-arrow">→</span></a></div></header>
 
+<header class="px-hud" id="px-hud">
+  <a class="px-hud__name" href="#">Halcyon</a>
+  <span class="px-hud__stat px-hud__world" aria-hidden="true"><small>World</small><b>1-0</b></span>
+  <span class="px-hud__stat px-hud__items" aria-hidden="true"><small>Items</small><b><i class="px-star"></i>×0</b></span>
+  <span class="px-hud__stat px-hud__score" aria-hidden="true"><small>Score</small><b>000000</b></span>
+  <span class="px-hud__stat px-hud__time" aria-hidden="true"><small>Time</small><b>400</b></span>
+<nav class="px-hud__levels" aria-label="Levels"><a href="#why"><b>1-1</b> Why</a><a href="#features"><b>1-2</b> Features</a><a href="#how"><b>1-3</b> How</a></nav>  <span class="px-hud__sp"></span>
+  <button type="button" class="px-mode" aria-pressed="false" hidden>Read as page</button>
+  <button type="button" class="px-startbtn" aria-expanded="false" aria-controls="px-pause" hidden>Start</button>
+<a class="px-coin" href="#get"><i aria-hidden="true"></i>Get Halcyon</a></header>
+<div class="px-pause" id="px-pause" role="dialog" aria-label="Pause menu" hidden>
+  <p class="px-pause__h">Pause</p>
+  <nav class="px-pause__list">
+    <a href="#" data-go="0">▶ Title screen</a>
+<a href="#why">▶ 1-1 Why</a><a href="#features">▶ 1-2 Features</a><a href="#how">▶ 1-3 How</a>    <button type="button" class="px-pause__page">▶ Read as page</button>
+  </nav>
+</div>
+<canvas class="px-canvas" aria-hidden="true"></canvas>
+<div class="px-banner" aria-hidden="true"></div>
 <main>
-<section class="ss-block ss-hero ss-hero--center">
-  <div class="ss-hero__in">
-<span class="ss-badge">New · Halcyon 2.0</span><h1 class="ss-h1">Your mornings, <em>back.</em></h1><p class="ss-lede">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>    <div class="ss-btns"><a class="ss-btn ss-btn--hot" href="#get">Try it free <span class="ss-arrow">→</span></a><a class="ss-btn" href="../../looks/">See the looks</a></div>
+<section class="px-sec px-sec--hero" data-zone="hero">
+
+  <div class="px-win px-title">
+<p class="px-badge">New · Halcyon 2.0</p>    <h1 class="px-logo">Your mornings, <em>back.</em></h1>
+    <p class="px-start" aria-hidden="true">Press start</p>
+<p class="px-body px-title__body">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>    <nav class="px-menu px-menu--title"><a class="px-menu__i is-sel" href="#get">Try it free</a><a class="px-menu__i" href="../../looks/">See the looks</a></nav>
   </div>
+
+
 </section>
+<section class="px-sec px-sec--intro" data-zone="intro" id="why">
 
-<section class="ss-block" id="why"><div class="ss-wrap ss-intro2">
-  <h2 class="ss-display ss-reveal">Calendars fill up <em>from the top.</em></h2>
-  <div class="ss-reveal">
-<span class="ss-kicker">The problem</span><p class="ss-lede">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>  </div>
-</div></section>
-
-<section class="ss-block" id="features"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">What it does</span><h2 class="ss-display">Three rules, <em>kept for you.</em></h2></div>  <div class="ss-features ss-features--3">
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">01</span>      <div><h3>Focus first</h3><p>Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">02</span>      <div><h3>Smart batching</h3><p>Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p></div>
-    </div>
-    <div class="ss-feature ss-reveal">
-<span class="ss-tag">03</span>      <div><h3>Polite no</h3><p>Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p></div>
-    </div>
+  <div class="px-win px-dialog px-dialog--sign">
+    <p class="px-world" aria-hidden="true"><span>World 1-1</span><span>The problem</span></p>
+    <p class="px-name" aria-hidden="true">Sign</p>
+    <h2 class="px-h">Calendars fill up <em>from the top.</em></h2>
+<p class="px-body px-type">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>    <span class="px-next" aria-hidden="true">▼</span>
   </div>
-</div></section>
 
-<section class="ss-scene ss-overlay ss-side-right ss-type-type ss-shade-auto ss-type--display" id="words" data-scene="type">
-  <div class="ss-track" style="height: 260vh">
-    <div class="ss-stage">
-      <div class="ss-visual"></div>
-      <div class="ss-shade"></div>
-      <div class="ss-captions">
-      </div>
-      
-      <div class="ss-outro"></div>
-    </div>
-  </div>
-  <script type="application/json" class="ss-config">{"mode": "swap", "text": "Halcyon keeps your", "words": ["mornings", "Fridays", "evenings", "weekends"]}</script>
-  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "none", "legend": [], "scales": []}, "layout": "overlay", "length": 2.6, "steps": []}</script>
+
 </section>
-<section class="ss-block ss-product ss-product--right ss-pose--beside" id="app"><div class="ss-wrap ss-product__in">
-  <div class="ss-product__media" data-float>
+<section class="px-sec px-sec--features" data-zone="features" id="features">
+
+  <div class="px-win px-items">
+    <p class="px-world" aria-hidden="true"><span>World 1-2</span><span>What it does</span></p>
+<h2 class="px-h">Three rules, <em>kept for you.</em></h2>    <ul class="px-items__list">
+      <li class="px-item" data-icon="star">
+        <span class="px-icon px-icon--star" aria-hidden="true"></span>
+        <div class="px-item__txt">
+          <p class="px-item__get" aria-hidden="true">Item get! <span>No.01</span></p>
+          <h3 class="px-item__name">Focus first</h3>
+<p class="px-body">Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p>        </div>
+      </li>
+      <li class="px-item" data-icon="heart">
+        <span class="px-icon px-icon--heart" aria-hidden="true"></span>
+        <div class="px-item__txt">
+          <p class="px-item__get" aria-hidden="true">Item get! <span>No.02</span></p>
+          <h3 class="px-item__name">Smart batching</h3>
+<p class="px-body">Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p>        </div>
+      </li>
+      <li class="px-item" data-icon="gem">
+        <span class="px-icon px-icon--gem" aria-hidden="true"></span>
+        <div class="px-item__txt">
+          <p class="px-item__get" aria-hidden="true">Item get! <span>No.03</span></p>
+          <h3 class="px-item__name">Polite no</h3>
+<p class="px-body">Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p>        </div>
+      </li>
+    </ul>
+  </div>
+
+
+</section>
+<section class="px-sec px-sec--product" data-zone="product" id="app">
+
+  <div class="px-win px-gear px-side--right">
+    <div class="px-gear__copy">
+      <p class="px-world" aria-hidden="true"><span>World 1-3</span><span>The app</span></p>
+      <p class="px-name" aria-hidden="true">New gear</p>
+      <h2 class="px-h">Pick a slot, <em>keep the morning.</em></h2>
+<p class="px-body">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><ul class="px-tags"><li>iPhone</li><li>Android</li><li>Web</li><li>Google and Outlook</li></ul>      
+    </div>
+    <div class="px-tv">
 <div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
   <div class="ss-phone__bar"><span>9:41</span><i></i></div>
 <div class="ss-app">
 <div class="ss-app__name">Halcyon</div><div class="ss-app__title">Coffee with Sam</div><div class="ss-app__label">Best times</div><p class="ss-app__note">Your 8-11 focus block stays free.</p><div class="ss-app__opt is-on"><b>Tue 2:30 pm</b><small>Next to your other calls</small></div><div class="ss-app__opt"><b>Wed 4:00 pm</b><small>End of day</small></div><div class="ss-app__opt"><b>Thu 1:00 pm</b><small>After lunch</small></div><div class="ss-app__btn">Send these times</div>  </div></div></div>
+    </div>
   </div>
-  <div class="ss-product__copy ss-reveal">
-<span class="ss-kicker">The app</span>    <h2 class="ss-h2">Pick a slot, <em>keep the morning.</em></h2>
-<p class="ss-lede">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><ul class="ss-pills"><li>iPhone</li><li>Android</li><li>Web</li><li>Google and Outlook</li></ul>    
-  </div>
-</div></section>
 
-<section class="ss-block ss-band ss-band"><div class="ss-wrap ss-stats ss-stats--4">
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="11">11<sup>h</sup></div><div class="ss-l">Focus hours kept per week</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="38">38<sup>%</sup></div><div class="ss-l">Fewer meeting fragments</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="2">2<sup>min</sup></div><div class="ss-l">To set up</div></div>
-  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="0">0</div><div class="ss-l">Calendars replaced</div></div>
-</div></section>
 
-<section class="ss-block" id="how"><div class="ss-wrap">
-<div class="ss-head ss-reveal"><span class="ss-kicker">How it works</span><h2 class="ss-display">Set it up <em>over coffee.</em></h2></div>  <div class="ss-timeline ss-timeline--4">
-<div class="ss-tl ss-reveal"><span class="ss-when">Minute 1</span><h4>Connect</h4><p>Sign in with Google or Outlook; nothing moves yet.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Minute 2</span><h4>Mark your hours</h4><p>Paint the blocks you want protected.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Day 1</span><h4>It starts</h4><p>New invites are steered around your focus.</p></div><div class="ss-tl ss-reveal"><span class="ss-when">Week 1</span><h4>You notice</h4><p>A free morning, then another one.</p></div>  </div>
-</div></section>
-
-<section class="ss-block"><div class="ss-wrap ss-quote ss-reveal">
-  <blockquote>I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote><cite>Priya N., product designer</cite></div></section>
-
-<section class="ss-block ss-faq"><div class="ss-wrap ss-faq__in">
-  <div class="ss-head ss-reveal"><h2 class="ss-h2">Questions</h2></div>
-  <div class="ss-faq__list">
-<details class="ss-reveal" open><summary>Does it replace my calendar?</summary><p>No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></details><details class="ss-reveal"><summary>What do the people I meet see?</summary><p>A short list of times that work for both of you. No new app to install.</p></details><details class="ss-reveal"><summary>Can I override it?</summary><p>Always. Drag anything anywhere; Halcyon learns from what you move.</p></details>  </div>
-</div></section>
-<section class="ss-block ss-cta" id="get">
-  <div class="ss-cta__in">
-<span class="ss-kicker ss-reveal">Free for 30 days</span>    <h2 class="ss-display ss-reveal">Keep <em>tomorrow morning.</em></h2>
-<a class="ss-btn ss-btn--hot ss-reveal" href="#">Get Halcyon <span class="ss-arrow">→</span></a>  </div>
 </section>
+<section class="px-sec px-sec--stats" data-zone="stats">
 
+  <div class="px-win px-status">
+    <p class="px-world" aria-hidden="true"><span>World 1-4</span><span>Status</span></p>
+    <p class="px-status__who" aria-hidden="true"><span class="px-status__face"></span><span>Status</span><b>LV 4</b></p>
+    <dl class="px-status__list">
+      <div class="px-stat"><dt>Focus hours kept per week</dt><dd><span class="px-seg" style="--fill: 0.289" aria-hidden="true"></span><b class="px-stat__v">11<small>h</small></b></dd></div>
+      <div class="px-stat"><dt>Fewer meeting fragments</dt><dd><span class="px-seg" style="--fill: 1.000" aria-hidden="true"></span><b class="px-stat__v">38<small>%</small></b></dd></div>
+      <div class="px-stat"><dt>To set up</dt><dd><span class="px-seg" style="--fill: 0.053" aria-hidden="true"></span><b class="px-stat__v">2<small>min</small></b></dd></div>
+      <div class="px-stat"><dt>Calendars replaced</dt><dd><span class="px-seg" style="--fill: 0.000" aria-hidden="true"></span><b class="px-stat__v">0</b></dd></div>
+    </dl>
+    <p class="px-lvup" aria-hidden="true">LV UP!</p>
+  </div>
+
+
+</section>
+<section class="px-sec px-sec--timeline" data-zone="timeline" id="how">
+
+  <div class="px-win px-map">
+    <p class="px-world" aria-hidden="true"><span>World 1-5</span><span>How it works</span></p>
+<h2 class="px-h">Set it up <em>over coffee.</em></h2>    <ol class="px-map__nodes">
+      <li class="px-node"><span class="px-node__dot" aria-hidden="true"></span><span class="px-node__when">Minute 1</span><h3 class="px-node__t">Connect</h3><p class="px-body">Sign in with Google or Outlook; nothing moves yet.</p></li>
+      <li class="px-node"><span class="px-node__dot" aria-hidden="true"></span><span class="px-node__when">Minute 2</span><h3 class="px-node__t">Mark your hours</h3><p class="px-body">Paint the blocks you want protected.</p></li>
+      <li class="px-node"><span class="px-node__dot" aria-hidden="true"></span><span class="px-node__when">Day 1</span><h3 class="px-node__t">It starts</h3><p class="px-body">New invites are steered around your focus.</p></li>
+      <li class="px-node"><span class="px-node__dot" aria-hidden="true"></span><span class="px-node__when">Week 1</span><h3 class="px-node__t">You notice</h3><p class="px-body">A free morning, then another one.</p></li>
+    </ol>
+  </div>
+
+
+</section>
+<section class="px-sec px-sec--quote" data-zone="quote">
+
+  <div class="px-win px-dialog px-dialog--npc">
+    <span class="px-portrait" aria-hidden="true"></span>
+    <figure class="px-npc">
+<figcaption class="px-name">Priya N., product designer</figcaption>      <blockquote class="px-body px-say">I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote>
+    </figure>
+    <span class="px-next" aria-hidden="true">▼</span>
+  </div>
+
+
+</section>
+<section class="px-sec px-sec--faq" data-zone="faq">
+
+  <div class="px-win px-ask">
+    <p class="px-world" aria-hidden="true"><span>World 1-7</span></p>
+    <h2 class="px-h px-ask__h">Questions</h2>
+    <p class="px-name" aria-hidden="true">Ask about...</p>
+    <dl class="px-qa">
+<div class="px-qa__i"><dt>Does it replace my calendar?</dt><dd class="px-body">No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</dd></div><div class="px-qa__i"><dt>What do the people I meet see?</dt><dd class="px-body">A short list of times that work for both of you. No new app to install.</dd></div><div class="px-qa__i"><dt>Can I override it?</dt><dd class="px-body">Always. Drag anything anywhere; Halcyon learns from what you move.</dd></div>    </dl>
+  </div>
+
+
+</section>
+<section class="px-sec px-sec--cta" data-zone="cta" id="get">
+
+  <div class="px-win px-clear">
+    <p class="px-clear__big" aria-hidden="true">Course clear!</p>
+<p class="px-badge">Free for 30 days</p>    <h2 class="px-h px-clear__h">Keep <em>tomorrow morning.</em></h2>
+    <dl class="px-tally" aria-hidden="true" hidden></dl>
+    <p class="px-continue" aria-hidden="true">Continue?</p>
+    <nav class="px-menu px-menu--continue">
+<a class="px-menu__i is-sel" href="#">Get Halcyon</a>      <button type="button" class="px-menu__i px-again" hidden>Play again</button>
+    </nav>
+  </div>
+
+</section>
 </main>
-
+<div class="px-credits" aria-hidden="true">
+  <p class="px-credits__k">Thank you for playing</p>
+  <p class="px-credits__n">Halcyon</p>
+</div>
 <footer class="ss-footer"><div class="ss-wrap ss-footer__in">
   <span>© Halcyon. A concept site; the product is fictional.</span>
   <span>Built with Scroll Studio</span>
@@ -273,9 +619,9 @@ html.style-pixel-art .ss-nav.ss-solid { background: var(--bg); box-shadow: 0 4px
 <script>window.__ssScroll = { speed: 1.0 };</script>
 <script type="module" src="../../runtime/index.js"></script>
 <nav class="ss-looks" aria-label="Looks">
-  <a href="../bauhaus/" aria-label="Previous look">←</a>
-  <a class="ss-looks__name" href="../">Pixel art <small>17/20</small></a>
-  <a href="../blueprint/" aria-label="Next look">→</a>
+  <a href="../particles/" aria-label="Previous look">←</a>
+  <a class="ss-looks__name" href="../">Pixel art <small>18/21</small></a>
+  <a href="../retro-vhs/" aria-label="Next look">→</a>
 </nav>
 <style>
   .ss-looks { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 990; display: flex; align-items: center; gap: 4px; padding: 5px;
