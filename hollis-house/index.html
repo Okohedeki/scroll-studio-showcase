@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en" class="mode-light layout-stack">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hollis House</title>
+<meta name="description" content="A house on a quiet lane, open plan from the garden to the kitchen. Walk through it before you visit."><meta name="generator" content="Scroll Studio">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%231f4d3a%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23f3f1ee%22%3EH%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root {
+  --bg: #f3f1ee;
+  --bg-2: #e9e6e1;
+  --ink: #16150f;
+  --ink-rgb: 22, 21, 15;
+  --bg-rgb: 243, 241, 238;
+  --ink-2: rgba(22, 21, 15, 0.75);
+  --ink-3: rgba(22, 21, 15, 0.61);
+  --line: rgba(22, 21, 15, .13);
+  --accent: #1f4d3a;
+  --accent-2: #2f6b52;
+  --accent-ink: #f3f1ee;
+  --accent-text: #1f4d3a;
+  --accent-rgb: 31, 77, 58;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+  --display-weight: 600;
+  --em-style: normal;
+  --radius: 10px;
+  color-scheme: light;
+}
+.ss-surface-dark { --btn-bg: #f3f1ee; --btn-ink: #000000; --bg: #16150f; --bg-2: #282721; --ink: #f3f1ee; --ink-rgb: 243, 241, 238; --bg-rgb: 22, 21, 15; --ink-2: rgba(243, 241, 238, 0.68); --ink-3: rgba(243, 241, 238, 0.51); --line: rgba(243, 241, 238, .14); --accent-text: #7c9589; --em-color: #f3f1ee; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #1f4d3a; --btn-ink: #ffffff; --bg: #e9e6e1; --bg-2: #f3f1ee; --ink: #16150f; --ink-rgb: 22, 21, 15; --bg-rgb: 233, 230, 225; --ink-2: rgba(22, 21, 15, 0.75); --ink-3: rgba(22, 21, 15, 0.61); --line: rgba(22, 21, 15, .14); --accent-text: #1f4d3a; --em-color: #1f4d3a; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #1f4d3a; --btn-ink: #ffffff; --bg: #8daea0; --bg-2: #1d1e18; --ink: #16150f; --ink-rgb: 22, 21, 15; --bg-rgb: 141, 174, 160; --ink-2: rgba(22, 21, 15, 1.0); --ink-3: rgba(22, 21, 15, 1.0); --line: rgba(22, 21, 15, .14); --accent-text: #16150f; --em-color: #16150f; color-scheme: light; background: var(--bg); color: var(--ink); }
+</style>
+<link rel="stylesheet" href="runtime/studio.css">
+<style>
+  /* A section's backdrop: the image fills the panel (or a wrapper in the flow layout); the section itself goes clear,
+     whatever surface it has. */
+  .ss-backdrop { background-size: cover; background-position: center; }
+  .ss-backdrop > section, .ss-backdrop > section[class*=ss-surface-], .ss-backdrop .ss-stage, .ss-backdrop .ss-band { background: transparent; }
+  /* A type scene set as a display line (size: display) rather than a passage: bigger, centred, balanced. */
+  .ss-scene.ss-type--display .ss-type__text { font-size: clamp(46px, 8.2vw, 150px); text-align: center; letter-spacing: -.04em; line-height: 1; max-width: 12em; }
+  /* On a dark surface the rolling word takes the surface's <em> colour, which is checked for contrast; the raw accent is not. */
+  .ss-surface-dark .ss-type--swap .roll { color: var(--em-color); }
+  /* A phone can play a clip instead of showing a screenshot. */
+  .ss-phone__screen > video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* Poses: how a product section's phone sits (ProductBlock.pose). The panel clips at its edges (overflow: clip), so a
+     phone pushed past them is cut off there. Each pose is a different composition, so a run of product panels reads
+     as different screens rather than one screen seven times. */
+  .ss-pose--rise.ss-product { align-items: flex-start; padding-top: clamp(100px, 13vh, 130px); padding-bottom: 0; }
+  .ss-pose--rise .ss-product__in { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 0; }
+  .ss-pose--rise .ss-product__copy { order: 1; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .ss-pose--rise .ss-lede { max-width: 58ch; }
+  .ss-pose--rise .ss-pills, .ss-pose--rise .ss-btns { justify-content: center; }
+  .ss-pose--rise .ss-product__media { order: 2; width: 100%; min-height: 0; height: max(30svh, 290px); margin-top: 28px; place-items: start center; }
+  .ss-pose--rise .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(230px, 21vw, 330px); transform: translate(-50%, calc(var(--float, 0) * -22px)); }
+  .ss-pose--close .ss-product__media { min-height: 0; height: min(62svh, 640px); place-items: start center; }
+  .ss-pose--close .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(300px, 30vw, 440px); transform: translate(-50%, calc(var(--float, 0) * -26px)); }
+  .ss-pose--lean .ss-product__media { min-height: 0; height: min(60svh, 620px); }
+  .ss-pose--lean .ss-phone { position: absolute; bottom: calc(-1 * clamp(90px, 14vh, 160px) - 30%); width: clamp(260px, 24vw, 360px); transform-origin: 50% 100%; }
+  .ss-pose--lean.ss-product--left .ss-phone { left: calc(-1 * var(--gutter) - 2%); transform: rotate(9deg) translateY(calc(var(--float, 0) * -20px)); }
+  .ss-pose--lean.ss-product--right .ss-phone { right: calc(-1 * var(--gutter) - 2%); transform: rotate(-9deg) translateY(calc(var(--float, 0) * -20px)); }
+  .ss-pose--turn .ss-product__media { perspective: 1400px; }
+  .ss-pose--turn .ss-phone { width: clamp(220px, 21vw, 310px); }
+  .ss-pose--turn.ss-product--left .ss-phone { transform: rotateY(-16deg) rotateX(4deg) rotateZ(-3deg) translateY(calc(var(--float, 0) * -24px)); box-shadow: 34px 60px 90px -30px rgba(0, 0, 0, .5), inset 0 0 0 2px #2c2c2c; }
+  .ss-pose--turn.ss-product--right .ss-phone { transform: rotateY(16deg) rotateX(4deg) rotateZ(3deg) translateY(calc(var(--float, 0) * -24px)); box-shadow: -34px 60px 90px -30px rgba(0, 0, 0, .5), inset 0 0 0 2px #2c2c2c; }
+  /* pair: the two phones swap places on a loop, each playing its own clip, the one coming forward lifting over the one
+     going back. Without motion they hold the front and back positions. */
+  .ss-pose--pair .ss-product__media { min-height: min(70vh, 720px); }
+  .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind { position: absolute; left: 50%; top: 50%; animation: 16s cubic-bezier(.45, 0, .25, 1) infinite; }
+  .ss-pose--pair .ss-product__media > .ss-phone { z-index: 2; transform: translate(-64%, -50%); animation-name: ss-pair-a; }
+  .ss-pose--pair .ss-phone-behind { z-index: 1; transform: translate(-22%, -56%) rotate(9deg) scale(.9); animation-name: ss-pair-b; }
+  @keyframes ss-pair-a {
+    0%, 42% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+    46% { transform: translate(-43%, -40%) rotate(4deg) scale(.94); }
+    50%, 92% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+    96% { transform: translate(-43%, -66%) rotate(4deg) scale(.96); }
+    100% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+  }
+  @keyframes ss-pair-b {
+    0%, 42% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+    46% { transform: translate(-43%, -66%) rotate(4deg) scale(.96); }
+    50%, 92% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+    96% { transform: translate(-43%, -40%) rotate(4deg) scale(.94); }
+    100% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind { animation: none; } }
+  .ss-product__stats { display: flex; flex-wrap: wrap; gap: 18px 44px; margin: 30px 0 10px; }
+  /* A hero can hold the app too: the phone rises from the bottom edge under the copy and sinks as the hero is left. */
+  .ss-hero--device { flex-direction: column; justify-content: flex-start; padding-top: clamp(110px, 14vh, 150px); padding-bottom: 0; gap: clamp(24px, 4vh, 44px); }
+  .ss-hero--device .ss-hero__in { flex: none; }
+  .ss-hero__phone { position: relative; width: 100%; height: max(26svh, 230px); flex: none; }
+  .ss-hero__phone .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(230px, 22vw, 340px); transform: translate(-50%, calc(var(--hero-p, 0) * 40px)); }
+  .ss-product__stats .ss-v { font-size: clamp(40px, 4.2vw, 72px); }
+  .ss-product__stats .ss-l { margin-top: 4px; }
+  @media (max-width: 900px) {
+    .ss-pose--rise.ss-product { padding-top: 100px; }
+    .ss-pose--rise .ss-product__media { height: max(34svh, 250px); }
+    .ss-pose--rise .ss-phone { width: min(64vw, 300px); }
+    .ss-pose--close .ss-product__media, .ss-pose--lean .ss-product__media { order: 2; height: 44svh; }
+    .ss-pose--close .ss-phone { width: min(76vw, 340px); }
+    .ss-pose--lean .ss-phone { width: min(66vw, 320px); }
+    .ss-pose--lean.ss-product--left .ss-phone, .ss-pose--lean.ss-product--right .ss-phone { top: 24px; bottom: auto; left: 50%; right: auto; transform: translateX(-50%) rotate(-7deg); transform-origin: 50% 0; }
+    .ss-pose--pair .ss-product__media { min-height: 0; height: clamp(420px, 66svh, 600px); }
+    .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind .ss-phone { width: min(50vw, 230px); }
+    .ss-pose--turn .ss-phone { width: min(60vw, 280px); }
+    .ss-product__stats { gap: 12px 28px; }
+    .ss-hero--device { padding-top: 100px; gap: 22px; }
+    .ss-hero__phone { height: max(22svh, 190px); }
+    .ss-hero__phone .ss-phone { width: min(60vw, 280px); }
+  }
+  .ss-h1, .ss-display { text-wrap: balance; }
+</style>
+<style>
+  html.ss-loading, html.ss-loading body { overflow: hidden; height: 100%; }
+  .ss-loader { position: fixed; inset: 0; z-index: 1000; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+    background: var(--bg); color: var(--ink); transition: opacity .7s cubic-bezier(.22,.8,.2,1), visibility .7s; }
+  html.ss-loading .ss-loader, .ss-loader.ss-leaving { display: flex; }
+  .ss-loader.ss-leaving { opacity: 0; visibility: hidden; }
+  .ss-loader__name { font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(28px, 3.4vw, 46px); letter-spacing: -.02em; }
+  .ss-loader__bar { width: min(320px, 60vw); height: 2px; background: var(--line); position: relative; overflow: hidden; }
+  .ss-loader__bar i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: scaleX(0); transition: transform .3s; }
+  .ss-loader__pct { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+</style>
+<script>
+  // Lock scrolling from the very first paint; the runtime unlocks it once every scene is ready.
+  // If the runtime can't run at all, open the page anyway after max_wait seconds.
+  document.documentElement.classList.add("ss-loading");
+  window.__ssLoader = { maxWait: 45.0, minTime: 0.6 };
+  setTimeout(function () { document.documentElement.classList.remove("ss-loading"); }, 50000.0);
+</script>
+</head>
+<body>
+<div class="ss-loader" id="ss-loader" role="status" aria-live="polite">
+  <div class="ss-loader__name">Hollis House</div>
+  <div class="ss-loader__bar"><i></i></div>
+  <div class="ss-loader__pct"><span>0</span>%</div>
+</div>
+
+<header class="ss-nav" id="ss-nav"><div class="ss-nav__in">
+  <a class="ss-wordmark" href="#">
+    <span>Hollis House</span>
+  </a>
+  <nav class="ss-nav__links"><a href="#walk">The walk</a></nav>
+<a class="ss-btn" href="#viewing">Book a viewing <span class="ss-arrow">→</span></a></div></header>
+
+<main>
+<div class="ss-panel ss-panel--hero">
+<section class="ss-block ss-hero ss-hero--center">
+  <div class="ss-hero__in">
+<h1 class="ss-h1">Walk through it <em>before you visit.</em></h1><p class="ss-lede">Every room on this page is the real room, rebuilt in 3D from a walkthrough video. Scroll to walk from the hall into the living room.</p>    <div class="ss-btns"><a class="ss-btn ss-btn--hot" href="#walk">Start the walk <span class="ss-arrow">→</span></a><a class="ss-btn" href="#viewing">Book a viewing</a></div>
+  </div>
+</section>
+
+</div><div class="ss-panel">
+<section class="ss-scene ss-overlay ss-side-right ss-type-splat ss-shade-auto" id="walk" data-scene="splat">
+  <div class="ss-track" style="height: 500vh">
+    <div class="ss-stage">
+      <div class="ss-visual"></div>
+      <div class="ss-shade"></div>
+      <div class="ss-captions">
+        <div class="ss-caption" data-from="0.02" data-to="0.25">
+<div class="ss-eyebrow"><i></i><span>Hollis House</span></div><h1 class="ss-h1 ss-split-words">The hall, <em>as it is.</em></h1>        </div>
+        <div class="ss-caption" data-from="0.38" data-to="0.62">
+<div class="ss-eyebrow"><i></i><span>Open plan</span></div><h2 class="ss-display ss-split-words">One room, <em>windows on two sides.</em></h2>        </div>
+        <div class="ss-caption" data-from="0.74" data-to="0.98">
+<div class="ss-eyebrow"><i></i><span>The light</span></div><h2 class="ss-display ss-split-words">Dinner for ten, <em>light till late.</em></h2>        </div>
+      </div>
+      
+<div class="ss-cue">Scroll to walk</div>      <div class="ss-outro"></div>
+    </div>
+  </div>
+  <script type="application/json" class="ss-config">{"background": "#f3f1ee", "bounds": {"count": null}, "credits": ["Reconstructed locally with gsplat from walkthrough footage by Kindel Media (Pexels)"], "file": "assets/walk/scene.spz", "fov": 62.0, "keys": [{"at": [2.0, -0.6, 0.25], "look": [-2.0, -0.6, 0.1], "t": 0.0}, {"at": [0.2, -0.6, 0.25], "look": [-3.0, -0.3, 0.1], "t": 0.4}, {"at": [-0.3, -0.8, 0.25], "look": [-0.5, 2.5, 0.1], "t": 0.75}, {"at": [-0.6, -0.2, 0.28], "look": [-3.5, 0.6, 0.15], "t": 1.0}], "up": [0.0, 0.0, 1.0]}</script>
+  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "none", "legend": [], "scales": []}, "layout": "overlay", "length": 5.0, "steps": [{"at": [0.02, 0.25], "body": null, "fact": null, "hint": null, "image": null, "intro": true, "kicker": "Hollis House", "length": 1.2, "state": {}, "title": "The hall, \u003cem\u003eas it is.\u003c/em\u003e"}, {"at": [0.38, 0.62], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": "Open plan", "length": 1.2, "state": {}, "title": "One room, \u003cem\u003ewindows on two sides.\u003c/em\u003e"}, {"at": [0.74, 0.98], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": "The light", "length": 1.2, "state": {}, "title": "Dinner for ten, \u003cem\u003elight till late.\u003c/em\u003e"}]}</script>
+</section>
+</div><div class="ss-panel">
+<section class="ss-block"><div class="ss-wrap">
+<div class="ss-head ss-reveal"><span class="ss-kicker">The house</span><h2 class="ss-display">Four bedrooms, <em>one long room.</em></h2></div>  <div class="ss-features ss-features--3">
+    <div class="ss-feature ss-reveal">
+<span class="ss-tag">Ground floor</span>      <div><h3>Kitchen and living</h3><p>One open room running the full depth of the house, with the garden on three sides.</p></div>
+    </div>
+    <div class="ss-feature ss-reveal">
+<span class="ss-tag">First floor</span>      <div><h3>Four bedrooms</h3><p>Two with garden views, one with a study nook, all with built-in storage.</p></div>
+    </div>
+    <div class="ss-feature ss-reveal">
+<span class="ss-tag">Outside</span>      <div><h3>Garden and terrace</h3><p>A south-facing terrace off the kitchen and a lawn beyond it.</p></div>
+    </div>
+  </div>
+</div></section>
+
+</div><div class="ss-panel">
+<section class="ss-block ss-band"><div class="ss-wrap ss-stats ss-stats--4">
+  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="4">4</div><div class="ss-l">Bedrooms</div></div>
+  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="182">182<sup>m²</sup></div><div class="ss-l">Floor area</div></div>
+  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="1">1</div><div class="ss-l">Scan, no renders</div></div>
+  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="0">0</div><div class="ss-l">API keys</div></div>
+</div></section>
+
+</div><div class="ss-panel ss-surface-dark">
+<section class="ss-block ss-cta ss-surface-dark" id="viewing">
+  <div class="ss-cta__in">
+<span class="ss-kicker ss-reveal">Viewings</span>    <h2 class="ss-display ss-reveal">See it <em>in person.</em></h2>
+<a class="ss-btn ss-btn--hot ss-reveal" href="#">Book a viewing <span class="ss-arrow">→</span></a>  </div>
+</section>
+
+</div></main>
+
+<footer class="ss-footer"><div class="ss-wrap ss-footer__in">
+  <span>© Hollis House. A concept site; the house details are fictional, the rooms are a real scan.</span>
+  <span>Rooms reconstructed locally from footage by Kindel Media on Pexels · Reconstructed locally with gsplat from walkthrough footage by Kindel Media (Pexels)</span>
+</div></footer>
+
+<script>window.__ssScroll = { speed: 1.0 };</script>
+<script type="module" src="runtime/index.js"></script>
+<script>
+  // Clips in phones play while their panel is on screen and rest while it isn't: browsers may hold a muted
+  // autoplay until the element is seen, and a stack of looping videos is wasted work off screen.
+  (function () {
+    var clips = document.querySelectorAll(".ss-phone__screen > video");
+    if (!clips.length || !("IntersectionObserver" in window)) return;
+    function play(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    function inView(v) { var r = v.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; }
+    var io = new IntersectionObserver(function (entries) {
+      if (document.hidden) return;   // a hidden page reports nothing as visible; leave the clips as they are
+      entries.forEach(function (e) { if (e.isIntersecting) play(e.target); else e.target.pause(); });
+    }, { threshold: 0.05 });
+    clips.forEach(function (v) { io.observe(v); });
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) clips.forEach(function (v) { if (inView(v)) play(v); });
+    });
+  })();
+</script>
+</body>
+</html>

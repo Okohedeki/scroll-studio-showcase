@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Hushwell</title>
 <meta name="description" content="Personal sleep care, with a plan that changes as you do. A concept site."><meta name="generator" content="Scroll Studio">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%232b1f16%22/%3E%3Cpath%20d%3D%22M4%2015c2.5%200%204-1.6%204-4s1.5-4%204-4%204%201.6%204%204%201.5%204%204%204M4%2019h16%22%20fill%3D%22none%22%20stroke%3D%22%23ffffff%22%20stroke-width%3D%221.8%22%20transform%3D%22translate%284%204%29%22/%3E%3C/svg%3E">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root {
@@ -34,6 +35,84 @@
 .ss-surface-accent { --btn-bg: #2b1f16; --btn-ink: #ffffff; --bg: #f3d8d4; --bg-2: #30261f; --ink: #241b14; --ink-rgb: 36, 27, 20; --bg-rgb: 243, 216, 212; --ink-2: rgba(36, 27, 20, 1.0); --ink-3: rgba(36, 27, 20, 1.0); --line: rgba(36, 27, 20, .14); --accent-text: #241b14; --em-color: #241b14; color-scheme: light; background: var(--bg); color: var(--ink); }
 </style>
 <link rel="stylesheet" href="runtime/studio.css">
+<style>
+  /* A section's backdrop: the image fills the panel (or a wrapper in the flow layout); the section itself goes clear,
+     whatever surface it has. */
+  .ss-backdrop { background-size: cover; background-position: center; }
+  .ss-backdrop > section, .ss-backdrop > section[class*=ss-surface-], .ss-backdrop .ss-stage, .ss-backdrop .ss-band { background: transparent; }
+  /* A type scene set as a display line (size: display) rather than a passage: bigger, centred, balanced. */
+  .ss-scene.ss-type--display .ss-type__text { font-size: clamp(46px, 8.2vw, 150px); text-align: center; letter-spacing: -.04em; line-height: 1; max-width: 12em; }
+  /* On a dark surface the rolling word takes the surface's <em> colour, which is checked for contrast; the raw accent is not. */
+  .ss-surface-dark .ss-type--swap .roll { color: var(--em-color); }
+  /* A phone can play a clip instead of showing a screenshot. */
+  .ss-phone__screen > video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* Poses: how a product section's phone sits (ProductBlock.pose). The panel clips at its edges (overflow: clip), so a
+     phone pushed past them is cut off there. Each pose is a different composition, so a run of product panels reads
+     as different screens rather than one screen seven times. */
+  .ss-pose--rise.ss-product { align-items: flex-start; padding-top: clamp(100px, 13vh, 130px); padding-bottom: 0; }
+  .ss-pose--rise .ss-product__in { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 0; }
+  .ss-pose--rise .ss-product__copy { order: 1; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .ss-pose--rise .ss-lede { max-width: 58ch; }
+  .ss-pose--rise .ss-pills, .ss-pose--rise .ss-btns { justify-content: center; }
+  .ss-pose--rise .ss-product__media { order: 2; width: 100%; min-height: 0; height: max(30svh, 290px); margin-top: 28px; place-items: start center; }
+  .ss-pose--rise .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(230px, 21vw, 330px); transform: translate(-50%, calc(var(--float, 0) * -22px)); }
+  .ss-pose--close .ss-product__media { min-height: 0; height: min(62svh, 640px); place-items: start center; }
+  .ss-pose--close .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(300px, 30vw, 440px); transform: translate(-50%, calc(var(--float, 0) * -26px)); }
+  .ss-pose--lean .ss-product__media { min-height: 0; height: min(60svh, 620px); }
+  .ss-pose--lean .ss-phone { position: absolute; bottom: calc(-1 * clamp(90px, 14vh, 160px) - 30%); width: clamp(260px, 24vw, 360px); transform-origin: 50% 100%; }
+  .ss-pose--lean.ss-product--left .ss-phone { left: calc(-1 * var(--gutter) - 2%); transform: rotate(9deg) translateY(calc(var(--float, 0) * -20px)); }
+  .ss-pose--lean.ss-product--right .ss-phone { right: calc(-1 * var(--gutter) - 2%); transform: rotate(-9deg) translateY(calc(var(--float, 0) * -20px)); }
+  .ss-pose--turn .ss-product__media { perspective: 1400px; }
+  .ss-pose--turn .ss-phone { width: clamp(220px, 21vw, 310px); }
+  .ss-pose--turn.ss-product--left .ss-phone { transform: rotateY(-16deg) rotateX(4deg) rotateZ(-3deg) translateY(calc(var(--float, 0) * -24px)); box-shadow: 34px 60px 90px -30px rgba(0, 0, 0, .5), inset 0 0 0 2px #2c2c2c; }
+  .ss-pose--turn.ss-product--right .ss-phone { transform: rotateY(16deg) rotateX(4deg) rotateZ(3deg) translateY(calc(var(--float, 0) * -24px)); box-shadow: -34px 60px 90px -30px rgba(0, 0, 0, .5), inset 0 0 0 2px #2c2c2c; }
+  /* pair: the two phones swap places on a loop, each playing its own clip, the one coming forward lifting over the one
+     going back. Without motion they hold the front and back positions. */
+  .ss-pose--pair .ss-product__media { min-height: min(70vh, 720px); }
+  .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind { position: absolute; left: 50%; top: 50%; animation: 16s cubic-bezier(.45, 0, .25, 1) infinite; }
+  .ss-pose--pair .ss-product__media > .ss-phone { z-index: 2; transform: translate(-64%, -50%); animation-name: ss-pair-a; }
+  .ss-pose--pair .ss-phone-behind { z-index: 1; transform: translate(-22%, -56%) rotate(9deg) scale(.9); animation-name: ss-pair-b; }
+  @keyframes ss-pair-a {
+    0%, 42% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+    46% { transform: translate(-43%, -40%) rotate(4deg) scale(.94); }
+    50%, 92% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+    96% { transform: translate(-43%, -66%) rotate(4deg) scale(.96); }
+    100% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+  }
+  @keyframes ss-pair-b {
+    0%, 42% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+    46% { transform: translate(-43%, -66%) rotate(4deg) scale(.96); }
+    50%, 92% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+    96% { transform: translate(-43%, -40%) rotate(4deg) scale(.94); }
+    100% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind { animation: none; } }
+  .ss-product__stats { display: flex; flex-wrap: wrap; gap: 18px 44px; margin: 30px 0 10px; }
+  /* A hero can hold the app too: the phone rises from the bottom edge under the copy and sinks as the hero is left. */
+  .ss-hero--device { flex-direction: column; justify-content: flex-start; padding-top: clamp(110px, 14vh, 150px); padding-bottom: 0; gap: clamp(24px, 4vh, 44px); }
+  .ss-hero--device .ss-hero__in { flex: none; }
+  .ss-hero__phone { position: relative; width: 100%; height: max(26svh, 230px); flex: none; }
+  .ss-hero__phone .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(230px, 22vw, 340px); transform: translate(-50%, calc(var(--hero-p, 0) * 40px)); }
+  .ss-product__stats .ss-v { font-size: clamp(40px, 4.2vw, 72px); }
+  .ss-product__stats .ss-l { margin-top: 4px; }
+  @media (max-width: 900px) {
+    .ss-pose--rise.ss-product { padding-top: 100px; }
+    .ss-pose--rise .ss-product__media { height: max(34svh, 250px); }
+    .ss-pose--rise .ss-phone { width: min(64vw, 300px); }
+    .ss-pose--close .ss-product__media, .ss-pose--lean .ss-product__media { order: 2; height: 44svh; }
+    .ss-pose--close .ss-phone { width: min(76vw, 340px); }
+    .ss-pose--lean .ss-phone { width: min(66vw, 320px); }
+    .ss-pose--lean.ss-product--left .ss-phone, .ss-pose--lean.ss-product--right .ss-phone { top: 24px; bottom: auto; left: 50%; right: auto; transform: translateX(-50%) rotate(-7deg); transform-origin: 50% 0; }
+    .ss-pose--pair .ss-product__media { min-height: 0; height: clamp(420px, 66svh, 600px); }
+    .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind .ss-phone { width: min(50vw, 230px); }
+    .ss-pose--turn .ss-phone { width: min(60vw, 280px); }
+    .ss-product__stats { gap: 12px 28px; }
+    .ss-hero--device { padding-top: 100px; gap: 22px; }
+    .ss-hero__phone { height: max(22svh, 190px); }
+    .ss-hero__phone .ss-phone { width: min(60vw, 280px); }
+  }
+  .ss-h1, .ss-display { text-wrap: balance; }
+</style>
 <style>
   html.ss-loading, html.ss-loading body { overflow: hidden; height: 100%; }
   .ss-loader { position: fixed; inset: 0; z-index: 1000; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
@@ -68,13 +147,15 @@
 <a class="ss-btn" href="#start">Start your plan <span class="ss-arrow">→</span></a></div></header>
 
 <main>
-<div class="ss-panel ss-panel--hero"><section class="ss-block ss-hero ss-hero--center ss-surface-dark ss-hero--media">
+<div class="ss-panel ss-panel--hero">
+<section class="ss-block ss-hero ss-hero--center ss-surface-dark ss-hero--media">
 <div class="ss-hero__media"><img src="assets/_media/b3664503e915.webp" alt="" fetchpriority="high"></div><div class="ss-hero__shade"></div>  <div class="ss-hero__in">
 <span class="ss-badge">Sleep consults now open in six states</span><h1 class="ss-h1">Sleep care, built around you.</h1><p class="ss-lede">A sleep clinician, a plan for your nights, and support that changes as you do.</p>    <div class="ss-btns"><a class="ss-btn ss-btn--hot" href="#start">Start your plan <span class="ss-arrow">→</span></a><a class="ss-btn" href="#plan">How it works</a></div>
   </div>
 </section>
 
-</div><div class="ss-panel"><section class="ss-block ss-product ss-product--left" id="plan"><div class="ss-wrap ss-product__in">
+</div><div class="ss-panel">
+<section class="ss-block ss-product ss-product--left ss-pose--beside" id="plan"><div class="ss-wrap ss-product__in">
   <div class="ss-product__media ss-product__media--both" data-float>
 <img class="ss-product__img" src="assets/_media/3abdf0ae057f.webp" alt="" loading="lazy"><div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
   <div class="ss-phone__bar"><span>21:48</span><i></i></div>
@@ -87,12 +168,14 @@
 <p class="ss-note">From $12 a month · concept pricing</p>  </div>
 </div></section>
 
-</div><div class="ss-panel"><section class="ss-block ss-strip">
+</div><div class="ss-panel">
+<section class="ss-block ss-strip">
 <div class="ss-wrap ss-head ss-strip__head ss-reveal"><span class="ss-kicker">In practice</span><h2 class="ss-h2">Small changes, every night.</h2><p class="ss-lede">What a plan looks like once it is part of your week.</p></div>  <div class="ss-strip__track" data-strip>
 <figure><img src="assets/_media/24bff2daeb2e.webp" alt="Read on paper, not a screen." loading="lazy"><figcaption>Read on paper, not a screen.</figcaption></figure><figure><img src="assets/_media/a9da4dba45a7.webp" alt="Caffeine stops at two." loading="lazy"><figcaption>Caffeine stops at two.</figcaption></figure><figure><img src="assets/_media/86eca0d5f1a8.webp" alt="Morning light, ten minutes." loading="lazy"><figcaption>Morning light, ten minutes.</figcaption></figure><figure><img src="assets/_media/b9b58f5c9d15.webp" alt="Dark, cool and quiet." loading="lazy"><figcaption>Dark, cool and quiet.</figcaption></figure><figure><img src="assets/_media/1be99f1b6959.webp" alt="Park the worries on paper." loading="lazy"><figcaption>Park the worries on paper.</figcaption></figure><figure><img src="assets/_media/1407077180a2.webp" alt="Wind down, don&#39;t work out." loading="lazy"><figcaption>Wind down, don&#39;t work out.</figcaption></figure>  </div>
 </section>
 
-</div><div class="ss-panel ss-surface-accent"><section class="ss-block ss-product ss-product--right ss-surface-accent"><div class="ss-wrap ss-product__in">
+</div><div class="ss-panel ss-surface-accent">
+<section class="ss-block ss-product ss-product--right ss-pose--beside ss-surface-accent"><div class="ss-wrap ss-product__in">
   <div class="ss-product__media" data-float>
 <div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
   <div class="ss-phone__bar"><span>06:12</span><i></i></div>
@@ -105,13 +188,15 @@
 <p class="ss-note">Coming soon</p>  </div>
 </div></section>
 
-</div><div class="ss-panel ss-surface-dark ss-panel--hero"><section class="ss-block ss-hero ss-hero--center ss-surface-dark">
+</div><div class="ss-panel ss-surface-dark ss-panel--hero">
+<section class="ss-block ss-hero ss-hero--center ss-surface-dark">
 <div class="ss-hero__media"><img src="assets/_media/fe7a1f3530a8.webp" alt="" fetchpriority="high"></div><div class="ss-hero__shade"></div>  <div class="ss-hero__in">
 <span class="ss-badge">Sleep assistant</span><h2 class="ss-h1">Ask anything, even at 3 a.m.</h2><p class="ss-lede">A private assistant for the questions that come up at night, with a clinician one message away when it matters.</p>    <div class="ss-btns"><a class="ss-btn ss-btn--hot" href="#start">Try the assistant <span class="ss-arrow">→</span></a></div>
   </div>
 </section>
 
-</div><div class="ss-panel"><section class="ss-block ss-orbit"><div class="ss-wrap ss-orbit__in">
+</div><div class="ss-panel">
+<section class="ss-block ss-orbit"><div class="ss-wrap ss-orbit__in">
   <div class="ss-orbit__copy ss-reveal">
 <span class="ss-kicker">End-to-end care</span>    <h2 class="ss-h2">From the first bad night to rested.</h2>
 <p class="ss-lede">Start with a consult and a plan. As Hushwell grows, the rest of your sleep care joins it in one place.</p>  </div>
@@ -120,12 +205,14 @@
 <div class="ss-orbit__item is-primary"><b>Sleep consults</b><small>Live</small></div><div class="ss-orbit__item is-primary"><b>Prescriptions</b><small>Live</small></div><div class="ss-orbit__item"><b>Home sleep tests</b><small>Developing</small></div><div class="ss-orbit__item"><b>CBT-I coaching</b><small>Developing</small></div><div class="ss-orbit__item"><b>Wearables</b><small>Roadmap</small></div><div class="ss-orbit__item"><b>Partner care</b><small>Roadmap</small></div><div class="ss-orbit__item"><b>Bloodwork</b><small>Roadmap</small></div>  </div>
 </div></section>
 
-</div><div class="ss-panel"><section class="ss-block ss-faq"><div class="ss-wrap ss-faq__in">
+</div><div class="ss-panel">
+<section class="ss-block ss-faq"><div class="ss-wrap ss-faq__in">
   <div class="ss-head ss-reveal"><span class="ss-kicker">Questions</span><h2 class="ss-h2">Before you start.</h2></div>
   <div class="ss-faq__list">
 <details class="ss-reveal" open><summary>Who builds my plan?</summary><p>A licensed sleep clinician reviews your answers and builds the plan. The app helps you follow it; it never diagnoses on its own.</p></details><details class="ss-reveal"><summary>Do I need a wearable?</summary><p>No. A sleep diary in the app is enough to start. If you already have a tracker, you can connect it.</p></details><details class="ss-reveal"><summary>Can I cancel any time?</summary><p>Yes. Plans are monthly and you can cancel in the app.</p></details><details class="ss-reveal"><summary>Is this a replacement for a doctor?</summary><p>No. If something needs in-person care, your clinician will tell you and help you find it.</p></details>  </div>
 </div></section>
-</div><div class="ss-panel ss-surface-dark"><section class="ss-block ss-cta ss-surface-dark" id="start">
+</div><div class="ss-panel ss-surface-dark">
+<section class="ss-block ss-cta ss-surface-dark" id="start">
   <div class="ss-cta__in">
 <span class="ss-kicker ss-reveal">Start tonight</span>    <h2 class="ss-display ss-reveal">Rest is a plan.</h2>
 <a class="ss-btn ss-btn--hot ss-reveal" href="#">Start your plan <span class="ss-arrow">→</span></a>  </div>
@@ -138,6 +225,25 @@
   <span>Photographs generated locally with Z-Image Turbo</span>
 </div></footer>
 
+<script>window.__ssScroll = { speed: 1.0 };</script>
 <script type="module" src="runtime/index.js"></script>
+<script>
+  // Clips in phones play while their panel is on screen and rest while it isn't: browsers may hold a muted
+  // autoplay until the element is seen, and a stack of looping videos is wasted work off screen.
+  (function () {
+    var clips = document.querySelectorAll(".ss-phone__screen > video");
+    if (!clips.length || !("IntersectionObserver" in window)) return;
+    function play(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    function inView(v) { var r = v.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; }
+    var io = new IntersectionObserver(function (entries) {
+      if (document.hidden) return;   // a hidden page reports nothing as visible; leave the clips as they are
+      entries.forEach(function (e) { if (e.isIntersecting) play(e.target); else e.target.pause(); });
+    }, { threshold: 0.05 });
+    clips.forEach(function (v) { io.observe(v); });
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) clips.forEach(function (v) { if (inView(v)) play(v); });
+    });
+  })();
+</script>
 </body>
 </html>
