@@ -81,6 +81,14 @@ pre .tx-cursor, .tx-banner .tx-cursor { display: none; }
 .tx-h--1 { text-transform: uppercase; letter-spacing: .02em; }
 .tx-hash { color: var(--dim); }
 .tx-p { max-width: 72ch; }
+/* theme.art in characters: a smaller, square-ish cell so the picture has detail */
+.tx-artwork { font: 400 8px/1 "JetBrains Mono", monospace; letter-spacing: 0; color: var(--hi); white-space: pre; overflow: hidden;
+  font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0;
+  margin: .5lh 0 .25lh; min-height: 8lh; max-width: 100%; }
+.tx-artwork__cap { margin-bottom: 1lh; }
+html.tx-has-art .tx-render { font-size: 8px; line-height: 1; letter-spacing: 0; }
+@media (max-width: 760px) { .tx-artwork { font-size: 5.5px; } }
+.tx-render { font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }
 .tx-banner { letter-spacing: -.06em; font: 400 var(--tx-size)/.96 "JetBrains Mono", monospace; color: var(--hi); white-space: pre; overflow: hidden; margin: .5lh 0 1lh; }
 .tx-banner:empty { display: none; }
 
@@ -398,7 +406,8 @@ html.style-ascii-art img { filter: sepia(1) saturate(2) hue-rotate(-12deg); }
 
   <div class="tx-out">
     <pre class="tx-l tx-banner" aria-hidden="true"></pre>
-<p class="tx-l tx-dim">New · Halcyon 2.0</p>    <h1 class="tx-l tx-h tx-h--1"><span class="tx-hash" aria-hidden="true"># </span>Your mornings, <em>back.</em></h1>
+<pre class="tx-l tx-artwork" role="img" aria-label="ASCII art: morning coffee, steam rising"></pre>
+    <p class="tx-l tx-dim tx-artwork__cap">// morning coffee, steam rising · 29 frames, looping</p><p class="tx-l tx-dim">New · Halcyon 2.0</p>    <h1 class="tx-l tx-h tx-h--1"><span class="tx-hash" aria-hidden="true"># </span>Your mornings, <em>back.</em></h1>
 <p class="tx-l tx-p">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>    <p class="tx-l tx-btns"><a class="tx-btn tx-btn--hot" href="#get">[ Try it free ]</a><a class="tx-btn" href="../../looks/">[ See the looks ]</a></p>
   </div>
 
@@ -547,6 +556,7 @@ html.style-ascii-art img { filter: sepia(1) saturate(2) hue-rotate(-12deg); }
 </div></footer>
 
 <script>window.__ssScroll = { speed: 1.0 };</script>
+<script type="application/json" id="ss-art">{"fps": 12, "frames": 29, "h": 165, "invert": false, "label": "morning coffee, steam rising", "sheet": "assets/_art/12a698f52008.png", "w": 220}</script>
 <script type="module" src="../../runtime/index.js"></script>
 <nav class="ss-looks" aria-label="Looks">
   <a href="../art-deco/" aria-label="Previous look">←</a>
