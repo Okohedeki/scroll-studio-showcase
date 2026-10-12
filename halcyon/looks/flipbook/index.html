@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en" data-style="flipbook" class="mode-dark layout-flow style-flipbook">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Halcyon</title>
+<meta name="description" content="The calendar that guards your mornings. One page, built in twenty styles by Scroll Studio."><meta name="generator" content="Scroll Studio">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23c4452e%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23fff7ee%22%3EH%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root {
+  --bg: #1f2427;
+  --bg-2: #262c30;
+  --ink: #ece6d8;
+  --ink-rgb: 236, 230, 216;
+  --bg-rgb: 31, 36, 39;
+  --ink-2: rgba(236, 230, 216, 0.69);
+  --ink-3: rgba(236, 230, 216, 0.55);
+  --line: rgba(236, 230, 216, .13);
+  --accent: #c4452e;
+  --accent-2: #e0a24a;
+  --accent-ink: #fff7ee;
+  --accent-text: #f0b464;
+  --accent-rgb: 196, 69, 46;
+  --font-display: "Caveat", system-ui, sans-serif;
+  --font-body: "Kalam", system-ui, sans-serif;
+  --font-mono: "Courier Prime", ui-monospace, monospace;
+  --display-weight: 700;
+  --em-style: normal;
+  --radius: 3px;
+  color-scheme: dark;
+}
+.ss-surface-dark { --btn-bg: #c4452e; --btn-ink: #ffffff; --bg: #0c0e10; --bg-2: #1f2427; --ink: #ece6d8; --ink-rgb: 236, 230, 216; --bg-rgb: 12, 14, 16; --ink-2: rgba(236, 230, 216, 0.68); --ink-3: rgba(236, 230, 216, 0.53); --line: rgba(236, 230, 216, .14); --accent-text: #ce6f5a; --em-color: #e0a24a; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #c4452e; --btn-ink: #ffffff; --bg: #ece6d8; --bg-2: #343739; --ink: #1f2427; --ink-rgb: 31, 36, 39; --bg-rgb: 236, 230, 216; --ink-2: rgba(31, 36, 39, 1.0); --ink-3: rgba(31, 36, 39, 1.0); --line: rgba(31, 36, 39, .14); --accent-text: #1f2427; --em-color: #1f2427; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #ece6d8; --btn-ink: #000000; --bg: #4f4430; --bg-2: #e3dcce; --ink: #ece6d8; --ink-rgb: 236, 230, 216; --bg-rgb: 79, 68, 48; --ink-2: rgba(236, 230, 216, 1.0); --ink-3: rgba(236, 230, 216, 1.0); --line: rgba(236, 230, 216, .14); --accent-text: #ece6d8; --em-color: #ece6d8; color-scheme: dark; background: var(--bg); color: var(--ink); }
+</style>
+<link rel="stylesheet" href="../../runtime/studio.css">
+<style id="ss-style">
+/* Flipbook: one pad of animation paper on a dark desk, held at the top by a peg bar. The runtime
+   (runtime/src/styles/flipbook.ts) draws the pad and its pages on canvas and pins each section's text page over it
+   (html.fb-on); without JavaScript, and with reduced motion, every section is one finished page on the desk. */
+
+html.style-flipbook {
+  --fb-paper: #f7f3ea;
+  --fb-paper-2: #ece6d6;
+  --fb-lead: #2f2f33;
+  --fb-lead-2: #55555c;
+  --fb-blue: #3461b0;
+  --fb-red: #b23a25;
+  --fb-red-2: #c4452e;
+  --fb-desk: #1f2427;
+  --fb-x: 0px; --fb-y: 0px; --fb-w: 100vw; --fb-h: 100vh;
+  scroll-padding-top: 60px;
+}
+html.style-flipbook body {
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 46%, rgba(255, 244, 214, .09), transparent 70%),
+    radial-gradient(ellipse 130% 80% at 50% 110%, rgba(0, 0, 0, .55), transparent 60%),
+    var(--fb-desk);
+  background-attachment: fixed;
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+html.style-flipbook .ss-nav { display: none; }
+html.style-flipbook em { color: var(--fb-red-2); font-style: normal; }
+html.style-flipbook .ss-footer { position: relative; z-index: 7; padding: 22px 0 28px; font-family: var(--font-body); font-size: 13.5px; color: rgba(236, 230, 216, .72); background: var(--fb-desk); }
+
+/* ---------------------------------------------------------------- the lid band */
+.fb-lid { position: fixed; inset: 0 0 auto 0; z-index: 30; display: flex; align-items: center; gap: 22px; padding: 12px var(--gutter); padding-top: max(12px, env(safe-area-inset-top));
+  background: linear-gradient(rgba(31, 36, 39, .96), rgba(31, 36, 39, .7) 70%, rgba(31, 36, 39, 0)); }
+.fb-lid__mark { font-family: var(--font-display); font-weight: 700; font-size: 30px; line-height: 1; color: var(--ink); }
+.fb-count { font-family: var(--font-mono); font-size: 13px; color: rgba(236, 230, 216, .7); letter-spacing: .04em; display: none; }
+.fb-count__of { margin-left: 6px; opacity: .7; }
+.fb-lid__nav { display: flex; gap: 22px; margin-left: auto; font-size: 15px; }
+.fb-lid__nav a { color: rgba(236, 230, 216, .8); padding: 4px 0; background: linear-gradient(currentColor, currentColor) 0 100% / 0 1.5px no-repeat; transition: background-size .3s; }
+.fb-lid__nav a:hover { color: var(--ink); background-size: 100% 1.5px; }
+.fb-lid__mark + .fb-count + .fb-lid__cta { margin-left: auto; }
+
+/* ---------------------------------------------------------------- drawn boxes (buttons) */
+.fb-boxes { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 22px; }
+.fb-box { position: relative; display: inline-flex; align-items: center; gap: 8px; padding: 9px 18px 8px; font-family: var(--font-body); font-weight: 700; font-size: 16px; line-height: 1.1;
+  color: var(--fb-lead); background: var(--fb-paper); border: 2px solid var(--fb-lead); border-radius: 4px 9px 5px 8px / 9px 4px 8px 5px; transition: transform .2s; white-space: nowrap; }
+.fb-box::after { content: ""; position: absolute; inset: 4px -6px -6px 4px; z-index: -1; border-radius: inherit;
+  background: repeating-linear-gradient(-45deg, rgba(47, 47, 51, .55) 0 1.5px, transparent 1.5px 5px); transition: transform .2s; }
+.fb-box:hover { transform: translate(-1px, -2px) rotate(-.5deg); }
+.fb-box:hover::after { transform: translate(2px, 2px); }
+.fb-box--hot { color: #fff7ee; background: var(--fb-red); border-color: #7a2414; }
+.fb-box--hot::after { background: repeating-linear-gradient(-45deg, rgba(122, 36, 20, .7) 0 1.5px, transparent 1.5px 5px); }
+.fb-lid .fb-box { padding: 7px 14px 6px; font-size: 14px; color: #fff7ee; }
+
+/* ---------------------------------------------------------------- one page (the flow layout) */
+.fb-sec { padding: clamp(70px, 10vh, 120px) var(--gutter) 0; }
+.fb-sec:first-of-type { padding-top: 110px; }
+.fb-sec:last-of-type { padding-bottom: 90px; }
+.fb-page { position: relative; margin: 0 auto; max-width: 1060px; min-height: min(640px, 80vh); display: grid; grid-template-columns: 44fr 56fr; gap: 0 28px;
+  padding: 58px 40px 40px 46px; background: var(--fb-paper); color: var(--fb-lead); border-radius: 2px 2px 4px 4px;
+  box-shadow: 0 1px 0 #d9d2c0, 0 2px 0 var(--fb-paper-2), 0 3px 0 #d6cfbd, 0 4px 0 var(--fb-paper-2), 0 5px 0 #d2cab8, 0 24px 50px -20px rgba(0, 0, 0, .8); }
+.fb-page::before { content: ""; position: absolute; top: 16px; left: 50%; width: 120px; height: 14px; margin-left: -60px;
+  background: radial-gradient(circle at 50% 50%, var(--fb-desk) 0 6px, transparent 6.5px) 50% 0 / 14px 14px no-repeat,
+              radial-gradient(ellipse 13px 5px at 50% 50%, var(--fb-desk) 0 99%, transparent 100%) 0 50% / 30px 14px no-repeat,
+              radial-gradient(ellipse 13px 5px at 50% 50%, var(--fb-desk) 0 99%, transparent 100%) 100% 50% / 30px 14px no-repeat; }
+.fb-text { position: relative; z-index: 1; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+.fb-field { position: relative; min-height: 260px; border: 1.5px dashed rgba(52, 97, 176, .35); border-radius: 2px; }
+.fb-field canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.fb-img { display: none; }
+
+/* lettering */
+.fb-label { align-self: flex-start; font-family: var(--font-body); font-weight: 700; font-size: 14px; letter-spacing: .12em; text-transform: uppercase; color: var(--fb-blue);
+  padding-bottom: 3px; margin-bottom: 10px; background: linear-gradient(var(--fb-blue), var(--fb-blue)) 0 100% / 100% 1.5px no-repeat; }
+.fb-h { font-family: var(--font-display); font-weight: 700; font-size: clamp(44px, 4.6vw, 76px); line-height: .95; letter-spacing: -.005em; color: var(--fb-lead); text-wrap: balance; }
+.fb-h--hero { font-size: clamp(54px, 6vw, 96px); line-height: .9; }
+.fb-h--sm { font-size: clamp(38px, 3.6vw, 58px); }
+.fb-h em { color: var(--fb-red-2); }
+.fb-body { margin-top: 16px; font-size: clamp(16.5px, 1.2vw, 18.5px); line-height: 1.5; color: var(--fb-lead); max-width: 40ch; }
+.fb-note { margin-top: 12px; font-size: 14px; color: var(--fb-lead-2); }
+
+/* features: a checklist */
+.fb-list { list-style: none; margin-top: 16px; display: grid; gap: 10px; }
+.fb-list .fb-item { display: grid; grid-template-columns: 26px 1fr; gap: 8px; align-items: start; }
+.fb-tick { font-family: var(--font-display); font-weight: 700; font-size: 28px; line-height: .9; color: var(--fb-red); }
+.fb-item__t { font-family: var(--font-display); font-weight: 700; font-size: 30px; line-height: 1; color: var(--fb-lead); }
+.fb-item__tag { font-family: var(--font-mono); font-weight: 400; font-size: 13px; color: var(--fb-blue); vertical-align: 4px; margin-right: 2px; }
+.fb-list p { margin-top: 3px; font-size: 16px; line-height: 1.42; color: var(--fb-lead); }
+
+/* product tags */
+.fb-tags { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.fb-tags li { font-size: 14.5px; padding: 3px 10px 2px; border: 1.5px solid var(--fb-blue); color: var(--fb-blue); border-radius: 12px 5px 10px 6px / 6px 10px 5px 12px; }
+
+/* stats: counted by hand */
+.fb-tally { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 20px; margin-top: 8px; }
+.fb-tally dd { font-family: var(--font-display); font-weight: 700; font-size: clamp(54px, 5vw, 84px); line-height: .9; color: var(--fb-lead); }
+.fb-tally dd small { font-size: .45em; margin-left: 3px; color: var(--fb-red); }
+.fb-tally dt { font-size: 15px; line-height: 1.3; color: var(--fb-lead); }
+.fb-tally--sm dd { font-size: 40px; }
+
+/* timeline */
+.fb-steps { list-style: none; margin-top: 14px; display: grid; gap: 8px; }
+.fb-steps .fb-item { display: grid; grid-template-columns: 82px 1fr; gap: 10px; }
+.fb-when { font-family: var(--font-mono); font-size: 13px; color: var(--fb-blue); padding-top: 6px; text-transform: uppercase; letter-spacing: .04em; }
+.fb-steps h3 { font-family: var(--font-display); font-weight: 700; font-size: 28px; line-height: 1; }
+.fb-steps p { font-size: 15.5px; line-height: 1.38; margin-top: 2px; }
+
+/* quote */
+.fb-quote blockquote { font-family: var(--font-display); font-weight: 600; font-size: clamp(34px, 3.2vw, 52px); line-height: 1.04; color: var(--fb-lead); text-wrap: balance; }
+.fb-quote figcaption { margin-top: 18px; font-size: 16px; font-weight: 700; color: var(--fb-blue); }
+
+/* faq */
+.fb-faq { margin-top: 12px; display: grid; gap: 10px; }
+.fb-faq summary { list-style: none; font-family: var(--font-display); font-weight: 700; font-size: 28px; line-height: 1; cursor: pointer; }
+.fb-faq summary::-webkit-details-marker { display: none; }
+.fb-faq summary::before { content: "Q. "; font-family: var(--font-mono); font-size: 13px; font-weight: 700; color: var(--fb-red); vertical-align: 5px; }
+.fb-faq p { font-size: 15.5px; line-height: 1.42; margin-top: 4px; }
+
+/* furniture that only the live pad uses */
+.fb-tabs, .fb-pad { display: none; }
+html.style-flipbook .ss-scene, html.style-flipbook main > .ss-block, html.style-flipbook main > div > .ss-block { position: relative; z-index: 6; background: var(--fb-desk); }
+
+/* ---------------------------------------------------------------- the live pad */
+html.fb-on .fb-count { display: inline; }
+html.fb-on main { pointer-events: none; }
+html.fb-on .ss-scene, html.fb-on main > .ss-block, html.fb-on main > div > .ss-block { pointer-events: auto; }
+html.fb-on .fb-sec { padding: 0; }
+html.fb-on .fb-page { position: fixed; z-index: 3; left: var(--fb-x); top: var(--fb-y); width: var(--fb-w); height: var(--fb-h); max-width: none; min-height: 0; margin: 0;
+  background: none; box-shadow: none; border-radius: 0; visibility: hidden; pointer-events: none; }
+html.fb-on .fb-page::before { display: none; }
+html.fb-on .fb-page.is-on { visibility: visible; pointer-events: auto; }
+html.fb-on .fb-field { border: 0; min-height: 0; }
+html.fb-on .fb-list .fb-item:not(.is-cur) p, html.fb-on .fb-steps .fb-item:not(.is-cur) p, html.fb-on .fb-faq .fb-item:not(.is-cur) p { display: none; }
+html.fb-on .fb-item.is-future { visibility: hidden; }
+html.fb-on .fb-steps .fb-item.is-past h3, html.fb-on .fb-faq .fb-item.is-past summary { color: var(--fb-lead-2); }
+html.fb-on [data-fb-write] .sx-ch { visibility: hidden; }
+html.fb-on [data-fb-write] .sx-ch.on { visibility: visible; }
+html.fb-on [data-fb-unit]:not(.on) { visibility: hidden; }
+html.fb-on .fb-tick { visibility: hidden; }
+html.fb-on .fb-item.is-past .fb-tick, html.fb-on .fb-item.is-ticked .fb-tick { visibility: visible; }
+
+.fb-cv { position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; }
+.fb-cv--under { z-index: 2; }
+.fb-cv--fly { z-index: 4; }
+html.fb-on .fb-pad { display: block; position: fixed; inset: 0; z-index: 5; pointer-events: none; transition: transform .6s cubic-bezier(.5, 0, .2, 1), opacity .4s; }
+html.fb-on.fb-away .fb-pad, html.fb-on.fb-away .fb-cv, html.fb-on.fb-away .fb-page.is-on, html.fb-on.fb-away .fb-tabs { opacity: 0; transition: opacity .35s; }
+.fb-peg { position: absolute; left: calc(var(--fb-x) + var(--fb-w) / 2 - min(30%, 210px)); width: min(60%, 420px); top: calc(var(--fb-y) - 12px); height: 22px;
+  background: linear-gradient(#cfd3d6, #8d9398 45%, #5d6368 55%, #a5abb0); border-radius: 4px; box-shadow: 0 4px 10px rgba(0, 0, 0, .45), inset 0 1px 0 rgba(255, 255, 255, .6); }
+.fb-peg i { position: absolute; top: 4px; height: 14px; background: linear-gradient(#e7e9eb, #9aa0a5); border-radius: 7px; box-shadow: 0 1px 2px rgba(0, 0, 0, .5); }
+.fb-peg i:nth-child(1) { left: 8%; width: 46px; } .fb-peg i:nth-child(2) { left: calc(50% - 7px); width: 14px; } .fb-peg i:nth-child(3) { right: 8%; width: 46px; }
+.fb-grip { position: absolute; pointer-events: auto; left: calc(var(--fb-x) + var(--fb-w) - 120px); top: calc(var(--fb-y) + var(--fb-h) - 100px); width: 150px; height: 130px; cursor: grab; touch-action: none; }
+.fb-grip.is-grab { cursor: grabbing; }
+.fb-hint { position: absolute; left: calc(var(--fb-x) + var(--fb-w) - 260px); top: calc(var(--fb-y) + var(--fb-h) + 22px); width: 260px; text-align: right;
+  font-family: var(--font-display); font-size: 21px; color: rgba(236, 230, 216, .78); transition: opacity .5s; }
+.fb-hint span { display: inline-block; animation: fb-nudge 1.6s ease-in-out infinite; }
+html.fb-on.fb-moved .fb-hint { opacity: 0; }
+@keyframes fb-nudge { 50% { transform: translate(3px, 3px); } }
+
+html.fb-on .fb-tabs { display: block; position: fixed; z-index: 1; left: calc(var(--fb-x) + var(--fb-w) - 2px); top: calc(var(--fb-y) + 26px); }
+.fb-tabs ol { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+.fb-tabs li { transition: transform .35s cubic-bezier(.3, 1.2, .5, 1), opacity .3s; }
+.fb-tabs li.is-gone { transform: translateX(-100%); opacity: 0; pointer-events: none; }
+.fb-tabs a { display: block; padding: 5px 12px 4px 20px; min-width: 64px; max-width: 150px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  font-family: var(--font-body); font-size: 13.5px; color: var(--fb-lead); background: var(--fb-paper-2); border-radius: 0 6px 6px 0; box-shadow: 2px 2px 6px rgba(0, 0, 0, .35); }
+.fb-tabs li:nth-child(4n+1) a { background: #f0dfa8; } .fb-tabs li:nth-child(4n+2) a { background: #cfe0d0; }
+.fb-tabs li:nth-child(4n+3) a { background: #f2c9bd; } .fb-tabs li:nth-child(4n+4) a { background: #cfdaee; }
+.fb-tabs li.is-on a { padding-left: 26px; font-weight: 700; }
+.fb-tabs a:hover { padding-left: 24px; }
+
+/* ---------------------------------------------------------------- phones */
+@media (max-width: 760px) {
+  .fb-lid { gap: 12px; padding: 10px 14px; }
+  .fb-lid__mark { font-size: 26px; }
+  .fb-lid__nav { display: none; }
+  .fb-lid__cta { margin-left: auto; }
+  .fb-count { font-size: 11.5px; }
+  .fb-sec { padding: 70px 12px 0; }
+  .fb-page { grid-template-columns: 1fr; grid-template-rows: minmax(200px, 38%) auto; padding: 46px 20px 26px; gap: 16px; }
+  .fb-field { order: -1; }
+  html.fb-on .fb-page { grid-template-rows: 46% 1fr; gap: 10px; padding: 40px 18px 18px; }
+  html.fb-on .fb-text { justify-content: flex-start; }
+  .fb-label { font-size: 12px; margin-bottom: 6px; }
+  .fb-h { font-size: clamp(36px, 10.4vw, 46px); }
+  .fb-h--hero { font-size: clamp(42px, 12.4vw, 54px); }
+  .fb-h--sm { font-size: clamp(32px, 9vw, 40px); }
+  .fb-body { margin-top: 10px; font-size: 15.5px; line-height: 1.42; }
+  .fb-boxes { margin-top: 14px; gap: 10px; }
+  .fb-box { font-size: 14.5px; padding: 8px 13px 7px; }
+  .fb-list { margin-top: 8px; gap: 6px; }
+  .fb-item__t { font-size: 25px; }
+  .fb-list p, .fb-steps p, .fb-faq p { font-size: 14.5px; }
+  .fb-tally { gap: 8px 14px; }
+  .fb-tally dd { font-size: 46px; }
+  .fb-tally dt { font-size: 13.5px; }
+  .fb-steps .fb-item { grid-template-columns: 64px 1fr; }
+  .fb-when { font-size: 11.5px; }
+  .fb-steps h3, .fb-faq summary { font-size: 24px; }
+  .fb-quote blockquote { font-size: 30px; }
+  html.fb-on .fb-tabs { display: none; }
+  .fb-hint { font-size: 18px; left: auto; right: 14px; width: 240px; top: calc(var(--fb-y) + var(--fb-h) + 10px); }
+  .fb-peg { height: 18px; }
+  .fb-peg i { height: 10px; }
+  .fb-peg i:nth-child(1), .fb-peg i:nth-child(3) { width: 30px; }
+  .fb-grip { left: calc(var(--fb-x) + var(--fb-w) - 90px); top: calc(var(--fb-y) + var(--fb-h) - 80px); width: 100px; height: 100px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fb-hint span { animation: none; }
+  .fb-box, .fb-box::after, .fb-tabs li { transition: none; }
+}
+/* lists grow page by page: anchor them to the top so the heading never moves between pages */
+html.fb-on .fb-sec--features .fb-text, html.fb-on .fb-sec--stats .fb-text, html.fb-on .fb-sec--timeline .fb-text, html.fb-on .fb-sec--faq .fb-text { justify-content: flex-start; padding-top: clamp(20px, 7%, 70px); }
+@media (max-width: 760px) {
+  html.fb-on .fb-sec--features .fb-text, html.fb-on .fb-sec--stats .fb-text, html.fb-on .fb-sec--timeline .fb-text, html.fb-on .fb-sec--faq .fb-text { padding-top: 0; }
+}
+/* the stack layout's sliding panels would carry the pages off with them: the pad is one fixed object */
+html.fb-on .ss-panel { position: relative; min-height: 0; display: block; background: none; box-shadow: none; border-radius: 0; }
+html.fb-on .ss-panel > section { transform: none !important; background: transparent; }
+html.fb-on .ss-panel::after { display: none; }
+html.fb-on .ss-panel > .ss-scene, html.fb-on .ss-panel > .ss-block { background: var(--fb-desk); }
+/* a face that is not the page under the thumb shows nothing, whatever its letters were last set to */
+html.fb-on .fb-page:not(.is-on) .sx-ch.on, html.fb-on .fb-page:not(.is-on) [data-fb-unit].on, html.fb-on .fb-page:not(.is-on) .fb-tick { visibility: hidden; }
+
+</style><style>
+  /* A section's backdrop: the image fills the panel (or a wrapper in the flow layout); the section itself goes clear,
+     whatever surface it has. */
+  .ss-backdrop { background-size: cover; background-position: center; }
+  .ss-backdrop > section, .ss-backdrop > section[class*=ss-surface-], .ss-backdrop .ss-stage, .ss-backdrop .ss-band { background: transparent; }
+  /* A type scene set as a display line (size: display) rather than a passage: bigger, centred, balanced. */
+  .ss-scene.ss-type--display .ss-type__text { font-size: clamp(46px, 8.2vw, 150px); text-align: center; letter-spacing: -.04em; line-height: 1; max-width: 12em; }
+  /* On a dark surface the rolling word takes the surface's <em> colour, which is checked for contrast; the raw accent is not. */
+  .ss-surface-dark .ss-type--swap .roll { color: var(--em-color); }
+  /* A phone can play a clip instead of showing a screenshot. */
+  .ss-phone__screen > video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* Poses: how a product section's phone sits (ProductBlock.pose). The panel clips at its edges (overflow: clip), so a
+     phone pushed past them is cut off there. Each pose is a different composition, so a run of product panels reads
+     as different screens rather than one screen seven times. */
+  .ss-pose--rise.ss-product { align-items: flex-start; padding-top: clamp(100px, 13vh, 130px); padding-bottom: 0; }
+  .ss-pose--rise .ss-product__in { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 0; }
+  .ss-pose--rise .ss-product__copy { order: 1; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .ss-pose--rise .ss-lede { max-width: 58ch; }
+  .ss-pose--rise .ss-pills, .ss-pose--rise .ss-btns { justify-content: center; }
+  .ss-pose--rise .ss-product__media { order: 2; width: 100%; min-height: 0; height: max(30svh, 290px); margin-top: 28px; place-items: start center; }
+  .ss-pose--rise .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(230px, 21vw, 330px); transform: translate(-50%, calc(var(--float, 0) * -22px)); }
+  .ss-pose--close .ss-product__media { min-height: 0; height: min(62svh, 640px); place-items: start center; }
+  .ss-pose--close .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(300px, 30vw, 440px); transform: translate(-50%, calc(var(--float, 0) * -26px)); }
+  .ss-pose--lean .ss-product__media { min-height: 0; height: min(60svh, 620px); }
+  .ss-pose--lean .ss-phone { position: absolute; bottom: calc(-1 * clamp(90px, 14vh, 160px) - 30%); width: clamp(260px, 24vw, 360px); transform-origin: 50% 100%; }
+  .ss-pose--lean.ss-product--left .ss-phone { left: calc(-1 * var(--gutter) - 2%); transform: rotate(9deg) translateY(calc(var(--float, 0) * -20px)); }
+  .ss-pose--lean.ss-product--right .ss-phone { right: calc(-1 * var(--gutter) - 2%); transform: rotate(-9deg) translateY(calc(var(--float, 0) * -20px)); }
+  .ss-pose--turn .ss-product__media { perspective: 1400px; }
+  .ss-pose--turn .ss-phone { width: clamp(220px, 21vw, 310px); }
+  .ss-pose--turn.ss-product--left .ss-phone { transform: rotateY(-16deg) rotateX(4deg) rotateZ(-3deg) translateY(calc(var(--float, 0) * -24px)); box-shadow: 34px 60px 90px -30px rgba(0, 0, 0, .5), inset 0 0 0 2px #2c2c2c; }
+  .ss-pose--turn.ss-product--right .ss-phone { transform: rotateY(16deg) rotateX(4deg) rotateZ(3deg) translateY(calc(var(--float, 0) * -24px)); box-shadow: -34px 60px 90px -30px rgba(0, 0, 0, .5), inset 0 0 0 2px #2c2c2c; }
+  /* pair: the two phones swap places on a loop, each playing its own clip, the one coming forward lifting over the one
+     going back. Without motion they hold the front and back positions. */
+  .ss-pose--pair .ss-product__media { min-height: min(70vh, 720px); }
+  .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind { position: absolute; left: 50%; top: 50%; animation: 16s cubic-bezier(.45, 0, .25, 1) infinite; }
+  .ss-pose--pair .ss-product__media > .ss-phone { z-index: 2; transform: translate(-64%, -50%); animation-name: ss-pair-a; }
+  .ss-pose--pair .ss-phone-behind { z-index: 1; transform: translate(-22%, -56%) rotate(9deg) scale(.9); animation-name: ss-pair-b; }
+  @keyframes ss-pair-a {
+    0%, 42% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+    46% { transform: translate(-43%, -40%) rotate(4deg) scale(.94); }
+    50%, 92% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+    96% { transform: translate(-43%, -66%) rotate(4deg) scale(.96); }
+    100% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+  }
+  @keyframes ss-pair-b {
+    0%, 42% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+    46% { transform: translate(-43%, -66%) rotate(4deg) scale(.96); }
+    50%, 92% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+    96% { transform: translate(-43%, -40%) rotate(4deg) scale(.94); }
+    100% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind { animation: none; } }
+  .ss-product__stats { display: flex; flex-wrap: wrap; gap: 18px 44px; margin: 30px 0 10px; }
+  /* A hero can hold the app too: the phone rises from the bottom edge under the copy and sinks as the hero is left. */
+  .ss-hero--device { flex-direction: column; justify-content: flex-start; padding-top: clamp(110px, 14vh, 150px); padding-bottom: 0; gap: clamp(24px, 4vh, 44px); }
+  .ss-hero--device .ss-hero__in { flex: none; }
+  .ss-hero__phone { position: relative; width: 100%; height: max(26svh, 230px); flex: none; }
+  .ss-hero__phone .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(230px, 22vw, 340px); transform: translate(-50%, calc(var(--hero-p, 0) * 40px)); }
+  .ss-product__stats .ss-v { font-size: clamp(40px, 4.2vw, 72px); }
+  .ss-product__stats .ss-l { margin-top: 4px; }
+  @media (max-width: 900px) {
+    .ss-pose--rise.ss-product { padding-top: 100px; }
+    .ss-pose--rise .ss-product__media { height: max(34svh, 250px); }
+    .ss-pose--rise .ss-phone { width: min(64vw, 300px); }
+    .ss-pose--close .ss-product__media, .ss-pose--lean .ss-product__media { order: 2; height: 44svh; }
+    .ss-pose--close .ss-phone { width: min(76vw, 340px); }
+    .ss-pose--lean .ss-phone { width: min(66vw, 320px); }
+    .ss-pose--lean.ss-product--left .ss-phone, .ss-pose--lean.ss-product--right .ss-phone { top: 24px; bottom: auto; left: 50%; right: auto; transform: translateX(-50%) rotate(-7deg); transform-origin: 50% 0; }
+    .ss-pose--pair .ss-product__media { min-height: 0; height: clamp(420px, 66svh, 600px); }
+    .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind .ss-phone { width: min(50vw, 230px); }
+    .ss-pose--turn .ss-phone { width: min(60vw, 280px); }
+    .ss-product__stats { gap: 12px 28px; }
+    .ss-hero--device { padding-top: 100px; gap: 22px; }
+    .ss-hero__phone { height: max(22svh, 190px); }
+    .ss-hero__phone .ss-phone { width: min(60vw, 280px); }
+  }
+  .ss-h1, .ss-display { text-wrap: balance; }
+</style>
+<style>
+  html.ss-loading, html.ss-loading body { overflow: hidden; height: 100%; }
+  .ss-loader { position: fixed; inset: 0; z-index: 1000; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+    background: var(--bg); color: var(--ink); transition: opacity .7s cubic-bezier(.22,.8,.2,1), visibility .7s; }
+  html.ss-loading .ss-loader, .ss-loader.ss-leaving { display: flex; }
+  .ss-loader.ss-leaving { opacity: 0; visibility: hidden; }
+  .ss-loader__name { font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(28px, 3.4vw, 46px); letter-spacing: -.02em; }
+  .ss-loader__bar { width: min(320px, 60vw); height: 2px; background: var(--line); position: relative; overflow: hidden; }
+  .ss-loader__bar i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: scaleX(0); transition: transform .3s; }
+  .ss-loader__pct { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+</style>
+<script>
+  // Lock scrolling from the very first paint; the runtime unlocks it once every scene is ready.
+  // If the runtime can't run at all, open the page anyway after max_wait seconds.
+  document.documentElement.classList.add("ss-loading");
+  window.__ssLoader = { maxWait: 45.0, minTime: 0.6 };
+  setTimeout(function () { document.documentElement.classList.remove("ss-loading"); }, 50000.0);
+</script>
+</head>
+<body>
+<div class="ss-loader" id="ss-loader" role="status" aria-live="polite">
+  <div class="ss-loader__name">Halcyon</div>
+  <div class="ss-loader__bar"><i></i></div>
+  <div class="ss-loader__pct"><span>0</span>%</div>
+</div>
+
+<header class="ss-nav" id="ss-nav"><div class="ss-nav__in">
+  <a class="ss-wordmark" href="#">
+    <span>Halcyon</span>
+  </a>
+  <nav class="ss-nav__links"><a href="#why">Why</a><a href="#features">Features</a><a href="#how">How</a></nav>
+<a class="ss-btn" href="#get">Get Halcyon <span class="ss-arrow">→</span></a></div></header>
+
+<header class="fb-lid">
+  <a class="fb-lid__mark" href="#">Halcyon</a>
+  <span class="fb-count" aria-hidden="true"><span class="fb-count__p">p. 1</span><span class="fb-count__of"></span></span>
+<nav class="fb-lid__nav" aria-label="Sections"><a href="#why">Why</a><a href="#features">Features</a><a href="#how">How</a></nav><a class="fb-box fb-box--hot fb-lid__cta" href="#get">Get Halcyon</a></header>
+<nav class="fb-tabs" aria-label="Index">
+  <ol>
+<li data-fb-tab="0"><a href="#" data-fb-go="0">Start</a></li><li data-fb-tab="1"><a href="#why" data-fb-go="1">Why</a></li><li data-fb-tab="2"><a href="#features" data-fb-go="2">Features</a></li><li data-fb-tab="3"><a href="#app" data-fb-go="3">The app</a></li><li data-fb-tab="4"><a href="#" data-fb-go="4">Numbers</a></li><li data-fb-tab="5"><a href="#how" data-fb-go="5">How</a></li><li data-fb-tab="6"><a href="#" data-fb-go="6">Priya N.</a></li><li data-fb-tab="7"><a href="#" data-fb-go="7">Questions</a></li><li data-fb-tab="8"><a href="#get" data-fb-go="8">The end</a></li>  </ol>
+</nav>
+<div class="fb-pad" id="fb-pad" aria-hidden="true">
+  <div class="fb-peg"><i></i><i></i><i></i></div>
+  <div class="fb-grip" title="Grab the corner to flip"></div>
+  <p class="fb-hint">thumb the corner <span>↘</span> or just scroll</p>
+</div>
+<main>
+<section class="fb-sec fb-sec--hero" data-fb="hero">
+<div class="fb-page">
+  <div class="fb-text">
+
+<span class="fb-label" data-fb-unit>New · Halcyon 2.0</span>  <h1 class="fb-h fb-h--hero" data-fb-write="chars">Your mornings, <em>back.</em></h1>
+<p class="fb-body" data-fb-write="words">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>  <div class="fb-boxes" data-fb-unit><a class="fb-box fb-box--hot" href="#get" data-fb-box>Try it free <span aria-hidden="true">→</span></a><a class="fb-box" href="../../looks/" data-fb-box>See the looks</a></div>
+
+  </div>
+  <div class="fb-field" aria-hidden="true"></div>
+</div>
+</section>
+<section class="fb-sec fb-sec--intro" data-fb="intro" id="why">
+<div class="fb-page">
+  <div class="fb-text">
+
+<span class="fb-label" data-fb-unit>The problem</span>  <h2 class="fb-h" data-fb-write="chars">Calendars fill up <em>from the top.</em></h2>
+<p class="fb-body" data-fb-write="words">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>
+  </div>
+  <div class="fb-field" aria-hidden="true"></div>
+</div>
+</section>
+<section class="fb-sec fb-sec--features" data-fb="features" id="features">
+<div class="fb-page">
+  <div class="fb-text">
+
+<span class="fb-label" data-fb-unit>What it does</span><h2 class="fb-h fb-h--sm" data-fb-write="chars">Three rules, <em>kept for you.</em></h2>  <ol class="fb-list">
+    <li class="fb-item" data-fb-item="0" data-fb-tag="01">
+      <span class="fb-tick" aria-hidden="true">✓</span>
+      <div><h3 class="fb-item__t" data-fb-write="chars"><span class="fb-item__tag">01</span> Focus first</h3><p data-fb-write="words">Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p></div>
+    </li>
+    <li class="fb-item" data-fb-item="1" data-fb-tag="02">
+      <span class="fb-tick" aria-hidden="true">✓</span>
+      <div><h3 class="fb-item__t" data-fb-write="chars"><span class="fb-item__tag">02</span> Smart batching</h3><p data-fb-write="words">Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p></div>
+    </li>
+    <li class="fb-item" data-fb-item="2" data-fb-tag="03">
+      <span class="fb-tick" aria-hidden="true">✓</span>
+      <div><h3 class="fb-item__t" data-fb-write="chars"><span class="fb-item__tag">03</span> Polite no</h3><p data-fb-write="words">Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p></div>
+    </li>
+  </ol>
+
+  </div>
+  <div class="fb-field" aria-hidden="true"></div>
+</div>
+</section>
+<section class="fb-sec fb-sec--product" data-fb="product" id="app">
+<div class="fb-page">
+  <div class="fb-text">
+
+<span class="fb-label" data-fb-unit>The app</span>  <h2 class="fb-h" data-fb-write="chars">Pick a slot, <em>keep the morning.</em></h2>
+<p class="fb-body" data-fb-write="words">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><ul class="fb-tags" data-fb-unit><li data-fb-box>iPhone</li><li data-fb-box>Android</li><li data-fb-box>Web</li><li data-fb-box>Google and Outlook</li></ul>  
+<script type="application/json" class="fb-device">{"app": "Halcyon", "button": "Send these times", "label": "Best times", "options": ["Tue 2:30 pm", "Wed 4:00 pm", "Thu 1:00 pm"], "selected": "Tue 2:30 pm", "time": "9:41", "title": "Coffee with Sam"}</script>
+  </div>
+  <div class="fb-field" aria-hidden="true"></div>
+</div>
+</section>
+<section class="fb-sec fb-sec--stats" data-fb="stats">
+<div class="fb-page">
+  <div class="fb-text">
+
+  <span class="fb-label" data-fb-unit>Counted by hand</span>
+  <dl class="fb-tally">
+<div class="fb-item" data-fb-item="0" data-fb-value="11" data-fb-unit-label="h"><dd data-fb-write="chars">11<small>h</small></dd><dt data-fb-write="words">Focus hours kept per week</dt></div><div class="fb-item" data-fb-item="1" data-fb-value="38" data-fb-unit-label="%"><dd data-fb-write="chars">38<small>%</small></dd><dt data-fb-write="words">Fewer meeting fragments</dt></div><div class="fb-item" data-fb-item="2" data-fb-value="2" data-fb-unit-label="min"><dd data-fb-write="chars">2<small>min</small></dd><dt data-fb-write="words">To set up</dt></div><div class="fb-item" data-fb-item="3" data-fb-value="0" data-fb-unit-label=""><dd data-fb-write="chars">0</dd><dt data-fb-write="words">Calendars replaced</dt></div>  </dl>
+
+  </div>
+  <div class="fb-field" aria-hidden="true"></div>
+</div>
+</section>
+<section class="fb-sec fb-sec--timeline" data-fb="timeline" id="how">
+<div class="fb-page">
+  <div class="fb-text">
+
+<span class="fb-label" data-fb-unit>How it works</span><h2 class="fb-h fb-h--sm" data-fb-write="chars">Set it up <em>over coffee.</em></h2>  <ol class="fb-steps">
+<li class="fb-item" data-fb-item="0" data-fb-when="Minute 1"><span class="fb-when" data-fb-write="chars">Minute 1</span><div><h3 data-fb-write="chars">Connect</h3><p data-fb-write="words">Sign in with Google or Outlook; nothing moves yet.</p></div></li><li class="fb-item" data-fb-item="1" data-fb-when="Minute 2"><span class="fb-when" data-fb-write="chars">Minute 2</span><div><h3 data-fb-write="chars">Mark your hours</h3><p data-fb-write="words">Paint the blocks you want protected.</p></div></li><li class="fb-item" data-fb-item="2" data-fb-when="Day 1"><span class="fb-when" data-fb-write="chars">Day 1</span><div><h3 data-fb-write="chars">It starts</h3><p data-fb-write="words">New invites are steered around your focus.</p></div></li><li class="fb-item" data-fb-item="3" data-fb-when="Week 1"><span class="fb-when" data-fb-write="chars">Week 1</span><div><h3 data-fb-write="chars">You notice</h3><p data-fb-write="words">A free morning, then another one.</p></div></li>  </ol>
+
+  </div>
+  <div class="fb-field" aria-hidden="true"></div>
+</div>
+</section>
+<section class="fb-sec fb-sec--quote" data-fb="quote">
+<div class="fb-page">
+  <div class="fb-text">
+
+  <figure class="fb-quote">
+    <blockquote data-fb-write="words">I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote>
+<figcaption data-fb-write="chars">— Priya N., product designer</figcaption>  </figure>
+
+  </div>
+  <div class="fb-field" aria-hidden="true"></div>
+</div>
+</section>
+<section class="fb-sec fb-sec--faq" data-fb="faq">
+<div class="fb-page">
+  <div class="fb-text">
+
+  <h2 class="fb-h fb-h--sm" data-fb-write="chars">Questions</h2>
+  <div class="fb-faq">
+<details class="fb-item" data-fb-item="0" open><summary data-fb-write="chars">Does it replace my calendar?</summary><p data-fb-write="words">No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></details><details class="fb-item" data-fb-item="1" open><summary data-fb-write="chars">What do the people I meet see?</summary><p data-fb-write="words">A short list of times that work for both of you. No new app to install.</p></details><details class="fb-item" data-fb-item="2" open><summary data-fb-write="chars">Can I override it?</summary><p data-fb-write="words">Always. Drag anything anywhere; Halcyon learns from what you move.</p></details>  </div>
+
+  </div>
+  <div class="fb-field" aria-hidden="true"></div>
+</div>
+</section>
+<section class="fb-sec fb-sec--cta" data-fb="cta" id="get">
+<div class="fb-page">
+  <div class="fb-text">
+
+<span class="fb-label" data-fb-unit>Free for 30 days</span>  <h2 class="fb-h fb-h--hero" data-fb-write="chars">Keep <em>tomorrow morning.</em></h2>
+<div class="fb-boxes" data-fb-unit><a class="fb-box fb-box--hot" href="#" data-fb-box>Get Halcyon <span aria-hidden="true">→</span></a></div>  </div>
+  <div class="fb-field" aria-hidden="true"></div>
+</div>
+</section>
+</main>
+
+<footer class="ss-footer"><div class="ss-wrap ss-footer__in">
+  <span>© Halcyon. A concept site; the product is fictional.</span>
+  <span>Built with Scroll Studio</span>
+</div></footer>
+
+<script>window.__ssScroll = { speed: 1.0 };</script>
+<script type="application/json" id="ss-art">{"fps": 12, "frames": 33, "h": 165, "invert": false, "label": "morning coffee, steam rising", "sheet": "assets/_art/74bcc7b01519.png", "w": 220}</script>
+<script type="module" src="../../runtime/index.js"></script>
+<nav class="ss-looks" aria-label="Looks">
+  <a href="../comic-book/" aria-label="Previous look">←</a>
+  <a class="ss-looks__name" href="../">Flipbook <small>8/23</small></a>
+  <a href="../glassmorphism/" aria-label="Next look">→</a>
+</nav>
+<style>
+  .ss-looks { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 990; display: flex; align-items: center; gap: 4px; padding: 5px;
+    background: rgba(12, 12, 14, .88); color: #fff; border-radius: 999px; font: 500 14px/1 system-ui, sans-serif; box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); text-transform: none; letter-spacing: 0; }
+  .ss-looks a { color: #fff; padding: 10px 14px; border-radius: 999px; }
+  .ss-looks a:hover { background: rgba(255, 255, 255, .14); }
+  .ss-looks__name { min-width: 170px; text-align: center; }
+  .ss-looks small { opacity: .6; margin-left: 6px; font-size: 12px; }
+</style>
+<script>
+  addEventListener("keydown", function (e) {
+    if (e.target.closest && e.target.closest("input, textarea")) return;
+    var a = document.querySelectorAll(".ss-looks a");
+    if (e.key === "ArrowLeft") location.href = a[0].href;
+    if (e.key === "ArrowRight") location.href = a[2].href;
+  });
+</script>
+<script>
+  // Clips in phones play while their panel is on screen and rest while it isn't: browsers may hold a muted
+  // autoplay until the element is seen, and a stack of looping videos is wasted work off screen.
+  (function () {
+    var clips = document.querySelectorAll(".ss-phone__screen > video");
+    if (!clips.length || !("IntersectionObserver" in window)) return;
+    function play(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    function inView(v) { var r = v.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; }
+    var io = new IntersectionObserver(function (entries) {
+      if (document.hidden) return;   // a hidden page reports nothing as visible; leave the clips as they are
+      entries.forEach(function (e) { if (e.isIntersecting) play(e.target); else e.target.pause(); });
+    }, { threshold: 0.05 });
+    clips.forEach(function (v) { io.observe(v); });
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) clips.forEach(function (v) { if (inView(v)) play(v); });
+    });
+  })();
+</script>
+</body>
+</html>
