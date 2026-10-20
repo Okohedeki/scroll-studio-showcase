@@ -1,39 +1,39 @@
 <!doctype html>
 <html lang="en" class="mode-dark layout-flow">
 <head>
-<base href="feel/">
+<base href="showcase/">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Scroll Studio</title>
-<meta name="description" content="A landing page is the door to a world. Scroll Studio makes the ones people feel."><meta name="generator" content="Scroll Studio">
+<meta name="description" content="An open-source engine for scroll-driven websites. Every site below was built from one YAML file."><meta name="generator" content="Scroll Studio">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23ff7a3d%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%23140803%22%3ES%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
 :root {
-  --bg: #070707;
+  --bg: #050608;
   --bg-2: #0b0d11;
   --ink: #eef0f2;
   --ink-rgb: 238, 240, 242;
-  --bg-rgb: 7, 7, 7;
+  --bg-rgb: 5, 6, 8;
   --ink-2: rgba(238, 240, 242, 0.68);
   --ink-3: rgba(238, 240, 242, 0.49);
   --line: rgba(238, 240, 242, .13);
   --accent: #ff7a3d;
-  --accent-2: #ffb27a;
+  --accent-2: #ffa071;
   --accent-ink: #140803;
   --accent-text: #ff7a3d;
   --accent-rgb: 255, 122, 61;
-  --font-display: "Fraunces", Georgia, serif;
+  --font-display: "Bricolage Grotesque", system-ui, sans-serif;
   --font-body: "Inter", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
   --display-weight: 500;
-  --em-style: italic;
+  --em-style: normal;
   --radius: 4px;
   color-scheme: dark;
 }
-.ss-surface-dark { --btn-bg: #ff7a3d; --btn-ink: #000000; --bg: #030303; --bg-2: #070707; --ink: #eef0f2; --ink-rgb: 238, 240, 242; --bg-rgb: 3, 3, 3; --ink-2: rgba(238, 240, 242, 0.68); --ink-3: rgba(238, 240, 242, 0.49); --line: rgba(238, 240, 242, .14); --accent-text: #ff7a3d; --em-color: #ffb27a; color-scheme: dark; background: var(--bg); color: var(--ink); }
-.ss-surface-light { --btn-bg: #070707; --btn-ink: #ffffff; --bg: #eef0f2; --bg-2: #1e1e1e; --ink: #070707; --ink-rgb: 7, 7, 7; --bg-rgb: 238, 240, 242; --ink-2: rgba(7, 7, 7, 1.0); --ink-3: rgba(7, 7, 7, 1.0); --line: rgba(7, 7, 7, .14); --accent-text: #070707; --em-color: #070707; color-scheme: light; background: var(--bg); color: var(--ink); }
-.ss-surface-accent { --btn-bg: #ff7a3d; --btn-ink: #000000; --bg: #453224; --bg-2: #e4e5e6; --ink: #eef0f2; --ink-rgb: 238, 240, 242; --bg-rgb: 69, 50, 36; --ink-2: rgba(238, 240, 242, 1.0); --ink-3: rgba(238, 240, 242, 1.0); --line: rgba(238, 240, 242, .14); --accent-text: #eef0f2; --em-color: #eef0f2; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-dark { --btn-bg: #ff7a3d; --btn-ink: #000000; --bg: #020203; --bg-2: #050608; --ink: #eef0f2; --ink-rgb: 238, 240, 242; --bg-rgb: 2, 2, 3; --ink-2: rgba(238, 240, 242, 0.68); --ink-3: rgba(238, 240, 242, 0.49); --line: rgba(238, 240, 242, .14); --accent-text: #ff7a3d; --em-color: #ffa071; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #050608; --btn-ink: #ffffff; --bg: #eef0f2; --bg-2: #1c1d1f; --ink: #050608; --ink-rgb: 5, 6, 8; --bg-rgb: 238, 240, 242; --ink-2: rgba(5, 6, 8, 1.0); --ink-3: rgba(5, 6, 8, 1.0); --line: rgba(5, 6, 8, .14); --accent-text: #050608; --em-color: #050608; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #ff7a3d; --btn-ink: #000000; --bg: #442c22; --bg-2: #e4e4e6; --ink: #eef0f2; --ink-rgb: 238, 240, 242; --bg-rgb: 68, 44, 34; --ink-2: rgba(238, 240, 242, 1.0); --ink-3: rgba(238, 240, 242, 1.0); --line: rgba(238, 240, 242, .14); --accent-text: #eef0f2; --em-color: #eef0f2; color-scheme: dark; background: var(--bg); color: var(--ink); }
 </style>
 <link rel="stylesheet" href="runtime/studio.css">
 <style>
@@ -144,55 +144,173 @@
   <a class="ss-wordmark" href="#">
     <span>Scroll Studio</span>
   </a>
-  <nav class="ss-nav__links"></nav>
-<a class="ss-btn" href="../showcase/index.html">The showcase <span class="ss-arrow">→</span></a></div></header>
+  <nav class="ss-nav__links"><a href="#new">New in 1.4</a><a href="#examples">Every scene</a><a href="../concepts/index.html">Concepts</a></nav>
+<a class="ss-btn" href="https://github.com/Okohedeki/scroll-studio">GitHub <span class="ss-arrow">→</span></a></div></header>
 
 <main>
-<section class="ss-scene ss-overlay ss-side-right ss-type-film ss-shade-auto" id="story" data-scene="film">
-  <div class="ss-track" style="height: 2600vh">
+<section class="ss-scene ss-overlay ss-side-right ss-type-type ss-shade-auto" id="hello" data-scene="type">
+  <div class="ss-track" style="height: 240vh">
     <div class="ss-stage">
-      <div class="ss-visual"><img class="ss-poster" src="assets/story/poster.jpg" alt=""></div>
+      <div class="ss-visual"></div>
       <div class="ss-shade"></div>
       <div class="ss-captions">
-        <div class="ss-caption" data-from="0.0071" data-to="0.0663">
-<h1 class="ss-h1 ss-split-words">A landing page is <em>a door.</em></h1>        </div>
-        <div class="ss-caption" data-from="0.0776" data-to="0.1369">
-<h2 class="ss-display ss-split-words">Make it open onto <em>a world.</em></h2>        </div>
-        <div class="ss-caption" data-from="0.2496" data-to="0.3289">
-<h2 class="ss-display ss-split-words">Don&#39;t hand them a page. <em>Tell them a story.</em></h2>        </div>
-        <div class="ss-caption" data-from="0.3347" data-to="0.414">
-<h2 class="ss-display ss-split-words">Make them feel <em>joy.</em></h2>        </div>
-        <div class="ss-caption" data-from="0.4221" data-to="0.521">
-<h2 class="ss-display ss-split-words">Make it <em>ache.</em></h2>        </div>
-        <div class="ss-caption" data-from="0.5305" data-to="0.6294">
-<h2 class="ss-display ss-split-words">Make them fall <em>in love.</em></h2>        </div>
-        <div class="ss-caption" data-from="0.6342" data-to="0.6939">
-<h2 class="ss-display ss-split-words">Make them <em>curious.</em></h2>        </div>
-        <div class="ss-caption" data-from="0.6982" data-to="0.7775">
-<h2 class="ss-display ss-split-words">Make them feel something <em>they didn&#39;t expect.</em></h2>        </div>
-        <div class="ss-caption" data-from="0.7856" data-to="0.8845">
-<h2 class="ss-display ss-split-words">Show them <em>what&#39;s missing.</em></h2>        </div>
-        <div class="ss-caption" data-from="0.894" data-to="0.9929">
-<h2 class="ss-display ss-split-words">That&#39;s what <em>Scroll Studio</em> does.</h2>        </div>
       </div>
       
       <div class="ss-outro"></div>
     </div>
   </div>
-  <script type="application/json" class="ss-config">{"end": "assets/story/end.jpg", "poster": "assets/story/poster.jpg", "video": "assets/story/film.mp4", "videoMobile": "assets/story/film-mobile.mp4"}</script>
-  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "none", "legend": [], "scales": []}, "layout": "overlay", "length": 26.0, "steps": [{"at": [0.0071, 0.0663], "body": null, "fact": null, "hint": null, "image": null, "intro": true, "kicker": null, "length": 1.2, "state": {"beat": "door", "part": [0, 0.5]}, "title": "A landing page is \u003cem\u003ea door.\u003c/em\u003e"}, {"at": [0.0776, 0.1369], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": null, "length": 1.2, "state": {"beat": "door", "part": [0.5, 1]}, "title": "Make it open onto \u003cem\u003ea world.\u003c/em\u003e"}, {"at": [0.2496, 0.3289], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": null, "length": 1.2, "state": {"beat": "book"}, "title": "Don\u0027t hand them a page. \u003cem\u003eTell them a story.\u003c/em\u003e"}, {"at": [0.3347, 0.414], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": null, "length": 1.2, "state": {"beat": "laugh"}, "title": "Make them feel \u003cem\u003ejoy.\u003c/em\u003e"}, {"at": [0.4221, 0.521], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": null, "length": 1.2, "state": {"beat": "hurt"}, "title": "Make it \u003cem\u003eache.\u003c/em\u003e"}, {"at": [0.5305, 0.6294], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": null, "length": 1.2, "state": {"beat": "love"}, "title": "Make them fall \u003cem\u003ein love.\u003c/em\u003e"}, {"at": [0.6342, 0.6939], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": null, "length": 1.2, "state": {"beat": "curious"}, "title": "Make them \u003cem\u003ecurious.\u003c/em\u003e"}, {"at": [0.6982, 0.7775], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": null, "length": 1.2, "state": {"beat": "feel"}, "title": "Make them feel something \u003cem\u003ethey didn\u0027t expect.\u003c/em\u003e"}, {"at": [0.7856, 0.8845], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": null, "length": 1.2, "state": {"beat": "missing"}, "title": "Show them \u003cem\u003ewhat\u0027s missing.\u003c/em\u003e"}, {"at": [0.894, 0.9929], "body": null, "fact": null, "hint": null, "image": null, "intro": false, "kicker": null, "length": 1.2, "state": {"beat": "screen"}, "title": "That\u0027s what \u003cem\u003eScroll Studio\u003c/em\u003e does."}]}</script>
+  <script type="application/json" class="ss-config">{"mode": "reveal", "text": "Give it a \u003cem\u003ebrief\u003c/em\u003e, a \u003cem\u003ephoto\u003c/em\u003e, a \u003cem\u003epainting\u003c/em\u003e, a \u003cem\u003e3D model\u003c/em\u003e or a \u003cem\u003eCSV\u003c/em\u003e. Scroll Studio builds the site, and scrolling plays it.", "words": []}</script>
+  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "none", "legend": [], "scales": []}, "layout": "overlay", "length": 2.4, "steps": []}</script>
 </section>
+<section class="ss-block" id="new"><div class="ss-wrap">
+<div class="ss-head ss-reveal"><span class="ss-kicker">New in 1.4</span><h2 class="ss-display">Nine new ways <em>to move through a page.</em></h2></div>  <div class="ss-gallery">
+    <a class="ss-tile ss-reveal" href="../recordings/journey.mp4">
+      <div class="ss-tile__media"><video src="assets/_media/journey.mp4" muted loop playsinline preload="metadata" poster="assets/_media/journey.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">journey · Fenmoor, a farmhouse stay</span><h3>The one-take page</h3><p>The whole page is one camera journey through one world: door, hall, hearth, library, table, window, moor. Each section waits at its stop.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../recordings/cinemagraphs.mp4">
+      <div class="ss-tile__media"><video src="assets/_media/cinemagraphs.mp4" muted loop playsinline preload="metadata" poster="assets/_media/cinemagraphs.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">cinemagraph · Tern House, a coastal hotel</span><h3>Cinemagraphs</h3><p>Stills where only one thing moves: steam, a curtain, incense. Everything else is held pixel for pixel.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../recordings/light.mp4">
+      <div class="ss-tile__media"><video src="assets/_media/light.mp4" muted loop playsinline preload="metadata" poster="assets/_media/light.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">light · Quay House, a harbour town</span><h3>Light as the scroll</h3><p>One place relit from dawn to night as you scroll. Windows and lamps come on one by one at dusk.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../recordings/inside.mp4">
+      <div class="ss-tile__media"><video src="assets/_media/inside.mp4" muted loop playsinline preload="metadata" poster="assets/_media/inside.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">inside · the Framework Laptop 12 mainboard</span><h3>Inside the product</h3><p>A macro camera flies into the product&#39;s own 3D model: heat pipe, fan, memory, storage, ports. Each feature is a stop.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../recordings/diorama.mp4">
+      <div class="ss-tile__media"><video src="assets/_media/diorama.mp4" muted loop playsinline preload="metadata" poster="assets/_media/diorama.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">diorama · Harbourlight, port software</span><h3>Miniature worlds</h3><p>A tilt-shift diorama you orbit and dive into, live in the browser. Every section lives at a place on it.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../recordings/film-cuts.mp4">
+      <div class="ss-tile__media"><video src="assets/_media/film-cuts.mp4" muted loop playsinline preload="metadata" poster="assets/_media/film-cuts.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">transition · Halo Coffee</span><h3>Film cuts</h3><p>Sections join like a film: a match cut from a ring logo to the sun, irises, wipes, whips and carried headlines.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../recordings/type-world.mp4">
+      <div class="ss-tile__media"><video src="assets/_media/type-world.mp4" muted loop playsinline preload="metadata" poster="assets/_media/type-world.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">place · Stillwater and Casa Alta</span><h3>Type in the world</h3><p>Headlines that live inside the scene: behind a tree, painted on a deck, set in the haze.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../recordings/directions-board.png">
+      <div class="ss-tile__media"><img src="assets/_media/directions.jpg" alt="" loading="lazy"></div>
+      <div class="ss-tile__text"><span class="ss-tag">studio directions · Kiln &amp; Kettle</span><h3>Direction boards</h3><p>One brief in, six art directions out, side by side as storyboards. Pick one and it becomes the spec.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../halcyon/looks/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/halcyon.mp4" muted loop playsinline preload="metadata" poster="assets/_media/halcyon.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">theme.style · Halcyon</span><h3>Six new styles</h3><p>Stop-motion, paper cut-out, scratch film, Spider-Verse smears, paint on glass and Disney&#39;s multiplane: thirty-two styles in all.</p></div>
+    </a>
+  </div>
+</div></section>
+
+<section class="ss-block" id="examples"><div class="ss-wrap">
+<div class="ss-head ss-reveal"><span class="ss-kicker">Every scene, live</span><h2 class="ss-display">One engine, <em>every kind of scroll.</em></h2></div>  <div class="ss-gallery">
+    <a class="ss-tile ss-reveal" href="../one-take/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/one-take.mp4" muted loop playsinline preload="metadata" poster="assets/_media/one-take.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">film + take · Stillwater, consumer product</span><h3>One take</h3><p>One unbroken take from a mountain ridge to a lakeside table. The bottle is its real 3D model, never generated.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../hollis-house/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/hollis-house.mp4" muted loop playsinline preload="metadata" poster="assets/_media/hollis-house.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">splat · Hollis House, real estate</span><h3>Gaussian splat</h3><p>A walk through a real house, rebuilt as a Gaussian splat.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../pelorus/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/pelorus.mp4" muted loop playsinline preload="metadata" poster="assets/_media/pelorus.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">chart · Pelorus, research</span><h3>Charts from the data</h3><p>The renewables story with every figure read from the source data at build time.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../halcyon/looks/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/halcyon.mp4" muted loop playsinline preload="metadata" poster="assets/_media/halcyon.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">theme.style · Halcyon, software</span><h3>Thirty-two styles</h3><p>One product page as a departures board, a comic, a zoetrope, a stop-motion set, a paper theatre, a painting on glass and twenty-six more experiences.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../feel/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/feel.mp4" muted loop playsinline preload="metadata" poster="assets/_media/feel.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">film + beats · Feel</span><h3>Story in shots</h3><p>A closed door opens onto an oasis, and every sentence is its own generated shot.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../lodestar-orbital/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/lodestar-orbital.mp4" muted loop playsinline preload="metadata" poster="assets/_media/lodestar-orbital.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">film · Lodestar Orbital, aerospace</span><h3>Story film</h3><p>A rocket launch to orbit, generated locally with LTX-2.3.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../fischer-vale/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/fischer-vale.mp4" muted loop playsinline preload="metadata" poster="assets/_media/fischer-vale.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">sequence · Fischer &amp; Vale, luxury goods</span><h3>Product sequence</h3><p>A glass chess set rendered in Blender lifts off its board.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../atelier-sfumato/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/atelier-sfumato.mp4" muted loop playsinline preload="metadata" poster="assets/_media/atelier-sfumato.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">artwork · Atelier Sfumato, education</span><h3>Artwork</h3><p>The Mona Lisa, drawn and painted in five lessons.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../cellwright-bio/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/cellwright-bio.mp4" muted loop playsinline preload="metadata" poster="assets/_media/cellwright-bio.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">scene3d · Cellwright Bio, biotech</span><h3>Live 3D</h3><p>From tissue to a molecule docking on DNA, live in three.js.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../northstar-observatory/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/northstar-observatory.mp4" muted loop playsinline preload="metadata" poster="assets/_media/northstar-observatory.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">scene3d · Northstar Observatory, astronomy</span><h3>Cosmic zoom</h3><p>A fall from the whole galaxy to one living planet.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../tidewater-lines/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/tidewater-lines.mp4" muted loop playsinline preload="metadata" poster="assets/_media/tidewater-lines.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">map · Tidewater Lines, logistics</span><h3>Map journey</h3><p>Shanghai to Rotterdam, port by port, on a live map.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../daybreak-institute/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/daybreak-institute.mp4" muted loop playsinline preload="metadata" poster="assets/_media/daybreak-institute.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">chart · Daybreak Institute, research</span><h3>Data story</h3><p>Fifteen years of real solar data told as a story.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../wunderkammer/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/wunderkammer.mp4" muted loop playsinline preload="metadata" poster="assets/_media/wunderkammer.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">vector · Wunderkammer, museum</span><h3>Vector line art</h3><p>Dürer&#39;s Rhinoceros, re-cut line by line.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../meridian/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/meridian.mp4" muted loop playsinline preload="metadata" poster="assets/_media/meridian.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">film · Meridian, private aviation</span><h3>Aerial film</h3><p>A jet descends through cloud over London.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../form-conference/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/form-conference.mp4" muted loop playsinline preload="metadata" poster="assets/_media/form-conference.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">type · FORM/26, events</span><h3>Kinetic type</h3><p>A conference site told in kinetic type.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../casa-alta/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/casa-alta.mp4" muted loop playsinline preload="metadata" poster="assets/_media/casa-alta.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">parallax · Casa Alta, hospitality</span><h3>Photo parallax</h3><p>A cliff hotel&#39;s photos, given depth and a slow camera move.</p></div>
+    </a>
+    <a class="ss-tile ss-reveal" href="../hushwell/index.html">
+      <div class="ss-tile__media"><video src="assets/_media/hushwell.mp4" muted loop playsinline preload="metadata" poster="assets/_media/hushwell.jpg"></video></div>
+      <div class="ss-tile__text"><span class="ss-tag">stack layout · Hushwell, healthcare</span><h3>Stacked panels</h3><p>Full-screen panels that slide over each other, with a phone, a photo strip and an orbit.</p></div>
+    </a>
+  </div>
+</div></section>
+
+<section class="ss-block"><div class="ss-wrap">
+<div class="ss-head ss-reveal"><span class="ss-kicker">How it works</span><h2 class="ss-display">One spec in, <em>one static site out.</em></h2></div>  <div class="ss-features ss-features--4">
+    <div class="ss-feature ss-reveal">
+<span class="ss-tag">01 · Describe</span>      <div><h3>Write site.yaml</h3><p>Sections, copy, theme and inputs: files, URLs, or images generated locally from a prompt. Or ask Claude to write it.</p></div>
+    </div>
+    <div class="ss-feature ss-reveal">
+<span class="ss-tag">02 · Build</span>      <div><h3>studio build</h3><p>Each scene type renders what it needs: Blender, LTX-2.3, depth maps, vector traces, data. Cached stage by stage.</p></div>
+    </div>
+    <div class="ss-feature ss-reveal">
+<span class="ss-tag">03 · Ship</span>      <div><h3>Upload dist/</h3><p>Plain HTML, CSS and JS with the media. Host it anywhere; no server, no API keys.</p></div>
+    </div>
+    <div class="ss-feature ss-reveal">
+<span class="ss-tag">04 · Make it yours</span>      <div><h3>Your pictures, your brand</h3><p>Nothing here is a template to copy. Give it your own photos, footage, 3D models, logo and copy, or a brief, and the same scenes come out as your site.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ss-block ss-band"><div class="ss-wrap ss-stats ss-stats--4">
+  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="15">15</div><div class="ss-l">Scene types</div></div>
+  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="12">12</div><div class="ss-l">Content blocks</div></div>
+  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="32">32</div><div class="ss-l">Styles</div></div>
+  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="0">0</div><div class="ss-l">API keys</div></div>
+</div></section>
+
 <section class="ss-block ss-cta">
   <div class="ss-cta__in">
-<span class="ss-kicker ss-reveal">Every frame above was made on one local GPU and built from one file</span>    <h2 class="ss-display ss-reveal">See what it <em>can do.</em></h2>
-<a class="ss-btn ss-btn--hot ss-reveal" href="../showcase/index.html">Open the showcase <span class="ss-arrow">→</span></a>  </div>
+<span class="ss-kicker ss-reveal">Open source (AGPL-3.0) · local models only, no API keys</span>    <h2 class="ss-display ss-reveal">Build one <em>tonight.</em></h2>
+<a class="ss-btn ss-btn--hot ss-reveal" href="https://github.com/Okohedeki/scroll-studio">Get Scroll Studio <span class="ss-arrow">→</span></a>  </div>
 </section>
 
 </main>
 
 <footer class="ss-footer"><div class="ss-wrap ss-footer__in">
   <span>Scroll Studio · AGPL-3.0</span>
-  <span>Made with Scroll Studio</span>
+  <span>Every example on this page is a concept site.</span>
 </div></footer>
 
 <script>window.__ssScroll = { speed: 1.0 };</script>
