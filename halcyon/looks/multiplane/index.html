@@ -1,0 +1,544 @@
+<!doctype html>
+<html lang="en" data-style="multiplane" class="mode-dark layout-flow style-multiplane">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Halcyon</title>
+<meta name="description" content="The calendar that guards your mornings. One page, built in twenty styles by Scroll Studio."><meta name="generator" content="Scroll Studio">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23f0a05c%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%232a1608%22%3EH%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root {
+  --bg: #14111f;
+  --bg-2: #1b1729;
+  --ink: #f6ecd9;
+  --ink-rgb: 246, 236, 217;
+  --bg-rgb: 20, 17, 31;
+  --ink-2: rgba(246, 236, 217, 0.68);
+  --ink-3: rgba(246, 236, 217, 0.5);
+  --line: rgba(246, 236, 217, .13);
+  --accent: #f0a05c;
+  --accent-2: #9db6d9;
+  --accent-ink: #2a1608;
+  --accent-text: #f6ecd9;
+  --accent-rgb: 240, 160, 92;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Lora", Georgia, serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+  --display-weight: 500;
+  --em-style: normal;
+  --radius: 999px;
+  color-scheme: dark;
+}
+.ss-surface-dark { --btn-bg: #f0a05c; --btn-ink: #000000; --bg: #08070c; --bg-2: #14111f; --ink: #f6ecd9; --ink-rgb: 246, 236, 217; --bg-rgb: 8, 7, 12; --ink-2: rgba(246, 236, 217, 0.68); --ink-3: rgba(246, 236, 217, 0.49); --line: rgba(246, 236, 217, .14); --accent-text: #f0a05c; --em-color: #9db6d9; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #14111f; --btn-ink: #ffffff; --bg: #f6ecd9; --bg-2: #2b2732; --ink: #14111f; --ink-rgb: 20, 17, 31; --bg-rgb: 246, 236, 217; --ink-2: rgba(20, 17, 31, 1.0); --ink-3: rgba(20, 17, 31, 1.0); --line: rgba(20, 17, 31, .14); --accent-text: #14111f; --em-color: #14111f; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #f0a05c; --btn-ink: #000000; --bg: #363a4e; --bg-2: #eae1d1; --ink: #f6ecd9; --ink-rgb: 246, 236, 217; --bg-rgb: 54, 58, 78; --ink-2: rgba(246, 236, 217, 1.0); --ink-3: rgba(246, 236, 217, 1.0); --line: rgba(246, 236, 217, .14); --accent-text: #f6ecd9; --em-color: #f6ecd9; color-scheme: dark; background: var(--bg); color: var(--ink); }
+</style>
+<link rel="stylesheet" href="../../runtime/studio.css">
+<style id="ss-style">
+/* Multiplane: painted glass at real depths under one camera. In the live page (runtime/src/styles/multiplane.ts) the
+   world is a set of fixed plates the runtime paints and scales by distance, and every beat's words are fixed planes
+   over the scroll; .mp-beat is only the length of scroll its camera move takes. Without JavaScript and with reduced
+   motion each section is a still diorama: a sky and three layers of hills painted in CSS behind ordinary copy.
+   Cormorant Garamond for the title cards, Lora for reading, DM Mono for the camera stand's markings. */
+html.style-multiplane {
+  --night: #14111f; --cream: #f6ecd9; --cream-2: #d7c9b0; --amber: #f0a05c; --mist: #9db6d9; --ink-dark: #2a1608;
+  --shadow: 0 1px 2px rgba(5, 3, 12, .7), 0 0 22px rgba(8, 6, 18, .75), 0 0 56px rgba(8, 6, 18, .5);
+  background: var(--night);
+}
+html.style-multiplane body { font-family: var(--font-body), Georgia, serif; font-size: 1.1rem; line-height: 1.58; color: var(--cream); background: var(--night); }
+html.style-multiplane .ss-nav { display: none; }
+html.style-multiplane ::selection { background: var(--amber); color: var(--ink-dark); }
+html.style-multiplane :focus-visible { outline: 2px solid var(--amber); outline-offset: 4px; border-radius: 4px; }
+html.style-multiplane main { position: static; }
+html.style-multiplane em { font-style: italic; font-weight: inherit; color: var(--amber); }
+html.style-multiplane .ss-footer { position: relative; z-index: 900; background: #0d0a16; color: var(--cream-2); border-top: 1px solid rgba(246, 236, 217, .14); }
+html.style-multiplane .ss-footer a { color: var(--cream); }
+
+/* ---------------------------------------------------------------- the stills (no JavaScript, reduced motion) */
+.mp-sec { --sk0: #1d1a35; --sk1: #4a3a5e; --sk2: #c9835e; --h1: #3b3552; --h2: #2a2540; --h3: #191528;
+}
+html:not(.mp-live) .mp-sec { position: relative; isolation: isolate; overflow: clip; }
+/* reduced motion with the runtime: the plates are painted once and composed at rest behind the section */
+.mp-still { position: sticky; top: 0; z-index: -1; display: block; width: 100%; height: 100vh; height: 100svh; margin-bottom: -100vh; margin-bottom: -100svh; pointer-events: none; }
+.mp-sec.has-still::before, .mp-sec.has-still::after { display: none; }
+.mp-sec:nth-of-type(4n+2) { --sk0: #0f2230; --sk1: #1f4a58; --sk2: #7fa59a; --h1: #1f4553; --h2: #17323f; --h3: #0d1f29; }
+.mp-sec:nth-of-type(4n+3) { --sk0: #2a1830; --sk1: #6a3a52; --sk2: #e8a06a; --h1: #4d2f45; --h2: #35233a; --h3: #1e1428; }
+.mp-sec:nth-of-type(4n+4) { --sk0: #121b36; --sk1: #2d4673; --sk2: #9cb5dc; --h1: #2b4166; --h2: #1d2e4d; --h3: #101a30; }
+html:not(.mp-live) .mp-sec::before { content: ""; position: absolute; inset: 0; z-index: -2; background: linear-gradient(180deg, var(--sk0), var(--sk1) 58%, var(--sk2)); }
+html:not(.mp-live) .mp-sec::after { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background:
+    radial-gradient(130% 34% at 20% 104%, var(--h3) 0 62%, transparent 63%),
+    radial-gradient(120% 30% at 85% 101%, var(--h2) 0 60%, transparent 61%),
+    linear-gradient(180deg, transparent 62%, rgba(255, 236, 210, .1) 78%, transparent 86%),
+    radial-gradient(110% 34% at 45% 92%, var(--h1) 0 58%, transparent 59%); }
+html:not(.mp-live) .mp-beat { display: flex; flex-wrap: wrap; align-items: center; gap: 2rem 4rem; padding: 14vh clamp(22px, 7vw, 120px); }
+html:not(.mp-live) .mp-plane { position: relative; }
+html:not(.mp-live) .mp-copy { flex: 1 1 24rem; max-width: 40rem; }
+html:not(.mp-live) .mp-copy[data-side="r"] { margin-left: auto; }
+html:not(.mp-live) .mp-copy[data-side="c"] { margin: 0 auto; text-align: center; }
+html:not(.mp-live) .mp-beat:has(> .mp-copy[data-side="c"]) { justify-content: center; }
+html:not(.mp-live) .mp-prop { flex: 0 1 auto; }
+html:not(.mp-live) .mp-gauge, html:not(.mp-live) .mp-hud { display: none; }
+
+/* ---------------------------------------------------------------- the live world */
+.mp-world { position: static; }
+.mp-plate { position: fixed; left: 50%; top: 50%; pointer-events: none; transform-origin: 50% 50%; will-change: transform, opacity; visibility: hidden; }
+.mp-plate canvas { position: absolute; left: 0; top: 0; width: 100%; height: 100%; display: block; }
+.mp-soft { opacity: 0; }
+html.mp-live body { background: #0b0914; }
+html.mp-scene .mp-plate, html.mp-scene .mp-plane { visibility: hidden !important; }
+html.mp-live .mp-beat { position: relative; min-height: 150vh; min-height: 150svh; }
+html.mp-live .mp-hero { min-height: 175svh; }
+html.mp-live .mp-beat--item { min-height: 125svh; }
+html.mp-live .mp-beat--end { min-height: 130svh; }
+html.mp-live .mp-plane { position: fixed; inset: 0; z-index: 510; display: flex; align-items: center; box-sizing: border-box; padding: 13svh clamp(22px, 8vw, 150px) 17svh; opacity: 0;
+  pointer-events: none; transform-origin: 50% 50%; }
+html.mp-live .mp-plane[data-side="r"] { justify-content: flex-end; }
+html.mp-live .mp-plane[data-side="c"] { justify-content: center; text-align: center; }
+html.mp-live .mp-plane > * { pointer-events: none; transform: scale(var(--fit, 1)); transform-origin: 0 50%; }
+html.mp-live .mp-plane[data-side="r"] > * { transform-origin: 100% 50%; }
+html.mp-live .mp-plane[data-side="c"] > * { transform-origin: 50% 50%; }
+html.mp-live .mp-plane.is-live > * { pointer-events: auto; }
+html.mp-live .mp-prop { z-index: 500; }
+
+/* ---------------------------------------------------------------- furniture */
+.mp-top { position: fixed; inset: 0 0 auto 0; z-index: 1000; display: flex; align-items: center; gap: 22px; padding: 16px clamp(16px, 3vw, 36px); pointer-events: none; }
+.mp-top > * { pointer-events: auto; }
+.mp-mark { font-family: var(--font-display); font-weight: 600; font-style: italic; font-size: 1.55rem; letter-spacing: .01em; color: var(--cream); text-shadow: var(--shadow); }
+.mp-links { display: flex; gap: 22px; margin-left: auto; font: 400 .72rem/1 var(--font-mono), monospace; letter-spacing: .18em; text-transform: uppercase; }
+.mp-links a { color: var(--cream-2); text-shadow: var(--shadow); padding: 8px 2px; border-bottom: 1px solid transparent; }
+.mp-links a:hover { color: #fff; border-color: var(--amber); }
+.mp-top__cta { font: 500 .74rem/1 var(--font-mono), monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-dark); background: var(--amber); padding: 12px 20px 11px; border-radius: 3px;
+  box-shadow: inset 0 0 0 2px rgba(42, 22, 8, .35), 0 6px 18px rgba(0, 0, 0, .4); white-space: nowrap; }
+.mp-top__cta:hover { background: #f6b57a; }
+.mp-links + .mp-top__cta { margin-left: 0; }
+.mp-mark + .mp-top__cta { margin-left: auto; }
+.mp-gauge { position: fixed; right: clamp(14px, 2vw, 28px); top: 50%; z-index: 1000; width: 2px; height: 38vh; transform: translateY(-50%); background: linear-gradient(180deg, var(--amber), rgba(246, 236, 217, .25)); pointer-events: none; font-family: var(--font-mono), monospace; }
+html:not(.mp-live) .mp-gauge { display: none; }
+.mp-gauge__cap { position: absolute; right: 8px; top: -20px; font-size: .6rem; letter-spacing: .2em; text-transform: uppercase; color: var(--amber); }
+.mp-tick { position: absolute; right: 0; width: 12px; height: 1px; background: var(--cream-2); }
+.mp-tick::after { content: attr(data-role); position: absolute; right: 18px; top: -6px; font-style: normal; font-size: .58rem; letter-spacing: .16em; text-transform: uppercase; color: rgba(246, 236, 217, .7); text-shadow: var(--shadow); }
+.mp-focus { position: absolute; right: -6px; width: 14px; height: 14px; margin-top: -7px; border: 1.5px solid var(--amber); border-radius: 50%; box-shadow: 0 0 10px rgba(240, 160, 92, .6); transition: top .05s linear; }
+.mp-hud { position: fixed; left: clamp(14px, 2.2vw, 30px); bottom: 14px; z-index: 1000; margin: 0; display: flex; gap: 16px; font: 400 .64rem/1 var(--font-mono), monospace; letter-spacing: .16em; text-transform: uppercase; color: rgba(246, 236, 217, .6); text-shadow: var(--shadow); pointer-events: none; }
+.mp-hud b { font-weight: 500; color: var(--cream); font-variant-numeric: tabular-nums; }
+html:not(.mp-live) .mp-hud { display: none; }
+
+/* ---------------------------------------------------------------- the words: title cards */
+.mp-card { position: relative; max-width: 35rem; text-shadow: var(--shadow); }
+.mp-card::before { content: ""; position: absolute; inset: -14% -16%; z-index: -1; pointer-events: none; background: radial-gradient(closest-side, rgba(10, 7, 20, .62), rgba(10, 7, 20, .28) 60%, transparent); }
+.mp-copy[data-side="c"] .mp-card { max-width: 46rem; }
+.mp-card--wide { max-width: 72rem; width: 100%; }
+.mp-kicker, .mp-badge, .mp-when { margin: 0 0 1.2rem; font: 500 .72rem/1.2 var(--font-mono), monospace; letter-spacing: .26em; text-transform: uppercase; color: var(--mist); }
+.mp-kicker::before { content: ""; display: inline-block; width: 2.2rem; height: 1px; margin-right: .9rem; vertical-align: middle; background: var(--amber); }
+.mp-copy[data-side="c"] .mp-kicker::before { display: none; }
+.mp-badge { display: inline-block; padding: 7px 14px; border: 1px solid rgba(246, 236, 217, .4); letter-spacing: .16em; color: var(--cream); background: rgba(12, 9, 22, .5); }
+.mp-title { margin: 0 0 1.2rem; font-family: var(--font-display); font-weight: 600; font-size: clamp(2.8rem, 6.6vw, 6.4rem); line-height: .96; letter-spacing: -.012em; text-wrap: balance; }
+.mp-hero .mp-title { font-size: clamp(3.2rem, 9vw, 9rem); line-height: .9; }
+.mp-title--end { font-size: clamp(3.2rem, 8.6vw, 8.6rem); line-height: .92; }
+.mp-sub { margin: 0 0 .7rem; font-family: var(--font-display); font-weight: 600; font-size: clamp(2.1rem, 4.4vw, 4rem); line-height: 1; letter-spacing: -.01em; }
+.mp-lede, .mp-body { margin: 0 0 1.5rem; font-size: clamp(1.06rem, 1.45vw, 1.28rem); line-height: 1.55; color: #ecdfc6; }
+.mp-note { font: 400 .78rem/1.5 var(--font-mono), monospace; color: var(--cream-2); }
+.mp-num { margin: 0 0 .1rem; font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: clamp(5rem, 13vw, 11rem); line-height: .85; color: var(--amber); text-shadow: 0 0 44px rgba(240, 160, 92, .5), 0 3px 4px rgba(0, 0, 0, .55); }
+.mp-when { display: inline-block; padding: 6px 12px; border: 1px solid rgba(157, 182, 217, .5); background: rgba(8, 7, 16, .55); }
+.mp-meter { height: 6px; width: min(100%, 20rem); margin-top: .3rem; background: rgba(246, 236, 217, .16); }
+.mp-meter i { display: block; height: 100%; background: linear-gradient(90deg, var(--mist), var(--amber)); }
+
+.mp-btns { display: flex; flex-wrap: wrap; gap: 14px; margin: 0; }
+.mp-copy[data-side="c"] .mp-btns { justify-content: center; }
+.mp-btn { display: inline-block; padding: 14px 26px 13px; font: 500 .8rem/1 var(--font-mono), monospace; letter-spacing: .16em; text-transform: uppercase; color: var(--cream); background: rgba(12, 9, 22, .55);
+  border: 1px solid rgba(246, 236, 217, .55); outline: 1px solid rgba(246, 236, 217, .28); outline-offset: 3px; transition: transform .25s ease, background .25s; }
+.mp-btn:hover { transform: translateY(-2px); background: rgba(12, 9, 22, .8); }
+.mp-btn--hot { color: var(--ink-dark); background: var(--amber); border-color: var(--amber); outline-color: rgba(240, 160, 92, .6); }
+.mp-btn--hot:hover { background: #f6b57a; }
+.mp-btn--big { padding: 22px 46px 21px; font-size: .95rem; }
+.mp-tags { display: flex; flex-wrap: wrap; gap: 9px; margin: 0 0 1.5rem; padding: 0; list-style: none; }
+.mp-tags li { padding: 7px 14px 6px; font: 500 .7rem/1 var(--font-mono), monospace; letter-spacing: .12em; text-transform: uppercase; border: 1px solid rgba(157, 182, 217, .55); background: rgba(8, 7, 16, .5); }
+.mp-tags b { color: var(--amber); font-weight: 500; }
+
+/* stats */
+.mp-figs { display: flex; flex-wrap: wrap; justify-content: center; gap: clamp(26px, 5vw, 72px) clamp(32px, 6vw, 90px); margin: 0; padding: 0; list-style: none; }
+.mp-fig { display: flex; flex-direction: column; align-items: center; min-width: 7rem; }
+.mp-fig__v { font-family: var(--font-display); font-weight: 500; font-style: italic; font-size: clamp(3.8rem, 9vw, 8.4rem); line-height: 1; color: var(--cream); text-shadow: 0 0 40px rgba(240, 160, 92, .35), var(--shadow); }
+.mp-fig__v sup { font-size: .36em; margin-left: .06em; vertical-align: .9em; color: var(--amber); font-style: normal; }
+.mp-fig__l { margin-top: .8rem; max-width: 12rem; font: 500 .72rem/1.4 var(--font-mono), monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--cream-2); }
+
+/* quote, faq */
+.mp-quote { margin: 0; }
+.mp-saying { margin: 0 0 1.8rem; font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: clamp(2rem, 4.8vw, 4.4rem); line-height: 1.08; text-wrap: balance; }
+.mp-sign { display: inline-block; font: 500 .76rem/1 var(--font-mono), monospace; letter-spacing: .22em; text-transform: uppercase; color: var(--amber); padding-top: .9rem; border-top: 1px solid var(--amber); }
+.mp-q { margin: 0; }
+.mp-q summary { list-style: none; cursor: pointer; font-family: var(--font-display); font-weight: 600; font-size: clamp(1.9rem, 3.5vw, 3rem); line-height: 1.05; }
+.mp-q summary::-webkit-details-marker { display: none; }
+.mp-q summary::before { content: "Q."; margin-right: .6rem; font-style: italic; color: var(--amber); }
+.mp-q p { margin: 1.2rem 0 0; padding: 1.1rem 0 0 1.3rem; border-left: 1px solid var(--amber); font-size: 1.16rem; color: #ecdfc6; }
+
+/* a cel: a picture or tile on a sheet of acetate */
+.mp-cel { margin: 0; background: rgba(10, 8, 20, .5); border: 1px solid rgba(246, 236, 217, .35); box-shadow: 0 0 0 5px rgba(246, 236, 217, .06), 0 26px 60px rgba(0, 0, 0, .55); text-shadow: none; }
+.mp-cel img, .mp-cel video { display: block; width: 100%; max-width: 520px; }
+.mp-cels { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 18px; margin-top: 1.6rem; text-align: left; }
+.mp-cel--tile { display: flex; flex-direction: column; overflow: hidden; transition: transform .3s ease, border-color .3s; }
+.mp-cel--tile:hover { transform: translateY(-5px); border-color: var(--amber); }
+.mp-cel__media { display: block; aspect-ratio: 4 / 3; background: linear-gradient(140deg, rgba(240, 160, 92, .3), rgba(157, 182, 217, .3)); overflow: hidden; }
+.mp-cel__media img, .mp-cel__media video { display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; }
+.mp-cel__text { display: block; padding: 14px 16px 16px; }
+.mp-cel__text small { display: block; margin-bottom: 6px; font: 500 .64rem/1 var(--font-mono), monospace; letter-spacing: .18em; text-transform: uppercase; color: var(--mist); }
+.mp-cel__text b { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1.5rem; line-height: 1.1; }
+.mp-cel__text em { display: block; margin-top: 6px; font-size: .95rem; color: var(--cream-2); font-style: normal; }
+.mp-roll { display: flex; gap: 16px; margin-top: 1.4rem; padding: 4px 4px 14px; overflow-x: auto; text-align: left; }
+.mp-roll .mp-cel { flex: none; width: min(66vw, 320px); }
+.mp-roll figcaption { padding: 10px 14px 12px; font: 400 .76rem/1.4 var(--font-mono), monospace; color: var(--cream-2); }
+.mp-ring { --r: clamp(120px, 16vw, 200px); position: relative; width: calc(var(--r) * 2 + 120px); height: calc(var(--r) * 2 + 120px); }
+.mp-ring::before { content: ""; position: absolute; inset: 60px; border: 1px dashed rgba(246, 236, 217, .35); border-radius: 50%; }
+.mp-hub { position: absolute; left: 50%; top: 50%; width: 9rem; height: 9rem; margin: -4.5rem 0 0 -4.5rem; display: grid; place-items: center; text-align: center; padding: 1rem; font-family: var(--font-display); font-weight: 600; font-style: italic; font-size: 1.35rem; line-height: 1.05;
+  color: var(--ink-dark); background: radial-gradient(circle at 35% 30%, #ffe3b8, var(--amber) 72%); border-radius: 50%; box-shadow: 0 0 60px rgba(240, 160, 92, .5); }
+.mp-moon { position: absolute; left: 50%; top: 50%; width: 7.4rem; margin: -2.2rem 0 0 -3.7rem; padding: .8rem .5rem; text-align: center; background: rgba(10, 8, 20, .7); border: 1px solid rgba(157, 182, 217, .6);
+  transform: rotate(calc(var(--i) / var(--n) * 360deg - 90deg)) translateX(var(--r)) rotate(calc(var(--i) / var(--n) * -360deg + 90deg)); }
+.mp-moon b { display: block; font-family: var(--font-display); font-weight: 600; font-size: 1.05rem; line-height: 1.1; }
+.mp-moon small { display: block; margin-top: 4px; font: 500 .6rem/1 var(--font-mono), monospace; letter-spacing: .14em; text-transform: uppercase; color: var(--mist); }
+.mp-prop .ss-phone { margin: 0; filter: drop-shadow(0 30px 40px rgba(0, 0, 0, .55)); }
+.mp-prop .mp-cel { max-width: 30rem; }
+
+html.style-multiplane .ss-scene .ss-stage { background: transparent; }
+
+/* ---------------------------------------------------------------- phones */
+@media (max-width: 760px) {
+  .mp-top { padding: 12px 14px; gap: 10px; }
+  .mp-links, .mp-gauge { display: none; }
+  .mp-mark { font-size: 1.3rem; }
+  .mp-top__cta { font-size: .64rem; padding: 10px 14px 9px; }
+  .mp-hud { left: 14px; bottom: 10px; font-size: .56rem; gap: 12px; }
+  html.mp-live .mp-plane { padding: 11svh 20px; }
+  html.mp-live .mp-plane[data-side="r"], html.mp-live .mp-plane[data-side="l"] { justify-content: flex-start; }
+  html.mp-live .mp-plane[data-side="c"] { justify-content: center; }
+  html.mp-live .mp-hero .mp-copy { align-items: flex-end; padding-bottom: 14svh; }
+  .mp-title { font-size: clamp(2.5rem, 12.5vw, 3.9rem); }
+  .mp-hero .mp-title { font-size: clamp(3rem, 16vw, 5rem); }
+  .mp-title--end { font-size: clamp(2.8rem, 14.5vw, 4.6rem); }
+  .mp-sub { font-size: clamp(1.9rem, 9vw, 2.7rem); }
+  .mp-num { font-size: clamp(4rem, 22vw, 6.5rem); }
+  html.mp-live .mp-prop { align-items: flex-end; justify-content: flex-end !important; padding: 0 8px 2svh; }
+  html.mp-live .mp-prop > .ss-phone { transform: scale(.36); transform-origin: 100% 100%; }
+  html.mp-live .mp-prop .mp-cel { display: none; }
+  .mp-cels { display: flex; overflow-x: auto; gap: 10px; padding-bottom: 6px; }
+  .mp-cel--tile { flex: 0 0 44%; }
+  .mp-cel__text { padding: 9px 11px 11px; }
+  .mp-cel__text b { font-size: 1.1rem; }
+  .mp-cel__text em { display: none; }
+  html.mp-live .mp-hero .mp-prop { display: none; }
+  .mp-ring { transform: scale(.7); margin: -3.5rem auto; }
+  .mp-fig { min-width: 38%; }
+  html.mp-live .mp-beat { min-height: 140svh; }
+  html.mp-live .mp-beat--item { min-height: 115svh; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mp-btn, .mp-cel--tile { transition: none; }
+  .mp-focus { transition: none; }
+}
+
+/* `layout: stack` wraps every section in a sticky, scaling panel; this style has its own way of moving between sections */
+html.style-multiplane .ss-panel { position: static; display: block; min-height: 0; background: none; border-radius: 0; box-shadow: none; transform: none; }
+html.style-multiplane .ss-panel::after { display: none; }
+html.style-multiplane .ss-panel > section { background: none; transform: none; }
+
+</style><style>
+  /* A section's backdrop: the image fills the panel (or a wrapper in the flow layout); the section itself goes clear,
+     whatever surface it has. */
+  .ss-backdrop { background-size: cover; background-position: center; }
+  .ss-backdrop > section, .ss-backdrop > section[class*=ss-surface-], .ss-backdrop .ss-stage, .ss-backdrop .ss-band { background: transparent; }
+  /* A type scene set as a display line (size: display) rather than a passage: bigger, centred, balanced. */
+  .ss-scene.ss-type--display .ss-type__text { font-size: clamp(46px, 8.2vw, 150px); text-align: center; letter-spacing: -.04em; line-height: 1; max-width: 12em; }
+  /* On a dark surface the rolling word takes the surface's <em> colour, which is checked for contrast; the raw accent is not. */
+  .ss-surface-dark .ss-type--swap .roll { color: var(--em-color); }
+  /* A phone can play a clip instead of showing a screenshot. */
+  .ss-phone__screen > video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* Poses: how a product section's phone sits (ProductBlock.pose). The panel clips at its edges (overflow: clip), so a
+     phone pushed past them is cut off there. Each pose is a different composition, so a run of product panels reads
+     as different screens rather than one screen seven times. */
+  .ss-pose--rise.ss-product { align-items: flex-start; padding-top: clamp(100px, 13vh, 130px); padding-bottom: 0; }
+  .ss-pose--rise .ss-product__in { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 0; }
+  .ss-pose--rise .ss-product__copy { order: 1; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .ss-pose--rise .ss-lede { max-width: 58ch; }
+  .ss-pose--rise .ss-pills, .ss-pose--rise .ss-btns { justify-content: center; }
+  .ss-pose--rise .ss-product__media { order: 2; width: 100%; min-height: 0; height: max(30svh, 290px); margin-top: 28px; place-items: start center; }
+  .ss-pose--rise .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(230px, 21vw, 330px); transform: translate(-50%, calc(var(--float, 0) * -22px)); }
+  .ss-pose--close .ss-product__media { min-height: 0; height: min(62svh, 640px); place-items: start center; }
+  .ss-pose--close .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(300px, 30vw, 440px); transform: translate(-50%, calc(var(--float, 0) * -26px)); }
+  .ss-pose--lean .ss-product__media { min-height: 0; height: min(60svh, 620px); }
+  .ss-pose--lean .ss-phone { position: absolute; bottom: calc(-1 * clamp(90px, 14vh, 160px) - 30%); width: clamp(260px, 24vw, 360px); transform-origin: 50% 100%; }
+  .ss-pose--lean.ss-product--left .ss-phone { left: calc(-1 * var(--gutter) - 2%); transform: rotate(9deg) translateY(calc(var(--float, 0) * -20px)); }
+  .ss-pose--lean.ss-product--right .ss-phone { right: calc(-1 * var(--gutter) - 2%); transform: rotate(-9deg) translateY(calc(var(--float, 0) * -20px)); }
+  .ss-pose--turn .ss-product__media { perspective: 1400px; }
+  .ss-pose--turn .ss-phone { width: clamp(220px, 21vw, 310px); }
+  .ss-pose--turn.ss-product--left .ss-phone { transform: rotateY(-16deg) rotateX(4deg) rotateZ(-3deg) translateY(calc(var(--float, 0) * -24px)); box-shadow: 34px 60px 90px -30px rgba(0, 0, 0, .5), inset 0 0 0 2px #2c2c2c; }
+  .ss-pose--turn.ss-product--right .ss-phone { transform: rotateY(16deg) rotateX(4deg) rotateZ(3deg) translateY(calc(var(--float, 0) * -24px)); box-shadow: -34px 60px 90px -30px rgba(0, 0, 0, .5), inset 0 0 0 2px #2c2c2c; }
+  /* pair: the two phones swap places on a loop, each playing its own clip, the one coming forward lifting over the one
+     going back. Without motion they hold the front and back positions. */
+  .ss-pose--pair .ss-product__media { min-height: min(70vh, 720px); }
+  .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind { position: absolute; left: 50%; top: 50%; animation: 16s cubic-bezier(.45, 0, .25, 1) infinite; }
+  .ss-pose--pair .ss-product__media > .ss-phone { z-index: 2; transform: translate(-64%, -50%); animation-name: ss-pair-a; }
+  .ss-pose--pair .ss-phone-behind { z-index: 1; transform: translate(-22%, -56%) rotate(9deg) scale(.9); animation-name: ss-pair-b; }
+  @keyframes ss-pair-a {
+    0%, 42% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+    46% { transform: translate(-43%, -40%) rotate(4deg) scale(.94); }
+    50%, 92% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+    96% { transform: translate(-43%, -66%) rotate(4deg) scale(.96); }
+    100% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+  }
+  @keyframes ss-pair-b {
+    0%, 42% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+    46% { transform: translate(-43%, -66%) rotate(4deg) scale(.96); }
+    50%, 92% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+    96% { transform: translate(-43%, -40%) rotate(4deg) scale(.94); }
+    100% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind { animation: none; } }
+  .ss-product__stats { display: flex; flex-wrap: wrap; gap: 18px 44px; margin: 30px 0 10px; }
+  /* A hero can hold the app too: the phone rises from the bottom edge under the copy and sinks as the hero is left. */
+  .ss-hero--device { flex-direction: column; justify-content: flex-start; padding-top: clamp(110px, 14vh, 150px); padding-bottom: 0; gap: clamp(24px, 4vh, 44px); }
+  .ss-hero--device .ss-hero__in { flex: none; }
+  .ss-hero__phone { position: relative; width: 100%; height: max(26svh, 230px); flex: none; }
+  .ss-hero__phone .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(230px, 22vw, 340px); transform: translate(-50%, calc(var(--hero-p, 0) * 40px)); }
+  .ss-product__stats .ss-v { font-size: clamp(40px, 4.2vw, 72px); }
+  .ss-product__stats .ss-l { margin-top: 4px; }
+  @media (max-width: 900px) {
+    .ss-pose--rise.ss-product { padding-top: 100px; }
+    .ss-pose--rise .ss-product__media { height: max(34svh, 250px); }
+    .ss-pose--rise .ss-phone { width: min(64vw, 300px); }
+    .ss-pose--close .ss-product__media, .ss-pose--lean .ss-product__media { order: 2; height: 44svh; }
+    .ss-pose--close .ss-phone { width: min(76vw, 340px); }
+    .ss-pose--lean .ss-phone { width: min(66vw, 320px); }
+    .ss-pose--lean.ss-product--left .ss-phone, .ss-pose--lean.ss-product--right .ss-phone { top: 24px; bottom: auto; left: 50%; right: auto; transform: translateX(-50%) rotate(-7deg); transform-origin: 50% 0; }
+    .ss-pose--pair .ss-product__media { min-height: 0; height: clamp(420px, 66svh, 600px); }
+    .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind .ss-phone { width: min(50vw, 230px); }
+    .ss-pose--turn .ss-phone { width: min(60vw, 280px); }
+    .ss-product__stats { gap: 12px 28px; }
+    .ss-hero--device { padding-top: 100px; gap: 22px; }
+    .ss-hero__phone { height: max(22svh, 190px); }
+    .ss-hero__phone .ss-phone { width: min(60vw, 280px); }
+  }
+  .ss-h1, .ss-display { text-wrap: balance; }
+</style>
+<style>
+  html.ss-loading, html.ss-loading body { overflow: hidden; height: 100%; }
+  .ss-loader { position: fixed; inset: 0; z-index: 1000; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+    background: var(--bg); color: var(--ink); transition: opacity .7s cubic-bezier(.22,.8,.2,1), visibility .7s; }
+  html.ss-loading .ss-loader, .ss-loader.ss-leaving { display: flex; }
+  .ss-loader.ss-leaving { opacity: 0; visibility: hidden; }
+  .ss-loader__name { font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(28px, 3.4vw, 46px); letter-spacing: -.02em; }
+  .ss-loader__bar { width: min(320px, 60vw); height: 2px; background: var(--line); position: relative; overflow: hidden; }
+  .ss-loader__bar i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: scaleX(0); transition: transform .3s; }
+  .ss-loader__pct { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+</style>
+<script>
+  // Lock scrolling from the very first paint; the runtime unlocks it once every scene is ready.
+  // If the runtime can't run at all, open the page anyway after max_wait seconds.
+  document.documentElement.classList.add("ss-loading");
+  window.__ssLoader = { maxWait: 45.0, minTime: 0.6 };
+  setTimeout(function () { document.documentElement.classList.remove("ss-loading"); }, 50000.0);
+</script>
+</head>
+<body>
+<div class="ss-loader" id="ss-loader" role="status" aria-live="polite">
+  <div class="ss-loader__name">Halcyon</div>
+  <div class="ss-loader__bar"><i></i></div>
+  <div class="ss-loader__pct"><span>0</span>%</div>
+</div>
+
+<header class="ss-nav" id="ss-nav"><div class="ss-nav__in">
+  <a class="ss-wordmark" href="#">
+    <span>Halcyon</span>
+  </a>
+  <nav class="ss-nav__links"><a href="#why">Why</a><a href="#features">Features</a><a href="#how">How</a></nav>
+<a class="ss-btn" href="#get">Get Halcyon <span class="ss-arrow">→</span></a></div></header>
+
+<div class="mp-world" aria-hidden="true"></div>
+<header class="mp-top">
+  <a class="mp-mark" href="#">Halcyon</a>
+<nav class="mp-links" aria-label="Sections"><a href="#why">Why</a><a href="#features">Features</a><a href="#how">How</a></nav><a class="mp-top__cta" href="#get">Get Halcyon</a></header>
+<div class="mp-gauge" aria-hidden="true"><span class="mp-gauge__cap">lens</span></div>
+<p class="mp-hud" aria-hidden="true"><span>set-up <b data-mp-set>01</b></span><span>truck <b data-mp-truck>0.00</b></span><span>focus <b data-mp-focus>1.00</b></span></p>
+<main>
+
+<section class="mp-sec mp-sec--hero">
+  <div class="mp-beat mp-hero" data-mp="hero">
+    <div class="mp-plane mp-copy" data-side="l"><div class="mp-card">
+<p class="mp-badge">New · Halcyon 2.0</p><h1 class="mp-title">Your mornings, <em>back.</em></h1><p class="mp-lede">Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p>      <div class="mp-btns"><a class="mp-btn mp-btn--hot" href="#get">Try it free</a><a class="mp-btn" href="../../looks/">See the looks</a></div>
+    </div></div>
+  </div>
+</section>
+
+
+<section class="mp-sec" id="why">
+  <div class="mp-beat" data-mp="intro">
+    <div class="mp-plane mp-copy" data-side="r"><div class="mp-card">
+      <p class="mp-kicker">The problem</p>
+      <h2 class="mp-title">Calendars fill up <em>from the top.</em></h2>
+<p class="mp-lede">Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p>    </div></div>
+  </div>
+</section>
+
+
+<section class="mp-sec" id="features">
+<div class="mp-beat mp-beat--item" data-mp="features">
+    <div class="mp-plane mp-copy" data-side="l"><div class="mp-card"><p class="mp-kicker">What it does</p><h2 class="mp-title">Three rules, <em>kept for you.</em></h2></div></div>
+  </div>  <div class="mp-beat mp-beat--item" data-mp="feat">
+    <div class="mp-plane mp-copy" data-side="l"><div class="mp-card">
+<p class="mp-num" aria-hidden="true">01</p>      <h3 class="mp-sub">Focus first</h3>
+<p class="mp-body">Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p>    </div></div>
+  </div>
+  <div class="mp-beat mp-beat--item" data-mp="feat">
+    <div class="mp-plane mp-copy" data-side="l"><div class="mp-card">
+<p class="mp-num" aria-hidden="true">02</p>      <h3 class="mp-sub">Smart batching</h3>
+<p class="mp-body">Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p>    </div></div>
+  </div>
+  <div class="mp-beat mp-beat--item" data-mp="feat">
+    <div class="mp-plane mp-copy" data-side="l"><div class="mp-card">
+<p class="mp-num" aria-hidden="true">03</p>      <h3 class="mp-sub">Polite no</h3>
+<p class="mp-body">Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p>    </div></div>
+  </div>
+</section>
+
+
+<section class="mp-sec" id="app">
+  <div class="mp-beat" data-mp="product">
+    <div class="mp-plane mp-copy" data-side="l"><div class="mp-card">
+      <p class="mp-kicker">The app</p>
+      <h2 class="mp-title">Pick a slot, <em>keep the morning.</em></h2>
+<p class="mp-lede">When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p><ul class="mp-tags"><li>iPhone</li><li>Android</li><li>Web</li><li>Google and Outlook</li></ul>      
+    </div></div>
+<div class="mp-plane mp-prop" data-mp-d="0.84" data-side="r">
+<div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
+  <div class="ss-phone__bar"><span>9:41</span><i></i></div>
+<div class="ss-app">
+<div class="ss-app__name">Halcyon</div><div class="ss-app__title">Coffee with Sam</div><div class="ss-app__label">Best times</div><p class="ss-app__note">Your 8-11 focus block stays free.</p><div class="ss-app__opt is-on"><b>Tue 2:30 pm</b><small>Next to your other calls</small></div><div class="ss-app__opt"><b>Wed 4:00 pm</b><small>End of day</small></div><div class="ss-app__opt"><b>Thu 1:00 pm</b><small>After lunch</small></div><div class="ss-app__btn">Send these times</div>  </div></div></div>
+    </div>  </div>
+</section>
+
+
+<section class="mp-sec">
+  <div class="mp-beat" data-mp="stats">
+    <div class="mp-plane mp-copy" data-side="c"><div class="mp-card">
+      <ul class="mp-figs">
+<li class="mp-fig"><b class="mp-fig__v">11<sup>h</sup></b><span class="mp-fig__l">Focus hours kept per week</span></li><li class="mp-fig"><b class="mp-fig__v">38<sup>%</sup></b><span class="mp-fig__l">Fewer meeting fragments</span></li><li class="mp-fig"><b class="mp-fig__v">2<sup>min</sup></b><span class="mp-fig__l">To set up</span></li><li class="mp-fig"><b class="mp-fig__v">0</b><span class="mp-fig__l">Calendars replaced</span></li>      </ul>
+    </div></div>
+  </div>
+</section>
+
+
+<section class="mp-sec" id="how">
+<div class="mp-beat mp-beat--item" data-mp="timeline">
+    <div class="mp-plane mp-copy" data-side="r"><div class="mp-card"><p class="mp-kicker">How it works</p><h2 class="mp-title">Set it up <em>over coffee.</em></h2></div></div>
+  </div>  <div class="mp-beat mp-beat--item" data-mp="tl">
+    <div class="mp-plane mp-copy" data-side="c"><div class="mp-card">
+      <p class="mp-when">Minute 1</p>
+      <h3 class="mp-sub">Connect</h3>
+<p class="mp-body">Sign in with Google or Outlook; nothing moves yet.</p>    </div></div>
+  </div>
+  <div class="mp-beat mp-beat--item" data-mp="tl">
+    <div class="mp-plane mp-copy" data-side="c"><div class="mp-card">
+      <p class="mp-when">Minute 2</p>
+      <h3 class="mp-sub">Mark your hours</h3>
+<p class="mp-body">Paint the blocks you want protected.</p>    </div></div>
+  </div>
+  <div class="mp-beat mp-beat--item" data-mp="tl">
+    <div class="mp-plane mp-copy" data-side="c"><div class="mp-card">
+      <p class="mp-when">Day 1</p>
+      <h3 class="mp-sub">It starts</h3>
+<p class="mp-body">New invites are steered around your focus.</p>    </div></div>
+  </div>
+  <div class="mp-beat mp-beat--item" data-mp="tl">
+    <div class="mp-plane mp-copy" data-side="c"><div class="mp-card">
+      <p class="mp-when">Week 1</p>
+      <h3 class="mp-sub">You notice</h3>
+<p class="mp-body">A free morning, then another one.</p>    </div></div>
+  </div>
+</section>
+
+
+<section class="mp-sec">
+  <div class="mp-beat" data-mp="quote">
+    <div class="mp-plane mp-copy" data-side="c"><figure class="mp-card mp-quote">
+      <blockquote class="mp-saying">I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote>
+<figcaption class="mp-sign">Priya N., product designer</figcaption>    </figure></div>
+  </div>
+</section>
+
+
+<section class="mp-sec">
+  <div class="mp-beat mp-beat--item" data-mp="faq">
+    <div class="mp-plane mp-copy" data-side="r"><div class="mp-card"><h2 class="mp-title">Questions</h2></div></div>
+  </div>
+  <div class="mp-beat mp-beat--item" data-mp="qa">
+    <div class="mp-plane mp-copy" data-side="r"><div class="mp-card"><details class="mp-q" open><summary>Does it replace my calendar?</summary><p>No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p></details></div></div>
+  </div>
+  <div class="mp-beat mp-beat--item" data-mp="qa">
+    <div class="mp-plane mp-copy" data-side="r"><div class="mp-card"><details class="mp-q" open><summary>What do the people I meet see?</summary><p>A short list of times that work for both of you. No new app to install.</p></details></div></div>
+  </div>
+  <div class="mp-beat mp-beat--item" data-mp="qa">
+    <div class="mp-plane mp-copy" data-side="r"><div class="mp-card"><details class="mp-q" open><summary>Can I override it?</summary><p>Always. Drag anything anywhere; Halcyon learns from what you move.</p></details></div></div>
+  </div>
+</section>
+
+
+<section class="mp-sec mp-sec--end" id="get">
+  <div class="mp-beat mp-beat--end" data-mp="cta">
+    <div class="mp-plane mp-copy" data-side="c"><div class="mp-card">
+      <p class="mp-kicker">Free for 30 days</p>
+      <h2 class="mp-title mp-title--end">Keep <em>tomorrow morning.</em></h2>
+<div class="mp-btns"><a class="mp-btn mp-btn--hot mp-btn--big" href="#">Get Halcyon</a></div>    </div></div>
+  </div>
+</section>
+
+</main>
+
+<footer class="ss-footer"><div class="ss-wrap ss-footer__in">
+  <span>© Halcyon. A concept site; the product is fictional.</span>
+  <span>Built with Scroll Studio</span>
+</div></footer>
+
+<script>window.__ssScroll = { speed: 1.0 };</script>
+<script type="application/json" id="ss-art">{"fps": 12, "frames": 33, "h": 165, "invert": false, "label": "morning coffee, steam rising", "sheet": "assets/_art/74bcc7b01519.png", "w": 220}</script>
+<script type="module" src="../../runtime/index.js"></script>
+<nav class="ss-looks" aria-label="Looks">
+  <a href="../liquid-morph/" aria-label="Previous look">←</a>
+  <a class="ss-looks__name" href="../">Multiplane <small>16/32</small></a>
+  <a href="../neo-brutalism/" aria-label="Next look">→</a>
+</nav>
+<style>
+  .ss-looks { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 990; display: flex; align-items: center; gap: 4px; padding: 5px;
+    background: rgba(12, 12, 14, .88); color: #fff; border-radius: 999px; font: 500 14px/1 system-ui, sans-serif; box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); text-transform: none; letter-spacing: 0; }
+  .ss-looks a { color: #fff; padding: 10px 14px; border-radius: 999px; }
+  .ss-looks a:hover { background: rgba(255, 255, 255, .14); }
+  .ss-looks__name { min-width: 170px; text-align: center; }
+  .ss-looks small { opacity: .6; margin-left: 6px; font-size: 12px; }
+</style>
+<script>
+  addEventListener("keydown", function (e) {
+    if (e.target.closest && e.target.closest("input, textarea")) return;
+    var a = document.querySelectorAll(".ss-looks a");
+    if (e.key === "ArrowLeft") location.href = a[0].href;
+    if (e.key === "ArrowRight") location.href = a[2].href;
+  });
+</script>
+<script>
+  // Clips in phones play while their panel is on screen and rest while it isn't: browsers may hold a muted
+  // autoplay until the element is seen, and a stack of looping videos is wasted work off screen.
+  (function () {
+    var clips = document.querySelectorAll(".ss-phone__screen > video");
+    if (!clips.length || !("IntersectionObserver" in window)) return;
+    function play(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    function inView(v) { var r = v.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; }
+    var io = new IntersectionObserver(function (entries) {
+      if (document.hidden) return;   // a hidden page reports nothing as visible; leave the clips as they are
+      entries.forEach(function (e) { if (e.isIntersecting) play(e.target); else e.target.pause(); });
+    }, { threshold: 0.05 });
+    clips.forEach(function (v) { io.observe(v); });
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) clips.forEach(function (v) { if (inView(v)) play(v); });
+    });
+  })();
+</script>
+</body>
+</html>

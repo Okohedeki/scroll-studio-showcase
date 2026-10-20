@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en" data-style="smears" class="mode-dark layout-flow style-smears">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Halcyon</title>
+<meta name="description" content="The calendar that guards your mornings. One page, built in twenty styles by Scroll Studio."><meta name="generator" content="Scroll Studio">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23ff3d9a%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%2312062b%22%3EH%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root {
+  --bg: #12062b;
+  --bg-2: #1b0a42;
+  --ink: #ffffff;
+  --ink-rgb: 255, 255, 255;
+  --bg-rgb: 18, 6, 43;
+  --ink-2: rgba(255, 255, 255, 0.68);
+  --ink-3: rgba(255, 255, 255, 0.47);
+  --line: rgba(255, 255, 255, .13);
+  --accent: #ff3d9a;
+  --accent-2: #17d4ff;
+  --accent-ink: #12062b;
+  --accent-text: #ff3d9a;
+  --accent-rgb: 255, 61, 154;
+  --font-display: "Anton", system-ui, sans-serif;
+  --font-body: "Archivo", system-ui, sans-serif;
+  --font-mono: "Space Mono", ui-monospace, monospace;
+  --display-weight: 400;
+  --em-style: normal;
+  --radius: 0px;
+  color-scheme: dark;
+}
+.ss-surface-dark { --btn-bg: #ff3d9a; --btn-ink: #000000; --bg: #070211; --bg-2: #12062b; --ink: #ffffff; --ink-rgb: 255, 255, 255; --bg-rgb: 7, 2, 17; --ink-2: rgba(255, 255, 255, 0.68); --ink-3: rgba(255, 255, 255, 0.46); --line: rgba(255, 255, 255, .14); --accent-text: #ff3d9a; --em-color: #17d4ff; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #ff3d9a; --btn-ink: #000000; --bg: #ffffff; --bg-2: #2a1f40; --ink: #12062b; --ink-rgb: 18, 6, 43; --bg-rgb: 255, 255, 255; --ink-2: rgba(18, 6, 43, 1.0); --ink-3: rgba(18, 6, 43, 1.0); --line: rgba(18, 6, 43, .14); --accent-text: #12062b; --em-color: #ff3d9a; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #ff3d9a; --btn-ink: #000000; --bg: #133a60; --bg-2: #f1f3f5; --ink: #ffffff; --ink-rgb: 255, 255, 255; --bg-rgb: 19, 58, 96; --ink-2: rgba(255, 255, 255, 1.0); --ink-3: rgba(255, 255, 255, 1.0); --line: rgba(255, 255, 255, .14); --accent-text: #ffffff; --em-color: #ffffff; color-scheme: dark; background: var(--bg); color: var(--ink); }
+</style>
+<link rel="stylesheet" href="../../runtime/studio.css">
+<style id="ss-style">
+/* Smears: Spider-Verse timing on a page. Sheets from four dimensions (night, ink, riso, pop), cut at an angle and nested into
+   one another, each with its own print texture: dots, hatching, overprinted inks. Headlines, cards, numerals and buttons are
+   actors: they carry colour plates (text-shadow and box-shadow offsets, never blur) which slip as the page moves, and the
+   runtime holds them on twos and draws the move between poses as a smear. Body copy sits on paper scraps and is never
+   stretched. Nothing in this file animates by itself. Without JavaScript and with reduced motion each sheet is a still print;
+   html.sa-live (set by the runtime) puts the sheets on a belt that is sampled twelve times a second. */
+html.style-smears {
+  --cyan: #17d4ff; --pink: #ff3d9a; --yellow: #ffd23f; --acid: #c6f432; --purple: #5b2bd9; --orange: #ff6a3d; --blue: #2f4bff; --paper: #f5ecd6; --void: #0d0620;
+  background: var(--void);
+}
+html.style-smears body { font-family: "Archivo", "Helvetica Neue", sans-serif; color: #fff; background: var(--void); }
+html.style-smears .ss-nav { display: none; }
+html.style-smears ::selection { background: var(--yellow); color: #111; }
+html.style-smears :focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
+html.style-smears main { position: relative; z-index: 1; }
+
+/* ---------------------------------------------------------------- dimensions: each sheet is a different print */
+.sa-sheet { --bg: #150838; --fg: #fff; --pa: var(--cyan); --pb: var(--pink); --pc: var(--yellow); --scrap: var(--paper); --scrapfg: #17102b; --mx: 3; --dot: var(--pink); --dot2: var(--cyan); }
+.sa-sheet[data-dim="night"] { --bg: #150838; --fg: #fff; --pa: var(--cyan); --pb: var(--pink); --pc: var(--yellow); --scrap: var(--paper); --scrapfg: #17102b; --dot: var(--pink); --dot2: var(--cyan); }
+.sa-sheet[data-dim="ink"]   { --bg: #ecebe6; --fg: #0d0d10; --pa: var(--pink); --pb: #27b8ff; --pc: var(--yellow); --scrap: #fff; --scrapfg: #0d0d10; --dot: #0d0d10; --dot2: var(--pink); }
+.sa-sheet[data-dim="riso"]  { --bg: #f3efe3; --fg: #1d2fd0; --pa: var(--orange); --pb: var(--blue); --pc: var(--yellow); --scrap: #fffaf0; --scrapfg: #1b1f4a; --dot: var(--orange); --dot2: var(--blue); }
+.sa-sheet[data-dim="pop"]   { --bg: #5b2bd9; --fg: #fff; --pa: var(--acid); --pb: var(--pink); --pc: var(--cyan); --scrap: #fff6ff; --scrapfg: #1d0a4d; --dot: var(--acid); --dot2: var(--pink); }
+
+/* the sheet: slanted top and bottom edges that nest into their neighbours (the boundary between two sheets is one line) */
+.sa-sheet { --cut: clamp(24px, 4.4vw, 70px); --tl: 0; --tr: 0; --bl: 100%; --br: 100%; position: relative; isolation: isolate; min-height: 100svh; background: var(--bg); color: var(--fg);
+  padding: calc(var(--cut) + clamp(84px, 12svh, 130px)) clamp(18px, 5vw, 84px) calc(var(--cut) + clamp(56px, 9svh, 100px));
+  margin-top: calc(var(--cut) * -1);
+  clip-path: polygon(0 var(--tl), 100% var(--tr), 100% var(--br), 0 var(--bl)); }
+.sa-sheet:first-child, .bt-belt > .sa-sheet:first-child { margin-top: 0; }
+.sa-sheet[data-lean="0"] { --bl: 100%; --br: calc(100% - var(--cut)); }
+.sa-sheet[data-lean="1"] { --bl: calc(100% - var(--cut)); --br: 100%; }
+.sa-sheet[data-lean="0"] + .sa-sheet { --tl: var(--cut); --tr: 0; }      /* the next one nests into this one's bottom edge */
+.sa-sheet[data-lean="1"] + .sa-sheet { --tl: 0; --tr: var(--cut); }
+.sa-sheet:last-child { --bl: 100%; --br: 100%; margin-bottom: 0; }
+.sa-folio { position: absolute; z-index: 2; right: clamp(16px, 3vw, 40px); top: calc(var(--cut) + 62px); margin: 0; font: 700 12px/1 "Space Mono", monospace; letter-spacing: .2em; opacity: .65; }
+.sa-in { position: relative; z-index: 1; max-width: 1240px; margin: 0 auto; display: grid; gap: clamp(22px, 3.4vw, 48px); }
+
+/* print textures: dots, hatching, overprinted inks. .sa-back is the backdrop; the runtime drifts it on threes */
+.sa-back { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
+.sa-back::before, .sa-back::after { content: ""; position: absolute; inset: -34px; translate: var(--bx, 0px) var(--by, 0px); }
+.sa-sheet[data-dim="night"] .sa-back { background: radial-gradient(ellipse 70% 60% at 85% 10%, rgba(255, 61, 154, .32), transparent 60%), radial-gradient(ellipse 60% 70% at 5% 95%, rgba(23, 212, 255, .24), transparent 60%); }
+.sa-sheet[data-dim="night"] .sa-back::before { background: radial-gradient(circle, var(--dot) 0 30%, transparent 34%) 0 0 / 15px 15px; opacity: .8; -webkit-mask: linear-gradient(115deg, #000, transparent 46%); mask: linear-gradient(115deg, #000, transparent 46%); }
+.sa-sheet[data-dim="night"] .sa-back::after { background: radial-gradient(circle, var(--dot2) 0 30%, transparent 34%) 7px 7px / 15px 15px; opacity: .7; translate: calc(var(--bx, 0px) + var(--mx) * 1px) calc(var(--by, 0px) + var(--mx) * .6px); -webkit-mask: linear-gradient(-70deg, #000, transparent 40%); mask: linear-gradient(-70deg, #000, transparent 40%); }
+.sa-sheet[data-dim="ink"] .sa-back::before { background: repeating-linear-gradient(125deg, rgba(13, 13, 16, .85) 0 2px, transparent 2px 9px); -webkit-mask: radial-gradient(ellipse 60% 70% at 100% 100%, #000, transparent 70%); mask: radial-gradient(ellipse 60% 70% at 100% 100%, #000, transparent 70%); }
+.sa-sheet[data-dim="ink"] .sa-back::after { background: radial-gradient(circle, var(--dot2) 0 34%, transparent 38%) 0 0 / 20px 20px; opacity: .85; translate: calc(var(--bx, 0px) + var(--mx) * 1px) calc(var(--by, 0px) + var(--mx) * 1px); -webkit-mask: radial-gradient(ellipse 50% 60% at 0 0, #000, transparent 70%); mask: radial-gradient(ellipse 50% 60% at 0 0, #000, transparent 70%); }
+.sa-sheet[data-dim="riso"] .sa-back::before { background: radial-gradient(circle, var(--dot) 0 36%, transparent 40%) 0 0 / 17px 17px; rotate: 15deg; mix-blend-mode: multiply; opacity: .9; -webkit-mask: radial-gradient(ellipse 55% 55% at 80% 30%, #000, transparent 70%); mask: radial-gradient(ellipse 55% 55% at 80% 30%, #000, transparent 70%); }
+.sa-sheet[data-dim="riso"] .sa-back::after { background: radial-gradient(circle, var(--dot2) 0 36%, transparent 40%) 0 0 / 17px 17px; rotate: 75deg; mix-blend-mode: multiply; opacity: .8; translate: calc(var(--bx, 0px) + var(--mx) * 1.4px) calc(var(--by, 0px) + var(--mx) * 1px); -webkit-mask: radial-gradient(ellipse 55% 60% at 15% 85%, #000, transparent 70%); mask: radial-gradient(ellipse 55% 60% at 15% 85%, #000, transparent 70%); }
+.sa-sheet[data-dim="pop"] .sa-back::before { background: repeating-linear-gradient(-45deg, rgba(13, 6, 32, .22) 0 18px, transparent 18px 36px); }
+.sa-sheet[data-dim="pop"] .sa-back::after { background: radial-gradient(circle, var(--dot) 0 30%, transparent 34%) 0 0 / 16px 16px; opacity: .8; -webkit-mask: radial-gradient(ellipse 50% 70% at 100% 50%, #000, transparent 70%); mask: radial-gradient(ellipse 50% 70% at 100% 50%, #000, transparent 70%); }
+
+/* ---------------------------------------------------------------- actors: lettering with its colour plates */
+.sa-title { margin: 0; font-family: "Anton", "Impact", sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: .005em; line-height: .92; font-size: clamp(52px, 9.6vw, 176px); color: var(--fg); text-wrap: balance;
+  text-shadow: calc(var(--mx) * -1px) 0 0 var(--pa), calc(var(--mx) * 1px) calc(var(--mx) * .45px) 0 var(--pb); }
+.sa-title em { font-style: normal; color: var(--pc); }
+.sa-sheet[data-dim="ink"] .sa-title em { color: var(--pa); } .sa-sheet[data-dim="riso"] .sa-title em { color: var(--orange); }
+.sa-title--hero { font-size: clamp(58px, 11.6vw, 208px); } .sa-title--cta { font-size: clamp(52px, 9.4vw, 160px); text-align: center; }
+
+/* captions: the comic's yellow caption box */
+.sa-cap { display: inline-block; justify-self: start; margin: 0; padding: .36em .9em .4em; font: 700 clamp(12px, 1.05vw, 15px)/1.1 "Space Mono", monospace; letter-spacing: .1em; text-transform: uppercase; color: #15102a; background: var(--yellow); rotate: -1deg;
+  box-shadow: calc(var(--mx) * 1.4px) calc(var(--mx) * 1.4px) 0 #15102a; }
+.sa-cap--badge { background: var(--pb); color: #fff; rotate: 1.4deg; }
+.sa-sheet[data-dim="ink"] .sa-cap--badge { background: #0d0d10; }
+
+/* paper scraps: body copy, never stretched */
+.sa-scrap { position: relative; max-width: 36em; padding: clamp(16px, 1.8vw, 26px) clamp(18px, 2.2vw, 32px); background: var(--scrap); color: var(--scrapfg); rotate: -.7deg;
+  box-shadow: calc(var(--mx) * 1.6px) calc(var(--mx) * 1.6px) 0 var(--pa), calc(var(--mx) * 3.2px) calc(var(--mx) * 3.2px) 0 var(--pb); }
+.sa-scrap p { margin: 0; font-size: clamp(16px, 1.3vw, 20px); line-height: 1.55; text-wrap: pretty; }
+.sa-scrap em, .sa-lede em { font-style: normal; font-weight: 700; background: linear-gradient(transparent 60%, var(--yellow) 60%); }
+.sa-small { margin: 0; font: 400 13px/1.4 "Space Mono", monospace; letter-spacing: .04em; opacity: .85; }
+
+/* buttons: slanted stickers, plates offset behind */
+.sa-btns { display: flex; flex-wrap: wrap; gap: 18px 16px; margin-top: 6px; }
+.sa-btn { display: inline-block; transform: skewX(-9deg); background: #15102a; color: #fff; text-decoration: none; padding: .8em 1.5em; font: 700 clamp(15px, 1.25vw, 19px)/1 "Archivo", sans-serif; letter-spacing: .03em; text-transform: uppercase;
+  box-shadow: calc(var(--mx) * 1.6px) calc(var(--mx) * 1.6px) 0 var(--pa), calc(var(--mx) * 3.2px) calc(var(--mx) * 3.2px) 0 var(--pb); transition: background .1s; }
+.sa-btn span { display: inline-block; transform: skewX(9deg); }
+.sa-sheet[data-dim="ink"] .sa-btn { background: #fff; color: #0d0d10; box-shadow: calc(var(--mx) * 1.6px) calc(var(--mx) * 1.6px) 0 var(--pa), calc(var(--mx) * 3.2px) calc(var(--mx) * 3.2px) 0 #0d0d10; }
+.sa-btn--hot { background: var(--yellow); color: #15102a; } .sa-sheet[data-dim="ink"] .sa-btn--hot { background: var(--pink); color: #fff; }
+.sa-btn:hover { background: #fff; color: #15102a; }
+.sa-btn--big { font-size: clamp(18px, 2.2vw, 30px); }
+.sa-arrow { display: inline-block; font-style: normal; }
+
+/* cut-outs: pictures and phones with a hard colour plate behind them */
+.sa-cut { position: relative; margin: 0; background: #0d0620; box-shadow: calc(var(--mx) * 2px) calc(var(--mx) * 2px) 0 var(--pa), calc(var(--mx) * 4px) calc(var(--mx) * 4px) 0 var(--pb); rotate: 1.5deg; }
+.sa-cut img, .sa-cut video { display: block; width: 100%; height: auto; }
+.sa-cut--phone { display: grid; place-items: center; padding: 22px 0; background: radial-gradient(circle, #2a1360, #0d0620 72%); }
+.sa-art { width: min(100%, 380px); aspect-ratio: var(--ar, 1); background: #0d0620; } .sa-art canvas { display: block; width: 100%; height: 100%; }
+.sa-art:not(.sa-drawn) { display: none; }
+
+/* ---------------------------------------------------------------- blocks */
+.sa-hero__text { display: grid; gap: 22px; align-content: center; }
+.sa-sheet--hero .sa-in { grid-template-columns: minmax(0, 1.3fr) minmax(0, .7fr); align-items: center; min-height: 64svh; }
+.sa-hero__prop { display: grid; justify-items: center; } .sa-hero__prop .sa-cut { width: min(100%, 400px); }
+.sa-sheet--intro .sa-in { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: end; }
+.sa-intro__copy { display: grid; gap: 22px; }
+
+.sa-features__head, .sa-timeline__head, .sa-faq__head, .sa-gallery__head, .sa-strip__head { display: grid; gap: 16px; max-width: 14em; } .sa-strip__head { max-width: none; }
+.sa-variants { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px 24px; }
+.sa-variant { position: relative; padding: clamp(18px, 2vw, 30px); color: #15102a; rotate: calc((var(--i) - 1) * 1.6deg); translate: 0 calc(var(--i) * 10px); box-shadow: calc(var(--mx) * 1.8px) calc(var(--mx) * 1.8px) 0 var(--pa), calc(var(--mx) * 3.6px) calc(var(--mx) * 3.6px) 0 var(--pb); }
+.sa-variant--print { background: #fff6e0 radial-gradient(circle, var(--pink) 0 28%, transparent 32%) 0 0 / 13px 13px; background-blend-mode: normal; }
+.sa-variant--print > * { position: relative; background: #fff6e0; padding: 0 .3em; } .sa-variant--print h3 { display: inline-block; }
+.sa-variant--ink { background: #fff repeating-linear-gradient(125deg, rgba(13, 13, 16, .14) 0 2px, transparent 2px 8px); border: 3px solid #0d0d10; }
+.sa-variant--riso { background: #fffaf0; background-image: radial-gradient(circle at 100% 0, rgba(255, 106, 61, .9) 0 18%, transparent 19%), radial-gradient(circle at 0 100%, rgba(47, 75, 255, .85) 0 8%, transparent 9%); }
+.sa-variant h3 { margin: .45em 0 .35em; font: 400 clamp(28px, 2.8vw, 44px)/.95 "Anton", sans-serif; text-transform: uppercase; }
+.sa-variant p { margin: 0; font-size: clamp(15px, 1.1vw, 17px); line-height: 1.5; }
+.sa-tag { display: inline-block; padding: .25em .7em; background: #15102a; color: var(--yellow); font: 700 13px/1.1 "Space Mono", monospace; letter-spacing: .1em; }
+.sa-meter { display: block; height: 8px; margin-top: 16px; background: rgba(21, 16, 42, .2); } .sa-meter i { display: block; height: 100%; background: var(--pink); }
+
+.sa-sheet--product .sa-in { grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); align-items: center; }
+.sa-sheet--product.sa-side--left .sa-product__prop { order: 2; }
+.sa-product__prop { display: grid; gap: 26px; justify-items: center; } .sa-product__prop .sa-cut { width: min(100%, 420px); } .sa-product__prop .sa-cut:nth-child(2) { rotate: -2deg; }
+.sa-product__copy { display: grid; gap: 20px; align-content: center; }
+.sa-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.sa-chips li { padding: .45em .85em; background: var(--yellow); color: #15102a; font: 700 clamp(12px, 1vw, 14px)/1.1 "Space Mono", monospace; letter-spacing: .08em; text-transform: uppercase; box-shadow: calc(var(--mx) * 1.2px) calc(var(--mx) * 1.2px) 0 #15102a; }
+.sa-chips li:nth-child(even) { background: var(--pa); } .sa-chips b { font-weight: 700; }
+
+.sa-stamps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px 24px; align-items: end; }
+.sa-stamp { display: grid; gap: 22px; justify-items: start; }
+.sa-stamp__v { font: 400 clamp(76px, 11vw, 188px)/.84 "Anton", sans-serif; color: var(--fg); letter-spacing: .005em; padding-bottom: .22em;
+  text-shadow: calc(var(--mx) * -1px) 0 0 var(--pa), 0 .07em 0 var(--pa), 0 .14em 0 var(--pb), 0 .21em 0 var(--pc); }
+.sa-stamp__v sup { font-size: .34em; margin-left: .06em; vertical-align: .95em; color: var(--pc); }
+
+.sa-keys { list-style: none; margin: 0; padding: 0; display: grid; gap: 26px; max-width: 900px; }
+.sa-key { position: relative; max-width: 560px; margin-left: calc(var(--i) * clamp(0px, 5vw, 90px)); padding: 18px 22px 20px 74px; background: var(--scrap); color: var(--scrapfg); rotate: calc(var(--i) * -.6deg + .8deg);
+  box-shadow: calc(var(--mx) * 1.6px) calc(var(--mx) * 1.6px) 0 var(--pa), calc(var(--mx) * 3.2px) calc(var(--mx) * 3.2px) 0 var(--pb); }
+.sa-key__no { position: absolute; left: 14px; top: 10px; font: 400 44px/1 "Anton", sans-serif; color: var(--pb); }
+.sa-when { display: inline-block; font: 700 12px/1 "Space Mono", monospace; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 6px; opacity: .75; }
+.sa-key h3 { margin: 0 0 .2em; font: 400 clamp(26px, 2.4vw, 38px)/.95 "Anton", sans-serif; text-transform: uppercase; } .sa-key p { margin: 0; font-size: 16px; line-height: 1.5; }
+
+.sa-quotefig { position: relative; margin: 0; display: grid; gap: 22px; justify-items: start; max-width: 1020px; min-height: 40svh; align-content: center; }
+.sa-burst { position: absolute; z-index: -1; left: 50%; top: 50%; width: min(150%, 1100px); aspect-ratio: 1; translate: -50% -50%; background: repeating-conic-gradient(from 4deg, var(--pa) 0 5deg, transparent 5deg 13deg); opacity: .55; -webkit-mask: radial-gradient(circle, transparent 0 22%, #000 40%, transparent 70%); mask: radial-gradient(circle, transparent 0 22%, #000 40%, transparent 70%); }
+.sa-quote { margin: 0; padding: clamp(22px, 3.4vw, 54px); background: var(--yellow); color: #15102a; font: 400 clamp(30px, 4.6vw, 78px)/1 "Anton", sans-serif; text-transform: uppercase; text-wrap: balance; rotate: -.8deg;
+  box-shadow: calc(var(--mx) * 2px) calc(var(--mx) * 2px) 0 var(--pb), calc(var(--mx) * 4px) calc(var(--mx) * 4px) 0 var(--pa); }
+
+.sa-tabs { display: grid; gap: 18px; max-width: 820px; }
+.sa-tab { background: var(--scrap); color: var(--scrapfg); box-shadow: calc(var(--mx) * 1.6px) calc(var(--mx) * 1.6px) 0 var(--pa), calc(var(--mx) * 3.2px) calc(var(--mx) * 3.2px) 0 var(--pb); clip-path: polygon(0 0, 100% 0, 100% calc(100% - 7px), 97% 100%, 94% calc(100% - 5px), 90% 100%, 86% calc(100% - 6px), 0 calc(100% - 3px)); }
+.sa-tab summary { display: flex; align-items: center; gap: 14px; cursor: pointer; list-style: none; padding: 14px 18px; font: 700 clamp(16px, 1.5vw, 20px)/1.25 "Archivo", sans-serif; background: var(--yellow); color: #15102a; }
+.sa-tab summary::-webkit-details-marker { display: none; }
+.sa-tab__no { display: grid; place-items: center; flex: none; width: 2em; height: 2em; background: #15102a; color: var(--yellow); font: 700 13px/1 "Space Mono", monospace; } .sa-tab__q { flex: 1; }
+.sa-tab__x { flex: none; width: 18px; height: 18px; background: linear-gradient(#15102a, #15102a) center / 100% 3px no-repeat, linear-gradient(#15102a, #15102a) center / 3px 100% no-repeat; }
+.sa-tab[open] .sa-tab__x { background: linear-gradient(#15102a, #15102a) center / 100% 3px no-repeat; }
+.sa-tab__a { margin: 0; padding: 16px 22px 24px; font-size: 16px; line-height: 1.55; }
+
+.sa-sheet--cta .sa-in { justify-items: center; min-height: 60svh; align-content: center; } .sa-burst--cta { opacity: .6; }
+.sa-cta__in { display: grid; gap: clamp(20px, 3vw, 40px); justify-items: center; text-align: center; }
+
+.sa-prints { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 30px 22px; }
+.sa-print { display: block; position: relative; background: #fff; color: #15102a; padding: 10px 10px 14px; text-decoration: none; rotate: calc((var(--i) - 1) * 1.8deg); translate: 0 calc((var(--i) % 2) * 14px);
+  box-shadow: calc(var(--mx) * 1.6px) calc(var(--mx) * 1.6px) 0 var(--pa), calc(var(--mx) * 3.2px) calc(var(--mx) * 3.2px) 0 var(--pb); }
+.sa-print__img { display: block; background: #0d0620; } .sa-print__img img, .sa-print__img video { display: block; width: 100%; height: auto; }
+.sa-print__cap { display: grid; gap: 2px; padding-top: 10px; font-size: 14px; line-height: 1.3; } .sa-print__cap small { font: 700 11px/1 "Space Mono", monospace; letter-spacing: .12em; text-transform: uppercase; color: var(--pb); } .sa-print__cap em { font-style: normal; opacity: .8; }
+.sa-prints--strip { grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); }
+
+.sa-sheet--orbit .sa-in { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center; }
+.sa-orbit__copy { display: grid; gap: 22px; }
+.sa-orbit__stage { position: relative; aspect-ratio: 1; width: min(100%, 520px); justify-self: center; }
+.sa-orbit__center { position: absolute; left: 50%; top: 50%; translate: -50% -50%; display: grid; place-items: center; width: 34%; aspect-ratio: 1; border-radius: 50%; text-align: center; background: var(--pb); color: #fff; font: 400 clamp(20px, 3vw, 44px)/1 "Anton", sans-serif; text-transform: uppercase; box-shadow: calc(var(--mx) * 2px) calc(var(--mx) * 2px) 0 var(--pa); }
+.sa-orbit__ring { list-style: none; margin: 0; padding: 0; position: absolute; inset: 0; }
+.sa-sticker { position: absolute; left: calc(50% + 41% * cos(calc(var(--i) / var(--n) * 360deg - 90deg + var(--rot, 0deg)))); top: calc(50% + 41% * sin(calc(var(--i) / var(--n) * 360deg - 90deg + var(--rot, 0deg)))); translate: -50% -50%; width: 26%; padding: 8px 6px; text-align: center; background: var(--yellow); color: #15102a; font-size: clamp(11px, 1.2vw, 16px); line-height: 1.15; box-shadow: calc(var(--mx) * 1.2px) calc(var(--mx) * 1.2px) 0 #15102a; }
+.sa-sticker b { display: block; } .sa-sticker small { display: block; margin-top: 3px; font: 700 .8em/1 "Space Mono", monospace; opacity: .75; }
+
+/* ---------------------------------------------------------------- page furniture */
+.sa-head { position: fixed; inset: 0 0 auto 0; z-index: 60; display: flex; align-items: flex-start; gap: 12px; padding: 12px clamp(14px, 2.4vw, 32px) 0; pointer-events: none; font: 700 12px/1 "Space Mono", monospace; letter-spacing: .08em; text-transform: uppercase; }
+.sa-head > * { pointer-events: auto; }
+.sa-head__mark span, .sa-head__nav a span, .sa-head__cta span { display: inline-block; padding: .65em .95em; background: var(--yellow); color: #15102a; text-decoration: none; box-shadow: 3px 3px 0 #15102a; }
+.sa-head__mark { rotate: -1.2deg; } .sa-head__mark span { background: #fff; }
+.sa-head__nav { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; justify-content: flex-end; } .sa-head__nav a:nth-child(odd) { rotate: .8deg; } .sa-head__nav a:nth-child(even) { rotate: -.8deg; }
+.sa-head__nav a:hover span, .sa-head__nav a.is-on span { background: var(--pink); color: #fff; }
+.sa-head__cta { rotate: 1deg; } .sa-head__cta span { background: var(--pink); color: #fff; } .sa-head__cta:hover span { background: var(--cyan); color: #15102a; }
+.sa-impact { position: fixed; inset: 0; z-index: 90; pointer-events: none; --hit: #c01a74; --a: 0deg;
+  background: radial-gradient(circle, transparent 0 8%, rgba(0, 0, 0, .0) 8%) , repeating-conic-gradient(from var(--a) at 50% 50%, #0b0418 0 1.6deg, transparent 1.6deg 7deg), var(--hit); }
+.sa-impact::after { content: ""; position: absolute; inset: 0; background: radial-gradient(circle, rgba(0, 0, 0, .75) 1.6px, transparent 2.4px) 0 0 / 13px 13px; -webkit-mask: radial-gradient(circle at 50% 50%, transparent 0 30%, #000 80%); mask: radial-gradient(circle at 50% 50%, transparent 0 30%, #000 80%); }
+.sa-impact::before { content: ""; position: absolute; left: 50%; top: 50%; width: 32vmin; height: 32vmin; translate: -50% -50%; background: var(--hit); border-radius: 50%; filter: none; box-shadow: 0 0 0 .6vmin #0b0418; z-index: 1; }
+.sa-impact[hidden] { display: none; }
+.sa-trail { position: fixed; left: 0; top: 0; z-index: 95; pointer-events: none; } .sa-trail[hidden] { display: none; }
+.sa-trail i { position: absolute; left: -8px; top: -8px; width: 16px; height: 16px; border-radius: 50%; background: var(--yellow); }
+.sa-trail i:nth-child(2) { background: var(--pink); width: 13px; height: 13px; left: -6.5px; top: -6.5px; } .sa-trail i:nth-child(3) { background: var(--cyan); width: 10px; height: 10px; left: -5px; top: -5px; }
+.sa-rate { position: fixed; z-index: 61; left: clamp(12px, 2vw, 24px); bottom: clamp(12px, 2vw, 20px); margin: 0; padding: .55em .8em; background: #15102a; color: #fff; font: 700 12px/1 "Space Mono", monospace; letter-spacing: .1em; box-shadow: 3px 3px 0 var(--pink); }
+.sa-rate[hidden] { display: none; } .sa-rate b { color: var(--yellow); display: inline-block; min-width: 7ch; } .sa-rate span { opacity: .8; }
+
+html.style-smears main > .ss-scene { border-block: 14px solid #0d0620; box-shadow: inset 0 0 0 3px var(--pink); position: relative; }
+html.style-smears .ss-footer { position: relative; z-index: 2; background: #0d0620; border: 0; color: rgba(255, 255, 255, .8); }
+html.style-smears .ss-footer__in { font: 400 13px/1.5 "Space Mono", monospace; } html.style-smears .ss-footer a { color: var(--yellow); }
+html.sa-live .sa-actor { will-change: transform; }
+
+/* ---------------------------------------------------------------- phones */
+@media (max-width: 760px) {
+  .sa-sheet { --cut: 26px; padding-inline: 16px; padding-top: calc(var(--cut) + 78px); min-height: 0; }
+  .sa-sheet--hero .sa-in, .sa-sheet--intro .sa-in, .sa-sheet--product .sa-in, .sa-sheet--orbit .sa-in { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .sa-head { padding-top: 8px; gap: 8px; } .sa-head__nav { display: none; } .sa-head__mark { margin-right: auto; } .sa-head__mark span, .sa-head__cta span { padding: .55em .7em; }
+  .sa-title { font-size: clamp(46px, 15vw, 82px); } .sa-title--hero { font-size: clamp(54px, 18vw, 96px); }
+  .sa-hero__prop .sa-cut { width: min(100%, 300px); }
+  .sa-variants, .sa-stamps, .sa-prints { grid-template-columns: minmax(0, 1fr); }
+  .sa-variant, .sa-print { translate: 0 0; }
+  .sa-key { margin-left: calc(var(--i) * 16px); padding-left: 62px; }
+  .sa-orbit__stage { width: min(100%, 340px); } .sa-sticker { width: 30%; font-size: 11px; }
+  .sa-folio { display: none; }
+  .sa-rate { padding: .5em .6em; font-size: 11px; } .sa-rate span { display: none; }
+  .sa-trail { display: none !important; }
+}
+
+/* ---------------------------------------------------------------- reduced motion: still prints, no readout */
+@media (prefers-reduced-motion: reduce) {
+  .sa-btn { transition: none; }
+  .sa-rate, .sa-impact, .sa-trail { display: none !important; }
+}
+
+</style><style>
+  /* A section's backdrop: the image fills the panel (or a wrapper in the flow layout); the section itself goes clear,
+     whatever surface it has. */
+  .ss-backdrop { background-size: cover; background-position: center; }
+  .ss-backdrop > section, .ss-backdrop > section[class*=ss-surface-], .ss-backdrop .ss-stage, .ss-backdrop .ss-band { background: transparent; }
+  /* A type scene set as a display line (size: display) rather than a passage: bigger, centred, balanced. */
+  .ss-scene.ss-type--display .ss-type__text { font-size: clamp(46px, 8.2vw, 150px); text-align: center; letter-spacing: -.04em; line-height: 1; max-width: 12em; }
+  /* On a dark surface the rolling word takes the surface's <em> colour, which is checked for contrast; the raw accent is not. */
+  .ss-surface-dark .ss-type--swap .roll { color: var(--em-color); }
+  /* A phone can play a clip instead of showing a screenshot. */
+  .ss-phone__screen > video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* Poses: how a product section's phone sits (ProductBlock.pose). The panel clips at its edges (overflow: clip), so a
+     phone pushed past them is cut off there. Each pose is a different composition, so a run of product panels reads
+     as different screens rather than one screen seven times. */
+  .ss-pose--rise.ss-product { align-items: flex-start; padding-top: clamp(100px, 13vh, 130px); padding-bottom: 0; }
+  .ss-pose--rise .ss-product__in { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 0; }
+  .ss-pose--rise .ss-product__copy { order: 1; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .ss-pose--rise .ss-lede { max-width: 58ch; }
+  .ss-pose--rise .ss-pills, .ss-pose--rise .ss-btns { justify-content: center; }
+  .ss-pose--rise .ss-product__media { order: 2; width: 100%; min-height: 0; height: max(30svh, 290px); margin-top: 28px; place-items: start center; }
+  .ss-pose--rise .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(230px, 21vw, 330px); transform: translate(-50%, calc(var(--float, 0) * -22px)); }
+  .ss-pose--close .ss-product__media { min-height: 0; height: min(62svh, 640px); place-items: start center; }
+  .ss-pose--close .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(300px, 30vw, 440px); transform: translate(-50%, calc(var(--float, 0) * -26px)); }
+  .ss-pose--lean .ss-product__media { min-height: 0; height: min(60svh, 620px); }
+  .ss-pose--lean .ss-phone { position: absolute; bottom: calc(-1 * clamp(90px, 14vh, 160px) - 30%); width: clamp(260px, 24vw, 360px); transform-origin: 50% 100%; }
+  .ss-pose--lean.ss-product--left .ss-phone { left: calc(-1 * var(--gutter) - 2%); transform: rotate(9deg) translateY(calc(var(--float, 0) * -20px)); }
+  .ss-pose--lean.ss-product--right .ss-phone { right: calc(-1 * var(--gutter) - 2%); transform: rotate(-9deg) translateY(calc(var(--float, 0) * -20px)); }
+  .ss-pose--turn .ss-product__media { perspective: 1400px; }
+  .ss-pose--turn .ss-phone { width: clamp(220px, 21vw, 310px); }
+  .ss-pose--turn.ss-product--left .ss-phone { transform: rotateY(-16deg) rotateX(4deg) rotateZ(-3deg) translateY(calc(var(--float, 0) * -24px)); box-shadow: 34px 60px 90px -30px rgba(0, 0, 0, .5), inset 0 0 0 2px #2c2c2c; }
+  .ss-pose--turn.ss-product--right .ss-phone { transform: rotateY(16deg) rotateX(4deg) rotateZ(3deg) translateY(calc(var(--float, 0) * -24px)); box-shadow: -34px 60px 90px -30px rgba(0, 0, 0, .5), inset 0 0 0 2px #2c2c2c; }
+  /* pair: the two phones swap places on a loop, each playing its own clip, the one coming forward lifting over the one
+     going back. Without motion they hold the front and back positions. */
+  .ss-pose--pair .ss-product__media { min-height: min(70vh, 720px); }
+  .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind { position: absolute; left: 50%; top: 50%; animation: 16s cubic-bezier(.45, 0, .25, 1) infinite; }
+  .ss-pose--pair .ss-product__media > .ss-phone { z-index: 2; transform: translate(-64%, -50%); animation-name: ss-pair-a; }
+  .ss-pose--pair .ss-phone-behind { z-index: 1; transform: translate(-22%, -56%) rotate(9deg) scale(.9); animation-name: ss-pair-b; }
+  @keyframes ss-pair-a {
+    0%, 42% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+    46% { transform: translate(-43%, -40%) rotate(4deg) scale(.94); }
+    50%, 92% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+    96% { transform: translate(-43%, -66%) rotate(4deg) scale(.96); }
+    100% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+  }
+  @keyframes ss-pair-b {
+    0%, 42% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+    46% { transform: translate(-43%, -66%) rotate(4deg) scale(.96); }
+    50%, 92% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+    96% { transform: translate(-43%, -40%) rotate(4deg) scale(.94); }
+    100% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind { animation: none; } }
+  .ss-product__stats { display: flex; flex-wrap: wrap; gap: 18px 44px; margin: 30px 0 10px; }
+  /* A hero can hold the app too: the phone rises from the bottom edge under the copy and sinks as the hero is left. */
+  .ss-hero--device { flex-direction: column; justify-content: flex-start; padding-top: clamp(110px, 14vh, 150px); padding-bottom: 0; gap: clamp(24px, 4vh, 44px); }
+  .ss-hero--device .ss-hero__in { flex: none; }
+  .ss-hero__phone { position: relative; width: 100%; height: max(26svh, 230px); flex: none; }
+  .ss-hero__phone .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(230px, 22vw, 340px); transform: translate(-50%, calc(var(--hero-p, 0) * 40px)); }
+  .ss-product__stats .ss-v { font-size: clamp(40px, 4.2vw, 72px); }
+  .ss-product__stats .ss-l { margin-top: 4px; }
+  @media (max-width: 900px) {
+    .ss-pose--rise.ss-product { padding-top: 100px; }
+    .ss-pose--rise .ss-product__media { height: max(34svh, 250px); }
+    .ss-pose--rise .ss-phone { width: min(64vw, 300px); }
+    .ss-pose--close .ss-product__media, .ss-pose--lean .ss-product__media { order: 2; height: 44svh; }
+    .ss-pose--close .ss-phone { width: min(76vw, 340px); }
+    .ss-pose--lean .ss-phone { width: min(66vw, 320px); }
+    .ss-pose--lean.ss-product--left .ss-phone, .ss-pose--lean.ss-product--right .ss-phone { top: 24px; bottom: auto; left: 50%; right: auto; transform: translateX(-50%) rotate(-7deg); transform-origin: 50% 0; }
+    .ss-pose--pair .ss-product__media { min-height: 0; height: clamp(420px, 66svh, 600px); }
+    .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind .ss-phone { width: min(50vw, 230px); }
+    .ss-pose--turn .ss-phone { width: min(60vw, 280px); }
+    .ss-product__stats { gap: 12px 28px; }
+    .ss-hero--device { padding-top: 100px; gap: 22px; }
+    .ss-hero__phone { height: max(22svh, 190px); }
+    .ss-hero__phone .ss-phone { width: min(60vw, 280px); }
+  }
+  .ss-h1, .ss-display { text-wrap: balance; }
+</style>
+<style>
+  html.ss-loading, html.ss-loading body { overflow: hidden; height: 100%; }
+  .ss-loader { position: fixed; inset: 0; z-index: 1000; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+    background: var(--bg); color: var(--ink); transition: opacity .7s cubic-bezier(.22,.8,.2,1), visibility .7s; }
+  html.ss-loading .ss-loader, .ss-loader.ss-leaving { display: flex; }
+  .ss-loader.ss-leaving { opacity: 0; visibility: hidden; }
+  .ss-loader__name { font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(28px, 3.4vw, 46px); letter-spacing: -.02em; }
+  .ss-loader__bar { width: min(320px, 60vw); height: 2px; background: var(--line); position: relative; overflow: hidden; }
+  .ss-loader__bar i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: scaleX(0); transition: transform .3s; }
+  .ss-loader__pct { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+</style>
+<script>
+  // Lock scrolling from the very first paint; the runtime unlocks it once every scene is ready.
+  // If the runtime can't run at all, open the page anyway after max_wait seconds.
+  document.documentElement.classList.add("ss-loading");
+  window.__ssLoader = { maxWait: 45.0, minTime: 0.6 };
+  setTimeout(function () { document.documentElement.classList.remove("ss-loading"); }, 50000.0);
+</script>
+</head>
+<body>
+<div class="ss-loader" id="ss-loader" role="status" aria-live="polite">
+  <div class="ss-loader__name">Halcyon</div>
+  <div class="ss-loader__bar"><i></i></div>
+  <div class="ss-loader__pct"><span>0</span>%</div>
+</div>
+
+<header class="ss-nav" id="ss-nav"><div class="ss-nav__in">
+  <a class="ss-wordmark" href="#">
+    <span>Halcyon</span>
+  </a>
+  <nav class="ss-nav__links"><a href="#why">Why</a><a href="#features">Features</a><a href="#how">How</a></nav>
+<a class="ss-btn" href="#get">Get Halcyon <span class="ss-arrow">→</span></a></div></header>
+
+<header class="sa-head">
+  <a class="sa-head__mark" href="#"><span>Halcyon</span></a>
+<nav class="sa-head__nav" aria-label="Sections"><a href="#why"><span>Why</span></a><a href="#features"><span>Features</span></a><a href="#how"><span>How</span></a></nav><a class="sa-head__cta" href="#get"><span>Get Halcyon</span></a></header>
+<div class="sa-impact" aria-hidden="true" hidden></div>
+<div class="sa-trail" aria-hidden="true" hidden><i></i><i></i><i></i></div>
+<p class="sa-rate" aria-hidden="true" hidden><b data-sa-rate>HOLD</b> <span data-sa-fps>12 · TWOS</span></p>
+<main>
+
+<section class="sa-sheet sa-sheet--hero" data-kind="hero" data-dim="night" data-lean="0">
+  <i class="sa-back" aria-hidden="true"></i>
+  <p class="sa-folio" aria-hidden="true">01</p>
+  <div class="sa-in">  <div class="sa-hero__text">
+    <p class="sa-cap sa-cap--badge" data-sa="chip">New · Halcyon 2.0</p>
+    
+<h1 class="sa-title sa-title--hero" data-sa="title">Your mornings, <em>back.</em></h1>
+    <div class="sa-scrap sa-lede" data-sa="plate"><p>Halcyon is a calendar that keeps your best hours free. It books meetings around your focus, not into it.</p></div>
+    <div class="sa-btns"><a class="sa-btn sa-btn--hot" data-sa="btn" href="#get"><span>Try it free <i class="sa-arrow" aria-hidden="true">&rarr;</i></span></a><a class="sa-btn" data-sa="btn" href="../../looks/"><span>See the looks</span></a></div>
+  </div>
+  <div class="sa-hero__prop">
+<div class="sa-cut sa-art" data-sa="img" data-sa-art role="img" aria-label="morning coffee, steam rising" style="--ar: 220 / 165"><canvas aria-hidden="true"></canvas></div>
+  </div>
+</div>
+</section>
+
+
+<section class="sa-sheet sa-sheet--intro" data-kind="intro" data-dim="ink" data-lean="1" id="why">
+  <i class="sa-back" aria-hidden="true"></i>
+  <p class="sa-folio" aria-hidden="true">02</p>
+  <div class="sa-in">  <div class="sa-intro__title"><p class="sa-cap " data-sa="chip">The problem</p>
+<h2 class="sa-title " data-sa="title">Calendars fill up <em>from the top.</em></h2></div>
+  <div class="sa-intro__copy">
+    <div class="sa-scrap sa-lede" data-sa="plate"><p>Every invite lands in the first free slot, and the first free slot is usually the hour you meant to think in. Halcyon moves the line.</p></div>
+  </div>
+</div>
+</section>
+
+
+<section class="sa-sheet sa-sheet--features sa-n3" data-kind="features" data-dim="riso" data-lean="0" id="features">
+  <i class="sa-back" aria-hidden="true"></i>
+  <p class="sa-folio" aria-hidden="true">03</p>
+  <div class="sa-in">  <div class="sa-features__head"><p class="sa-cap " data-sa="chip">What it does</p>
+<h2 class="sa-title " data-sa="title">Three rules, <em>kept for you.</em></h2></div>
+  <ul class="sa-variants" style="--n: 3">
+    <li class="sa-variant sa-variant--print" data-sa="card" style="--i: 0">
+      <span class="sa-tag" aria-hidden="true">01</span>
+      <h3>Focus first</h3>
+<p>Your deep-work blocks go in before anyone else&#39;s meetings, every week.</p>    </li>
+    <li class="sa-variant sa-variant--ink" data-sa="card" style="--i: 1">
+      <span class="sa-tag" aria-hidden="true">02</span>
+      <h3>Smart batching</h3>
+<p>Calls are grouped into afternoons, so the day isn&#39;t cut into twenty-minute scraps.</p>    </li>
+    <li class="sa-variant sa-variant--riso" data-sa="card" style="--i: 2">
+      <span class="sa-tag" aria-hidden="true">03</span>
+      <h3>Polite no</h3>
+<p>Halcyon suggests a better slot instead of declining, and the other side picks with one tap.</p>    </li>
+  </ul>
+</div>
+</section>
+
+
+<section class="sa-sheet sa-sheet--product sa-side--right" data-kind="product" data-dim="pop" data-lean="1" id="app">
+  <i class="sa-back" aria-hidden="true"></i>
+  <p class="sa-folio" aria-hidden="true">04</p>
+  <div class="sa-in">  <div class="sa-product__prop">
+<div class="sa-cut sa-cut--phone" data-sa="img"><div class="ss-phone" aria-hidden="true"><div class="ss-phone__screen">
+  <div class="ss-phone__bar"><span>9:41</span><i></i></div>
+<div class="ss-app">
+<div class="ss-app__name">Halcyon</div><div class="ss-app__title">Coffee with Sam</div><div class="ss-app__label">Best times</div><p class="ss-app__note">Your 8-11 focus block stays free.</p><div class="ss-app__opt is-on"><b>Tue 2:30 pm</b><small>Next to your other calls</small></div><div class="ss-app__opt"><b>Wed 4:00 pm</b><small>End of day</small></div><div class="ss-app__opt"><b>Thu 1:00 pm</b><small>After lunch</small></div><div class="ss-app__btn">Send these times</div>  </div></div></div>
+</div>  </div>
+  <div class="sa-product__copy">
+    <p class="sa-cap " data-sa="chip">The app</p>
+<h2 class="sa-title " data-sa="title">Pick a slot, <em>keep the morning.</em></h2>
+    <div class="sa-scrap sa-lede" data-sa="plate"><p>When someone asks for your time, Halcyon offers the hours that cost you least. You approve, it books.</p></div>
+<ul class="sa-chips"><li data-sa="chip">iPhone</li><li data-sa="chip">Android</li><li data-sa="chip">Web</li><li data-sa="chip">Google and Outlook</li></ul>    
+  </div>
+</div>
+</section>
+
+
+<section class="sa-sheet sa-sheet--stats sa-n4" data-kind="stats" data-dim="night" data-lean="0">
+  <i class="sa-back" aria-hidden="true"></i>
+  <p class="sa-folio" aria-hidden="true">05</p>
+  <div class="sa-in">  <ul class="sa-stamps" style="--n: 4">
+    <li class="sa-stamp" style="--i: 0">
+      <b class="sa-stamp__v" data-sa="num">11<sup>h</sup></b>
+      <span class="sa-cap" data-sa="chip">Focus hours kept per week</span>
+    </li>
+    <li class="sa-stamp" style="--i: 1">
+      <b class="sa-stamp__v" data-sa="num">38<sup>%</sup></b>
+      <span class="sa-cap" data-sa="chip">Fewer meeting fragments</span>
+    </li>
+    <li class="sa-stamp" style="--i: 2">
+      <b class="sa-stamp__v" data-sa="num">2<sup>min</sup></b>
+      <span class="sa-cap" data-sa="chip">To set up</span>
+    </li>
+    <li class="sa-stamp" style="--i: 3">
+      <b class="sa-stamp__v" data-sa="num">0</b>
+      <span class="sa-cap" data-sa="chip">Calendars replaced</span>
+    </li>
+  </ul>
+</div>
+</section>
+
+
+<section class="sa-sheet sa-sheet--timeline sa-n4" data-kind="timeline" data-dim="ink" data-lean="1" id="how">
+  <i class="sa-back" aria-hidden="true"></i>
+  <p class="sa-folio" aria-hidden="true">06</p>
+  <div class="sa-in">  <div class="sa-timeline__head"><p class="sa-cap " data-sa="chip">How it works</p>
+<h2 class="sa-title " data-sa="title">Set it up <em>over coffee.</em></h2></div>
+  <ol class="sa-keys" style="--n: 4">
+    <li class="sa-key" data-sa="card" style="--i: 0">
+      <span class="sa-key__no" aria-hidden="true">01</span>
+      <span class="sa-when">Minute 1</span><h3>Connect</h3><p>Sign in with Google or Outlook; nothing moves yet.</p>    </li>
+    <li class="sa-key" data-sa="card" style="--i: 1">
+      <span class="sa-key__no" aria-hidden="true">02</span>
+      <span class="sa-when">Minute 2</span><h3>Mark your hours</h3><p>Paint the blocks you want protected.</p>    </li>
+    <li class="sa-key" data-sa="card" style="--i: 2">
+      <span class="sa-key__no" aria-hidden="true">03</span>
+      <span class="sa-when">Day 1</span><h3>It starts</h3><p>New invites are steered around your focus.</p>    </li>
+    <li class="sa-key" data-sa="card" style="--i: 3">
+      <span class="sa-key__no" aria-hidden="true">04</span>
+      <span class="sa-when">Week 1</span><h3>You notice</h3><p>A free morning, then another one.</p>    </li>
+  </ol>
+</div>
+</section>
+
+
+<section class="sa-sheet sa-sheet--quote" data-kind="quote" data-dim="riso" data-lean="0">
+  <i class="sa-back" aria-hidden="true"></i>
+  <p class="sa-folio" aria-hidden="true">07</p>
+  <div class="sa-in">  <figure class="sa-quotefig">
+    <i class="sa-burst" aria-hidden="true"></i>
+    <blockquote class="sa-quote" data-sa="card">I got my mornings back in a week. I didn&#39;t change a single habit; the calendar did.</blockquote>
+<figcaption class="sa-cap" data-sa="chip">Priya N., product designer</figcaption>  </figure>
+</div>
+</section>
+
+
+<section class="sa-sheet sa-sheet--faq sa-n3" data-kind="faq" data-dim="pop" data-lean="1">
+  <i class="sa-back" aria-hidden="true"></i>
+  <p class="sa-folio" aria-hidden="true">08</p>
+  <div class="sa-in">  <div class="sa-faq__head">
+<h2 class="sa-title " data-sa="title">Questions</h2></div>
+  <div class="sa-tabs">
+    <details class="sa-tab" data-sa="card">
+      <summary><span class="sa-tab__no" aria-hidden="true">1</span><span class="sa-tab__q">Does it replace my calendar?</span><i class="sa-tab__x" aria-hidden="true"></i></summary>
+      <p class="sa-tab__a">No. Halcyon sits on top of Google Calendar or Outlook and only decides where new things go.</p>
+    </details>
+    <details class="sa-tab" data-sa="card">
+      <summary><span class="sa-tab__no" aria-hidden="true">2</span><span class="sa-tab__q">What do the people I meet see?</span><i class="sa-tab__x" aria-hidden="true"></i></summary>
+      <p class="sa-tab__a">A short list of times that work for both of you. No new app to install.</p>
+    </details>
+    <details class="sa-tab" data-sa="card">
+      <summary><span class="sa-tab__no" aria-hidden="true">3</span><span class="sa-tab__q">Can I override it?</span><i class="sa-tab__x" aria-hidden="true"></i></summary>
+      <p class="sa-tab__a">Always. Drag anything anywhere; Halcyon learns from what you move.</p>
+    </details>
+  </div>
+</div>
+</section>
+
+
+<section class="sa-sheet sa-sheet--cta" data-kind="cta" data-dim="night" data-lean="0" id="get">
+  <i class="sa-back" aria-hidden="true"></i>
+  <p class="sa-folio" aria-hidden="true">09</p>
+  <div class="sa-in">  <i class="sa-burst sa-burst--cta" aria-hidden="true"></i>
+  <div class="sa-cta__in">
+    <p class="sa-cap " data-sa="chip">Free for 30 days</p>
+<h2 class="sa-title sa-title--cta" data-sa="title">Keep <em>tomorrow morning.</em></h2>
+<div class="sa-btns"><a class="sa-btn sa-btn--hot sa-btn--big" data-sa="btn" href="#"><span>Get Halcyon <i class="sa-arrow" aria-hidden="true">&rarr;</i></span></a></div>  </div>
+</div>
+</section>
+
+</main>
+
+<footer class="ss-footer"><div class="ss-wrap ss-footer__in">
+  <span>© Halcyon. A concept site; the product is fictional.</span>
+  <span>Built with Scroll Studio</span>
+</div></footer>
+
+<script>window.__ssScroll = { speed: 1.0 };</script>
+<script type="application/json" id="ss-art">{"fps": 12, "frames": 33, "h": 165, "invert": false, "label": "morning coffee, steam rising", "sheet": "assets/_art/74bcc7b01519.png", "w": 220}</script>
+<script type="module" src="../../runtime/index.js"></script>
+<nav class="ss-looks" aria-label="Looks">
+  <a href="../scratch-film/" aria-label="Previous look">←</a>
+  <a class="ss-looks__name" href="../">Smears <small>28/32</small></a>
+  <a href="../split-flap/" aria-label="Next look">→</a>
+</nav>
+<style>
+  .ss-looks { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 990; display: flex; align-items: center; gap: 4px; padding: 5px;
+    background: rgba(12, 12, 14, .88); color: #fff; border-radius: 999px; font: 500 14px/1 system-ui, sans-serif; box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); text-transform: none; letter-spacing: 0; }
+  .ss-looks a { color: #fff; padding: 10px 14px; border-radius: 999px; }
+  .ss-looks a:hover { background: rgba(255, 255, 255, .14); }
+  .ss-looks__name { min-width: 170px; text-align: center; }
+  .ss-looks small { opacity: .6; margin-left: 6px; font-size: 12px; }
+</style>
+<script>
+  addEventListener("keydown", function (e) {
+    if (e.target.closest && e.target.closest("input, textarea")) return;
+    var a = document.querySelectorAll(".ss-looks a");
+    if (e.key === "ArrowLeft") location.href = a[0].href;
+    if (e.key === "ArrowRight") location.href = a[2].href;
+  });
+</script>
+<script>
+  // Clips in phones play while their panel is on screen and rest while it isn't: browsers may hold a muted
+  // autoplay until the element is seen, and a stack of looping videos is wasted work off screen.
+  (function () {
+    var clips = document.querySelectorAll(".ss-phone__screen > video");
+    if (!clips.length || !("IntersectionObserver" in window)) return;
+    function play(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    function inView(v) { var r = v.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; }
+    var io = new IntersectionObserver(function (entries) {
+      if (document.hidden) return;   // a hidden page reports nothing as visible; leave the clips as they are
+      entries.forEach(function (e) { if (e.isIntersecting) play(e.target); else e.target.pause(); });
+    }, { threshold: 0.05 });
+    clips.forEach(function (v) { io.observe(v); });
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) clips.forEach(function (v) { if (inView(v)) play(v); });
+    });
+  })();
+</script>
+</body>
+</html>
