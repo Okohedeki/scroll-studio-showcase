@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en" class="mode-dark layout-flow hero-media">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Tidelow</title>
+<meta name="description" content="A bedside speaker that plays the sea at the pace you breathe, until you are asleep. A concept site."><meta name="generator" content="Scroll Studio">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%23ff7a59%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222.5%22%20text-anchor%3D%22middle%22%20font-family%3D%22system-ui%2Csans-serif%22%20font-size%3D%2218%22%20font-weight%3D%22700%22%20fill%3D%22%231a0d08%22%3ET%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+:root {
+  --bg: #16142b;
+  --bg-2: #1f1c3a;
+  --ink: #efe7da;
+  --ink-rgb: 239, 231, 218;
+  --bg-rgb: 22, 20, 43;
+  --ink-2: rgba(239, 231, 218, 0.68);
+  --ink-3: rgba(239, 231, 218, 0.52);
+  --line: rgba(239, 231, 218, .13);
+  --accent: #ff7a59;
+  --accent-2: #8fb8ff;
+  --accent-ink: #1a0d08;
+  --accent-text: #ff7a59;
+  --accent-rgb: 255, 122, 89;
+  --font-display: "DM Serif Display", Georgia, serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --display-weight: 500;
+  --em-style: normal;
+  --radius: 999px;
+  color-scheme: dark;
+}
+.ss-surface-dark { --btn-bg: #ff7a59; --btn-ink: #000000; --bg: #090811; --bg-2: #16142b; --ink: #efe7da; --ink-rgb: 239, 231, 218; --bg-rgb: 9, 8, 17; --ink-2: rgba(239, 231, 218, 0.68); --ink-3: rgba(239, 231, 218, 0.51); --line: rgba(239, 231, 218, .14); --accent-text: #ff7a59; --em-color: #8fb8ff; color-scheme: dark; background: var(--bg); color: var(--ink); }
+.ss-surface-light { --btn-bg: #16142b; --btn-ink: #ffffff; --bg: #efe7da; --bg-2: #2c293c; --ink: #16142b; --ink-rgb: 22, 20, 43; --bg-rgb: 239, 231, 218; --ink-2: rgba(22, 20, 43, 1.0); --ink-3: rgba(22, 20, 43, 1.0); --line: rgba(22, 20, 43, .14); --accent-text: #16142b; --em-color: #16142b; color-scheme: light; background: var(--bg); color: var(--ink); }
+.ss-surface-accent { --btn-bg: #ff7a59; --btn-ink: #000000; --bg: #343d60; --bg-2: #e4ddd3; --ink: #efe7da; --ink-rgb: 239, 231, 218; --bg-rgb: 52, 61, 96; --ink-2: rgba(239, 231, 218, 1.0); --ink-3: rgba(239, 231, 218, 1.0); --line: rgba(239, 231, 218, .14); --accent-text: #efe7da; --em-color: #efe7da; color-scheme: dark; background: var(--bg); color: var(--ink); }
+</style>
+<link rel="stylesheet" href="runtime/studio.css">
+<style>
+  /* A section's backdrop: the image fills the panel (or a wrapper in the flow layout); the section itself goes clear,
+     whatever surface it has. */
+  .ss-backdrop { background-size: cover; background-position: center; }
+  .ss-backdrop > section, .ss-backdrop > section[class*=ss-surface-], .ss-backdrop .ss-stage, .ss-backdrop .ss-band { background: transparent; }
+  /* A type scene set as a display line (size: display) rather than a passage: bigger, centred, balanced. */
+  .ss-scene.ss-type--display .ss-type__text { font-size: clamp(46px, 8.2vw, 150px); text-align: center; letter-spacing: -.04em; line-height: 1; max-width: 12em; }
+  /* On a dark surface the rolling word takes the surface's <em> colour, which is checked for contrast; the raw accent is not. */
+  .ss-surface-dark .ss-type--swap .roll { color: var(--em-color); }
+  /* A phone can play a clip instead of showing a screenshot. */
+  .ss-phone__screen > video { width: 100%; height: 100%; object-fit: cover; display: block; }
+  /* Poses: how a product section's phone sits (ProductBlock.pose). The panel clips at its edges (overflow: clip), so a
+     phone pushed past them is cut off there. Each pose is a different composition, so a run of product panels reads
+     as different screens rather than one screen seven times. */
+  .ss-pose--rise.ss-product { align-items: flex-start; padding-top: clamp(100px, 13vh, 130px); padding-bottom: 0; }
+  .ss-pose--rise .ss-product__in { grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 0; }
+  .ss-pose--rise .ss-product__copy { order: 1; max-width: 820px; display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .ss-pose--rise .ss-lede { max-width: 58ch; }
+  .ss-pose--rise .ss-pills, .ss-pose--rise .ss-btns { justify-content: center; }
+  .ss-pose--rise .ss-product__media { order: 2; width: 100%; min-height: 0; height: max(30svh, 290px); margin-top: 28px; place-items: start center; }
+  .ss-pose--rise .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(230px, 21vw, 330px); transform: translate(-50%, calc(var(--float, 0) * -22px)); }
+  .ss-pose--close .ss-product__media { min-height: 0; height: min(62svh, 640px); place-items: start center; }
+  .ss-pose--close .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(300px, 30vw, 440px); transform: translate(-50%, calc(var(--float, 0) * -26px)); }
+  .ss-pose--lean .ss-product__media { min-height: 0; height: min(60svh, 620px); }
+  .ss-pose--lean .ss-phone { position: absolute; bottom: calc(-1 * clamp(90px, 14vh, 160px) - 30%); width: clamp(260px, 24vw, 360px); transform-origin: 50% 100%; }
+  .ss-pose--lean.ss-product--left .ss-phone { left: calc(-1 * var(--gutter) - 2%); transform: rotate(9deg) translateY(calc(var(--float, 0) * -20px)); }
+  .ss-pose--lean.ss-product--right .ss-phone { right: calc(-1 * var(--gutter) - 2%); transform: rotate(-9deg) translateY(calc(var(--float, 0) * -20px)); }
+  .ss-pose--turn .ss-product__media { perspective: 1400px; }
+  .ss-pose--turn .ss-phone { width: clamp(220px, 21vw, 310px); }
+  .ss-pose--turn.ss-product--left .ss-phone { transform: rotateY(-16deg) rotateX(4deg) rotateZ(-3deg) translateY(calc(var(--float, 0) * -24px)); box-shadow: 34px 60px 90px -30px rgba(0, 0, 0, .5), inset 0 0 0 2px #2c2c2c; }
+  .ss-pose--turn.ss-product--right .ss-phone { transform: rotateY(16deg) rotateX(4deg) rotateZ(3deg) translateY(calc(var(--float, 0) * -24px)); box-shadow: -34px 60px 90px -30px rgba(0, 0, 0, .5), inset 0 0 0 2px #2c2c2c; }
+  /* pair: the two phones swap places on a loop, each playing its own clip, the one coming forward lifting over the one
+     going back. Without motion they hold the front and back positions. */
+  .ss-pose--pair .ss-product__media { min-height: min(70vh, 720px); }
+  .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind { position: absolute; left: 50%; top: 50%; animation: 16s cubic-bezier(.45, 0, .25, 1) infinite; }
+  .ss-pose--pair .ss-product__media > .ss-phone { z-index: 2; transform: translate(-64%, -50%); animation-name: ss-pair-a; }
+  .ss-pose--pair .ss-phone-behind { z-index: 1; transform: translate(-22%, -56%) rotate(9deg) scale(.9); animation-name: ss-pair-b; }
+  @keyframes ss-pair-a {
+    0%, 42% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+    46% { transform: translate(-43%, -40%) rotate(4deg) scale(.94); }
+    50%, 92% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+    96% { transform: translate(-43%, -66%) rotate(4deg) scale(.96); }
+    100% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+  }
+  @keyframes ss-pair-b {
+    0%, 42% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+    46% { transform: translate(-43%, -66%) rotate(4deg) scale(.96); }
+    50%, 92% { transform: translate(-64%, -50%) rotate(0deg) scale(1); z-index: 2; }
+    96% { transform: translate(-43%, -40%) rotate(4deg) scale(.94); }
+    100% { transform: translate(-22%, -56%) rotate(9deg) scale(.9); z-index: 1; }
+  }
+  @media (prefers-reduced-motion: reduce) { .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind { animation: none; } }
+  .ss-product__stats { display: flex; flex-wrap: wrap; gap: 18px 44px; margin: 30px 0 10px; }
+  /* A hero can hold the app too: the phone rises from the bottom edge under the copy and sinks as the hero is left. */
+  .ss-hero--device { flex-direction: column; justify-content: flex-start; padding-top: clamp(110px, 14vh, 150px); padding-bottom: 0; gap: clamp(24px, 4vh, 44px); }
+  .ss-hero--device .ss-hero__in { flex: none; }
+  .ss-hero__phone { position: relative; width: 100%; height: max(26svh, 230px); flex: none; }
+  .ss-hero__phone .ss-phone { position: absolute; top: 0; left: 50%; width: clamp(230px, 22vw, 340px); transform: translate(-50%, calc(var(--hero-p, 0) * 40px)); }
+  .ss-product__stats .ss-v { font-size: clamp(40px, 4.2vw, 72px); }
+  .ss-product__stats .ss-l { margin-top: 4px; }
+  @media (max-width: 900px) {
+    .ss-pose--rise.ss-product { padding-top: 100px; }
+    .ss-pose--rise .ss-product__media { height: max(34svh, 250px); }
+    .ss-pose--rise .ss-phone { width: min(64vw, 300px); }
+    .ss-pose--close .ss-product__media, .ss-pose--lean .ss-product__media { order: 2; height: 44svh; }
+    .ss-pose--close .ss-phone { width: min(76vw, 340px); }
+    .ss-pose--lean .ss-phone { width: min(66vw, 320px); }
+    .ss-pose--lean.ss-product--left .ss-phone, .ss-pose--lean.ss-product--right .ss-phone { top: 24px; bottom: auto; left: 50%; right: auto; transform: translateX(-50%) rotate(-7deg); transform-origin: 50% 0; }
+    .ss-pose--pair .ss-product__media { min-height: 0; height: clamp(420px, 66svh, 600px); }
+    .ss-pose--pair .ss-product__media > .ss-phone, .ss-pose--pair .ss-phone-behind .ss-phone { width: min(50vw, 230px); }
+    .ss-pose--turn .ss-phone { width: min(60vw, 280px); }
+    .ss-product__stats { gap: 12px 28px; }
+    .ss-hero--device { padding-top: 100px; gap: 22px; }
+    .ss-hero__phone { height: max(22svh, 190px); }
+    .ss-hero__phone .ss-phone { width: min(60vw, 280px); }
+  }
+  /* Small labels in sentence case in the body face (theme.labels: plain). */
+  .ss-kicker, .ss-num, .ss-eyebrow, .ss-tag, .ss-when { font-family: var(--font-body); font-size: 14px; font-weight: 500; letter-spacing: 0; text-transform: none; }
+  .ss-footer__in { font-family: var(--font-body); }
+  .ss-h1, .ss-display { text-wrap: balance; }
+</style>
+<style>
+  html.ss-loading, html.ss-loading body { overflow: hidden; height: 100%; }
+  .ss-loader { position: fixed; inset: 0; z-index: 1000; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 22px;
+    background: var(--bg); color: var(--ink); transition: opacity .7s cubic-bezier(.22,.8,.2,1), visibility .7s; }
+  html.ss-loading .ss-loader, .ss-loader.ss-leaving { display: flex; }
+  .ss-loader.ss-leaving { opacity: 0; visibility: hidden; }
+  .ss-loader__name { font-family: var(--font-display); font-weight: var(--display-weight); font-size: clamp(28px, 3.4vw, 46px); letter-spacing: -.02em; }
+  .ss-loader__bar { width: min(320px, 60vw); height: 2px; background: var(--line); position: relative; overflow: hidden; }
+  .ss-loader__bar i { position: absolute; inset: 0; background: var(--accent); transform-origin: left; transform: scaleX(0); transition: transform .3s; }
+  .ss-loader__pct { font-family: var(--font-mono); font-size: 12px; letter-spacing: .2em; color: var(--ink-3); font-variant-numeric: tabular-nums; }
+</style>
+<script>
+  // Lock scrolling from the very first paint; the runtime unlocks it once every scene is ready.
+  // If the runtime can't run at all, open the page anyway after max_wait seconds.
+  document.documentElement.classList.add("ss-loading");
+  window.__ssLoader = { maxWait: 45.0, minTime: 0.6 };
+  setTimeout(function () { document.documentElement.classList.remove("ss-loading"); }, 50000.0);
+</script>
+</head>
+<body>
+<div class="ss-loader" id="ss-loader" role="status" aria-live="polite">
+  <div class="ss-loader__name">Tidelow</div>
+  <div class="ss-loader__bar"><i></i></div>
+  <div class="ss-loader__pct"><span>0</span>%</div>
+</div>
+
+<header class="ss-nav" id="ss-nav"><div class="ss-nav__in">
+  <a class="ss-wordmark" href="#">
+    <span>Tidelow</span>
+  </a>
+  <nav class="ss-nav__links"><a href="#how">How it works</a><a href="#sea">The sea</a></nav>
+<a class="ss-btn" href="#reserve">Reserve yours <span class="ss-arrow">→</span></a></div></header>
+
+<main>
+<section class="ss-block ss-hero ss-hero--left ss-surface-dark ss-hero--media ss-hero--calm ss-hero--calm-left ss-hero--kit">
+<div class="ss-hero__media"><img src="assets/_media/e796928668ca.webp" alt="" fetchpriority="high" style="--phone-x: 34%" data-live="{&quot;r&quot;:1.7778,&quot;d&quot;:[{&quot;kind&quot;:&quot;flow&quot;,&quot;box&quot;:[0.66,0.36,0.9,0.52],&quot;speed&quot;:0.5,&quot;strength&quot;:0.4,&quot;softness&quot;:0.25,&quot;count&quot;:12,&quot;color&quot;:&quot;#efe7da&quot;,&quot;angle&quot;:0,&quot;origin&quot;:null},{&quot;kind&quot;:&quot;glint&quot;,&quot;box&quot;:[0.68,0.0,0.88,0.3],&quot;speed&quot;:1.0,&quot;strength&quot;:0.6,&quot;softness&quot;:0.25,&quot;count&quot;:4,&quot;color&quot;:&quot;#efe7da&quot;,&quot;angle&quot;:0,&quot;origin&quot;:null,&quot;points&quot;:[[0.7072,0.0839,1.0],[0.7241,0.1972,0.949]]}]}"></div><div class="ss-hero__shade"></div>  <div class="ss-hero__in">
+<span class="ss-badge ss-badge--kit"><i class="ss-badge__dot" aria-hidden="true"></i><span class="ss-badge__text">Tidelow One, shipping in November</span></span><h1 class="ss-h1">Fall asleep <em>on the tide.</em></h1><p class="ss-lede">A bedside speaker that plays a living sea and slows its waves to your breathing until you are under. No screen, and no app to open at midnight.</p>    <div class="ss-btns"><a class="ss-btn ss-btn--kit ss-btn--hot" href="#reserve"><span>Reserve yours</span><svg class="ss-icon ss-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="ss-btn ss-btn--kit ss-btn--ghost" href="#sea"><svg class="ss-icon ss-icon--play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 6.2v11.6c0 .7.8 1.2 1.4.8l9.1-5.8a1 1 0 0 0 0-1.6L9.9 5.4c-.6-.4-1.4.1-1.4.8Z"/></svg><span>Hear the sea</span></a></div><div class="ss-kit__part ss-kit__rating"><div class="ss-rating"><span class="ss-stars" aria-hidden="true"><span class="ss-stars__row"><svg class="ss-icon ss-icon--star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9Z"/></svg><svg class="ss-icon ss-icon--star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9Z"/></svg><svg class="ss-icon ss-icon--star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9Z"/></svg><svg class="ss-icon ss-icon--star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9Z"/></svg><svg class="ss-icon ss-icon--star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9Z"/></svg></span><span class="ss-stars__fill" style="width: 98.0%"><svg class="ss-icon ss-icon--star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9Z"/></svg><svg class="ss-icon ss-icon--star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9Z"/></svg><svg class="ss-icon ss-icon--star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9Z"/></svg><svg class="ss-icon ss-icon--star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9Z"/></svg><svg class="ss-icon ss-icon--star" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2.8 2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3-4.6-4.4 6.3-.9Z"/></svg></span></span><b class="ss-rating__score">4.9<span class="ss-sr"> out of 5</span></b><span class="ss-rating__text">from 640 early testers</span></div></div>
+  </div>
+</section>
+
+<section class="ss-block" id="how"><div class="ss-wrap ss-intro2">
+  <h2 class="ss-display ss-reveal">Twelve breaths a minute, <em>then ten, then six.</em></h2>
+  <div class="ss-reveal">
+<span class="ss-kicker">How it works</span><p class="ss-lede">Tidelow hears the rhythm of your breathing from across the room and lets the sea follow it down. Once you are asleep it fades to a hush and stays there until morning.</p>  </div>
+</div></section>
+
+<section class="ss-block ss-product ss-product--right ss-pose--beside"><div class="ss-wrap ss-product__in">
+  <div class="ss-product__media" data-float>
+<img class="ss-product__img ss-product__img--plate" src="assets/_media/ac02696daba9.webp" alt="" loading="lazy">  </div>
+  <div class="ss-product__copy ss-reveal">
+<span class="ss-kicker">The speaker</span>    <h2 class="ss-h2">Nothing to look at. <em>Everything to hear.</em></h2>
+<p class="ss-lede">A wool-covered sphere the size of an orange, one ring of light that dims as you do, and a driver tuned for low, slow water.</p><div class="ss-product__stats"><div class="ss-stat"><div class="ss-v">50<sup>mm</sup></div><div class="ss-l">driver tuned for low water</div></div><div class="ss-stat"><div class="ss-v">9<sup>h</sup></div><div class="ss-l">of sea on one charge</div></div></div>
+    
+  </div>
+</div></section>
+
+<section class="ss-scene ss-split ss-side-left ss-type-parallax ss-shade-auto" id="sea" data-scene="parallax">
+  <div class="ss-split-grid">
+    <div class="ss-steps">
+<article class="ss-step" style="--h: 140vh"><div class="ss-card">
+<div class="ss-num">Recorded on four coasts</div><h2 class="ss-h2">A real sea, <em>never a loop.</em></h2><p class="ss-body">Eleven nights of shoreline, recorded on quiet beaches and woven together live, so no wave ever comes round twice.</p>
+</div>
+</article><article class="ss-step" style="--h: 110vh"><div class="ss-card ss-card--block ss-card--stats"><section class="ss-block ss-band"><div class="ss-wrap ss-stats ss-stats--3">
+  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="11">11</div><div class="ss-l">nights of sea from four coasts</div></div>
+  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="0">0</div><div class="ss-l">screens or apps to open at night</div></div>
+  <div class="ss-stat ss-reveal"><div class="ss-v" data-count="1">1</div><div class="ss-l">ring of light that goes out before you do</div></div>
+</div></section>
+
+</div>
+</article>    </div>
+    <div class="ss-pin">
+      <div class="ss-visual"></div>
+      
+    </div>
+  </div>
+  <script type="application/json" class="ss-config">{"chapters": [{"depth": "assets/sea/photo0-depth.png", "focus": 0.067, "image": "assets/sea/photo0.jpg", "live": [{"angle": 0, "box": [0.0, 0.3, 1.0, 0.75], "color": "#efe7da", "count": 12, "kind": "flow", "origin": null, "softness": 0.25, "speed": 0.45, "strength": 0.5}], "move": "dolly", "step": 0}], "credits": [], "end": "assets/sea/photo0.jpg", "move": "dolly", "poster": "assets/sea/photo0.jpg", "strength": 0.7}</script>
+  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "none", "legend": [], "scales": []}, "layout": "split", "length": 4.0, "steps": [{"at": null, "body": "Eleven nights of shoreline, recorded on quiet beaches and woven together live, so no wave ever comes round twice.", "button": null, "fact": null, "hint": null, "image": {"beat_frame": null, "cinemagraph": null, "credit": null, "crop": null, "edit": null, "file": "inputs/shore.jpg", "generate": null, "gradient": null, "live": [{"angle": 0.0, "box": [0.0, 0.3, 1.0, 0.75], "color": null, "count": 12, "kind": "flow", "origin": null, "pick": "all", "prompt": null, "softness": 0.25, "speed": 0.45, "strength": 0.5}], "match": null, "medium": "halftone", "product": null, "scene": null, "seed": 7, "size": [1920, 1088]}, "intro": false, "kicker": "Recorded on four coasts", "length": 1.4, "place": null, "state": {}, "surface": null, "title": "A real sea, \u003cem\u003enever a loop.\u003c/em\u003e"}, {"at": null, "band": false, "block": "stats", "id": null, "items": [{"data": null, "label": "nights of sea from four coasts", "unit": null, "value": "11"}, {"data": null, "label": "screens or apps to open at night", "unit": null, "value": "0"}, {"data": null, "label": "ring of light that goes out before you do", "unit": null, "value": "1"}], "length": 1.1, "state": {}, "surface": null}]}</script>
+  <script type="application/json" class="ss-layout">{"elements": [{"show": [0.0, 0.56], "step": 0}, {"show": [0.56, 1.0], "step": 1}]}</script></section>
+<section class="ss-scene ss-overlay ss-side-right ss-type-type ss-shade-auto ss-type--display" id="breathe" data-scene="type">
+  <div class="ss-track" style="height: 240vh">
+    <div class="ss-stage">
+      <div class="ss-visual"></div>
+      <div class="ss-shade"></div>
+      <div class="ss-captions">
+      </div>
+      
+      <div class="ss-outro"></div>
+    </div>
+  </div>
+  <script type="application/json" class="ss-config">{"mode": "weight", "text": "Breathe in. / Hold it. / Let the tide take it.", "words": []}</script>
+  <script type="application/json" class="ss-section">{"hud": {"clock": null, "events": [], "fields": [], "kind": "none", "legend": [], "scales": []}, "layout": "overlay", "length": 2.4, "steps": []}</script>
+  <script type="application/json" class="ss-layout">{"elements": []}</script></section>
+<section class="ss-block"><div class="ss-wrap">
+<div class="ss-head ss-reveal"><span class="ss-kicker">Built for the dark</span><h2 class="ss-display">Quiet in every way <em>that matters.</em></h2></div>  <div class="ss-features ss-features--3">
+    <div class="ss-feature ss-reveal ss-feature--art">
+<div class="ss-feature__art"><img src="assets/_media/0871920d1c42.webp" alt="" loading="lazy"></div><span class="ss-tag">Light</span>      <div><h3>It dims with you</h3><p>The ring fades with your breathing and is out before you are.</p></div>
+    </div>
+    <div class="ss-feature ss-reveal ss-feature--art">
+<div class="ss-feature__art"><img src="assets/_media/d16e237559ce.webp" alt="" loading="lazy"></div><span class="ss-tag">Sound</span>      <div><h3>Sea, not static</h3><p>Recorded water with its own swell and lulls, mixed live so the sound never repeats.</p></div>
+    </div>
+    <div class="ss-feature ss-reveal ss-feature--art">
+<div class="ss-feature__art"><img src="assets/_media/73f87c39b39c.webp" alt="" loading="lazy"></div><span class="ss-tag">Sleep</span>      <div><h3>Off when you are</h3><p>When your breathing settles, it holds a hush through the night and wakes you with the tide coming in.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ss-block"><div class="ss-wrap ss-quote ss-reveal">
+  <blockquote>I used to count sheep. Now I count waves, <em>and I never get past forty.</em></blockquote><cite>Hanne, an early tester (a fictional quote)</cite></div></section>
+
+<section class="ss-block ss-signup-block"><div class="ss-wrap ss-signup-block__in ss-reveal">
+  <h2 class="ss-h2">Hear when it <em>ships.</em></h2>
+  <div class="ss-kit__part ss-kit__signup"><form class="ss-signup" action="mailto:hello@example.com" method="post" enctype="text/plain">
+<div class="ss-signup__row"><label class="ss-signup__field"><span class="ss-sr">Email address</span><input type="email" name="email" required autocomplete="email" placeholder="you@example.com"></label><button class="ss-btn ss-btn--hot ss-btn--kit" type="submit"><span>Tell me</span><svg class="ss-icon ss-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button></div><p class="ss-signup__note">One letter when Tidelow ships, and nothing else.</p></form></div>
+</div></section>
+<div class="ss-backdrop ss-surface-dark" style="background-image: url(assets/_media/209d4748ad8b.webp)"><section class="ss-block ss-cta ss-surface-dark" id="reserve">
+  <div class="ss-cta__in">
+<span class="ss-kicker ss-reveal">Tidelow One, £149, shipping in November</span>    <h2 class="ss-display ss-reveal">Sleep <em>at low tide.</em></h2>
+<a class="ss-btn ss-btn--hot ss-reveal" href="#reserve">Reserve yours <span class="ss-arrow">→</span></a>  </div>
+</section>
+
+</div></main>
+
+<footer class="ss-footer"><div class="ss-wrap ss-footer__in">
+  <span>Tidelow is a fictional product. A Scroll Studio example.</span>
+  <span></span>
+</div></footer>
+
+<script>window.__ssScroll = { speed: 1.0 };</script>
+<script type="module" src="runtime/index.js"></script>
+<script>
+  // Clips in phones play while their panel is on screen and rest while it isn't: browsers may hold a muted
+  // autoplay until the element is seen, and a stack of looping videos is wasted work off screen.
+  (function () {
+    var clips = document.querySelectorAll(".ss-phone__screen > video");
+    if (!clips.length || !("IntersectionObserver" in window)) return;
+    function play(v) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
+    function inView(v) { var r = v.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; }
+    var io = new IntersectionObserver(function (entries) {
+      if (document.hidden) return;   // a hidden page reports nothing as visible; leave the clips as they are
+      entries.forEach(function (e) { if (e.isIntersecting) play(e.target); else e.target.pause(); });
+    }, { threshold: 0.05 });
+    clips.forEach(function (v) { io.observe(v); });
+    document.addEventListener("visibilitychange", function () {
+      if (!document.hidden) clips.forEach(function (v) { if (inView(v)) play(v); });
+    });
+  })();
+</script>
+</body>
+</html>
